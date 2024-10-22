@@ -51,6 +51,9 @@ builder.Services.AddSwaggerGen();
 // register repository
 builder.Services.AddScoped<IProductsRepository, ProductsRepository>();
 builder.Services.AddScoped<IColorsRepository, ColorsRepository>();
+builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
+builder.Services.AddScoped<ISalesRepository, SalesRepository>();
+builder.Services.AddScoped<IStoreRepository, StoreRepository>();
 
 
 

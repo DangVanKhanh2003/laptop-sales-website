@@ -5,7 +5,7 @@ using SellingElectronicWebsite.UnitOfWork;
 
 namespace SellingElectronicWebsite.Controllers.Employee
 {
-    [Route("api/[controller]")]
+    [Route("api/employee/[controller]")]
     [ApiController]
     public class CategoryControler : ControllerBase
     {
@@ -55,7 +55,7 @@ namespace SellingElectronicWebsite.Controllers.Employee
         }
 
         
-
+       
         [HttpPost]
         public async Task<IActionResult> Add(CategoryModel model)
         {
@@ -102,7 +102,9 @@ namespace SellingElectronicWebsite.Controllers.Employee
 
                 if (result == false)
                 {
-                    return NotFound("No category found with id: " + id);
+                    _uow.Rollback();
+
+                    return NotFound("Not found category with id: " + id);
                 }
                 await _uow.Save();
                 _uow.Commit();
@@ -128,7 +130,9 @@ namespace SellingElectronicWebsite.Controllers.Employee
                 var result = await _uow.Categories.Delete(id);
                 if (result == false)
                 {
-                    return NotFound("No category found with id: " + id);
+                    _uow.Rollback();
+
+                    return NotFound("Not found category with id: " + id);
                 }
                 await _uow.Save();
                 _uow.Commit();
@@ -136,7 +140,6 @@ namespace SellingElectronicWebsite.Controllers.Employee
             }
             catch
             {
-                _uow.Rollback();
                 return StatusCode(StatusCodes.Status500InternalServerError);
 
             }

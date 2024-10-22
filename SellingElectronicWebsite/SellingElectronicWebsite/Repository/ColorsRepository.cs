@@ -27,7 +27,7 @@ namespace SellingElectronicWebsite.Repository
 
         public async Task<bool> Delete(int id)
         {
-            var item = await _context.Colors.FindAsync(id);
+            var item = await _context.Colors.Where(s => s.ColorId == id).FirstOrDefaultAsync();
             if (item != null)
             {
                 _context.Remove(item);
@@ -45,7 +45,7 @@ namespace SellingElectronicWebsite.Repository
 
         public async Task<ColorVM> GetById(int id)
         {
-            var item = await _context.Colors.FindAsync(id);
+            var item = await _context.Colors.Where(s => s.ColorId == id).FirstOrDefaultAsync();
             var colorVM = _mapper.Map<ColorVM>(item);
             return colorVM;
         }

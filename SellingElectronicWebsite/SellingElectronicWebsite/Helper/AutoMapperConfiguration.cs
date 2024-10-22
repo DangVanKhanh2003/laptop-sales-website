@@ -19,6 +19,10 @@ namespace SellingElectronicWebsite.Helper
             CreateMap<ProductSpecifiaction, ProductSpecifiactionVM>().ReverseMap();
             CreateMap<Category, CategoryModel>().ReverseMap();
             CreateMap<Category, CategoryVM>().ReverseMap();
+            CreateMap<Sale, SalesModel>().ReverseMap();
+            CreateMap<Sale, SalesVM>().ReverseMap();
+            CreateMap<Store, StoreModel>().ReverseMap();
+            CreateMap<Store, StoreVM>().ReverseMap();
         }
     }
 }

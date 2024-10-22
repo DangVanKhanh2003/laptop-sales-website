@@ -7,6 +7,8 @@ namespace SellingElectronicWebsite.UnitOfWork
         public ProductsRepository Products { get; }  
         public ColorsRepository Colors { get; }  
         public CategoryRepository Categories { get; }  
+        public SalesRepository Sales { get; }  
+        public StoreRepository Store { get; }  
         //This Method will Start the database Transaction
         public void CreateTransaction();
         //This Method will Commit the database Transaction

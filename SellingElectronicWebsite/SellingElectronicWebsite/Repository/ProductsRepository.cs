@@ -21,7 +21,11 @@ namespace SellingElectronicWebsite.Repository
             _mapper = mapper;
 
         }
-
+        public async Task<SalesVM> checkSaleByIdProduct(int idProduct)
+        {
+            var sale = await _context.Sales.Where(s => s.ProductId == idProduct && DateTime.Now <= s.EndAt && DateTime.Now >= s.StartAt).FirstOrDefaultAsync();
+            return _mapper.Map<SalesVM>(sale);
+        }
         public async Task<bool> CategoryExists(int? categoryId)
         {
             if (categoryId == null) return false;
@@ -62,6 +66,14 @@ namespace SellingElectronicWebsite.Repository
                                                 p.MainImg
                                         ))
                     .ToListAsync();
+            foreach(var item in products)
+            {
+                SalesVM sale = await checkSaleByIdProduct(item.ProductId);
+                if(sale != null)
+                {
+                    item.sale = sale;
+                }
+            }
             var queryableProduct = products.AsQueryable();
 
             if (!string.IsNullOrEmpty(sortBy))
@@ -89,6 +101,14 @@ namespace SellingElectronicWebsite.Repository
                                                 p.MainImg
                                         ))
                     .ToListAsync();
+            foreach (var item in products)
+            {
+                SalesVM sale = await checkSaleByIdProduct(item.ProductId);
+                if (sale != null)
+                {
+                    item.sale = sale;
+                }
+            }
             if (!string.IsNullOrEmpty(sortBy))
             {
                 switch (sortBy)
@@ -121,6 +141,13 @@ namespace SellingElectronicWebsite.Repository
                                                 })
                                                 .FirstOrDefaultAsync();
 
+            SalesVM sale = await checkSaleByIdProduct(model.ProductId);
+            if (sale != null)
+            {
+                model.sale = sale;
+            }
+            
+
             return model;
         }
         public async Task<ProductVM> GetByName(String name)
@@ -137,6 +164,11 @@ namespace SellingElectronicWebsite.Repository
                                                     ))
                                                 .FirstOrDefaultAsync();
 
+            SalesVM sale = await checkSaleByIdProduct(model.ProductId);
+            if (sale != null)
+            {
+                model.sale = sale;
+            }
             return model;
         }
 

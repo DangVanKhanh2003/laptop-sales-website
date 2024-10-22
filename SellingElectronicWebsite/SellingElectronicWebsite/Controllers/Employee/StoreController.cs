@@ -7,27 +7,28 @@ namespace SellingElectronicWebsite.Controllers.Employee
 {
     [Route("api/employee/[controller]")]
     [ApiController]
-    public class ColorController : ControllerBase
+    public class StoreController : ControllerBase
     {
-
         private IUnitOfWork _uow;
 
-        public ColorController(IUnitOfWork uow)
+        public StoreController(IUnitOfWork uow)
         {
             _uow = uow;
         }
+
         /// <summary>
-        /// List all colors. Color used for chossing color of color image
+        /// List all Stores.
         /// </summary>
 
-        [HttpGet("get all color")]
-        public async Task<IActionResult> GetAll()
+        [HttpGet("getAllStore")]
+        public async Task<IActionResult> GetAllStore()
         {
             try
             {
-                var data = await _uow.Colors.GetAll();
+                var data = await _uow.Store.GetAllStore();
                 if (data == null)
                 {
+
                     return NotFound();
                 }
                 return Ok(data); // Return the data in the response
@@ -39,15 +40,15 @@ namespace SellingElectronicWebsite.Controllers.Employee
         }
 
         /// <summary>
-        /// Get colors by id.
+        /// Get stores by id.
         /// </summary>
 
-        [HttpGet("{id}")]
-        public async Task<IActionResult> GetById(int id)
+        [HttpGet("{idStore}")]
+        public async Task<IActionResult> GetStoreById(int idStore)
         {
             try
             {
-                var data = await _uow.Colors.GetById(id);
+                var data = await _uow.Store.GetStoreById(idStore);
                 if (data == null)
                 {
                     return NotFound();
@@ -61,23 +62,25 @@ namespace SellingElectronicWebsite.Controllers.Employee
         }
 
         /// <summary>
-        /// Add new color. 
+        /// Add new store. 
         /// </summary>
 
-        [HttpPost]
-        public async Task<IActionResult> Add(ColorModel model)
+        [HttpPost("AddStore")]
+        public async Task<IActionResult> AddStore(StoreModel model)
         {
             try
             {
                 _uow.CreateTransaction();
-                var checkName = await _uow.Colors.GetByName(model.ColorName);
+                var checkName = await _uow.Store.GetStoreByName(model.StoreName);
 
                 if (checkName != null)
                 {
-                    return BadRequest("The color name already exists.");
+                    _uow.Rollback();
+
+                    return BadRequest("The store name already exists.");
                 }
-             
-                var result = await _uow.Colors.Add(model);
+
+                var result = await _uow.Store.AddStore(model);
 
                 await _uow.Save();
                 _uow.Commit();
@@ -91,35 +94,37 @@ namespace SellingElectronicWebsite.Controllers.Employee
             }
         }
         /// <summary>
-        /// Update color
+        /// Update store
         /// </summary>
         /// 
         /// <remarks>
-        /// server find color by id(input) and update the color.
+        /// server find store by id(input) and update the store.
         /// </remarks>
 
-        [HttpPut]
-        public async Task<IActionResult> Update(ColorModel model, int id)
+        [HttpPut("UpdateStore")]
+        public async Task<IActionResult> Update(StoreModel model, int id)
         {
             try
             {
                 _uow.CreateTransaction();
 
-                var checkName = await _uow.Colors.GetByName(model.ColorName);
+                var checkName = await _uow.Store.GetStoreByName(model.StoreName);
 
-                if (checkName != null && id != checkName.ColorId)
+                if (checkName != null && id != checkName.StoreId)
                 {
-                    return BadRequest("The color name already exists.");
+                    _uow.Rollback();
+
+                    return BadRequest("The store name already exists.");
                 }
 
 
-                var result = await _uow.Colors.Update(model, id);
+                var result = await _uow.Store.UpdateStore(model, id);
 
                 if (result == false)
                 {
                     _uow.Rollback();
 
-                    return NotFound("Not found color with id: " + id);
+                    return NotFound("Not found store with id: " + id);
                 }
                 await _uow.Save();
                 _uow.Commit();
@@ -134,26 +139,26 @@ namespace SellingElectronicWebsite.Controllers.Employee
             }
         }
         /// <summary>
-        /// Delete color.
+        /// Delete store.
         /// </summary>
         /// 
         /// <remarks>
-        /// Server find color and delete.
+        /// Server find store and delete.
         /// </remarks>
 
-        [HttpDelete]
+        [HttpDelete("DeleteStore")]
         public async Task<IActionResult> Delete(int id)
         {
             try
             {
                 _uow.CreateTransaction();
 
-                var result = await _uow.Colors.Delete(id);
+                var result = await _uow.Store.DeleteStore(id);
                 if (result == false)
                 {
                     _uow.Rollback();
 
-                    return NotFound("Not found color with id: " + id);
+                    return NotFound("Not found store with id: " + id);
                 }
                 await _uow.Save();
                 _uow.Commit();
@@ -166,6 +171,5 @@ namespace SellingElectronicWebsite.Controllers.Employee
 
             }
         }
-
     }
 }

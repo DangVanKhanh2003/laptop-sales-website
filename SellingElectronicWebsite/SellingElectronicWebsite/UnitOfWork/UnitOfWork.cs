@@ -15,6 +15,8 @@ namespace SellingElectronicWebsite.UnitOfWork
         public ProductsRepository Products { get; private set; }
         public ColorsRepository Colors { get; private set; }
         public CategoryRepository Categories { get; private set; }
+        public SalesRepository Sales { get; private set; }
+        public StoreRepository Store { get; private set; }
 
         public UnitOfWork(SellingElectronicsContext _Context, IMapper mapper)
         {
@@ -22,6 +24,8 @@ namespace SellingElectronicWebsite.UnitOfWork
             Products = new ProductsRepository(Context, mapper);
             Colors = new ColorsRepository(Context, mapper);
             Categories = new CategoryRepository(Context, mapper);
+            Sales = new SalesRepository(Context, mapper);
+            Store = new StoreRepository(Context, mapper);
         }
 
         public void CreateTransaction()
