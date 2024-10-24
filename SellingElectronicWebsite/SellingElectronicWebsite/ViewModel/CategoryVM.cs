@@ -5,11 +5,12 @@
         public int CategoryId { get; set; }
 
         public string? CategoryName { get; set; }
-
-        public CategoryVM(int categoryId, string categoryName)
-        { 
-            CategoryId = categoryId; 
+        public string? CategoryIcon { get; set; }
+        public CategoryVM(int categoryId, string categoryName, string? categoryIcon)
+        {
+            CategoryId = categoryId;
             CategoryName = categoryName;
+            CategoryIcon = categoryIcon;
         }
     }
 }

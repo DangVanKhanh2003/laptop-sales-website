@@ -4,10 +4,11 @@
     {
 
         public string? CategoryName { get; set; }
-
-        public CategoryModel(string? categoryName)
+        public string? CategoryIcon { get; set; }
+        public CategoryModel(string? categoryName, string? categoryIcon)
         {
             CategoryName = categoryName;
+            CategoryIcon = categoryIcon;
         }
     }
 }

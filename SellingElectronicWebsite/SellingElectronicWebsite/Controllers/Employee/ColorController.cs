@@ -20,7 +20,7 @@ namespace SellingElectronicWebsite.Controllers.Employee
         /// List all colors. Color used for chossing color of color image
         /// </summary>
 
-        [HttpGet("get all color")]
+        [HttpGet("getAllColor")]
         public async Task<IActionResult> GetAll()
         {
             try

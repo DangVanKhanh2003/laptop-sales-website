@@ -83,7 +83,7 @@ public partial class SellingElectronicsContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("Data Source=DESKTOP-19ENTAL\\SQLEXPRESS;Initial Catalog=SellingElectronics;Integrated Security=True;Trust Server Certificate=True");
+        => optionsBuilder.UseSqlServer("Data Source=DESKTOP-19ENTAL\\SQLEXPRESS;Initial Catalog=SellingElectronics;Integrated Security=True;Encrypt=True;Trust Server Certificate=True");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -158,6 +158,7 @@ public partial class SellingElectronicsContext : DbContext
 
             entity.HasIndex(e => e.CategoryName, "UQ__Categori__8517B2E03DAFC46E").IsUnique();
 
+            entity.Property(e => e.CategoryIcon).HasMaxLength(200);
             entity.Property(e => e.CategoryName).HasMaxLength(200);
         });
 
@@ -167,9 +168,7 @@ public partial class SellingElectronicsContext : DbContext
 
             entity.HasIndex(e => e.ColorName, "UQ_ColorName").IsUnique();
 
-            entity.Property(e => e.ColorName)
-                .HasMaxLength(255)
-                .IsUnicode(false);
+            entity.Property(e => e.ColorName).HasMaxLength(255);
         });
 
         modelBuilder.Entity<Comment>(entity =>

@@ -21,7 +21,7 @@ namespace SellingElectronicWebsite.Controllers.Employee
         }
 
 
-        [HttpGet("get all sales")]
+        [HttpGet("getAllSales")]
         public async Task<IActionResult> GetAll()
         {
             try
@@ -60,7 +60,7 @@ namespace SellingElectronicWebsite.Controllers.Employee
         /// Get all sale by id product
         /// </summary>
 
-        [HttpGet("get sales by idProduct")]
+        [HttpGet("getSalesByIdProduct")]
         public async Task<IActionResult> GetByIdProduct(int idProduct)
         {
             try

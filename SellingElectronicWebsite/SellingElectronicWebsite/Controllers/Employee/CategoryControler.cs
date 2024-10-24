@@ -17,7 +17,7 @@ namespace SellingElectronicWebsite.Controllers.Employee
         }
 
 
-        [HttpGet("get all category")]
+        [HttpGet("getAllCategory")]
         public async Task<IActionResult> GetAll()
         {
             try
