@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<sitemanifest>
+  <IisApp path="E:\Công Việc\BTL_DoAnChuyenNganh\laptop-sales-website\SellingElectronicWebsite\SellingElectronicWebsite\obj\Release\net8.0\win-x64\PubTmp\Out\" />
+  <dbfullsql path="E:\Công Việc\BTL_DoAnChuyenNganh\laptop-sales-website\SellingElectronicWebsite\SellingElectronicWebsite\obj\Release\net8.0\win-x64\PubTmp\EFSQLScripts\SellingElectronicWebsite.Entities.SellingElectronicsContext.sql" />
+</sitemanifest>

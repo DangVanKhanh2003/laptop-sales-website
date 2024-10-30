@@ -1,0 +1,183 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SellingElectronicWebsite</name>
+    </assembly>
+    <members>
+        <member name="M:SellingElectronicWebsite.Controllers.Employee.ColorController.GetAll">
+            <summary>
+            List all colors. Color used for chossing color of color image
+            </summary>
+        </member>
+        <member name="M:SellingElectronicWebsite.Controllers.Employee.ColorController.GetById(System.Int32)">
+            <summary>
+            Get colors by id.
+            </summary>
+        </member>
+        <member name="M:SellingElectronicWebsite.Controllers.Employee.ColorController.Add(SellingElectronicWebsite.Model.ColorModel)">
+            <summary>
+            Add new color. 
+            </summary>
+        </member>
+        <member name="M:SellingElectronicWebsite.Controllers.Employee.ColorController.Update(SellingElectronicWebsite.Model.ColorModel,System.Int32)">
+            <summary>
+            Update color
+            </summary>
+            
+            <remarks>
+            server find color by id(input) and update the color.
+            </remarks>
+        </member>
+        <member name="M:SellingElectronicWebsite.Controllers.Employee.ColorController.Delete(System.Int32)">
+            <summary>
+            Delete color.
+            </summary>
+            
+            <remarks>
+            Server find color and delete.
+            </remarks>
+        </member>
+        <member name="M:SellingElectronicWebsite.Controllers.Employee.ProductController.GetAll(System.String)">
+            <summary>
+            List all products.
+            </summary>
+            
+            <remarks>
+             In default, value of sortBy is null.If you want to sort, you can enter value for "sortBy" parameter.
+            </remarks>
+            
+            <param name="sortBy">sortBy: price_desc/price_asc/name_desc/null(default)</param>
+        </member>
+        <member name="M:SellingElectronicWebsite.Controllers.Employee.ProductController.GetById(System.Int32)">
+            <summary>
+            Get products by id.
+            </summary>
+        </member>
+        <member name="M:SellingElectronicWebsite.Controllers.Employee.ProductController.CountProducts">
+            <summary>
+            Count products.
+            </summary>
+            
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:SellingElectronicWebsite.Controllers.Employee.ProductController.GetByPage(System.Int32,System.Int32,System.String)" -->
+        <member name="M:SellingElectronicWebsite.Controllers.Employee.ProductController.GetAllcolor(System.Int32)">
+            <summary>
+            get all colors of product.
+            </summary>
+        </member>
+        <member name="M:SellingElectronicWebsite.Controllers.Employee.ProductController.Add(SellingElectronicWebsite.Model.ProductModel)">
+            <summary>
+            Add new product. 
+            </summary>
+            <remarks>mainImg used for show image product in the card product of list product(mainImg is link img)</remarks>
+        </member>
+        <member name="M:SellingElectronicWebsite.Controllers.Employee.ProductController.AddImgsForProduct(System.Collections.Generic.List{SellingElectronicWebsite.Model.ImageProductsModel})">
+            <summary>
+            add a list images of product.
+            </summary>
+             <param name="models"> Enter a list images</param>
+        </member>
+        <member name="M:SellingElectronicWebsite.Controllers.Employee.ProductController.AddSpesForProduct(System.Collections.Generic.List{SellingElectronicWebsite.Model.ProductSpecifiactionModel})">
+            <summary>
+            add a list specifications of product.
+            </summary>
+             <param name="models"> Enter a list images</param>
+        </member>
+        <member name="M:SellingElectronicWebsite.Controllers.Employee.ProductController.UpdateImgs(System.Collections.Generic.List{SellingElectronicWebsite.Model.ImageProductsModel},System.Int32)">
+            <summary>
+            Delete all images of product, and then add new list images of product.
+            </summary>
+        </member>
+        <member name="M:SellingElectronicWebsite.Controllers.Employee.ProductController.UpdateSpes(System.Collections.Generic.List{SellingElectronicWebsite.Model.ProductSpecifiactionModel},System.Int32)">
+            <summary>
+            Delete all specifications of product, and then add new list specifications of product.
+            </summary>
+            
+        </member>
+        <member name="M:SellingElectronicWebsite.Controllers.Employee.ProductController.Update(SellingElectronicWebsite.Model.ProductModel,System.Int32)">
+            <summary>
+            Update product
+            </summary>
+            
+            <remarks>
+            server find prouduct by id(input) and update the product. mainImg used for show image product in the card product of list product(mainImg is link img)
+            </remarks>
+        </member>
+        <member name="M:SellingElectronicWebsite.Controllers.Employee.ProductController.Delete(System.Int32)">
+            <summary>
+            Delete product.
+            </summary>
+            
+            <remarks>
+            Server find product and delete.
+            </remarks>
+        </member>
+        <member name="M:SellingElectronicWebsite.Controllers.Employee.ProductController.DeleteAllImgByIdProduct(System.Int32)">
+            <summary>
+            Delete all images of product.
+            </summary>
+        </member>
+        <member name="M:SellingElectronicWebsite.Controllers.Employee.ProductController.DeleteAllSpebyIdProduct(System.Int32)">
+            <summary>
+            Delete all specifications of product.
+            </summary>
+        </member>
+        <member name="M:SellingElectronicWebsite.Controllers.Employee.SalesController.GetByIdProduct(System.Int32)">
+            <summary>
+            Get all sale by id product
+            </summary>
+        </member>
+        <member name="M:SellingElectronicWebsite.Controllers.Employee.SalesController.Add(SellingElectronicWebsite.Model.SalesModel)">
+            <summary>
+            
+            </summary>
+            <param name="model">"numProduct = null" is not limited number products sale</param>
+            <returns></returns>
+        </member>
+        <member name="M:SellingElectronicWebsite.Controllers.Employee.SalesController.Update(SellingElectronicWebsite.Model.SalesModel,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="model">"numProduct = null" is not limited number products sale</param>
+            <returns></returns>
+        </member>
+        <member name="M:SellingElectronicWebsite.Controllers.Employee.SalesController.DeleteByIdProduct(System.Int32)">
+            <summary>
+            Delete all sales of product by idProduct
+            </summary>
+        </member>
+        <member name="M:SellingElectronicWebsite.Controllers.Employee.StoreController.GetAllStore">
+            <summary>
+            List all Stores.
+            </summary>
+        </member>
+        <member name="M:SellingElectronicWebsite.Controllers.Employee.StoreController.GetStoreById(System.Int32)">
+            <summary>
+            Get stores by id.
+            </summary>
+        </member>
+        <member name="M:SellingElectronicWebsite.Controllers.Employee.StoreController.AddStore(SellingElectronicWebsite.Model.StoreModel)">
+            <summary>
+            Add new store. 
+            </summary>
+        </member>
+        <member name="M:SellingElectronicWebsite.Controllers.Employee.StoreController.Update(SellingElectronicWebsite.Model.StoreModel,System.Int32)">
+            <summary>
+            Update store
+            </summary>
+            
+            <remarks>
+            server find store by id(input) and update the store.
+            </remarks>
+        </member>
+        <member name="M:SellingElectronicWebsite.Controllers.Employee.StoreController.Delete(System.Int32)">
+            <summary>
+            Delete store.
+            </summary>
+            
+            <remarks>
+            Server find store and delete.
+            </remarks>
+        </member>
+    </members>
+</doc>

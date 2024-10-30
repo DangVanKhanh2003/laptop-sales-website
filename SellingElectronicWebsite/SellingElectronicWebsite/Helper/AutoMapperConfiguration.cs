@@ -5,7 +5,7 @@ using SellingElectronicWebsite.ViewModel;
 
 namespace SellingElectronicWebsite.Helper
 {
-    public class AutoMapperConfiguration: Profile
+    public class AutoMapperConfiguration : Profile
     {
         public AutoMapperConfiguration()
         {
