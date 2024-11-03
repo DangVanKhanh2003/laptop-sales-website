@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:material_symbols_icons/material_symbols_icons.dart';
-import 'package:shopping_app/view/register/register_page.dart';
+import 'package:shopping_app/screen/register/register_page.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});

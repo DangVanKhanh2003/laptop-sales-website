@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:material_symbols_icons/material_symbols_icons.dart';
-import 'package:shopping_app/view/login/login_page.dart';
+import 'package:shopping_app/screen/login/login_page.dart';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({super.key});
@@ -18,10 +18,10 @@ class _RegisterPageState extends State<RegisterPage> {
 
   @override
   void initState() {
+    super.initState();
     _emailController = TextEditingController();
     _passwordController = TextEditingController();
     _passwordVerifyController = TextEditingController();
-    super.initState();
   }
 
   @override

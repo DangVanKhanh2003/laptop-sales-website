@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:shopping_app/view/home/home_page.dart';
-import 'package:shopping_app/view/notification/notification_page.dart';
-import 'package:shopping_app/view/setting/setting_page.dart';
+import 'package:shopping_app/screen/home/home_page.dart';
+import 'package:shopping_app/screen/notification/notification_page.dart';
+import 'package:shopping_app/screen/setting/setting_page.dart';
 
 class RootScreen extends StatefulWidget {
   const RootScreen({super.key});

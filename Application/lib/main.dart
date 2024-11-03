@@ -1,8 +1,8 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shopping_app/application.dart';
-import 'package:shopping_app/provider/setting_provider.dart';
+import 'package:shopping_app/service/getit.dart';
 import 'package:window_manager/window_manager.dart';
 
 Future<void> main(
@@ -15,12 +15,10 @@ Future<void> main(
     await windowManager.waitUntilReadyToShow();
     await windowManager.show();
   }
-  runApp(MultiProvider(
-    providers: [
-      ChangeNotifierProvider(
-        create: (_) => SettingProvider(),
-      ),
-    ],
-    child: const Application(),
-  ));
+  GetItWrapper.registerSingleton();
+  runApp(
+    const ProviderScope(
+      child: Application(),
+    ),
+  );
 }
