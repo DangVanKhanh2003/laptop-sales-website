@@ -44,7 +44,7 @@ class _RegisterPageState extends State<RegisterPage> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           const Text(
-            'Đăng ký',
+            'Đăng ký tài khoản',
             style: TextStyle(fontSize: 20),
           ),
           const SizedBox(height: 20),

@@ -3,7 +3,11 @@ class Category {
   String? categoryName;
   String? categoryIcon;
 
-  Category({this.categoryId, this.categoryName});
+  Category({
+    this.categoryId,
+    this.categoryName,
+    this.categoryIcon,
+  });
 
   Category.fromJson(Map<String, dynamic> json) {
     categoryId = json['categoryId'];

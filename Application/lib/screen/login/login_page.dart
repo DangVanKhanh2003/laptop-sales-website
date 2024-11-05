@@ -36,7 +36,7 @@ class _LoginPageState extends State<LoginPage> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           const Text(
-            'Đăng nhập',
+            'Vui lòng đăng nhập',
             style: TextStyle(fontSize: 20),
           ),
           const SizedBox(height: 20),
