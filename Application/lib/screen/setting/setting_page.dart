@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shopping_app/screen/login/login_page.dart';
 import 'package:shopping_app/screen/setting/account_setting.dart';
 import 'package:shopping_app/screen/setting/application_setting.dart';
 import 'package:shopping_app/screen/setting/store_setting.dart';
@@ -37,7 +38,14 @@ class _SettingPageState extends State<SettingPage> {
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.red,
               ),
-              onPressed: () {},
+              onPressed: () {
+                // TODO : Xoá JWT
+                Navigator.of(context).pushReplacement(
+                  MaterialPageRoute(
+                    builder: (context) => const LoginPage(),
+                  ),
+                );
+              },
               child: const SizedBox(
                 width: double.infinity,
                 child: Padding(
