@@ -40,6 +40,38 @@ class ProductApi {
     }
   }
 
+  /// Phương thức lấy các sản phẩm theo mã danh mục
+
+  Future<ProductList> getProductsByCategoryId({
+    required int categoryId,
+  }) async {
+    final uri = Uri.parse('$_url/getAllProductByCategory$categoryId');
+    final response = await http.get(uri).timeout(const Duration(seconds: 10));
+    if (response.statusCode == 200) {
+      return ProductList.fromJson(jsonDecode(response.body));
+    } else {
+      throw Exception(
+        'Không thể fetch được product, mã lỗi: ${response.statusCode}',
+      );
+    }
+  }
+
+  /// Phương thức lấy các sản phẩm theo mã danh mục
+
+  Future<ProductList> getProductsByName({
+    required String name,
+  }) async {
+    final uri = Uri.parse('$_url/SearchProductByName?nameProduct=$name');
+    final response = await http.get(uri).timeout(const Duration(seconds: 10));
+    if (response.statusCode == 200) {
+      return ProductList.fromJson(jsonDecode(response.body));
+    } else {
+      throw Exception(
+        'Không thể fetch được product, mã lỗi: ${response.statusCode}',
+      );
+    }
+  }
+
   Future<ProductSpecificationList> getProductSpecificationById({
     required int id,
   }) async {

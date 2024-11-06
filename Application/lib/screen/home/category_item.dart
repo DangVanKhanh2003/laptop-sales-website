@@ -14,22 +14,20 @@ class CategoryItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(12.0),
+      padding: const EdgeInsets.all(8.0),
       child: Tooltip(
         message: category.categoryName!,
         child: Card(
           elevation: 5,
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(15.0),
+            borderRadius: BorderRadius.circular(18.0),
           ),
           clipBehavior: Clip.hardEdge,
           child: InkWell(
             onTap: () {
               Navigator.of(context).push(
                 MaterialPageRoute(
-                  builder: (context) => CategoryPage(
-                    category: category,
-                  ),
+                  builder: (context) => CategoryPage(category: category),
                 ),
               );
             },
@@ -41,14 +39,15 @@ class CategoryItem extends StatelessWidget {
                     category.categoryIcon!,
                     SymbolStyle.outlined,
                   ),
-                  size: 40,
+                  size: 48,
                 ),
-                const SizedBox(height: 8.0),
+                const SizedBox(height: 10.0),
                 Text(
                   category.categoryName!,
-                  style: const TextStyle(
-                    fontSize: 16,
-                  ),
+                  style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                        fontWeight: FontWeight.w600,
+                        fontSize: 14,
+                      ),
                   textAlign: TextAlign.center,
                 ),
               ],

@@ -12,17 +12,20 @@ class CategoryGrid extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GridView.count(
+    return GridView.builder(
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
-      crossAxisCount: 4,
-      children: List.generate(
-        categoryList.length,
-        (index) {
-          final e = categoryList[index];
-          return CategoryItem(category: e);
-        },
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: 4,
+        crossAxisSpacing: 12.0,
+        mainAxisSpacing: 12.0,
+        childAspectRatio: 1.0,
       ),
+      itemCount: categoryList.length,
+      itemBuilder: (context, index) {
+        final e = categoryList[index];
+        return CategoryItem(category: e);
+      },
     );
   }
 }

@@ -34,7 +34,7 @@ class _ProductSpecificationPageState extends State<ProductSpecificationPage> {
       future: _future,
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
-          return const CircularProgressIndicator.adaptive();
+          return const Center(child: CircularProgressIndicator.adaptive());
         } else if (snapshot.hasData) {
           final data = snapshot.data!.productSpecificationList!;
           return Padding(
@@ -56,18 +56,12 @@ class _ProductSpecificationPageState extends State<ProductSpecificationPage> {
                                   .titleMedium
                                   ?.copyWith(
                                     fontWeight: FontWeight.bold,
-                                    color: Colors.blueGrey[800],
                                   ),
                             ),
                             const SizedBox(height: 4.0),
                             Text(
                               e.description!,
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .bodyMedium
-                                  ?.copyWith(
-                                    color: Colors.grey[700],
-                                  ),
+                              style: Theme.of(context).textTheme.bodyMedium,
                             ),
                             const Divider(thickness: 1, height: 20),
                           ],

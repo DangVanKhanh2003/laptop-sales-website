@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:shopping_app/model/product.dart';
 import 'package:shopping_app/repository/product_repository.dart';
-import 'package:shopping_app/screen/product_detail/product_detail.dart';
+import 'package:shopping_app/screen/product/product_grid.dart';
 import 'package:shopping_app/service/getit.dart';
 import 'package:shopping_app/screen/exception/exception_page.dart';
-import 'package:shopping_app/screen/home/product_item.dart';
 
 class ProductView extends StatefulWidget {
   const ProductView({
@@ -70,28 +69,7 @@ class _ProductViewState extends State<ProductView> {
           if (products.isEmpty) {
             products = snapshot.data!.productList!;
           }
-          return GridView.count(
-            crossAxisCount: 2,
-            shrinkWrap: true,
-            children: List.generate(
-              products.length,
-              (index) => Hero(
-                tag: products[index].productId!,
-                child: ProductItem(
-                  product: products[index],
-                  onTap: () {
-                    Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder: (context) => ProductDetail(
-                          product: products[index],
-                        ),
-                      ),
-                    );
-                  },
-                ),
-              ),
-            ),
-          );
+          return ProductGrid(products: products);
         } else if (snapshot.hasError) {
           return ExceptionPage(message: snapshot.error.toString());
         } else {

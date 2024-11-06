@@ -16,6 +16,22 @@ class ProductRepository {
     return await _productApi.getProducts(page: page, limit: limit);
   }
 
+  /// Get product by category id
+  Future<ProductList> getProductByCategoryId({
+    required int categoryId,
+  }) async {
+    return await _productApi.getProductsByCategoryId(categoryId: categoryId);
+  }
+
+  /// Get product by category id
+  Future<ProductList> getProductByName({
+    required String name,
+  }) async {
+    return await _productApi.getProductsByName(name: name);
+  }
+
+  /// Get product by Specification
+
   Future<ProductSpecificationList> getProductSpecification({
     required int id,
   }) async {

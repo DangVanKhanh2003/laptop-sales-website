@@ -1,10 +1,10 @@
-import 'package:flutter/cupertino.dart' as cupertino;
+import 'dart:io';
 import 'package:flutter/material.dart' as material;
 
 class MaterialDesign {
   static final material.ThemeData darkTheme = material.ThemeData(
     brightness: material.Brightness.dark,
-    fontFamily: 'GoogleSans',
+    fontFamily: _exchangeFont(),
     colorScheme: material.ColorScheme.fromSeed(
       seedColor: material.Colors.deepPurpleAccent,
       brightness: material.Brightness.dark,
@@ -14,35 +14,24 @@ class MaterialDesign {
     ),
     scaffoldBackgroundColor: material.Colors.black,
     useMaterial3: true,
+    dialogTheme: material.DialogTheme(
+      backgroundColor: material.Colors.grey.shade900,
+    ),
   );
 
+  static String _exchangeFont() {
+    if (Platform.isWindows) {
+      return 'SegoeUI';
+    }
+    return 'GoogleSans';
+  }
+
   static final material.ThemeData lightTheme = material.ThemeData(
-    fontFamily: 'GoogleSans',
+    fontFamily: _exchangeFont(),
     colorScheme: material.ColorScheme.fromSeed(
       seedColor: material.Colors.deepPurple,
       brightness: material.Brightness.light,
     ),
     useMaterial3: true,
-  );
-}
-
-class CupertinoDesign {
-  static const cupertino.CupertinoThemeData darkTheme =
-      cupertino.CupertinoThemeData(
-    brightness: cupertino.Brightness.dark,
-    primaryColor: cupertino.CupertinoColors.systemPurple,
-    scaffoldBackgroundColor: cupertino.CupertinoColors.black,
-    textTheme: cupertino.CupertinoTextThemeData(
-      textStyle: cupertino.TextStyle(fontFamily: 'SanFrancisco'),
-    ),
-  );
-
-  static const cupertino.CupertinoThemeData lightTheme =
-      cupertino.CupertinoThemeData(
-    brightness: cupertino.Brightness.light,
-    primaryColor: cupertino.CupertinoColors.systemPurple,
-    textTheme: cupertino.CupertinoTextThemeData(
-      textStyle: cupertino.TextStyle(fontFamily: 'SanFrancisco'),
-    ),
   );
 }

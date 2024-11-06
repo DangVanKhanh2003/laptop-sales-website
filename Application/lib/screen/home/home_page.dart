@@ -4,7 +4,7 @@ import 'package:shopping_app/provider/category_provider.dart';
 import 'package:shopping_app/screen/exception/exception_page.dart';
 import 'package:shopping_app/screen/home/category_grid.dart';
 import 'package:shopping_app/screen/home/search_bar.dart' as search_bar;
-import 'package:shopping_app/screen/home/product_view.dart';
+import 'package:shopping_app/screen/product/product_view.dart';
 
 final intializationProvider = FutureProvider((ref) async {
   await Future.delayed(const Duration(seconds: 1));
@@ -45,34 +45,34 @@ class _HomePageState extends ConsumerState<HomePage> {
   Widget build(BuildContext context) {
     final initWatch = ref.watch(intializationProvider);
     final category = ref.read(categoryProvider.notifier);
+
     return initWatch.when(
       data: (data) {
         return Padding(
-          padding: const EdgeInsets.symmetric(
-            horizontal: 16.0,
-            vertical: 8.0,
-          ),
+          padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.0),
           child: SingleChildScrollView(
             controller: _scrollController,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                search_bar.SearchBar(
-                  controller: _controller,
-                ),
-                const SizedBox(height: 10.0),
+                search_bar.SearchBar(controller: _controller),
+                const SizedBox(height: 20.0),
                 Text(
                   'Danh mục',
-                  style: Theme.of(context).textTheme.titleMedium,
+                  style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                        fontWeight: FontWeight.bold,
+                      ),
                 ),
-                const SizedBox(height: 5.0),
+                const SizedBox(height: 12.0),
                 CategoryGrid(categoryList: category.category!),
-                const SizedBox(height: 10.0),
+                const SizedBox(height: 20.0),
                 Text(
                   'Sản phẩm',
-                  style: Theme.of(context).textTheme.titleMedium,
+                  style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                        fontWeight: FontWeight.bold,
+                      ),
                 ),
-                const SizedBox(height: 5.0),
+                const SizedBox(height: 12.0),
                 ProductView(controller: _scrollController),
               ],
             ),
@@ -80,9 +80,7 @@ class _HomePageState extends ConsumerState<HomePage> {
         );
       },
       error: (error, _) => ExceptionPage(message: error.toString()),
-      loading: () => const Center(
-        child: CircularProgressIndicator.adaptive(),
-      ),
+      loading: () => const Center(child: CircularProgressIndicator.adaptive()),
     );
   }
 }
