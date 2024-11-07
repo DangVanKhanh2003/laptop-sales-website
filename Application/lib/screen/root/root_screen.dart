@@ -3,6 +3,7 @@ import 'package:material_symbols_icons/symbols.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:shopping_app/screen/cart/cart_page.dart';
 import 'package:shopping_app/screen/home/home_page.dart';
+import 'package:shopping_app/screen/message/message_page.dart';
 import 'package:shopping_app/screen/notification/notification_page.dart';
 import 'package:shopping_app/screen/setting/setting_page.dart';
 
@@ -55,16 +56,13 @@ class _RootScreenState extends State<RootScreen> {
               icon: const Icon(Symbols.shopping_cart),
             ),
           ),
-          // TODO : Làm tin nhắn
           Tooltip(
             message: 'Tin nhắn',
             child: IconButton(
               onPressed: () {
                 Navigator.of(context).push(
-                  PageTransition(
-                    type: PageTransitionType.rightToLeft,
-                    duration: const Duration(milliseconds: 200),
-                    child: const CartPage(),
+                  MaterialPageRoute(
+                    builder: (context) => const MessagePage(),
                   ),
                 );
               },

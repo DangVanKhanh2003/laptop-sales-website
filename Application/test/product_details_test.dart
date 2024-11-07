@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:shopping_app/provider/theme_provider.dart';
+import 'package:shopping_app/provider/setting_provider.dart';
 import 'package:shopping_app/screen/home/search_bar.dart' as search_bar;
 
 void main() {
@@ -27,8 +27,9 @@ void main() {
     });
 
     testWidgets('Thay đổi giao diện', (WidgetTester tester) async {
-      final themeProvider = StateNotifierProvider<ThemeProvider, ThemeMode>(
-        (ref) => ThemeProvider(),
+      final themeProvider =
+          StateNotifierProvider<SettingProvider, SettingState>(
+        (ref) => SettingProvider(),
       );
       await tester.pumpWidget(
         ProviderScope(

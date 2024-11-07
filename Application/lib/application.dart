@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shopping_app/model/theme.dart';
-import 'package:shopping_app/provider/theme_provider.dart';
+import 'package:shopping_app/provider/setting_provider.dart';
 import 'package:shopping_app/screen/login/login_page.dart';
 import 'package:dynamic_color/dynamic_color.dart';
 
@@ -20,7 +20,7 @@ class Application extends ConsumerWidget {
         darkTheme: MaterialDesign.darkTheme.copyWith(
           colorScheme: darkDynamic,
         ),
-        themeMode: ref.watch(themeProvider),
+        themeMode: ref.watch(settingProvider).themeData,
         home: const LoginPage(),
       ),
     );

@@ -107,11 +107,14 @@ class _CategoryPageState extends State<CategoryPage> {
                                 fontWeight: FontWeight.w600,
                               ),
                             ),
-                            trailing: IconButton(
-                              icon: const Icon(Symbols.favorite_border),
-                              onPressed: () {
-                                // TODO: Làm nút yêu thích
-                              },
+                            trailing: Tooltip(
+                              message: 'Thêm vào giỏ hàng',
+                              child: IconButton(
+                                icon: const Icon(Symbols.shopping_cart),
+                                onPressed: () {
+                                  // TODO: Implement
+                                },
+                              ),
                             ),
                           ),
                         ),

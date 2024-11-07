@@ -76,17 +76,6 @@ class _StoreSettingState extends State<StoreSetting> {
             name: 'Lịch sử mua hàng',
           ),
           const SizedBox(width: 12.0),
-          _iconButton(
-            icon: Symbols.favorite,
-            onPressed: () {
-              Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (context) => const CartPage(),
-                ),
-              );
-            },
-            name: 'Yêu thích',
-          ),
         ],
       ),
     );
