@@ -1,4 +1,5 @@
 import 'package:shopping_app/api/customer_api.dart';
+import 'package:shopping_app/model/customer_info.dart';
 import 'package:shopping_app/model/token_state.dart';
 
 class CustomerRepository {
@@ -18,5 +19,15 @@ class CustomerRepository {
     required String password,
   }) async {
     return await _customerApi.login(email: email, password: password);
+  }
+
+  Future<CustomerInfo> getCustomerInfoById({
+    required int customerId,
+    required TokenState token,
+  }) async {
+    return await _customerApi.getCustomerInfoById(
+      customerId: customerId,
+      token: token,
+    );
   }
 }

@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shopping_app/application.dart';
-import 'package:shopping_app/service/getit.dart';
+import 'package:shopping_app/service/getit_helper.dart';
+import 'package:shopping_app/service/notification_helper.dart';
 import 'package:window_manager/window_manager.dart';
 
 Future<void> main(
@@ -17,7 +18,8 @@ Future<void> main(
     await windowManager.waitUntilReadyToShow();
     await windowManager.show();
   }
-  GetItWrapper.registerSingleton();
+  GetItHelper.registerSingleton();
+  await NotificationHelper.initialize();
   runApp(
     const ProviderScope(
       child: Application(),

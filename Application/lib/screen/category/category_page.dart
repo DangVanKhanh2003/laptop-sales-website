@@ -1,14 +1,13 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:material_symbols_icons/symbols.dart';
 import 'package:shopping_app/model/category.dart';
 import 'package:shopping_app/model/product.dart';
 import 'package:shopping_app/provider/token_provider.dart';
 import 'package:shopping_app/repository/product_repository.dart';
+import 'package:shopping_app/screen/category/category_loading.dart';
+import 'package:shopping_app/screen/category/product_card.dart';
 import 'package:shopping_app/screen/exception/exception_page.dart';
-import 'package:shopping_app/screen/product_detail/product_detail.dart';
-import 'package:shopping_app/service/getit.dart';
+import 'package:shopping_app/service/getit_helper.dart';
 
 class CategoryPage extends ConsumerStatefulWidget {
   const CategoryPage({
@@ -28,7 +27,7 @@ class _CategoryPageState extends ConsumerState<CategoryPage> {
   @override
   void initState() {
     super.initState();
-    _future = GetItWrapper.getIt<ProductRepository>().getProductByCategoryId(
+    _future = GetItHelper.getIt<ProductRepository>().getProductByCategoryId(
       categoryId: widget.category.categoryId!,
       token: ref.read(tokenProvider),
     );
@@ -45,7 +44,7 @@ class _CategoryPageState extends ConsumerState<CategoryPage> {
         future: _future,
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
-            return const Center(child: CircularProgressIndicator.adaptive());
+            return const CategoryLoading();
           } else if (snapshot.hasError) {
             return Center(
               child: ExceptionPage(
@@ -55,76 +54,17 @@ class _CategoryPageState extends ConsumerState<CategoryPage> {
           } else if (snapshot.hasData) {
             final data = (snapshot.data as ProductList).productList!;
             return Padding(
-              padding: const EdgeInsets.symmetric(
-                horizontal: 8.0,
-                vertical: 4.0,
-              ),
-              child: SingleChildScrollView(
-                child: Column(
-                  children: [
-                    ...data.map(
-                      (e) => Container(
-                        margin: const EdgeInsets.symmetric(
-                          vertical: 8.0,
-                          horizontal: 4.0,
-                        ),
-                        child: Card(
-                          clipBehavior: Clip.hardEdge,
-                          elevation: 4,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(12),
-                          ),
-                          child: ListTile(
-                            contentPadding: const EdgeInsets.all(8.0),
-                            onTap: () {
-                              Navigator.of(context).push(
-                                MaterialPageRoute(
-                                  builder: (context) => ProductDetail(
-                                    product: e,
-                                  ),
-                                ),
-                              );
-                            },
-                            leading: ClipRRect(
-                              borderRadius: BorderRadius.circular(8),
-                              child: CachedNetworkImage(
-                                imageUrl: e.mainImg ??
-                                    'http://via.placeholder.com/350x150',
-                                placeholder: (context, url) =>
-                                    const CircularProgressIndicator(),
-                                errorWidget: (context, url, error) =>
-                                    const Icon(Icons.error),
-                              ),
-                            ),
-                            title: Text(
-                              e.productName!,
-                              style: const TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 16,
-                              ),
-                            ),
-                            subtitle: Text(
-                              '\$${e.price!}',
-                              style: const TextStyle(
-                                color: Colors.green,
-                                fontWeight: FontWeight.w600,
-                              ),
-                            ),
-                            trailing: Tooltip(
-                              message: 'Thêm vào giỏ hàng',
-                              child: IconButton(
-                                icon: const Icon(Symbols.shopping_cart),
-                                onPressed: () {
-                                  // TODO: Implement
-                                },
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
+              child: CustomScrollView(
+                slivers: [
+                  SliverList(
+                    delegate: SliverChildBuilderDelegate(
+                      (context, index) => ProductCard(product: data[index]),
+                      childCount: data.length,
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
             );
           } else {

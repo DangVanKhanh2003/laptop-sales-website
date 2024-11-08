@@ -4,7 +4,7 @@ import 'package:page_transition/page_transition.dart';
 import 'package:shopping_app/repository/customer_repository.dart';
 import 'package:shopping_app/screen/login/login_page.dart';
 import 'package:shopping_app/screen/root/root_screen.dart';
-import 'package:shopping_app/service/getit.dart';
+import 'package:shopping_app/service/getit_helper.dart';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({super.key});
@@ -192,7 +192,7 @@ class _RegisterPageState extends State<RegisterPage> {
                         onPressed: () async {
                           if (_formKey.currentState!.validate()) {
                             try {
-                              await GetItWrapper.getIt
+                              await GetItHelper.getIt
                                   .get<CustomerRepository>()
                                   .register(
                                     email: _emailController.text,

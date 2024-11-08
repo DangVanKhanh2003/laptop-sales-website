@@ -2,12 +2,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shopping_app/model/product.dart';
-import 'package:shopping_app/provider/token_provider.dart';
 import 'package:shopping_app/screen/product_detail/product_navbar.dart';
 import 'package:shopping_app/screen/product_detail/product_profile.dart';
 import 'package:shopping_app/screen/product_detail/product_specification.dart';
-import 'package:shopping_app/service/gemini_service.dart';
-import 'package:shopping_app/service/getit.dart';
+import 'package:shopping_app/service/gemini_helper.dart';
+import 'package:shopping_app/service/getit_helper.dart';
 import 'package:shimmer/shimmer.dart';
 import 'package:material_symbols_icons/symbols.dart';
 
@@ -20,7 +19,7 @@ class ProductDetail extends ConsumerWidget {
     BuildContext context,
     WidgetRef ref,
   ) async {
-    final future = GetItWrapper.getIt.get<GeminiService>().ask(
+    final future = GetItHelper.getIt.get<GeminiHelper>().ask(
           message:
               'Bạn nghĩ sao về sản phẩm này\n Tên: ${product.productName}, Giá: ${product.price}, Thông tin chi tiết bạn có thể tự tìm kiếm trên Google. Bạn hãy đánh giá sản phẩm này so với các sản phẩm điện tử hiện nay. Kết quả bằng tiếng việt làm ơn. Đừng cung cấp thông tin thừa như so sánh với sản phẩm khác',
         );
@@ -171,5 +170,8 @@ class _QueriedAnswer {
   final String title;
   final String description;
 
-  _QueriedAnswer({required this.title, required this.description});
+  _QueriedAnswer({
+    required this.title,
+    required this.description,
+  });
 }

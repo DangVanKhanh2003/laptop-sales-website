@@ -6,7 +6,8 @@ import 'package:shopping_app/repository/product_repository.dart';
 import 'package:shopping_app/screen/exception/exception_page.dart';
 import 'package:shopping_app/screen/product/product_grid.dart';
 import 'package:shopping_app/screen/search/empty_page.dart';
-import 'package:shopping_app/service/getit.dart';
+import 'package:shopping_app/screen/search/search_loading.dart';
+import 'package:shopping_app/service/getit_helper.dart';
 
 class SearchPage extends ConsumerStatefulWidget {
   const SearchPage({
@@ -45,7 +46,7 @@ class _SearchPageState extends ConsumerState<SearchPage> {
   }
 
   Future<ProductList> _fetchProducts(String name) {
-    return GetItWrapper.getIt<ProductRepository>().getProductByName(
+    return GetItHelper.getIt<ProductRepository>().getProductByName(
       name: name,
       token: ref.read(tokenProvider),
     );
@@ -60,7 +61,10 @@ class _SearchPageState extends ConsumerState<SearchPage> {
             ? Colors.black
             : Colors.white,
         title: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16.0),
+          padding: const EdgeInsets.symmetric(
+            horizontal: 16.0,
+            vertical: 12.0,
+          ),
           child: TextField(
             controller: _textController,
             onSubmitted: _onSearch,
@@ -72,24 +76,6 @@ class _SearchPageState extends ConsumerState<SearchPage> {
                 },
                 child: const Icon(Icons.search_outlined),
               ),
-              enabledBorder: OutlineInputBorder(
-                borderSide: BorderSide(
-                  width: 1.0,
-                  color: Theme.of(context).brightness == Brightness.dark
-                      ? Colors.white.withOpacity(0.95)
-                      : Colors.black.withOpacity(0.95),
-                ),
-                borderRadius: BorderRadius.circular(18.0),
-              ),
-              focusedBorder: OutlineInputBorder(
-                borderSide: BorderSide(
-                  width: 1.0,
-                  color: Theme.of(context).brightness == Brightness.dark
-                      ? Colors.white.withOpacity(0.95)
-                      : Colors.black.withOpacity(0.95),
-                ),
-                borderRadius: BorderRadius.circular(8.0),
-              ),
             ),
           ),
         ),
@@ -100,9 +86,7 @@ class _SearchPageState extends ConsumerState<SearchPage> {
           future: _future,
           builder: (context, snapshot) {
             if (snapshot.connectionState == ConnectionState.waiting) {
-              return const Center(
-                child: CircularProgressIndicator(),
-              );
+              return const SearchLoading();
             } else if (snapshot.hasError) {
               return Center(
                 child: ExceptionPage(message: snapshot.error.toString()),

@@ -6,7 +6,7 @@ import 'package:shopping_app/provider/token_provider.dart';
 import 'package:shopping_app/repository/customer_repository.dart';
 import 'package:shopping_app/screen/register/register_page.dart';
 import 'package:shopping_app/screen/root/root_screen.dart';
-import 'package:shopping_app/service/getit.dart';
+import 'package:shopping_app/service/getit_helper.dart';
 
 class LoginPage extends ConsumerStatefulWidget {
   const LoginPage({super.key});
@@ -156,13 +156,13 @@ class _LoginPageState extends ConsumerState<LoginPage> {
                         onPressed: () async {
                           if (_formKey.currentState!.validate()) {
                             try {
-                              final token = await GetItWrapper.getIt
+                              final token = await GetItHelper.getIt
                                   .get<CustomerRepository>()
                                   .login(
                                     email: _emailController.text,
                                     password: _passwordController.text,
                                   );
-                              ref.watch(tokenProvider).copy(token);
+                              ref.watch(tokenProvider).clone(token);
                               _toMainScreen();
                             } catch (e) {
                               _showError(e.toString());

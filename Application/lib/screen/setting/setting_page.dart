@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shopping_app/provider/token_provider.dart';
+import 'package:shopping_app/screen/account_detail/account_detail.dart';
 import 'package:shopping_app/screen/login/login_page.dart';
 import 'package:shopping_app/screen/setting/account_setting.dart';
 import 'package:shopping_app/screen/setting/application_setting.dart';
@@ -15,6 +16,15 @@ class SettingPage extends ConsumerStatefulWidget {
 }
 
 class _SettingPageState extends ConsumerState<SettingPage> {
+  void _onLogout() {
+    ref.watch(tokenProvider.notifier).loadToken();
+    Navigator.of(context).pushReplacement(
+      MaterialPageRoute(
+        builder: (context) => const LoginPage(),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -22,7 +32,16 @@ class _SettingPageState extends ConsumerState<SettingPage> {
       child: SingleChildScrollView(
         child: Column(
           children: [
-            const UserProfile(),
+            UserProfile(
+              onLogout: _onLogout,
+              onDetail: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => const AccountDetail(),
+                  ),
+                );
+              },
+            ),
             const SizedBox(height: 4.0),
             const Divider(thickness: 1.0, color: Colors.grey),
             const SizedBox(height: 4.0),
@@ -40,14 +59,7 @@ class _SettingPageState extends ConsumerState<SettingPage> {
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.red,
               ),
-              onPressed: () {
-                ref.watch(tokenProvider.notifier).loadToken();
-                Navigator.of(context).pushReplacement(
-                  MaterialPageRoute(
-                    builder: (context) => const LoginPage(),
-                  ),
-                );
-              },
+              onPressed: _onLogout,
               child: const SizedBox(
                 width: double.infinity,
                 child: Padding(

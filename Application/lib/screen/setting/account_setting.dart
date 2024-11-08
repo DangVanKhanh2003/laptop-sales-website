@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:material_symbols_icons/symbols.dart';
+import 'package:shopping_app/screen/account_detail/account_detail.dart';
 import 'package:shopping_app/screen/setting/change_password/change_password.dart';
 import 'package:shopping_app/screen/setting/privacy_policy.dart';
 
@@ -51,7 +52,13 @@ class _AccountSettingState extends State<AccountSetting> {
             contentPadding: const EdgeInsets.all(8.0),
             title: const Text('Xem tài khoản'),
             leading: const Icon(Symbols.person_2),
-            onTap: () {},
+            onTap: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => const AccountDetail(),
+                ),
+              );
+            },
           ),
           ListTile(
             contentPadding: const EdgeInsets.all(8.0),

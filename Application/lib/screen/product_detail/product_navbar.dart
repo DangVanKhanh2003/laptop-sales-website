@@ -34,13 +34,16 @@ class ProductNavbar extends StatelessWidget {
         Expanded(
           flex: 2,
           child: ElevatedButton(
-            style: ElevatedButton.styleFrom(
-              padding: const EdgeInsets.symmetric(vertical: 12.0),
-            ),
             onPressed: () {
               // TODO:
             },
+            style: ElevatedButton.styleFrom(
+              backgroundColor:
+                  Theme.of(context).colorScheme.secondary.withOpacity(0.50),
+            ),
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 const Text(
                   'Mua ngay',
@@ -48,7 +51,7 @@ class ProductNavbar extends StatelessWidget {
                 ),
                 Text(
                   '\$${product.price!}',
-                  style: const TextStyle(fontSize: 16),
+                  style: const TextStyle(fontSize: 14),
                 ),
               ],
             ),

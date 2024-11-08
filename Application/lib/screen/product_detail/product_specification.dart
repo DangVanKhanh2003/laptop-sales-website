@@ -4,7 +4,7 @@ import 'package:shopping_app/model/product.dart';
 import 'package:shopping_app/provider/token_provider.dart';
 import 'package:shopping_app/repository/product_repository.dart';
 import 'package:shopping_app/screen/exception/exception_page.dart';
-import 'package:shopping_app/service/getit.dart';
+import 'package:shopping_app/service/getit_helper.dart';
 
 class ProductSpecificationPage extends ConsumerStatefulWidget {
   const ProductSpecificationPage({
@@ -26,7 +26,7 @@ class _ProductSpecificationPageState
   @override
   void initState() {
     super.initState();
-    _future = GetItWrapper.getIt<ProductRepository>().getProductSpecification(
+    _future = GetItHelper.getIt<ProductRepository>().getProductSpecification(
       id: widget.product.productId!,
       token: ref.read(tokenProvider),
     );

@@ -1,10 +1,10 @@
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:google_generative_ai/google_generative_ai.dart';
 
-class GeminiService {
+class GeminiHelper {
   late final GenerativeModel _model;
 
-  GeminiService()
+  GeminiHelper()
       : _model = GenerativeModel(
           model: 'gemini-1.5-flash-latest',
           apiKey: dotenv.env['GEMINI_API']!,

@@ -4,7 +4,7 @@ import 'package:shopping_app/model/product.dart';
 import 'package:shopping_app/provider/token_provider.dart';
 import 'package:shopping_app/repository/product_repository.dart';
 import 'package:shopping_app/screen/product/product_grid.dart';
-import 'package:shopping_app/service/getit.dart';
+import 'package:shopping_app/service/getit_helper.dart';
 import 'package:shopping_app/screen/exception/exception_page.dart';
 
 class ProductView extends ConsumerStatefulWidget {
@@ -28,7 +28,7 @@ class _ProductViewState extends ConsumerState<ProductView> {
   @override
   void initState() {
     super.initState();
-    _productList = GetItWrapper.getIt<ProductRepository>().getProduct(
+    _productList = GetItHelper.getIt<ProductRepository>().getProduct(
       page: _page,
       token: ref.read(tokenProvider),
     );
@@ -40,7 +40,7 @@ class _ProductViewState extends ConsumerState<ProductView> {
     if (widget.controller.position.pixels ==
         widget.controller.position.maxScrollExtent) {
       _page++;
-      final result = await GetItWrapper.getIt<ProductRepository>().getProduct(
+      final result = await GetItHelper.getIt<ProductRepository>().getProduct(
         page: _page,
         token: ref.read(tokenProvider),
       );

@@ -8,7 +8,7 @@ import 'package:shopping_app/screen/home/category_grid.dart';
 import 'package:shopping_app/screen/home/home_loading.dart';
 import 'package:shopping_app/screen/home/search_bar.dart' as search_bar;
 import 'package:shopping_app/screen/product/product_view.dart';
-import 'package:shopping_app/service/getit.dart';
+import 'package:shopping_app/service/getit_helper.dart';
 
 class HomePage extends ConsumerStatefulWidget {
   const HomePage({super.key});
@@ -26,7 +26,7 @@ class _HomePageState extends ConsumerState<HomePage> {
   void initState() {
     _controller = TextEditingController();
     _scrollController = ScrollController();
-    _future = GetItWrapper.getIt.get<CategoryRepository>().getAllCategory(
+    _future = GetItHelper.getIt.get<CategoryRepository>().getAllCategory(
           token: ref.read(tokenProvider),
         );
     super.initState();
