@@ -1,18 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:shopping_app/provider/token_provider.dart';
 import 'package:shopping_app/screen/login/login_page.dart';
 import 'package:shopping_app/screen/setting/account_setting.dart';
 import 'package:shopping_app/screen/setting/application_setting.dart';
 import 'package:shopping_app/screen/setting/store_setting.dart';
 import 'package:shopping_app/screen/setting/user_profile.dart';
 
-class SettingPage extends StatefulWidget {
+class SettingPage extends ConsumerStatefulWidget {
   const SettingPage({super.key});
 
   @override
-  State<SettingPage> createState() => _SettingPageState();
+  ConsumerState<SettingPage> createState() => _SettingPageState();
 }
 
-class _SettingPageState extends State<SettingPage> {
+class _SettingPageState extends ConsumerState<SettingPage> {
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -39,7 +41,7 @@ class _SettingPageState extends State<SettingPage> {
                 backgroundColor: Colors.red,
               ),
               onPressed: () {
-                // TODO : Xoá JWT
+                ref.watch(tokenProvider.notifier).loadToken();
                 Navigator.of(context).pushReplacement(
                   MaterialPageRoute(
                     builder: (context) => const LoginPage(),

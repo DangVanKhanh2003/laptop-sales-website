@@ -1,5 +1,6 @@
 import 'package:shopping_app/api/product_api.dart';
 import 'package:shopping_app/model/product.dart';
+import 'package:shopping_app/model/token_state.dart';
 
 class ProductRepository {
   /// API Wrapper
@@ -12,29 +13,35 @@ class ProductRepository {
   Future<ProductList> getProduct({
     int page = 1,
     int limit = 10,
+    required TokenState token,
   }) async {
-    return await _productApi.getProducts(page: page, limit: limit);
+    return await _productApi.getProducts(
+        page: page, limit: limit, token: token);
   }
 
   /// Get product by category id
   Future<ProductList> getProductByCategoryId({
     required int categoryId,
+    required TokenState token,
   }) async {
-    return await _productApi.getProductsByCategoryId(categoryId: categoryId);
+    return await _productApi.getProductsByCategoryId(
+        categoryId: categoryId, token: token);
   }
 
   /// Get product by category id
   Future<ProductList> getProductByName({
     required String name,
+    required TokenState token,
   }) async {
-    return await _productApi.getProductsByName(name: name);
+    return await _productApi.getProductsByName(name: name, token: token);
   }
 
   /// Get product by Specification
 
   Future<ProductSpecificationList> getProductSpecification({
     required int id,
+    required TokenState token,
   }) async {
-    return await _productApi.getProductSpecificationById(id: id);
+    return await _productApi.getProductSpecificationById(id: id, token: token);
   }
 }

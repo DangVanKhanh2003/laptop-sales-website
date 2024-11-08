@@ -2,23 +2,35 @@ import 'dart:convert';
 
 import 'package:shopping_app/model/product.dart';
 import 'package:http/http.dart' as http;
+import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:shopping_app/model/token_state.dart';
 
 class ProductApi {
   /// URL cho API
 
-  final String _url = 'http://dangvankhanhblog.io.vn:7138/api/employee/Product';
+  final String _url = dotenv.get('PRODUCT_LINK');
 
   /// Phương thức lấy toàn bộ sản phẩm. Không nên sử dụng trong production vì nó sẽ fetch toàn bộ sản phẩm => Lâu.
   /// Viết để test
 
-  Future<ProductList> getAllProduct() async {
+  Future<ProductList> getAllProduct({
+    required TokenState token,
+  }) async {
     final uri = Uri.parse('$_url/getAllProduct');
-    final response = await http.get(uri).timeout(const Duration(seconds: 10));
+    final response = await http.get(uri, headers: {
+      'Authorization': token.toAuthorizationJson(),
+    }).timeout(const Duration(seconds: 10));
+    if (response.headers.containsKey('Authorization')) {
+      token.clone(
+        TokenState.fromJson(jsonDecode(response.headers['Authorization']!)),
+      );
+      await token.save();
+    }
     if (response.statusCode == 200) {
       return ProductList.fromJson(jsonDecode(response.body));
     } else {
       throw Exception(
-        'Không thể fetch được product, mã lỗi: ${response.statusCode}',
+        'Không thể fetch được sản phẩm, mã lỗi: ${response.statusCode}',
       );
     }
   }
@@ -28,14 +40,23 @@ class ProductApi {
   Future<ProductList> getProducts({
     required int page,
     required int limit,
+    required TokenState token,
   }) async {
     final uri = Uri.parse('$_url/page?pageIndex=$page&pageSize=$limit');
-    final response = await http.get(uri).timeout(const Duration(seconds: 10));
+    final response = await http.get(uri, headers: {
+      'Authorization': token.toAuthorizationJson(),
+    }).timeout(const Duration(seconds: 10));
+    if (response.headers.containsKey('Authorization')) {
+      token.clone(
+        TokenState.fromJson(jsonDecode(response.headers['Authorization']!)),
+      );
+      await token.save();
+    }
     if (response.statusCode == 200) {
       return ProductList.fromJson(jsonDecode(response.body));
     } else {
       throw Exception(
-        'Không thể fetch được product, mã lỗi: ${response.statusCode}',
+        'Không thể fetch được sản phẩm, mã lỗi: ${response.statusCode}',
       );
     }
   }
@@ -44,14 +65,23 @@ class ProductApi {
 
   Future<ProductList> getProductsByCategoryId({
     required int categoryId,
+    required TokenState token,
   }) async {
     final uri = Uri.parse('$_url/getAllProductByCategory$categoryId');
-    final response = await http.get(uri).timeout(const Duration(seconds: 10));
+    final response = await http.get(uri, headers: {
+      'Authorization': token.toAuthorizationJson(),
+    }).timeout(const Duration(seconds: 10));
+    if (response.headers.containsKey('Authorization')) {
+      token.clone(
+        TokenState.fromJson(jsonDecode(response.headers['Authorization']!)),
+      );
+      await token.save();
+    }
     if (response.statusCode == 200) {
       return ProductList.fromJson(jsonDecode(response.body));
     } else {
       throw Exception(
-        'Không thể fetch được product, mã lỗi: ${response.statusCode}',
+        'Không thể fetch được sản phẩm, mã lỗi: ${response.statusCode}',
       );
     }
   }
@@ -60,29 +90,47 @@ class ProductApi {
 
   Future<ProductList> getProductsByName({
     required String name,
+    required TokenState token,
   }) async {
     final uri = Uri.parse('$_url/SearchProductByName?nameProduct=$name');
-    final response = await http.get(uri).timeout(const Duration(seconds: 10));
+    final response = await http.get(uri, headers: {
+      'Authorization': token.toAuthorizationJson(),
+    }).timeout(const Duration(seconds: 10));
+    if (response.headers.containsKey('Authorization')) {
+      token.clone(
+        TokenState.fromJson(jsonDecode(response.headers['Authorization']!)),
+      );
+      await token.save();
+    }
     if (response.statusCode == 200) {
       return ProductList.fromJson(jsonDecode(response.body));
     } else {
       throw Exception(
-        'Không thể fetch được product, mã lỗi: ${response.statusCode}',
+        'Không thể fetch được sản phẩm, mã lỗi: ${response.statusCode}',
       );
     }
   }
 
   Future<ProductSpecificationList> getProductSpecificationById({
     required int id,
+    required TokenState token,
   }) async {
     final uri =
         Uri.parse('$_url/GetAllSpecificationsByIdProduct?ProductId=$id');
-    final response = await http.get(uri).timeout(const Duration(seconds: 10));
+    final response = await http.get(uri, headers: {
+      'Authorization': token.toAuthorizationJson(),
+    }).timeout(const Duration(seconds: 10));
+    if (response.headers.containsKey('Authorization')) {
+      token.clone(
+        TokenState.fromJson(jsonDecode(response.headers['Authorization']!)),
+      );
+      await token.save();
+    }
     if (response.statusCode == 200) {
       return ProductSpecificationList.fromJson(jsonDecode(response.body));
     } else {
       throw Exception(
-        'Không thể fetch được product, mã lỗi: ${response.statusCode}',
+        'Không thể fetch được sản phẩm, mã lỗi: ${response.statusCode}',
       );
     }
   }

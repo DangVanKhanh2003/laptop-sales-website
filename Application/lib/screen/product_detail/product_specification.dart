@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shopping_app/model/product.dart';
+import 'package:shopping_app/provider/token_provider.dart';
 import 'package:shopping_app/repository/product_repository.dart';
 import 'package:shopping_app/screen/exception/exception_page.dart';
 import 'package:shopping_app/service/getit.dart';
 
-class ProductSpecificationPage extends StatefulWidget {
+class ProductSpecificationPage extends ConsumerStatefulWidget {
   const ProductSpecificationPage({
     super.key,
     required this.product,
@@ -13,11 +15,12 @@ class ProductSpecificationPage extends StatefulWidget {
   final Product product;
 
   @override
-  State<ProductSpecificationPage> createState() =>
+  ConsumerState<ProductSpecificationPage> createState() =>
       _ProductSpecificationPageState();
 }
 
-class _ProductSpecificationPageState extends State<ProductSpecificationPage> {
+class _ProductSpecificationPageState
+    extends ConsumerState<ProductSpecificationPage> {
   late Future<ProductSpecificationList> _future;
 
   @override
@@ -25,6 +28,7 @@ class _ProductSpecificationPageState extends State<ProductSpecificationPage> {
     super.initState();
     _future = GetItWrapper.getIt<ProductRepository>().getProductSpecification(
       id: widget.product.productId!,
+      token: ref.read(tokenProvider),
     );
   }
 

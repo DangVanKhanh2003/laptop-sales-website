@@ -13,42 +13,44 @@ class CategoryItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Tooltip(
-        message: category.categoryName!,
-        child: Card(
-          elevation: 5,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(18.0),
-          ),
-          clipBehavior: Clip.hardEdge,
-          child: InkWell(
-            onTap: () {
-              Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (context) => CategoryPage(category: category),
-                ),
-              );
-            },
+    return Tooltip(
+      message: category.categoryName!,
+      child: Card(
+        elevation: 4,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(12.0),
+        ),
+        clipBehavior: Clip.hardEdge,
+        child: InkWell(
+          onTap: () {
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (context) => CategoryPage(category: category),
+              ),
+            );
+          },
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 4.0),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Icon(
                   SymbolsGet.get(
                     category.categoryIcon!,
                     SymbolStyle.outlined,
                   ),
-                  size: 48,
+                  size: 20,
                 ),
-                const SizedBox(height: 10.0),
+                const SizedBox(height: 8.0),
                 Text(
                   category.categoryName!,
                   style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                        fontWeight: FontWeight.w600,
-                        fontSize: 14,
+                        fontWeight: FontWeight.w500,
+                        fontSize: 12,
                       ),
                   textAlign: TextAlign.center,
+                  overflow: TextOverflow.ellipsis,
                 ),
               ],
             ),

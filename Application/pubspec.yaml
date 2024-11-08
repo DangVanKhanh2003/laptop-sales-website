@@ -18,6 +18,9 @@ dependencies:
     page_transition: ^2.1.0
     dynamic_color: ^1.7.0
     jwt_decode: ^0.3.1
+    google_generative_ai: ^0.4.6
+    flutter_dotenv: ^5.2.1
+    shimmer: ^3.0.0
 
 dev_dependencies:
     flutter_test:
@@ -29,6 +32,7 @@ flutter:
     assets:
         - assets/
         - assets/images/
+        - .env
     fonts:
         - family: GoogleSans
           fonts:

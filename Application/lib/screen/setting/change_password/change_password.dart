@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:material_symbols_icons/material_symbols_icons.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:shopping_app/screen/setting/change_password/change_fail.dart';
 import 'package:shopping_app/screen/setting/change_password/change_success.dart';
@@ -89,6 +88,7 @@ class _ChangePasswordState extends State<ChangePassword> {
                   ),
                 ],
               ),
+              const SizedBox(height: 12.0),
               Row(
                 children: [
                   const Text('Mật khẩu mới: '),

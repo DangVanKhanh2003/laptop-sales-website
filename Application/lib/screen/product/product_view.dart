@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shopping_app/model/product.dart';
+import 'package:shopping_app/provider/token_provider.dart';
 import 'package:shopping_app/repository/product_repository.dart';
 import 'package:shopping_app/screen/product/product_grid.dart';
 import 'package:shopping_app/service/getit.dart';
 import 'package:shopping_app/screen/exception/exception_page.dart';
 
-class ProductView extends StatefulWidget {
+class ProductView extends ConsumerStatefulWidget {
   const ProductView({
     super.key,
     required this.controller,
@@ -14,10 +16,10 @@ class ProductView extends StatefulWidget {
   final ScrollController controller;
 
   @override
-  State<ProductView> createState() => _ProductViewState();
+  ConsumerState<ProductView> createState() => _ProductViewState();
 }
 
-class _ProductViewState extends State<ProductView> {
+class _ProductViewState extends ConsumerState<ProductView> {
   late Future<ProductList> _productList;
   int _page = 1;
   bool _hasProduct = true;
@@ -28,6 +30,7 @@ class _ProductViewState extends State<ProductView> {
     super.initState();
     _productList = GetItWrapper.getIt<ProductRepository>().getProduct(
       page: _page,
+      token: ref.read(tokenProvider),
     );
     widget.controller.addListener(_scrollListener);
   }
@@ -39,6 +42,7 @@ class _ProductViewState extends State<ProductView> {
       _page++;
       final result = await GetItWrapper.getIt<ProductRepository>().getProduct(
         page: _page,
+        token: ref.read(tokenProvider),
       );
       if (result.productList!.isEmpty) {
         _hasProduct = false;
@@ -69,7 +73,10 @@ class _ProductViewState extends State<ProductView> {
           if (products.isEmpty) {
             products = snapshot.data!.productList!;
           }
-          return ProductGrid(products: products);
+          return ProductGrid(
+            products: products,
+            controller: widget.controller,
+          );
         } else if (snapshot.hasError) {
           return ExceptionPage(message: snapshot.error.toString());
         } else {

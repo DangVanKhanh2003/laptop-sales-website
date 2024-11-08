@@ -1,9 +1,13 @@
+import 'dart:convert';
+
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:http/http.dart' as http;
+import 'package:shopping_app/model/token_state.dart';
 
 class CustomerApi {
-  final String _url = 'http://dangvankhanhblog.io.vn:7138/api/CustomerAccount';
+  final String _url = dotenv.get('CUSTOMER_LINK');
 
-  Future<dynamic> login({
+  Future<TokenState> login({
     required String email,
     required String password,
   }) async {
@@ -13,7 +17,9 @@ class CustomerApi {
         );
     if (response.statusCode == 200) {
       // Đã lấy được danh mục, chuyển sang đối tượng
-      return response.body;
+      final token = TokenState.fromJson(jsonDecode(response.body));
+      await token.save();
+      return token;
     } else {
       // Ngoại lệ xảy ra
       throw Exception('Lỗi đăng nhập: ${response.body}');

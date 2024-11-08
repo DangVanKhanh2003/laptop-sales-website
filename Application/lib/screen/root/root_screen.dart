@@ -39,7 +39,7 @@ class _RootScreenState extends State<RootScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Shop'),
+        title: const Text('Commercial Project'),
         actions: [
           Tooltip(
             message: 'Giỏ hàng',
@@ -75,15 +75,15 @@ class _RootScreenState extends State<RootScreen> {
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.home_outlined),
+            icon: Icon(Symbols.home),
             label: 'Trang chủ',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.notifications_outlined),
+            icon: Icon(Symbols.notifications),
             label: 'Thông báo',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.settings_outlined),
+            icon: Icon(Symbols.settings),
             label: 'Cài đặt',
           ),
         ],

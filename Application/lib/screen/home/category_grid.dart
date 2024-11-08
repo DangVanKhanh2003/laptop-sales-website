@@ -16,15 +16,18 @@ class CategoryGrid extends StatelessWidget {
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 4,
-        crossAxisSpacing: 12.0,
-        mainAxisSpacing: 12.0,
+        crossAxisCount: 5,
+        crossAxisSpacing: 4.0,
+        mainAxisSpacing: 8.0,
         childAspectRatio: 1.0,
       ),
       itemCount: categoryList.length,
       itemBuilder: (context, index) {
-        final e = categoryList[index];
-        return CategoryItem(category: e);
+        final category = categoryList[index];
+        return Padding(
+          padding: const EdgeInsets.all(4.0),
+          child: CategoryItem(category: category),
+        );
       },
     );
   }

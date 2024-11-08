@@ -1,20 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:shopping_app/provider/category_provider.dart';
+import 'package:shopping_app/model/category.dart';
+import 'package:shopping_app/provider/token_provider.dart';
+import 'package:shopping_app/repository/category_repository.dart';
 import 'package:shopping_app/screen/exception/exception_page.dart';
 import 'package:shopping_app/screen/home/category_grid.dart';
+import 'package:shopping_app/screen/home/home_loading.dart';
 import 'package:shopping_app/screen/home/search_bar.dart' as search_bar;
 import 'package:shopping_app/screen/product/product_view.dart';
-
-final intializationProvider = FutureProvider((ref) async {
-  await Future.delayed(const Duration(seconds: 1));
-  await Future.microtask(() async {
-    final category = ref.read(categoryProvider.notifier);
-    if (!category.hasData) {
-      await ref.read(categoryProvider.notifier).getCategory();
-    }
-  });
-});
+import 'package:shopping_app/service/getit.dart';
 
 class HomePage extends ConsumerStatefulWidget {
   const HomePage({super.key});
@@ -26,11 +20,15 @@ class HomePage extends ConsumerStatefulWidget {
 class _HomePageState extends ConsumerState<HomePage> {
   late TextEditingController _controller;
   late ScrollController _scrollController;
+  late Future<CategoryList> _future;
 
   @override
   void initState() {
     _controller = TextEditingController();
     _scrollController = ScrollController();
+    _future = GetItWrapper.getIt.get<CategoryRepository>().getAllCategory(
+          token: ref.read(tokenProvider),
+        );
     super.initState();
   }
 
@@ -43,15 +41,15 @@ class _HomePageState extends ConsumerState<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    final initWatch = ref.watch(intializationProvider);
-    final category = ref.read(categoryProvider.notifier);
-
-    return initWatch.when(
-      data: (data) {
-        return Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.0),
-          child: SingleChildScrollView(
-            controller: _scrollController,
+    return FutureBuilder(
+      future: _future,
+      builder: (context, snapshot) {
+        if (snapshot.connectionState == ConnectionState.waiting) {
+          return const HomeLoading();
+        } else if (snapshot.hasData) {
+          return Padding(
+            padding:
+                const EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -64,7 +62,7 @@ class _HomePageState extends ConsumerState<HomePage> {
                       ),
                 ),
                 const SizedBox(height: 12.0),
-                CategoryGrid(categoryList: category.category!),
+                CategoryGrid(categoryList: snapshot.data!.categoryList!),
                 const SizedBox(height: 20.0),
                 Text(
                   'Sản phẩm',
@@ -73,14 +71,20 @@ class _HomePageState extends ConsumerState<HomePage> {
                       ),
                 ),
                 const SizedBox(height: 12.0),
-                ProductView(controller: _scrollController),
+                Expanded(child: ProductView(controller: _scrollController)),
               ],
             ),
-          ),
-        );
+          );
+        } else if (snapshot.hasError) {
+          return Center(
+            child: ExceptionPage(
+              message: snapshot.error.toString(),
+            ),
+          );
+        } else {
+          return const SizedBox.shrink();
+        }
       },
-      error: (error, _) => ExceptionPage(message: error.toString()),
-      loading: () => const Center(child: CircularProgressIndicator.adaptive()),
     );
   }
 }

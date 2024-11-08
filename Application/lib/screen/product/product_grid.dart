@@ -7,15 +7,18 @@ class ProductGrid extends StatelessWidget {
   const ProductGrid({
     super.key,
     required this.products,
+    this.controller,
   });
 
   final List<Product> products;
 
+  final ScrollController? controller;
+
   @override
   Widget build(BuildContext context) {
     return GridView.count(
+      controller: controller,
       crossAxisCount: 2,
-      shrinkWrap: true,
       children: List.generate(
         products.length,
         (index) => Hero(

@@ -5,6 +5,7 @@ import 'package:shopping_app/api/product_api.dart';
 import 'package:shopping_app/repository/category_repository.dart';
 import 'package:shopping_app/repository/customer_repository.dart';
 import 'package:shopping_app/repository/product_repository.dart';
+import 'package:shopping_app/service/gemini_service.dart';
 
 class GetItWrapper {
   static GetIt getIt = GetIt.instance;
@@ -18,6 +19,9 @@ class GetItWrapper {
     );
     getIt.registerLazySingleton<CustomerRepository>(
       () => CustomerRepository(CustomerApi()),
+    );
+    getIt.registerLazySingleton<GeminiService>(
+      () => GeminiService(),
     );
   }
 }

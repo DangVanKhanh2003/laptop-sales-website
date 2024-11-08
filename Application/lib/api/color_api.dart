@@ -1,16 +1,28 @@
 import 'dart:convert';
 
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:http/http.dart' as http;
 import 'package:shopping_app/model/color.dart';
+import 'package:shopping_app/model/token_state.dart';
 
 class CategoryApi {
-  final String _url = 'http://dangvankhanhblog.io.vn:7138/api/employee/Color';
+  final String _url = dotenv.get('COLOR_LINK');
 
-  Future<ColorList> getAllCategory() async {
+  Future<ColorList> getAllCategory({
+    required TokenState token,
+  }) async {
     final url = Uri.parse('$_url/getAllColor');
-    final response = await http.get(url).timeout(
-          const Duration(seconds: 10),
-        );
+    final response = await http.get(url, headers: {
+      'Authorization': token.toAuthorizationJson(),
+    }).timeout(
+      const Duration(seconds: 10),
+    );
+    if (response.headers.containsKey('Authorization')) {
+      token.clone(
+        TokenState.fromJson(jsonDecode(response.headers['Authorization']!)),
+      );
+      await token.save();
+    }
     if (response.statusCode == 200) {
       // Đã lấy được danh mục, chuyển sang đối tượng
       return ColorList.fromJson(jsonDecode(response.body));

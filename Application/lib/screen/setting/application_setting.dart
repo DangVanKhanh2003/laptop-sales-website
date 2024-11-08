@@ -23,7 +23,7 @@ class _ApplicationSettingState extends ConsumerState<ApplicationSetting> {
 
   void _onChangeThemeNotifier(String? newValue) {
     if (newValue == null) return;
-    ref.watch(settingProvider.notifier).setTheme(newValue);
+    ref.read(settingProvider.notifier).setTheme(newValue);
   }
 
   void _onChangeTheme() async {

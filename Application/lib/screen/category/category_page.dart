@@ -1,14 +1,16 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:material_symbols_icons/symbols.dart';
 import 'package:shopping_app/model/category.dart';
 import 'package:shopping_app/model/product.dart';
+import 'package:shopping_app/provider/token_provider.dart';
 import 'package:shopping_app/repository/product_repository.dart';
 import 'package:shopping_app/screen/exception/exception_page.dart';
 import 'package:shopping_app/screen/product_detail/product_detail.dart';
 import 'package:shopping_app/service/getit.dart';
 
-class CategoryPage extends StatefulWidget {
+class CategoryPage extends ConsumerStatefulWidget {
   const CategoryPage({
     super.key,
     required this.category,
@@ -17,10 +19,10 @@ class CategoryPage extends StatefulWidget {
   final Category category;
 
   @override
-  State<CategoryPage> createState() => _CategoryPageState();
+  ConsumerState<CategoryPage> createState() => _CategoryPageState();
 }
 
-class _CategoryPageState extends State<CategoryPage> {
+class _CategoryPageState extends ConsumerState<CategoryPage> {
   late Future<ProductList> _future;
 
   @override
@@ -28,6 +30,7 @@ class _CategoryPageState extends State<CategoryPage> {
     super.initState();
     _future = GetItWrapper.getIt<ProductRepository>().getProductByCategoryId(
       categoryId: widget.category.categoryId!,
+      token: ref.read(tokenProvider),
     );
   }
 

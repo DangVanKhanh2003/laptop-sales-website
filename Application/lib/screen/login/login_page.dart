@@ -1,19 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:material_symbols_icons/material_symbols_icons.dart';
 import 'package:page_transition/page_transition.dart';
+import 'package:shopping_app/provider/token_provider.dart';
 import 'package:shopping_app/repository/customer_repository.dart';
 import 'package:shopping_app/screen/register/register_page.dart';
 import 'package:shopping_app/screen/root/root_screen.dart';
 import 'package:shopping_app/service/getit.dart';
 
-class LoginPage extends StatefulWidget {
+class LoginPage extends ConsumerStatefulWidget {
   const LoginPage({super.key});
 
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  ConsumerState<LoginPage> createState() => _LoginPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _LoginPageState extends ConsumerState<LoginPage> {
   late final TextEditingController _emailController;
 
   late final TextEditingController _passwordController;
@@ -154,12 +156,13 @@ class _LoginPageState extends State<LoginPage> {
                         onPressed: () async {
                           if (_formKey.currentState!.validate()) {
                             try {
-                              await GetItWrapper.getIt
+                              final token = await GetItWrapper.getIt
                                   .get<CustomerRepository>()
                                   .login(
                                     email: _emailController.text,
                                     password: _passwordController.text,
                                   );
+                              ref.watch(tokenProvider).copy(token);
                               _toMainScreen();
                             } catch (e) {
                               _showError(e.toString());
@@ -192,6 +195,7 @@ class _LoginPageState extends State<LoginPage> {
                           ),
                         ],
                       ),
+                      const SizedBox(height: 12.0),
                     ],
                   ),
                 ),
