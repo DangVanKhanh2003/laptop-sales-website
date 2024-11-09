@@ -1,7 +1,6 @@
 E:\Công Việc\BTL_DoAnChuyenNganh\laptop-sales-website\SellingElectronicWebsite\SellingElectronicWebsite\obj\Release\net8.0\PubTmp\Out\SellingElectronicWebsite.exe
 E:\Công Việc\BTL_DoAnChuyenNganh\laptop-sales-website\SellingElectronicWebsite\SellingElectronicWebsite\obj\Release\net8.0\PubTmp\Out\appsettings.Development.json
 E:\Công Việc\BTL_DoAnChuyenNganh\laptop-sales-website\SellingElectronicWebsite\SellingElectronicWebsite\obj\Release\net8.0\PubTmp\Out\appsettings.json
-E:\Công Việc\BTL_DoAnChuyenNganh\laptop-sales-website\SellingElectronicWebsite\SellingElectronicWebsite\obj\Release\net8.0\PubTmp\Out\appsettings.Production.json
 E:\Công Việc\BTL_DoAnChuyenNganh\laptop-sales-website\SellingElectronicWebsite\SellingElectronicWebsite\obj\Release\net8.0\PubTmp\Out\SellingElectronicWebsite.dll
 E:\Công Việc\BTL_DoAnChuyenNganh\laptop-sales-website\SellingElectronicWebsite\SellingElectronicWebsite\obj\Release\net8.0\PubTmp\Out\SellingElectronicWebsite.runtimeconfig.json
 E:\Công Việc\BTL_DoAnChuyenNganh\laptop-sales-website\SellingElectronicWebsite\SellingElectronicWebsite\obj\Release\net8.0\PubTmp\Out\SellingElectronicWebsite.pdb
@@ -9,6 +8,12 @@ E:\Công Việc\BTL_DoAnChuyenNganh\laptop-sales-website\SellingElectronicWebsit
 E:\Công Việc\BTL_DoAnChuyenNganh\laptop-sales-website\SellingElectronicWebsite\SellingElectronicWebsite\obj\Release\net8.0\PubTmp\Out\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 E:\Công Việc\BTL_DoAnChuyenNganh\laptop-sales-website\SellingElectronicWebsite\SellingElectronicWebsite\obj\Release\net8.0\PubTmp\Out\Azure.Core.dll
 E:\Công Việc\BTL_DoAnChuyenNganh\laptop-sales-website\SellingElectronicWebsite\SellingElectronicWebsite\obj\Release\net8.0\PubTmp\Out\Azure.Identity.dll
+E:\Công Việc\BTL_DoAnChuyenNganh\laptop-sales-website\SellingElectronicWebsite\SellingElectronicWebsite\obj\Release\net8.0\PubTmp\Out\BCrypt.Net-Core.dll
+E:\Công Việc\BTL_DoAnChuyenNganh\laptop-sales-website\SellingElectronicWebsite\SellingElectronicWebsite\obj\Release\net8.0\PubTmp\Out\Microsoft.AspNet.Identity.Core.dll
+E:\Công Việc\BTL_DoAnChuyenNganh\laptop-sales-website\SellingElectronicWebsite\SellingElectronicWebsite\obj\Release\net8.0\PubTmp\Out\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+E:\Công Việc\BTL_DoAnChuyenNganh\laptop-sales-website\SellingElectronicWebsite\SellingElectronicWebsite\obj\Release\net8.0\PubTmp\Out\Microsoft.AspNetCore.Cryptography.Internal.dll
+E:\Công Việc\BTL_DoAnChuyenNganh\laptop-sales-website\SellingElectronicWebsite\SellingElectronicWebsite\obj\Release\net8.0\PubTmp\Out\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+E:\Công Việc\BTL_DoAnChuyenNganh\laptop-sales-website\SellingElectronicWebsite\SellingElectronicWebsite\obj\Release\net8.0\PubTmp\Out\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 E:\Công Việc\BTL_DoAnChuyenNganh\laptop-sales-website\SellingElectronicWebsite\SellingElectronicWebsite\obj\Release\net8.0\PubTmp\Out\Microsoft.Bcl.AsyncInterfaces.dll
 E:\Công Việc\BTL_DoAnChuyenNganh\laptop-sales-website\SellingElectronicWebsite\SellingElectronicWebsite\obj\Release\net8.0\PubTmp\Out\Microsoft.Data.SqlClient.dll
 E:\Công Việc\BTL_DoAnChuyenNganh\laptop-sales-website\SellingElectronicWebsite\SellingElectronicWebsite\obj\Release\net8.0\PubTmp\Out\Microsoft.EntityFrameworkCore.dll
@@ -18,6 +23,8 @@ E:\Công Việc\BTL_DoAnChuyenNganh\laptop-sales-website\SellingElectronicWebsit
 E:\Công Việc\BTL_DoAnChuyenNganh\laptop-sales-website\SellingElectronicWebsite\SellingElectronicWebsite\obj\Release\net8.0\PubTmp\Out\Microsoft.Extensions.Caching.Memory.dll
 E:\Công Việc\BTL_DoAnChuyenNganh\laptop-sales-website\SellingElectronicWebsite\SellingElectronicWebsite\obj\Release\net8.0\PubTmp\Out\Microsoft.Extensions.DependencyInjection.dll
 E:\Công Việc\BTL_DoAnChuyenNganh\laptop-sales-website\SellingElectronicWebsite\SellingElectronicWebsite\obj\Release\net8.0\PubTmp\Out\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+E:\Công Việc\BTL_DoAnChuyenNganh\laptop-sales-website\SellingElectronicWebsite\SellingElectronicWebsite\obj\Release\net8.0\PubTmp\Out\Microsoft.Extensions.Identity.Core.dll
+E:\Công Việc\BTL_DoAnChuyenNganh\laptop-sales-website\SellingElectronicWebsite\SellingElectronicWebsite\obj\Release\net8.0\PubTmp\Out\Microsoft.Extensions.Identity.Stores.dll
 E:\Công Việc\BTL_DoAnChuyenNganh\laptop-sales-website\SellingElectronicWebsite\SellingElectronicWebsite\obj\Release\net8.0\PubTmp\Out\Microsoft.Extensions.Logging.dll
 E:\Công Việc\BTL_DoAnChuyenNganh\laptop-sales-website\SellingElectronicWebsite\SellingElectronicWebsite\obj\Release\net8.0\PubTmp\Out\Microsoft.Extensions.Logging.Abstractions.dll
 E:\Công Việc\BTL_DoAnChuyenNganh\laptop-sales-website\SellingElectronicWebsite\SellingElectronicWebsite\obj\Release\net8.0\PubTmp\Out\Microsoft.Extensions.Options.dll

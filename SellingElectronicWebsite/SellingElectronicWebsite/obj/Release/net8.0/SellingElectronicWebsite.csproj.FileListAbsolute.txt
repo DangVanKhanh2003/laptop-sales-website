@@ -145,4 +145,11 @@ E:\Công Việc\BTL_DoAnChuyenNganh\laptop-sales-website\SellingElectronicWebsit
 E:\Công Việc\BTL_DoAnChuyenNganh\laptop-sales-website\SellingElectronicWebsite\SellingElectronicWebsite\obj\Release\net8.0\SellingElectronicWebsite.pdb
 E:\Công Việc\BTL_DoAnChuyenNganh\laptop-sales-website\SellingElectronicWebsite\SellingElectronicWebsite\obj\Release\net8.0\SellingElectronicWebsite.genruntimeconfig.cache
 E:\Công Việc\BTL_DoAnChuyenNganh\laptop-sales-website\SellingElectronicWebsite\SellingElectronicWebsite\obj\Release\net8.0\ref\SellingElectronicWebsite.dll
-E:\Công Việc\BTL_DoAnChuyenNganh\laptop-sales-website\SellingElectronicWebsite\SellingElectronicWebsite\bin\Release\net8.0\appsettings.Production.json
+E:\Công Việc\BTL_DoAnChuyenNganh\laptop-sales-website\SellingElectronicWebsite\SellingElectronicWebsite\bin\Release\net8.0\BCrypt.Net-Core.dll
+E:\Công Việc\BTL_DoAnChuyenNganh\laptop-sales-website\SellingElectronicWebsite\SellingElectronicWebsite\bin\Release\net8.0\Microsoft.AspNet.Identity.Core.dll
+E:\Công Việc\BTL_DoAnChuyenNganh\laptop-sales-website\SellingElectronicWebsite\SellingElectronicWebsite\bin\Release\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+E:\Công Việc\BTL_DoAnChuyenNganh\laptop-sales-website\SellingElectronicWebsite\SellingElectronicWebsite\bin\Release\net8.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+E:\Công Việc\BTL_DoAnChuyenNganh\laptop-sales-website\SellingElectronicWebsite\SellingElectronicWebsite\bin\Release\net8.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+E:\Công Việc\BTL_DoAnChuyenNganh\laptop-sales-website\SellingElectronicWebsite\SellingElectronicWebsite\bin\Release\net8.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+E:\Công Việc\BTL_DoAnChuyenNganh\laptop-sales-website\SellingElectronicWebsite\SellingElectronicWebsite\bin\Release\net8.0\Microsoft.Extensions.Identity.Core.dll
+E:\Công Việc\BTL_DoAnChuyenNganh\laptop-sales-website\SellingElectronicWebsite\SellingElectronicWebsite\bin\Release\net8.0\Microsoft.Extensions.Identity.Stores.dll

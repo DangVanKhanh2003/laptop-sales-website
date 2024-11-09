@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Công Việc\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\SellingElectronicWebsite.csproj": {}
+    "C:\\Users\\khanh084\\Desktop\\New folder\\SellingElectronicWebsite\\SellingElectronicWebsite.csproj": {}
   },
   "projects": {
-    "E:\\Công Việc\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\SellingElectronicWebsite.csproj": {
+    "C:\\Users\\khanh084\\Desktop\\New folder\\SellingElectronicWebsite\\SellingElectronicWebsite.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Công Việc\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\SellingElectronicWebsite.csproj",
+        "projectUniqueName": "C:\\Users\\khanh084\\Desktop\\New folder\\SellingElectronicWebsite\\SellingElectronicWebsite.csproj",
         "projectName": "SellingElectronicWebsite",
-        "projectPath": "E:\\Công Việc\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\SellingElectronicWebsite.csproj",
+        "projectPath": "C:\\Users\\khanh084\\Desktop\\New folder\\SellingElectronicWebsite\\SellingElectronicWebsite.csproj",
         "packagesPath": "C:\\Users\\khanh084\\.nuget\\packages\\",
-        "outputPath": "E:\\Công Việc\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\obj\\",
+        "outputPath": "C:\\Users\\khanh084\\Desktop\\New folder\\SellingElectronicWebsite\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\khanh084\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -47,6 +47,26 @@
             "AutoMapper.Extensions.Microsoft.DependencyInjection": {
               "target": "Package",
               "version": "[12.0.1, )"
+            },
+            "BCrypt.Net-Core": {
+              "target": "Package",
+              "version": "[1.6.0, )"
+            },
+            "Microsoft.AspNet.Identity.Core": {
+              "target": "Package",
+              "version": "[2.2.4, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[8.0.10, )"
+            },
+            "Microsoft.AspNetCore.Identity": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.10, )"
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",

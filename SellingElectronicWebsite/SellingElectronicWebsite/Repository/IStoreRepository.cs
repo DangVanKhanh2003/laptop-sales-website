@@ -1,4 +1,5 @@
-﻿using SellingElectronicWebsite.Model;
+﻿using SellingElectronicWebsite.Entities;
+using SellingElectronicWebsite.Model;
 using SellingElectronicWebsite.ViewModel;
 
 namespace SellingElectronicWebsite.Repository
@@ -8,8 +9,8 @@ namespace SellingElectronicWebsite.Repository
         Task<List<StoreVM>> GetAllStore();
         Task<StoreVM> GetStoreById(int idStore);
         Task<StoreVM> GetStoreByName(string nameStore);
-        Task<bool> AddStore(StoreModel model);
+        Task<bool> AddStore(Store model);
         Task<bool> UpdateStore(StoreModel model, int idStore);
-        Task<bool> DeleteStore(int idStore);
+        Task<int> DeleteStore(int idStore);
     }
 }

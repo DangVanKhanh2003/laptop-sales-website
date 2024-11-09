@@ -11,6 +11,12 @@ public partial class ShoppingCart
 
     public int Amount { get; set; }
 
+    public int ColorId { get; set; }
+
+    public int ShoppingCartId { get; set; }
+
+    public virtual Color Color { get; set; } = null!;
+
     public virtual Customer Customer { get; set; } = null!;
 
     public virtual Product Product { get; set; } = null!;

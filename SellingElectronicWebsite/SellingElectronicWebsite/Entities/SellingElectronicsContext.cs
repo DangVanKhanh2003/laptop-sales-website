@@ -1,15 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
 
 namespace SellingElectronicWebsite.Entities;
 
 public partial class SellingElectronicsContext : DbContext
 {
-    private readonly IConfiguration _configuration;
-
-
     public SellingElectronicsContext()
     {
     }
@@ -63,6 +59,8 @@ public partial class SellingElectronicsContext : DbContext
 
     public virtual DbSet<Rating> Ratings { get; set; }
 
+    public virtual DbSet<RefreshTokenCustomer> RefreshTokenCustomers { get; set; }
+
     public virtual DbSet<Role> Roles { get; set; }
 
     public virtual DbSet<Sale> Sales { get; set; }
@@ -86,7 +84,8 @@ public partial class SellingElectronicsContext : DbContext
     public virtual DbSet<WarehousesImportProduct> WarehousesImportProducts { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        => optionsBuilder.UseSqlServer("Data Source=DESKTOP-19ENTAL\\SQLEXPRESS;Initial Catalog=QLBanHang;Integrated Security=True;Trust Server Certificate=True");
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
+        => optionsBuilder.UseSqlServer("Data Source=DESKTOP-19ENTAL\\SQLEXPRESS;Initial Catalog=SellingElectronics;Persist Security Info=True;User Id=1;Password=1;Integrated Security=false;Trust Server Certificate=True");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -97,6 +96,10 @@ public partial class SellingElectronicsContext : DbContext
             entity.ToTable("AccountCustomer", "AccountSchema");
 
             entity.Property(e => e.AccCustomerId).HasDefaultValueSql("(newid())");
+            entity.Property(e => e.Email)
+                .HasMaxLength(200)
+                .IsUnicode(false)
+                .HasColumnName("email");
             entity.Property(e => e.Password).IsUnicode(false);
 
             entity.HasOne(d => d.Customer).WithMany(p => p.AccountCustomers)
@@ -202,9 +205,6 @@ public partial class SellingElectronicsContext : DbContext
 
             entity.ToTable("Customers", "UserSchema");
 
-            entity.Property(e => e.Email)
-                .HasMaxLength(150)
-                .IsUnicode(false);
             entity.Property(e => e.FullName).HasMaxLength(150);
             entity.Property(e => e.PhoneNumber)
                 .HasMaxLength(12)
@@ -250,6 +250,7 @@ public partial class SellingElectronicsContext : DbContext
 
             entity.HasOne(d => d.Store).WithMany(p => p.Employees)
                 .HasForeignKey(d => d.StoreId)
+                .OnDelete(DeleteBehavior.SetNull)
                 .HasConstraintName("FK_Employee_Store");
         });
 
@@ -333,6 +334,9 @@ public partial class SellingElectronicsContext : DbContext
             entity.Property(e => e.OdertDate)
                 .HasDefaultValueSql("(getdate())")
                 .HasColumnType("datetime");
+            entity.Property(e => e.Status)
+                .HasMaxLength(50)
+                .IsUnicode(false);
 
             entity.HasOne(d => d.Customer).WithMany(p => p.OrderPendings)
                 .HasForeignKey(d => d.CustomerId)
@@ -399,6 +403,12 @@ public partial class SellingElectronicsContext : DbContext
         {
             entity.ToTable("ProductOrder", "OrderSchema");
 
+            entity.Property(e => e.ColorId).HasColumnName("colorId");
+
+            entity.HasOne(d => d.Color).WithMany(p => p.ProductOrders)
+                .HasForeignKey(d => d.ColorId)
+                .HasConstraintName("fk_ProductOrder_color");
+
             entity.HasOne(d => d.Order).WithMany(p => p.ProductOrders)
                 .HasForeignKey(d => d.OrderId)
                 .OnDelete(DeleteBehavior.SetNull)
@@ -413,6 +423,12 @@ public partial class SellingElectronicsContext : DbContext
         modelBuilder.Entity<ProductOrderPending>(entity =>
         {
             entity.ToTable("ProductOrderPending", "OrderSchema");
+
+            entity.Property(e => e.ColorId).HasColumnName("colorId");
+
+            entity.HasOne(d => d.Color).WithMany(p => p.ProductOrderPendings)
+                .HasForeignKey(d => d.ColorId)
+                .HasConstraintName("fk_ProductOrderPending_color");
 
             entity.HasOne(d => d.OrderPending).WithMany(p => p.ProductOrderPendings)
                 .HasForeignKey(d => d.OrderPendingId)
@@ -457,6 +473,28 @@ public partial class SellingElectronicsContext : DbContext
                 .HasConstraintName("FK_Ratings_Products");
         });
 
+        modelBuilder.Entity<RefreshTokenCustomer>(entity =>
+        {
+            entity.HasKey(e => e.RefreshTokenCustomerId).HasName("PK__RefreshT__EB55C1121B83DBB5");
+
+            entity.ToTable("RefreshTokenCustomer", "AccountSchema");
+
+            entity.Property(e => e.RefreshTokenCustomerId).HasDefaultValueSql("(newid())");
+            entity.Property(e => e.ExpiredAt).HasColumnType("datetime");
+            entity.Property(e => e.IssuedAt).HasColumnType("datetime");
+            entity.Property(e => e.JwtId)
+                .HasMaxLength(200)
+                .IsUnicode(false);
+            entity.Property(e => e.Token)
+                .HasMaxLength(1000)
+                .IsUnicode(false);
+
+            entity.HasOne(d => d.Customer).WithMany(p => p.RefreshTokenCustomers)
+                .HasForeignKey(d => d.CustomerId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_RefreshTokenCustomer_Customer");
+        });
+
         modelBuilder.Entity<Role>(entity =>
         {
             entity.HasKey(e => e.RolesId).HasName("PK_ROLES");
@@ -485,9 +523,12 @@ public partial class SellingElectronicsContext : DbContext
 
         modelBuilder.Entity<ShoppingCart>(entity =>
         {
-            entity.HasKey(e => new { e.CustomerId, e.ProductId });
-
             entity.ToTable("ShoppingCart", "OrderSchema");
+
+            entity.HasOne(d => d.Color).WithMany(p => p.ShoppingCarts)
+                .HasForeignKey(d => d.ColorId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_ShoppingCart_Color");
 
             entity.HasOne(d => d.Customer).WithMany(p => p.ShoppingCarts)
                 .HasForeignKey(d => d.CustomerId)

@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<parameters>
-  <parameter name="IIS Web Application Name" description="" value="bangbang2k3-001-site1" tags="IisApp">
-    <parameterEntry kind="ProviderPath" scope="IisApp" match="^E:\\Công\ Việc\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\obj\\Release\\net8\.0\\win-x64\\PubTmp\\Out\\$" />
-  </parameter>
-  <parameter name="SellingElectronicWebsite.Entities.SellingElectronicsContext" description="" value="Data Source=SQL9001.site4now.net;Initial Catalog=db_aaeb23_bangbang2k3;Persist Security Info=True;User ID=db_aaeb23_bangbang2k3_admin;Password=0841010362kk;Trust Server Certificate=True" tags="dbfullsql">
-    <parameterEntry kind="ProviderPath" scope="dbfullsql" match="^E:\\Công\ Việc\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\obj\\Release\\net8\.0\\win-x64\\PubTmp\\EFSQLScripts\\SellingElectronicWebsite\.Entities\.SellingElectronicsContext\.sql$" />
-  </parameter>
-</parameters>

@@ -1,14 +1,14 @@
 ﻿namespace SellingElectronicWebsite.Helper
 {
-    public class PaginatedList<T> : List<T>
+    public class PaginatedList<T>: List<T>
     {
-        public int PageIndex { get; set; }
+        public int PageIndex { get; set; } 
         public int TotalPage { get; set; }
 
         public PaginatedList(List<T> items, int count, int pageIndex, int pageSize)
         {
             pageIndex = pageIndex;
-            TotalPage = (int)Math.Ceiling(count / (double)pageSize);
+            TotalPage = (int)Math.Ceiling((double)count / (double)pageSize);
             AddRange(items);
         }
 

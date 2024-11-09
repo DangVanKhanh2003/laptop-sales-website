@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using SellingElectronicWebsite.Entities;
 using SellingElectronicWebsite.Model;
+using SellingElectronicWebsite.Sercurity;
 using SellingElectronicWebsite.UnitOfWork;
 
 namespace SellingElectronicWebsite.Controllers.Employee
@@ -21,6 +23,8 @@ namespace SellingElectronicWebsite.Controllers.Employee
         /// </summary>
 
         [HttpGet("getAllStore")]
+        [CustomAuthorizeCustomer("customer")]
+
         public async Task<IActionResult> GetAllStore()
         {
             try
@@ -44,6 +48,8 @@ namespace SellingElectronicWebsite.Controllers.Employee
         /// </summary>
 
         [HttpGet("{idStore}")]
+        [CustomAuthorizeCustomer("customer")]
+
         public async Task<IActionResult> GetStoreById(int idStore)
         {
             try
@@ -79,8 +85,13 @@ namespace SellingElectronicWebsite.Controllers.Employee
 
                     return BadRequest("The store name already exists.");
                 }
-
-                var result = await _uow.Store.AddStore(model);
+                AddressModel addressModel = model.Address;
+                var address = await _uow.Addresses.Add(model.Address);
+                await _uow.Save();
+                _uow.Commit();
+                _uow.CreateTransaction();
+                var newStore = new Store() { StoreName = model.StoreName, AddressId = address.AddressId };
+                var result = await _uow.Store.AddStore(newStore);
 
                 await _uow.Save();
                 _uow.Commit();
@@ -154,20 +165,23 @@ namespace SellingElectronicWebsite.Controllers.Employee
                 _uow.CreateTransaction();
 
                 var result = await _uow.Store.DeleteStore(id);
-                if (result == false)
+                if (result == -1)
                 {
                     _uow.Rollback();
 
                     return NotFound("Not found store with id: " + id);
                 }
                 await _uow.Save();
+                var result2 = await _uow.Addresses.Delete(result);
+                await _uow.Save();
+
                 _uow.Commit();
                 return Ok(result);
             }
-            catch
+            catch( Exception ex ) 
             {
                 _uow.Rollback();
-                return StatusCode(StatusCodes.Status500InternalServerError);
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.ToString());
 
             }
         }
