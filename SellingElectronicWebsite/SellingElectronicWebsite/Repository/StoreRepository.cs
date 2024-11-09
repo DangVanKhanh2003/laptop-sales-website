@@ -18,28 +18,44 @@ namespace SellingElectronicWebsite.Repository
             _mapper = mapper;
 
         }
-        public async Task<bool> AddStore(StoreModel model)
+        public async Task<bool> AddStore(Store model)
         {
-            var item = _mapper.Map<Store>(model);
-            await _context.Stores.AddAsync(item);
+           
+            await _context.Stores.AddAsync(model);
             return true;
         }
 
-        public async Task<bool> DeleteStore(int idStore)
+        public async Task<int> DeleteStore(int idStore)
         {
             var item = await _context.Stores.Where(s => s.StoreId == idStore).FirstOrDefaultAsync();
             if (item != null)
             {
-                _context.Remove(item);
-                return true;
-            }
-            return false;
-        }
+                var idItem = item.StoreId;
 
+                _context.Stores.Remove(item);
+                return idItem;
+            }
+            return -1;
+        }
+        public async Task<AddressVM> getAddressByStoreId(int storeId)
+        {
+            var item = await _context.Stores.Where(s => s.StoreId == storeId).FirstOrDefaultAsync();
+            Address address = await _context.Addresses.Where(a => a.AddressId == item.AddressId).FirstOrDefaultAsync();
+
+            return _mapper.Map< AddressVM>(address);
+        }
         public async Task<List<StoreVM>> GetAllStore()
         {
             var Stores = await _context.Stores.ToListAsync();
             var StoresVM = _mapper.Map<List<StoreVM>>(Stores);
+            foreach (var item in StoresVM)
+            {
+                AddressVM address = await getAddressByStoreId(item.StoreId);
+                if (address != null)
+                {
+                    item.Address = address;
+                }
+            }
             return StoresVM;
         }
 
@@ -47,6 +63,11 @@ namespace SellingElectronicWebsite.Repository
         {
             var item = await _context.Stores.Where(s => s.StoreId == idStore).FirstOrDefaultAsync();
             var StoreVM = _mapper.Map<StoreVM>(item);
+            AddressVM address = await getAddressByStoreId(item.StoreId);
+            if (address != null)
+            {
+                StoreVM.Address = address;
+            }
             return StoreVM;
         }
 
@@ -64,7 +85,11 @@ namespace SellingElectronicWebsite.Repository
             {
                 return false;
             }
-            _mapper.Map(model, item);
+            var itemAddress = _mapper.Map<Address>(model.Address);
+            var address = await _context.Addresses.Where(c => c.AddressId.Equals(item.AddressId)).FirstOrDefaultAsync();
+            await _context.Addresses.AddAsync(itemAddress);
+            _context.Update(address);
+            item.StoreName = model.StoreName;
             _context.Update(item);
             return true;
         }

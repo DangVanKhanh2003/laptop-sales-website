@@ -4,6 +4,7 @@ using SellingElectronicWebsite.Repository;
 using SellingElectronicWebsite.Entities;
 using AutoMapper;
 using SellingElectronicWebsite.UnitOfWork;
+using Microsoft.Extensions.Configuration;
 namespace SellingElectronicWebsite.UnitOfWork
 {
     public class UnitOfWork : IUnitOfWork, IDisposable
@@ -11,21 +12,35 @@ namespace SellingElectronicWebsite.UnitOfWork
 
         public SellingElectronicsContext Context = null;
         private IDbContextTransaction? _objTran = null;
+        private IConfiguration _configuration;
 
         public ProductsRepository Products { get; private set; }
         public ColorsRepository Colors { get; private set; }
         public CategoryRepository Categories { get; private set; }
         public SalesRepository Sales { get; private set; }
         public StoreRepository Store { get; private set; }
+        public AddressRepository Addresses { get; private set; }
+        public CustomerAccountRepository CustomersAccount { get; private set; }
+        public CustomerRepository Customers { get; private set; }
+        public AddressBookRepository AddressBook { get; private set; }
+        public ShoppingCartRepository ShoppingCarts { get; private set; }
+        public OrderPendingRepository OrderPendings { get; private set; }
 
-        public UnitOfWork(SellingElectronicsContext _Context, IMapper mapper)
+        public UnitOfWork(SellingElectronicsContext _Context, IMapper mapper, IConfiguration configuration)
         {
             Context = _Context;
+            _configuration = configuration;
             Products = new ProductsRepository(Context, mapper);
             Colors = new ColorsRepository(Context, mapper);
             Categories = new CategoryRepository(Context, mapper);
             Sales = new SalesRepository(Context, mapper);
             Store = new StoreRepository(Context, mapper);
+            Addresses = new AddressRepository(Context, mapper);
+            CustomersAccount = new CustomerAccountRepository(Context, mapper, configuration);
+            Customers = new CustomerRepository(Context, mapper);
+            AddressBook = new AddressBookRepository(Context, mapper);
+            ShoppingCarts = new ShoppingCartRepository(Context, mapper);
+            OrderPendings = new OrderPendingRepository(Context, mapper);
         }
 
         public void CreateTransaction()

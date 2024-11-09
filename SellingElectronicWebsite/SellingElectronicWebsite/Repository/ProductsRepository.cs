@@ -15,7 +15,7 @@ namespace SellingElectronicWebsite.Repository
         private readonly IMapper _mapper;
 
 
-        public ProductsRepository(SellingElectronicsContext context, IMapper mapper) 
+        public ProductsRepository(SellingElectronicsContext context, IMapper mapper)
         {
             _context = context;
             _mapper = mapper;
@@ -40,7 +40,7 @@ namespace SellingElectronicWebsite.Repository
             return true;
         }
 
-        public async Task<bool>Delete(int id)
+        public async Task<bool> Delete(int id)
         {
             var p = await _context.Products.Where(p => p.ProductId.Equals(id)).FirstOrDefaultAsync();
             if (p == null)
@@ -66,10 +66,10 @@ namespace SellingElectronicWebsite.Repository
                                                 p.MainImg
                                         ))
                     .ToListAsync();
-            foreach(var item in products)
+            foreach (var item in products)
             {
                 SalesVM sale = await checkSaleByIdProduct(item.ProductId);
-                if(sale != null)
+                if (sale != null)
                 {
                     item.sale = sale;
                 }
@@ -88,6 +88,41 @@ namespace SellingElectronicWebsite.Repository
             return products;
         }
 
+        public async Task<List<ProductVM>> GetProductByIdCategory(int idCategroy, string sortBy)
+        {
+            var products = await _context.Products
+                    .Include(p => p.Category)
+                    .Where(p => p.CategoryId == idCategroy)
+                    .Select(p => new ProductVM(p.ProductId,
+                                                p.ProductName,
+                                                p.Brand,
+                                                p.Series,
+                                                p.Price,
+                                                p.Category.CategoryName,
+                                                p.MainImg
+                                        ))
+                    .ToListAsync();
+            foreach (var item in products)
+            {
+                SalesVM sale = await checkSaleByIdProduct(item.ProductId);
+                if (sale != null)
+                {
+                    item.sale = sale;
+                }
+            }
+            var queryableProduct = products.AsQueryable();
+
+            if (!string.IsNullOrEmpty(sortBy))
+            {
+                switch (sortBy)
+                {
+                    case "name_desc": products = products.OrderByDescending(p => p.ProductName).ToList(); break;
+                    case "price_asc": products = products.OrderBy(p => p.Price).ToList(); break;
+                    case "price_desc": products = products.OrderByDescending(p => p.Price).ToList(); break;
+                }
+            }
+            return products;
+        }
         public async Task<List<ProductVM>> GetByPage(int pageIndex, int pageSize, string sortBy)
         {
             var products = await _context.Products
@@ -146,7 +181,7 @@ namespace SellingElectronicWebsite.Repository
             {
                 model.sale = sale;
             }
-            
+
 
             return model;
         }
@@ -178,7 +213,7 @@ namespace SellingElectronicWebsite.Repository
             var p = await _context.Products.Where(p => p.ProductId.Equals(id)).FirstOrDefaultAsync();
             if (p == null)
             {
-                return false;  
+                return false;
             }
             _mapper.Map(model, p);
 
@@ -198,7 +233,7 @@ namespace SellingElectronicWebsite.Repository
         {
             var Colors = await _context.ImageProducts.Include(p => p.Color)
                                                           .Where(p => p.ProductId == id)
-                                                          .Select(p => new ColorVM(p.ColorId ,p.Color.ColorName)).Distinct().ToListAsync();
+                                                          .Select(p => new ColorVM(p.ColorId, p.Color.ColorName)).Distinct().ToListAsync();
             return Colors;
         }
 
@@ -213,7 +248,7 @@ namespace SellingElectronicWebsite.Repository
         public async Task<bool> AddImgs(List<ImageProductsModel> models)
         {
             var items = _mapper.Map<List<ImageProduct>>(models);
-            foreach(var img in items)
+            foreach (var img in items)
             {
                 await _context.AddAsync(img);
             }
@@ -242,7 +277,7 @@ namespace SellingElectronicWebsite.Repository
         public async Task<bool> DeleteAllImgByIdProduct(int idProduct)
         {
             var imgs = await _context.ImageProducts.Where(i => i.ProductId == idProduct).ToListAsync();
-            foreach(var item in imgs)
+            foreach (var item in imgs)
             {
                 await DeleteImgByIdImg(item.ImgId);
             }
@@ -252,7 +287,7 @@ namespace SellingElectronicWebsite.Repository
         public async Task<List<ProductSpecifiactionVM>> GetSpeciByIdProduct(int idProduct)
         {
             var specification = await _context.ProductSpecifiactions.Include(p => p.Product)
-                                                    .Where(p => p.ProductId == idProduct ).ToListAsync();
+                                                    .Where(p => p.ProductId == idProduct).ToListAsync();
             var specificationVM = _mapper.Map<List<ProductSpecifiactionVM>>(specification);
             return specificationVM;
         }
@@ -277,7 +312,7 @@ namespace SellingElectronicWebsite.Repository
         public async Task<bool> DeleteSpeciByIdSpeci(int idSpecification)
         {
             var spe = await _context.ProductSpecifiactions.Where(i => i.SpecifiactionsId == idSpecification).FirstOrDefaultAsync();
-            if(spe  == null)
+            if (spe == null)
             {
                 return false;
             }
@@ -293,6 +328,25 @@ namespace SellingElectronicWebsite.Repository
                 await DeleteSpeciByIdSpeci(item.SpecifiactionsId);
             }
             return true;
+        }
+
+        public async Task<List<ProductVM>> SearchProductByName(string nameProduct)
+        {
+
+            List<Product> listProduct;
+            if (nameProduct == null)
+            {
+                listProduct = await _context.Products.ToListAsync();
+            }
+            else
+            {
+                listProduct = await _context.Products.Where(i => i.ProductName.Contains(nameProduct)
+                                                       || nameProduct.Contains(i.ProductName)).ToListAsync();
+            }
+            
+            var listProductVM = _mapper.Map<List<ProductVM>>(listProduct);
+            return listProductVM;
+
         }
     }
 }

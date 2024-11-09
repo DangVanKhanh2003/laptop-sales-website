@@ -13,7 +13,7 @@ public partial class OrderPending
 
     public DateTime? OdertDate { get; set; }
 
-    public int Status { get; set; }
+    public string? Status { get; set; }
 
     public virtual Customer? Customer { get; set; }
 

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121.
+-->
+<Project>
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>E:\Công Việc\BTL_DoAnChuyenNganh\New folder</_PublishTargetUrl>
+    <History>True|2024-11-08T10:03:15.3480621Z;True|2024-11-08T15:20:56.5423224+07:00;True|2024-11-08T15:12:06.9662247+07:00;True|2024-11-04T20:21:32.4776907+07:00;True|2024-11-04T20:19:05.4076544+07:00;True|2024-11-04T20:16:24.7866535+07:00;True|2024-11-04T19:57:06.2073480+07:00;True|2024-11-04T19:54:56.4892900+07:00;True|2024-11-04T19:50:49.0633066+07:00;True|2024-11-04T19:45:48.9852757+07:00;True|2024-10-31T09:40:37.5333186+07:00;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="DefaultConnection">
+      <Value>Data Source=DANGVANKHANH\SQLEXPRESS%3bInitial Catalog=SellingElectronics%3bPersist Security Info=True%3bUser Id=1%3bPassword=1%3bIntegrated Security=false%3bTrust Server Certificate=True</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+</Project>

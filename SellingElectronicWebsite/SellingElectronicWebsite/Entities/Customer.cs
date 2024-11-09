@@ -9,8 +9,6 @@ public partial class Customer
 
     public string? FullName { get; set; }
 
-    public string? Email { get; set; }
-
     public string? PhoneNumber { get; set; }
 
     public int? AddressId { get; set; }
@@ -30,6 +28,8 @@ public partial class Customer
     public virtual ICollection<Order> Orders { get; set; } = new List<Order>();
 
     public virtual ICollection<Rating> Ratings { get; set; } = new List<Rating>();
+
+    public virtual ICollection<RefreshTokenCustomer> RefreshTokenCustomers { get; set; } = new List<RefreshTokenCustomer>();
 
     public virtual ICollection<ShoppingCart> ShoppingCarts { get; set; } = new List<ShoppingCart>();
 }

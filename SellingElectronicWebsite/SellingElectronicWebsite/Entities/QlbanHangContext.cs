@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 namespace SellingElectronicWebsite.Entities;
 
-public partial class QlbanHangContext : DbContext
+public partial class QlbanHangContext : IdentityDbContext<IdentityUser>
 {
     public QlbanHangContext()
     {
@@ -17,7 +19,6 @@ public partial class QlbanHangContext : DbContext
 
     public virtual DbSet<LoaiSanPham> LoaiSanPhams { get; set; }
 
-    public virtual DbSet<RefreshToken> RefreshTokens { get; set; }
 
     public virtual DbSet<SanPham> SanPhams { get; set; }
 
@@ -42,35 +43,7 @@ public partial class QlbanHangContext : DbContext
             entity.Property(e => e.TenLoai).HasMaxLength(50);
         });
 
-        modelBuilder.Entity<RefreshToken>(entity =>
-        {
-            entity.HasKey(e => e.Id).HasName("PK__refreshT__3213E83F93B1371E");
-
-            entity.ToTable("refreshToken");
-
-            entity.Property(e => e.Id)
-                .HasDefaultValueSql("(newid())")
-                .HasColumnName("id");
-            entity.Property(e => e.AccountId).HasColumnName("accountId");
-            entity.Property(e => e.ExpiredAt)
-                .HasColumnType("datetime")
-                .HasColumnName("expiredAt");
-            entity.Property(e => e.IsRevoked).HasColumnName("isRevoked");
-            entity.Property(e => e.IsUsed).HasColumnName("isUsed");
-            entity.Property(e => e.IssuedAt)
-                .HasColumnType("datetime")
-                .HasColumnName("issuedAt");
-            entity.Property(e => e.JwtId)
-                .IsUnicode(false)
-                .HasColumnName("jwtId");
-            entity.Property(e => e.Token)
-                .IsUnicode(false)
-                .HasColumnName("token");
-
-            entity.HasOne(d => d.Account).WithMany(p => p.RefreshTokens)
-                .HasForeignKey(d => d.AccountId)
-                .HasConstraintName("FK__refreshTo__accou__5DCAEF64");
-        });
+        
 
         modelBuilder.Entity<SanPham>(entity =>
         {

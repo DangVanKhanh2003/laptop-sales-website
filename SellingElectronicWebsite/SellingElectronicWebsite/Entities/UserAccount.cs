@@ -15,5 +15,4 @@ public partial class UserAccount
 
     public string Email { get; set; } = null!;
 
-    public virtual ICollection<RefreshToken> RefreshTokens { get; set; } = new List<RefreshToken>();
 }

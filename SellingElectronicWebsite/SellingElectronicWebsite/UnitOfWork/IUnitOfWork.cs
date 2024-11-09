@@ -9,6 +9,12 @@ namespace SellingElectronicWebsite.UnitOfWork
         public CategoryRepository Categories { get; }  
         public SalesRepository Sales { get; }  
         public StoreRepository Store { get; }  
+        public AddressRepository Addresses { get; }  
+        public CustomerAccountRepository CustomersAccount { get; }  
+        public CustomerRepository Customers { get; }  
+        public AddressBookRepository AddressBook { get; }  
+        public ShoppingCartRepository ShoppingCarts { get; }  
+        public OrderPendingRepository OrderPendings { get; }  
         //This Method will Start the database Transaction
         public void CreateTransaction();
         //This Method will Commit the database Transaction

@@ -1,6 +1,9 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using SellingElectronicWebsite.Entities;
 using SellingElectronicWebsite.Model;
+using SellingElectronicWebsite.Sercurity;
 using SellingElectronicWebsite.UnitOfWork;
 
 namespace SellingElectronicWebsite.Controllers.Employee
@@ -16,8 +19,9 @@ namespace SellingElectronicWebsite.Controllers.Employee
             _uow = uow;
         }
 
-
         [HttpGet("getAllCategory")]
+        [CustomAuthorizeCustomer("customer")]
+
         public async Task<IActionResult> GetAll()
         {
             try
@@ -37,6 +41,8 @@ namespace SellingElectronicWebsite.Controllers.Employee
 
 
         [HttpGet("{id}")]
+        [CustomAuthorizeCustomer("customer")]
+
         public async Task<IActionResult> GetById(int id)
         {
             try

@@ -9,6 +9,8 @@ namespace SellingElectronicWebsite.Repository
         Task<ProductVM> GetById(int id);
         Task<List<ProductVM>> GetByPage(int pageIndex, int pageSize, string sortBy);
         Task<ProductVM> GetByName(String name);
+        Task<List<ProductVM>> SearchProductByName(string nameProduct);
+
         Task<int> CountProducts();
         Task<bool> Add(ProductModel model);
         Task<bool> Update(ProductModel model, int id);

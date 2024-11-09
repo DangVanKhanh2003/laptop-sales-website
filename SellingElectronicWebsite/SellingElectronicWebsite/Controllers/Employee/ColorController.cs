@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using SellingElectronicWebsite.Model;
+using SellingElectronicWebsite.Sercurity;
 using SellingElectronicWebsite.UnitOfWork;
 
 namespace SellingElectronicWebsite.Controllers.Employee
@@ -21,6 +22,8 @@ namespace SellingElectronicWebsite.Controllers.Employee
         /// </summary>
 
         [HttpGet("getAllColor")]
+        [CustomAuthorizeCustomer("customer")]
+
         public async Task<IActionResult> GetAll()
         {
             try
@@ -43,6 +46,8 @@ namespace SellingElectronicWebsite.Controllers.Employee
         /// </summary>
 
         [HttpGet("{id}")]
+        [CustomAuthorizeCustomer("customer")]
+
         public async Task<IActionResult> GetById(int id)
         {
             try
