@@ -120,45 +120,42 @@ class ProductDetail extends ConsumerWidget {
         ),
         elevation: 0.5,
       ),
-      body: Hero(
-        tag: product.productId!,
-        child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              ProductProfile(product: product),
-              Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: ElevatedButton(
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text(
-                      'Thông số sản phẩm',
-                      style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                            fontSize: 18,
-                            fontWeight: FontWeight.w500,
-                          ),
-                    ),
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            ProductProfile(product: product),
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: ElevatedButton(
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text(
+                    'Thông số sản phẩm',
+                    style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                          fontSize: 18,
+                          fontWeight: FontWeight.w500,
+                        ),
                   ),
-                  onPressed: () async {
-                    await showDialog(
-                      context: context,
-                      builder: (context) => AlertDialog(
-                        title: const Text('Thông số sản phẩm'),
-                        content: ProductSpecificationPage(product: product),
-                        actions: [
-                          TextButton(
-                            onPressed: () => Navigator.of(context).pop(),
-                            child: const Text('OK'),
-                          ),
-                        ],
-                      ),
-                    );
-                  },
                 ),
+                onPressed: () async {
+                  await showDialog(
+                    context: context,
+                    builder: (context) => AlertDialog(
+                      title: const Text('Thông số sản phẩm'),
+                      content: ProductSpecificationPage(product: product),
+                      actions: [
+                        TextButton(
+                          onPressed: () => Navigator.of(context).pop(),
+                          child: const Text('OK'),
+                        ),
+                      ],
+                    ),
+                  );
+                },
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
       floatingActionButton: FloatingActionButton(

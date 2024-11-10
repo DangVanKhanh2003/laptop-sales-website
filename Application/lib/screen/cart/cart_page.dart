@@ -4,8 +4,8 @@ import 'package:shopping_app/model/cart.dart';
 import 'package:shopping_app/provider/token_provider.dart';
 import 'package:shopping_app/repository/cart_repository.dart';
 import 'package:shopping_app/screen/cart/cart_loading.dart';
+import 'package:shopping_app/screen/cart/cart_navbar.dart';
 import 'package:shopping_app/screen/cart/cart_view.dart';
-import 'package:shopping_app/screen/cart/empty_cart.dart';
 import 'package:shopping_app/screen/exception/exception_page.dart';
 import 'package:shopping_app/service/getit_helper.dart';
 
@@ -51,11 +51,7 @@ class _CartPageState extends ConsumerState<CartPage> {
             return const CartLoading();
           } else if (snapshot.hasData) {
             final data = snapshot.data!.items!;
-            if (data.isEmpty) {
-              return const EmptyCart();
-            } else {
-              return CartView(items: data);
-            }
+            return CartView(items: data);
           } else if (snapshot.hasError) {
             return Center(
               child: ExceptionPage(message: snapshot.error.toString()),
@@ -64,6 +60,9 @@ class _CartPageState extends ConsumerState<CartPage> {
             return const SizedBox.shrink();
           }
         },
+      ),
+      bottomNavigationBar: const BottomAppBar(
+        child: CartNavbar(),
       ),
     );
   }

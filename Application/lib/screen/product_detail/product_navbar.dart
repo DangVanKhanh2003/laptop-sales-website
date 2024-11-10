@@ -7,6 +7,7 @@ import 'package:shopping_app/provider/token_provider.dart';
 import 'package:shopping_app/repository/cart_repository.dart';
 import 'package:shopping_app/screen/cart/cart_page.dart';
 import 'package:shopping_app/screen/message/message_page.dart';
+import 'package:shopping_app/screen/payment/payment_page.dart';
 import 'package:shopping_app/service/getit_helper.dart';
 
 class ProductNavbar extends ConsumerStatefulWidget {
@@ -65,6 +66,7 @@ class _ProductNavbarState extends ConsumerState<ProductNavbar> {
           ),
           TextButton(
             onPressed: () {
+              Navigator.of(context).pop();
               Navigator.of(context).push(
                 MaterialPageRoute(
                   builder: (context) => const CartPage(),
@@ -129,7 +131,11 @@ class _ProductNavbarState extends ConsumerState<ProductNavbar> {
           flex: 2,
           child: ElevatedButton(
             onPressed: () {
-              // TODO:
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => const PaymentPage(),
+                ),
+              );
             },
             style: ElevatedButton.styleFrom(
               backgroundColor:

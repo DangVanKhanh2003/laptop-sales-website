@@ -81,6 +81,56 @@ class _AccountDetailState extends ConsumerState<AccountDetail> {
     );
   }
 
+  Future<void> _onError(String message) async {
+    await showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: const Text('Lỗi xảy ra'),
+        content: Text(message),
+        actions: [
+          TextButton(
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+            child: const Text('OK'),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Future<void> _onSuccess() async {
+    await showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: const Text('Thành công'),
+        content: const Text('Đã sửa thành công thông tin của bạn!'),
+        actions: [
+          TextButton(
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+            child: const Text('OK'),
+          ),
+        ],
+      ),
+    );
+  }
+
+  void _close() {
+    Navigator.of(context).pop();
+  }
+
+  void _onEdit() async {
+    try {
+      // TODO : Sửa
+      await _onSuccess();
+      _close();
+    } catch (e) {
+      await _onError(e.toString());
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -157,6 +207,19 @@ class _AccountDetailState extends ConsumerState<AccountDetail> {
                           controller: _numberHouseController,
                         ),
                       ],
+                    ),
+                    const SizedBox(height: 12.0),
+                    ElevatedButton(
+                      onPressed: _onEdit,
+                      child: const SizedBox(
+                          width: double.infinity,
+                          child: Padding(
+                            padding: EdgeInsets.symmetric(
+                              vertical: 20.0,
+                              horizontal: 24.0,
+                            ),
+                            child: Center(child: Text('Sửa')),
+                          )),
                     ),
                   ],
                 ),

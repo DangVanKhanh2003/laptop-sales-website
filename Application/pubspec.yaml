@@ -26,6 +26,7 @@ dependencies:
     file_selector: ^1.0.3
     path: ^1.9.0
     path_provider: ^2.1.5
+    speech_to_text: ^7.0.0
 
 dev_dependencies:
     flutter_test:

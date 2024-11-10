@@ -7,6 +7,7 @@ import 'package:shopping_app/model/product.dart';
 import 'package:shopping_app/provider/token_provider.dart';
 import 'package:shopping_app/repository/cart_repository.dart';
 import 'package:shopping_app/repository/product_repository.dart';
+import 'package:shopping_app/screen/cart/empty_cart.dart';
 import 'package:shopping_app/screen/product_detail/product_detail.dart';
 import 'package:shopping_app/service/getit_helper.dart';
 
@@ -23,6 +24,8 @@ class CartView extends ConsumerStatefulWidget {
 }
 
 class _CartViewState extends ConsumerState<CartView> {
+  bool _isLoading = false;
+
   @override
   void initState() {
     super.initState();
@@ -101,6 +104,9 @@ class _CartViewState extends ConsumerState<CartView> {
 
   @override
   Widget build(BuildContext context) {
+    if (widget.items.isEmpty) {
+      return const EmptyCart();
+    }
     return SingleChildScrollView(
       child: Column(
         children: widget.items
@@ -120,19 +126,34 @@ class _CartViewState extends ConsumerState<CartView> {
                       Tooltip(
                         message: 'Xem chi tiết',
                         child: IconButton(
-                          onPressed: () async {
-                            final product =
-                                await GetItHelper.get<ProductRepository>()
-                                    .getProductById(
-                              id: e.productId!,
-                              token: ref.read(tokenProvider),
-                            );
-                            _navigateProductDetail(product);
-                          },
-                          icon: const Icon(
-                            Symbols.info,
-                            color: Colors.cyan,
-                          ),
+                          onPressed: _isLoading
+                              ? null
+                              : () async {
+                                  setState(() {
+                                    _isLoading = true;
+                                  });
+                                  try {
+                                    final product = await GetItHelper.get<
+                                            ProductRepository>()
+                                        .getProductById(
+                                      id: e.productId!,
+                                      token: ref.read(tokenProvider),
+                                    );
+                                    _navigateProductDetail(product);
+                                  } catch (e) {
+                                    _showError(e.toString());
+                                  } finally {
+                                    setState(() {
+                                      _isLoading = false;
+                                    });
+                                  }
+                                },
+                          icon: _isLoading
+                              ? const CircularProgressIndicator.adaptive()
+                              : const Icon(
+                                  Symbols.info,
+                                  color: Colors.cyan,
+                                ),
                         ),
                       ),
                       Tooltip(
