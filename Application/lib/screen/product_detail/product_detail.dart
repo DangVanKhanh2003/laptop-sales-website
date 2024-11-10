@@ -11,7 +11,10 @@ import 'package:shimmer/shimmer.dart';
 import 'package:material_symbols_icons/symbols.dart';
 
 class ProductDetail extends ConsumerWidget {
-  const ProductDetail({super.key, required this.product});
+  const ProductDetail({
+    super.key,
+    required this.product,
+  });
 
   final Product product;
 
@@ -19,10 +22,10 @@ class ProductDetail extends ConsumerWidget {
     BuildContext context,
     WidgetRef ref,
   ) async {
-    final future = GetItHelper.getIt.get<GeminiHelper>().ask(
-          message:
-              'Bạn nghĩ sao về sản phẩm này\n Tên: ${product.productName}, Giá: ${product.price}, Thông tin chi tiết bạn có thể tự tìm kiếm trên Google. Bạn hãy đánh giá sản phẩm này so với các sản phẩm điện tử hiện nay. Kết quả bằng tiếng việt làm ơn. Đừng cung cấp thông tin thừa như so sánh với sản phẩm khác',
-        );
+    final future = GetItHelper.get<GeminiHelper>().ask(
+      message:
+          'Bạn nghĩ sao về sản phẩm này\n Tên: ${product.productName}, Giá: ${product.price}, Thông tin chi tiết bạn có thể tự tìm kiếm trên Google. Bạn hãy đánh giá sản phẩm này so với các sản phẩm điện tử hiện nay. Kết quả bằng tiếng việt làm ơn. Đừng cung cấp thông tin thừa như so sánh với sản phẩm khác',
+    );
     await showDialog(
       context: context,
       builder: (context) => AlertDialog(
@@ -100,8 +103,9 @@ class ProductDetail extends ConsumerWidget {
       if (description.endsWith('*')) {
         description = description.substring(0, description.length - 1);
       }
-      structuredContent
-          .add(_QueriedAnswer(title: title.trim(), description: description));
+      structuredContent.add(
+        _QueriedAnswer(title: title.trim(), description: description),
+      );
     }
     return structuredContent;
   }

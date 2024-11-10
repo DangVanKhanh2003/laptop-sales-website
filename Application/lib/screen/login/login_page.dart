@@ -22,6 +22,8 @@ class _LoginPageState extends ConsumerState<LoginPage> {
 
   late final GlobalKey<FormState> _formKey;
 
+  bool _isLoading = false;
+
   @override
   void initState() {
     _emailController = TextEditingController();
@@ -153,25 +155,35 @@ class _LoginPageState extends ConsumerState<LoginPage> {
                             ),
                           ),
                         ),
-                        onPressed: () async {
-                          if (_formKey.currentState!.validate()) {
-                            try {
-                              final token = await GetItHelper.getIt
-                                  .get<CustomerRepository>()
-                                  .login(
-                                    email: _emailController.text,
-                                    password: _passwordController.text,
-                                  );
-                              ref.watch(tokenProvider).clone(token);
-                              _toMainScreen();
-                            } catch (e) {
-                              _showError(e.toString());
-                            }
-                          }
-                        },
-                        child: const Padding(
-                          padding: EdgeInsets.all(8.0),
-                          child: Text('Đăng nhập'),
+                        onPressed: _isLoading
+                            ? null
+                            : () async {
+                                if (_formKey.currentState!.validate()) {
+                                  setState(() {
+                                    _isLoading = true;
+                                  });
+                                  try {
+                                    final token = await GetItHelper.get<
+                                            CustomerRepository>()
+                                        .login(
+                                      email: _emailController.text,
+                                      password: _passwordController.text,
+                                    );
+                                    ref.watch(tokenProvider).clone(token);
+                                    _toMainScreen();
+                                  } catch (e) {
+                                    _showError(e.toString());
+                                    setState(() {
+                                      _isLoading = false;
+                                    });
+                                  }
+                                }
+                              },
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: _isLoading
+                              ? const CircularProgressIndicator.adaptive()
+                              : const Text('Đăng nhập'),
                         ),
                       ),
                       const SizedBox(height: 8.0),
@@ -187,10 +199,11 @@ class _LoginPageState extends ConsumerState<LoginPage> {
                               ),
                             ),
                             onTap: () {
-                              Navigator.of(context)
-                                  .pushReplacement(MaterialPageRoute(
-                                builder: (context) => const RegisterPage(),
-                              ));
+                              Navigator.of(context).pushReplacement(
+                                MaterialPageRoute(
+                                  builder: (context) => const RegisterPage(),
+                                ),
+                              );
                             },
                           ),
                         ],

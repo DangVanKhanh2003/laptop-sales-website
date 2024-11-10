@@ -16,8 +16,12 @@ class SettingPage extends ConsumerStatefulWidget {
 }
 
 class _SettingPageState extends ConsumerState<SettingPage> {
-  void _onLogout() {
-    ref.watch(tokenProvider.notifier).loadToken();
+  void _onLogout() async {
+    await ref.watch(tokenProvider.notifier).clearToken();
+    _navigateLogin();
+  }
+
+  void _navigateLogin() {
     Navigator.of(context).pushReplacement(
       MaterialPageRoute(
         builder: (context) => const LoginPage(),

@@ -17,6 +17,7 @@ class UserProfile extends StatelessWidget {
         onDetail();
         break;
       case 'logout':
+        onLogout();
         break;
     }
   }

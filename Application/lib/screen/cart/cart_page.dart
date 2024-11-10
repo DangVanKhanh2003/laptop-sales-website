@@ -1,21 +1,70 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:shopping_app/model/cart.dart';
+import 'package:shopping_app/provider/token_provider.dart';
+import 'package:shopping_app/repository/cart_repository.dart';
+import 'package:shopping_app/screen/cart/cart_loading.dart';
+import 'package:shopping_app/screen/cart/cart_view.dart';
 import 'package:shopping_app/screen/cart/empty_cart.dart';
+import 'package:shopping_app/screen/exception/exception_page.dart';
+import 'package:shopping_app/service/getit_helper.dart';
 
-class CartPage extends StatefulWidget {
+class CartPage extends ConsumerStatefulWidget {
   const CartPage({super.key});
 
   @override
-  State<CartPage> createState() => _CartPageState();
+  ConsumerState<CartPage> createState() => _CartPageState();
 }
 
-class _CartPageState extends State<CartPage> {
+class _CartPageState extends ConsumerState<CartPage> {
+  late Future<CartList> _future;
+
+  @override
+  void initState() {
+    super.initState();
+    _future = GetItHelper.get<CartRepository>().getAllItems(
+      token: ref.read(tokenProvider),
+      customerId: ref.read(tokenProvider.notifier).customerId,
+    );
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Giỏ hàng của tôi'),
       ),
-      body: const EmptyCart(),
+      body: FutureBuilder(
+        future: _future,
+        builder: (context, snapshot) {
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            return const CartLoading();
+          } else if (snapshot.hasData) {
+            final data = snapshot.data!.items!;
+            if (data.isEmpty) {
+              return const EmptyCart();
+            } else {
+              return CartView(items: data);
+            }
+          } else if (snapshot.hasError) {
+            return Center(
+              child: ExceptionPage(message: snapshot.error.toString()),
+            );
+          } else {
+            return const SizedBox.shrink();
+          }
+        },
+      ),
     );
   }
 }

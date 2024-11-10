@@ -26,9 +26,9 @@ class _HomePageState extends ConsumerState<HomePage> {
   void initState() {
     _controller = TextEditingController();
     _scrollController = ScrollController();
-    _future = GetItHelper.getIt.get<CategoryRepository>().getAllCategory(
-          token: ref.read(tokenProvider),
-        );
+    _future = GetItHelper.get<CategoryRepository>().getAllCategory(
+      token: ref.read(tokenProvider),
+    );
     super.initState();
   }
 

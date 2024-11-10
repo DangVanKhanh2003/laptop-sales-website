@@ -86,6 +86,31 @@ class ProductApi {
     }
   }
 
+  /// Phương thức lấy các sản phẩm theo mã sản phẩm
+
+  Future<Product> getProductById({
+    required int productId,
+    required TokenState token,
+  }) async {
+    final uri = Uri.parse('$_url/$productId');
+    final response = await http.get(uri, headers: {
+      'Authorization': token.toAuthorizationJson(),
+    }).timeout(const Duration(seconds: 10));
+    if (response.headers.containsKey('Authorization')) {
+      token.clone(
+        TokenState.fromJson(jsonDecode(response.headers['Authorization']!)),
+      );
+      await token.save();
+    }
+    if (response.statusCode == 200) {
+      return Product.fromJson(jsonDecode(response.body));
+    } else {
+      throw Exception(
+        'Không thể fetch được sản phẩm, mã lỗi: ${response.statusCode}',
+      );
+    }
+  }
+
   /// Phương thức lấy các sản phẩm theo mã danh mục
 
   Future<ProductList> getProductsByName({

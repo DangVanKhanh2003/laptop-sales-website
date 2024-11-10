@@ -28,7 +28,7 @@ class _ProductViewState extends ConsumerState<ProductView> {
   @override
   void initState() {
     super.initState();
-    _productList = GetItHelper.getIt<ProductRepository>().getProduct(
+    _productList = GetItHelper.get<ProductRepository>().getProduct(
       page: _page,
       token: ref.read(tokenProvider),
     );
@@ -40,7 +40,7 @@ class _ProductViewState extends ConsumerState<ProductView> {
     if (widget.controller.position.pixels ==
         widget.controller.position.maxScrollExtent) {
       _page++;
-      final result = await GetItHelper.getIt<ProductRepository>().getProduct(
+      final result = await GetItHelper.get<ProductRepository>().getProduct(
         page: _page,
         token: ref.read(tokenProvider),
       );

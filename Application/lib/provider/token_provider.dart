@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:shopping_app/model/token_state.dart';
+import 'package:shopping_app/service/jwt_helper.dart';
 
 final tokenProvider = StateNotifierProvider<TokenProvider, TokenState>(
   (ref) => TokenProvider(),
@@ -11,12 +12,19 @@ final tokenProvider = StateNotifierProvider<TokenProvider, TokenState>(
 class TokenProvider extends StateNotifier<TokenState> {
   TokenProvider() : super(TokenState());
 
+  late int _customerId;
+
+  int get customerId => _customerId;
+
   Future<void> loadToken() async {
     final prefs = await SharedPreferences.getInstance();
     final token = prefs.getString('token');
-    if (token != null) {
-      state = state.copy(TokenState.fromJson(jsonDecode(token)));
+    if (token == null) {
+      return;
     }
+    state = state.copy(TokenState.fromJson(jsonDecode(token)));
+    final jwtToken = JwtHelper.decodeJWT(state);
+    _customerId = int.parse(jwtToken['Id']);
   }
 
   Future<void> clearToken() async {

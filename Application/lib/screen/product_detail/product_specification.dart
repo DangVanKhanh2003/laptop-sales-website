@@ -26,7 +26,7 @@ class _ProductSpecificationPageState
   @override
   void initState() {
     super.initState();
-    _future = GetItHelper.getIt<ProductRepository>().getProductSpecification(
+    _future = GetItHelper.get<ProductRepository>().getProductSpecification(
       id: widget.product.productId!,
       token: ref.read(tokenProvider),
     );

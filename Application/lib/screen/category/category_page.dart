@@ -27,7 +27,7 @@ class _CategoryPageState extends ConsumerState<CategoryPage> {
   @override
   void initState() {
     super.initState();
-    _future = GetItHelper.getIt<ProductRepository>().getProductByCategoryId(
+    _future = GetItHelper.get<ProductRepository>().getProductByCategoryId(
       categoryId: widget.category.categoryId!,
       token: ref.read(tokenProvider),
     );

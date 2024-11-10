@@ -22,6 +22,8 @@ class _RegisterPageState extends State<RegisterPage> {
 
   late final GlobalKey<FormState> _formKey;
 
+  bool _isLoading = false;
+
   @override
   void initState() {
     super.initState();
@@ -189,24 +191,33 @@ class _RegisterPageState extends State<RegisterPage> {
                             ),
                           ),
                         ),
-                        onPressed: () async {
-                          if (_formKey.currentState!.validate()) {
-                            try {
-                              await GetItHelper.getIt
-                                  .get<CustomerRepository>()
-                                  .register(
-                                    email: _emailController.text,
-                                    password: _passwordController.text,
-                                  );
-                              _toMainScreen();
-                            } catch (e) {
-                              _showError(e.toString());
-                            }
-                          }
-                        },
-                        child: const Padding(
-                          padding: EdgeInsets.all(8.0),
-                          child: Text('Đăng ký'),
+                        onPressed: _isLoading
+                            ? null
+                            : () async {
+                                setState(() {
+                                  _isLoading = true;
+                                });
+                                if (_formKey.currentState!.validate()) {
+                                  try {
+                                    await GetItHelper.get<CustomerRepository>()
+                                        .register(
+                                      email: _emailController.text,
+                                      password: _passwordController.text,
+                                    );
+                                    _toMainScreen();
+                                  } catch (e) {
+                                    _showError(e.toString());
+                                    setState(() {
+                                      _isLoading = false;
+                                    });
+                                  }
+                                }
+                              },
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: _isLoading
+                              ? const CircularProgressIndicator.adaptive()
+                              : const Text('Đăng ký'),
                         ),
                       ),
                       const SizedBox(height: 8.0),

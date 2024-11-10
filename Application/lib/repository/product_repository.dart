@@ -36,6 +36,14 @@ class ProductRepository {
     return await _productApi.getProductsByName(name: name, token: token);
   }
 
+  /// Get product by category id
+  Future<Product> getProductById({
+    required int id,
+    required TokenState token,
+  }) async {
+    return await _productApi.getProductById(token: token, productId: id);
+  }
+
   /// Get product by Specification
 
   Future<ProductSpecificationList> getProductSpecification({

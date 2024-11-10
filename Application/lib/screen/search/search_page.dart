@@ -46,7 +46,7 @@ class _SearchPageState extends ConsumerState<SearchPage> {
   }
 
   Future<ProductList> _fetchProducts(String name) {
-    return GetItHelper.getIt<ProductRepository>().getProductByName(
+    return GetItHelper.get<ProductRepository>().getProductByName(
       name: name,
       token: ref.read(tokenProvider),
     );

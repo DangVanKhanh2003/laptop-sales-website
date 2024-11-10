@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:jwt_decode/jwt_decode.dart';
 import 'package:shopping_app/model/customer_info.dart';
 import 'package:shopping_app/provider/token_provider.dart';
 import 'package:shopping_app/repository/customer_repository.dart';
@@ -26,12 +25,6 @@ class _AccountDetailState extends ConsumerState<AccountDetail> {
   late TextEditingController _streetController;
   late TextEditingController _numberHouseController;
 
-  Map<String, dynamic> _decodeJWT() {
-    final token = ref.read(tokenProvider);
-    final jwtToken = Jwt.parseJwt(token.accessToken!);
-    return jwtToken;
-  }
-
   @override
   void initState() {
     super.initState();
@@ -42,11 +35,10 @@ class _AccountDetailState extends ConsumerState<AccountDetail> {
     _communeController = TextEditingController();
     _streetController = TextEditingController();
     _numberHouseController = TextEditingController();
-    final jwtToken = _decodeJWT();
-    _future = GetItHelper.getIt.get<CustomerRepository>().getCustomerInfoById(
-          customerId: int.parse(jwtToken['Id']),
-          token: ref.read(tokenProvider),
-        );
+    _future = GetItHelper.get<CustomerRepository>().getCustomerInfoById(
+      customerId: ref.read(tokenProvider.notifier).customerId,
+      token: ref.read(tokenProvider),
+    );
   }
 
   @override
@@ -131,11 +123,13 @@ class _AccountDetailState extends ConsumerState<AccountDetail> {
                       title: 'Thông tin cá nhân',
                       children: [
                         _buildTextFieldRow(
-                            label: 'Họ và tên',
-                            controller: _fullNameController),
+                          label: 'Họ và tên',
+                          controller: _fullNameController,
+                        ),
                         _buildTextFieldRow(
-                            label: 'Số điện thoại',
-                            controller: _phoneController),
+                          label: 'Số điện thoại',
+                          controller: _phoneController,
+                        ),
                       ],
                     ),
                     const SizedBox(height: 20.0),
@@ -143,18 +137,25 @@ class _AccountDetailState extends ConsumerState<AccountDetail> {
                       title: 'Địa chỉ',
                       children: [
                         _buildTextFieldRow(
-                            label: 'Thành phố',
-                            controller: _provinceController),
+                          label: 'Thành phố',
+                          controller: _provinceController,
+                        ),
                         _buildTextFieldRow(
-                            label: 'Quận/Huyện',
-                            controller: _districtController),
+                          label: 'Quận/Huyện',
+                          controller: _districtController,
+                        ),
                         _buildTextFieldRow(
-                            label: 'Phường/Xã', controller: _communeController),
+                          label: 'Phường/Xã',
+                          controller: _communeController,
+                        ),
                         _buildTextFieldRow(
-                            label: 'Phố', controller: _streetController),
+                          label: 'Phố',
+                          controller: _streetController,
+                        ),
                         _buildTextFieldRow(
-                            label: 'Số nhà',
-                            controller: _numberHouseController),
+                          label: 'Số nhà',
+                          controller: _numberHouseController,
+                        ),
                       ],
                     ),
                   ],
