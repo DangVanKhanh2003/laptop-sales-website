@@ -28,7 +28,7 @@ class CategoryApi {
       return ColorList.fromJson(jsonDecode(response.body));
     } else {
       // Ngoại lệ xảy ra
-      throw Exception('Cannot get all color: ${response.statusCode}');
+      throw Exception('Cannot get all color: ${response.body}');
     }
   }
 }

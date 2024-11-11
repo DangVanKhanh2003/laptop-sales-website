@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:shopping_app/model/address.dart';
 import 'package:shopping_app/model/customer_info.dart';
 import 'package:shopping_app/provider/token_provider.dart';
 import 'package:shopping_app/repository/customer_repository.dart';
@@ -16,6 +17,8 @@ class AccountDetail extends ConsumerStatefulWidget {
 class _AccountDetailState extends ConsumerState<AccountDetail> {
   late Future<CustomerInfo> _future;
 
+  bool _isLoading = false;
+
   late TextEditingController _fullNameController;
 
   late TextEditingController _phoneController;
@@ -24,6 +27,8 @@ class _AccountDetailState extends ConsumerState<AccountDetail> {
   late TextEditingController _communeController;
   late TextEditingController _streetController;
   late TextEditingController _numberHouseController;
+
+  late GlobalKey<FormState> _formKey;
 
   @override
   void initState() {
@@ -35,6 +40,7 @@ class _AccountDetailState extends ConsumerState<AccountDetail> {
     _communeController = TextEditingController();
     _streetController = TextEditingController();
     _numberHouseController = TextEditingController();
+    _formKey = GlobalKey<FormState>();
     _future = GetItHelper.get<CustomerRepository>().getCustomerInfoById(
       customerId: ref.read(tokenProvider.notifier).customerId,
       token: ref.read(tokenProvider),
@@ -56,6 +62,7 @@ class _AccountDetailState extends ConsumerState<AccountDetail> {
   Widget _buildTextFieldRow({
     required String label,
     required TextEditingController controller,
+    String? Function(String? value)? validator,
     double spacing = 24.0,
   }) {
     return Padding(
@@ -72,8 +79,9 @@ class _AccountDetailState extends ConsumerState<AccountDetail> {
           ),
           SizedBox(width: spacing),
           Expanded(
-            child: TextField(
+            child: TextFormField(
               controller: controller,
+              validator: validator,
             ),
           ),
         ],
@@ -122,12 +130,35 @@ class _AccountDetailState extends ConsumerState<AccountDetail> {
   }
 
   void _onEdit() async {
+    setState(() {
+      _isLoading = true;
+    });
     try {
-      // TODO : Sửa
-      await _onSuccess();
-      _close();
+      if (_formKey.currentState!.validate()) {
+        await GetItHelper.get<CustomerRepository>().updateCustomerInfo(
+          token: ref.read(tokenProvider),
+          customerInfo: CustomerInfo(
+            customerId: ref.read(tokenProvider.notifier).customerId,
+            fullName: _fullNameController.text,
+            phoneNumber: _phoneController.text,
+            address: Address(
+              province: _provinceController.text,
+              district: _districtController.text,
+              commune: _communeController.text,
+              street: _streetController.text,
+              numberHouse: _numberHouseController.text,
+            ),
+          ),
+        );
+        await _onSuccess();
+        _close();
+      }
     } catch (e) {
       await _onError(e.toString());
+    } finally {
+      setState(() {
+        _isLoading = false;
+      });
     }
   }
 
@@ -163,65 +194,122 @@ class _AccountDetailState extends ConsumerState<AccountDetail> {
               _streetController.text = 'Chưa cung cấp';
               _numberHouseController.text = 'Chưa cung cấp';
             }
-
             return Padding(
               padding: const EdgeInsets.all(16.0),
-              child: SingleChildScrollView(
-                child: Column(
-                  children: [
-                    _InfoCard(
-                      title: 'Thông tin cá nhân',
-                      children: [
-                        _buildTextFieldRow(
-                          label: 'Họ và tên',
-                          controller: _fullNameController,
-                        ),
-                        _buildTextFieldRow(
-                          label: 'Số điện thoại',
-                          controller: _phoneController,
-                        ),
-                      ],
-                    ),
-                    const SizedBox(height: 20.0),
-                    _InfoCard(
-                      title: 'Địa chỉ',
-                      children: [
-                        _buildTextFieldRow(
-                          label: 'Thành phố',
-                          controller: _provinceController,
-                        ),
-                        _buildTextFieldRow(
-                          label: 'Quận/Huyện',
-                          controller: _districtController,
-                        ),
-                        _buildTextFieldRow(
-                          label: 'Phường/Xã',
-                          controller: _communeController,
-                        ),
-                        _buildTextFieldRow(
-                          label: 'Phố',
-                          controller: _streetController,
-                        ),
-                        _buildTextFieldRow(
-                          label: 'Số nhà',
-                          controller: _numberHouseController,
-                        ),
-                      ],
-                    ),
-                    const SizedBox(height: 12.0),
-                    ElevatedButton(
-                      onPressed: _onEdit,
-                      child: const SizedBox(
-                          width: double.infinity,
-                          child: Padding(
-                            padding: EdgeInsets.symmetric(
-                              vertical: 20.0,
-                              horizontal: 24.0,
-                            ),
-                            child: Center(child: Text('Sửa')),
-                          )),
-                    ),
-                  ],
+              child: Form(
+                key: _formKey,
+                child: SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      _InfoCard(
+                        title: 'Thông tin cá nhân',
+                        children: [
+                          _buildTextFieldRow(
+                              label: 'Họ và tên',
+                              controller: _fullNameController,
+                              validator: (value) {
+                                if (value == null || value.isEmpty) {
+                                  return 'Tên không được rỗng';
+                                }
+                                if (!RegExp(
+                                        r'^[A-ZÀÁẠẢÃÂẦẤẬẨẪĂẰẮẶẲẴÈÉẸẺẼÊỀẾỆỂỄÌÍỊỈĨÒÓỌỎÕÔỒỐỘỔỖƠỜỚỢỞỠÙÚỤỦŨƯỪỨỰỬỮỲÝỴỶỸĐ][a-zàáạảãâầấậẩẫăằắặẳẵèéẹẻẽêềếệểễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹđ]*(?:[ ][A-ZÀÁẠẢÃÂẦẤẬẨẪĂẰẮẶẲẴÈÉẸẺẼÊỀẾỆỂỄÌÍỊỈĨÒÓỌỎÕÔỒỐỘỔỖƠỜỚỢỞỠÙÚỤỦŨƯỪỨỰỬỮỲÝỴỶỸĐ][a-zàáạảãâầấậẩẫăằắặẳẵèéẹẻẽêềếệểễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹđ]*)*$')
+                                    .hasMatch(value)) {
+                                  return 'Tên không hợp lệ';
+                                }
+                                return null;
+                              }),
+                          _buildTextFieldRow(
+                            label: 'Số điện thoại',
+                            controller: _phoneController,
+                            validator: (value) {
+                              if (value == null || value.isEmpty) {
+                                return 'Số điện thoại không được rỗng';
+                              }
+                              if (!RegExp(
+                                      r'(03|05|07|08|09|01[2|6|8|9])+([0-9]{8})\b')
+                                  .hasMatch(value)) {
+                                return 'Số điện thoại không hợp lệ';
+                              }
+                              return null;
+                            },
+                          ),
+                        ],
+                      ),
+                      const SizedBox(height: 20.0),
+                      _InfoCard(
+                        title: 'Địa chỉ',
+                        children: [
+                          _buildTextFieldRow(
+                            label: 'Thành phố',
+                            controller: _provinceController,
+                            validator: (value) {
+                              if (value == null || value.isEmpty) {
+                                return 'Địa chỉ không được rỗng';
+                              }
+                              return null;
+                            },
+                          ),
+                          _buildTextFieldRow(
+                            label: 'Quận/Huyện',
+                            controller: _districtController,
+                            validator: (value) {
+                              if (value == null || value.isEmpty) {
+                                return 'Quận/Huyện không được rỗng';
+                              }
+                              return null;
+                            },
+                          ),
+                          _buildTextFieldRow(
+                            label: 'Phường/Xã',
+                            controller: _communeController,
+                            validator: (value) {
+                              if (value == null || value.isEmpty) {
+                                return 'Phường/Xã không được rỗng';
+                              }
+                              return null;
+                            },
+                          ),
+                          _buildTextFieldRow(
+                            label: 'Phố',
+                            controller: _streetController,
+                            validator: (value) {
+                              if (value == null || value.isEmpty) {
+                                return 'Phố không được rỗng';
+                              }
+                              return null;
+                            },
+                          ),
+                          _buildTextFieldRow(
+                            label: 'Số nhà',
+                            controller: _numberHouseController,
+                            validator: (value) {
+                              if (value == null || value.isEmpty) {
+                                return 'Số nhà không được rỗng';
+                              }
+                              return null;
+                            },
+                          ),
+                        ],
+                      ),
+                      const SizedBox(height: 12.0),
+                      ElevatedButton(
+                        onPressed: _isLoading ? null : _onEdit,
+                        child: SizedBox(
+                            width: double.infinity,
+                            child: Padding(
+                              padding: const EdgeInsets.symmetric(
+                                vertical: 20.0,
+                                horizontal: 24.0,
+                              ),
+                              child: _isLoading
+                                  ? const Center(
+                                      child:
+                                          CircularProgressIndicator.adaptive())
+                                  : const Center(child: Text('Sửa')),
+                            )),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             );

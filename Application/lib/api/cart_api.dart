@@ -31,7 +31,7 @@ class CartApi {
       return CartList.fromJson(jsonDecode(response.body));
     } else {
       // Ngoại lệ xảy ra
-      throw Exception('Không thể lấy được giỏ hàng: ${response.statusCode}');
+      throw Exception('Không thể lấy được giỏ hàng: ${response.body}');
     }
   }
 
@@ -62,7 +62,7 @@ class CartApi {
       return;
     } else {
       // Ngoại lệ xảy ra
-      throw Exception('Không thể thêm vào giỏ hàng: ${response.statusCode}');
+      throw Exception('Không thể thêm vào giỏ hàng: ${response.body}');
     }
   }
 
@@ -71,7 +71,7 @@ class CartApi {
     required CartItem cart,
   }) async {
     final url = Uri.parse(
-      '$_url/?amount=${cart.amount}&idShoppingCart=${cart.shoppingCartItemId}',
+      '$_url/UpdateAmountForItemShoppingCart?amount=${cart.amount}&idShoppingCartItem=${cart.shoppingCartItemId}',
     );
     final response = await http.put(
       url,
@@ -91,7 +91,7 @@ class CartApi {
       return;
     } else {
       // Ngoại lệ xảy ra
-      throw Exception('Không thể sửa được giỏ hàng: ${response.statusCode}');
+      throw Exception('Không thể sửa được giỏ hàng: ${response.body}');
     }
   }
 
@@ -120,7 +120,7 @@ class CartApi {
       return;
     } else {
       // Ngoại lệ xảy ra
-      throw Exception('Không thể xoá được giỏ hàng: ${response.statusCode}');
+      throw Exception('Không thể xoá được giỏ hàng: ${response.body}');
     }
   }
 }

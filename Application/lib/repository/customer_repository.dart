@@ -30,4 +30,28 @@ class CustomerRepository {
       token: token,
     );
   }
+
+  Future<CustomerInfo> updateCustomerInfo({
+    required TokenState token,
+    required CustomerInfo customerInfo,
+  }) async {
+    return await _customerApi.updateCustomerInfo(
+      customerInfo: customerInfo,
+      token: token,
+    );
+  }
+
+  Future<CustomerInfo> updateCustomerPassword({
+    required TokenState token,
+    required String email,
+    required String oldPassword,
+    required String newPassword,
+  }) async {
+    return await _customerApi.updateCustomerPassword(
+      token: token,
+      email: email,
+      oldPassword: oldPassword,
+      newPassword: newPassword,
+    );
+  }
 }

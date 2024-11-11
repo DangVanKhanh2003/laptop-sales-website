@@ -30,7 +30,7 @@ class CategoryApi {
       return CategoryList.fromJson(jsonDecode(response.body));
     } else {
       // Ngoại lệ xảy ra
-      throw Exception('Không thể lấy được danh mục: ${response.statusCode}');
+      throw Exception('Không thể lấy được danh mục: ${response.body}');
     }
   }
 }

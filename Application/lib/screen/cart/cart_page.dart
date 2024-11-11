@@ -19,9 +19,12 @@ class CartPage extends ConsumerStatefulWidget {
 class _CartPageState extends ConsumerState<CartPage> {
   late Future<CartList> _future;
 
+  late List<CartItem> _selectedItems;
+
   @override
   void initState() {
     super.initState();
+    _selectedItems = [];
     _future = GetItHelper.get<CartRepository>().getAllItems(
       token: ref.read(tokenProvider),
       customerId: ref.read(tokenProvider.notifier).customerId,
@@ -51,7 +54,19 @@ class _CartPageState extends ConsumerState<CartPage> {
             return const CartLoading();
           } else if (snapshot.hasData) {
             final data = snapshot.data!.items!;
-            return CartView(items: data);
+            return CartView(
+              items: data,
+              selectedItems: _selectedItems,
+              onChangeSelectedItem: (CartItem cart) {
+                setState(() {
+                  if (_selectedItems.contains(cart)) {
+                    _selectedItems.remove(cart);
+                  } else {
+                    _selectedItems.add(cart);
+                  }
+                });
+              },
+            );
           } else if (snapshot.hasError) {
             return Center(
               child: ExceptionPage(message: snapshot.error.toString()),
@@ -61,8 +76,10 @@ class _CartPageState extends ConsumerState<CartPage> {
           }
         },
       ),
-      bottomNavigationBar: const BottomAppBar(
-        child: CartNavbar(),
+      bottomNavigationBar: BottomAppBar(
+        child: CartNavbar(
+          cartItems: _selectedItems,
+        ),
       ),
     );
   }

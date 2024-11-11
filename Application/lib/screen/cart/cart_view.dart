@@ -4,6 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:material_symbols_icons/material_symbols_icons.dart';
 import 'package:shopping_app/model/cart.dart';
 import 'package:shopping_app/model/product.dart';
+import 'package:shopping_app/model/token_state.dart';
 import 'package:shopping_app/provider/token_provider.dart';
 import 'package:shopping_app/repository/cart_repository.dart';
 import 'package:shopping_app/repository/product_repository.dart';
@@ -15,7 +16,13 @@ class CartView extends ConsumerStatefulWidget {
   const CartView({
     super.key,
     required this.items,
+    required this.selectedItems,
+    required this.onChangeSelectedItem,
   });
+
+  final List<CartItem> selectedItems;
+
+  final void Function(CartItem cart) onChangeSelectedItem;
 
   final List<CartItem> items;
 
@@ -24,7 +31,7 @@ class CartView extends ConsumerStatefulWidget {
 }
 
 class _CartViewState extends ConsumerState<CartView> {
-  bool _isLoading = false;
+  late int amount;
 
   @override
   void initState() {
@@ -39,14 +46,6 @@ class _CartViewState extends ConsumerState<CartView> {
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-  }
-
-  void _navigateProductDetail(Product product) {
-    Navigator.of(context).push(
-      MaterialPageRoute(
-        builder: (context) => ProductDetail(product: product),
-      ),
-    );
   }
 
   Future<void> _showError(String message) async {
@@ -107,72 +106,229 @@ class _CartViewState extends ConsumerState<CartView> {
     if (widget.items.isEmpty) {
       return const EmptyCart();
     }
-    return SingleChildScrollView(
-      child: Column(
-        children: widget.items
-            .map(
-              (e) => Card(
-                child: ListTile(
-                  leading: CachedNetworkImage(
-                    imageUrl: e.mainImg ?? 'http://via.placeholder.com/350x150',
-                    width: 40,
-                    height: 40,
-                  ),
-                  title: Text(e.productName!),
-                  subtitle: Text('Số lượng: ${e.amount}'),
-                  trailing: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Tooltip(
-                        message: 'Xem chi tiết',
-                        child: IconButton(
-                          onPressed: _isLoading
-                              ? null
-                              : () async {
-                                  setState(() {
-                                    _isLoading = true;
-                                  });
-                                  try {
-                                    final product = await GetItHelper.get<
-                                            ProductRepository>()
-                                        .getProductById(
-                                      id: e.productId!,
-                                      token: ref.read(tokenProvider),
-                                    );
-                                    _navigateProductDetail(product);
-                                  } catch (e) {
-                                    _showError(e.toString());
-                                  } finally {
-                                    setState(() {
-                                      _isLoading = false;
-                                    });
-                                  }
-                                },
-                          icon: _isLoading
-                              ? const CircularProgressIndicator.adaptive()
-                              : const Icon(
-                                  Symbols.info,
-                                  color: Colors.cyan,
-                                ),
-                        ),
-                      ),
-                      Tooltip(
-                        message: 'Xoá sản phẩm',
-                        child: IconButton(
-                          onPressed: () => _deleteProduct(cart: e),
-                          icon: const Icon(
-                            Symbols.delete,
-                            color: Colors.red,
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: SingleChildScrollView(
+        child: Column(
+          children: widget.items
+              .map(
+                (e) => _ProductCard(
+                  originalAmount: e.amount!,
+                  cart: e,
+                  onDelete: () => _deleteProduct(cart: e),
+                  selectedItems: widget.selectedItems,
+                  onChangeSelectedItem: widget.onChangeSelectedItem,
+                ),
+              )
+              .toList(),
+        ),
+      ),
+    );
+  }
+}
+
+class _ProductCard extends ConsumerStatefulWidget {
+  const _ProductCard(
+      {required this.cart,
+      required this.onDelete,
+      required this.originalAmount,
+      required this.selectedItems,
+      required this.onChangeSelectedItem});
+
+  final int originalAmount;
+  final CartItem cart;
+  final List<CartItem> selectedItems;
+  final void Function(CartItem cart) onChangeSelectedItem;
+  final void Function() onDelete;
+
+  @override
+  ConsumerState<_ProductCard> createState() => __ProductCardState();
+}
+
+class __ProductCardState extends ConsumerState<_ProductCard> {
+  bool _isLoading = false;
+
+  late final TokenState token;
+
+  @override
+  void initState() {
+    token = ref.read(tokenProvider);
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    if (widget.cart.amount != widget.originalAmount) {
+      Future.microtask(() async {
+        await GetItHelper.get<CartRepository>().updateItem(
+          token: token,
+          cart: widget.cart,
+        );
+      });
+    }
+    super.dispose();
+  }
+
+  void _navigateProductDetail(Product product) {
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (context) => ProductDetail(product: product),
+      ),
+    );
+  }
+
+  Future<void> _showError(String message) async {
+    await showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: const Text('Lỗi xảy ra'),
+        content: Text(message),
+        actions: [
+          TextButton(
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+            child: const Text('OK'),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Future<void> _fetchProductDetail() async {
+    setState(() {
+      _isLoading = true;
+    });
+    try {
+      final product = await GetItHelper.get<ProductRepository>().getProductById(
+        id: widget.cart.productId!,
+        token: ref.read(tokenProvider),
+      );
+      _navigateProductDetail(product);
+    } catch (e) {
+      _showError(e.toString());
+    } finally {
+      setState(() {
+        _isLoading = false;
+      });
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Card(
+          child: ListTile(
+            contentPadding: const EdgeInsets.all(8.0),
+            leading: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Checkbox(
+                  value: widget.selectedItems.contains(widget.cart),
+                  onChanged: (value) =>
+                      widget.onChangeSelectedItem(widget.cart),
+                ),
+                const SizedBox(width: 5.0),
+                CachedNetworkImage(
+                  imageUrl: widget.cart.mainImg ??
+                      'http://via.placeholder.com/350x150',
+                  width: 50,
+                  height: 50,
+                ),
+              ],
+            ),
+            title: Text(widget.cart.productName!),
+            subtitle: _ChangeAmount(
+              amount: widget.cart.amount!,
+              onAdd: () {
+                setState(() {
+                  widget.cart.amount = (widget.cart.amount!) + 1;
+                });
+              },
+              onMinus: () {
+                setState(() {
+                  widget.cart.amount = (widget.cart.amount!) - 1;
+                });
+              },
+            ),
+            trailing: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Tooltip(
+                  message: 'Xem chi tiết',
+                  child: IconButton(
+                    onPressed: _isLoading ? null : _fetchProductDetail,
+                    icon: _isLoading
+                        ? const CircularProgressIndicator.adaptive()
+                        : const Icon(
+                            Symbols.info,
+                            color: Colors.cyan,
                           ),
-                        ),
-                      ),
-                    ],
                   ),
                 ),
+                Tooltip(
+                  message: 'Xoá sản phẩm',
+                  child: IconButton(
+                    onPressed: widget.onDelete,
+                    icon: const Icon(
+                      Symbols.delete,
+                      color: Colors.red,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+        const SizedBox(height: 5.0),
+        const Padding(
+          padding: EdgeInsets.symmetric(horizontal: 8.0),
+          child: Divider(thickness: 1.0),
+        ),
+        const SizedBox(height: 5.0),
+      ],
+    );
+  }
+}
+
+class _ChangeAmount extends StatelessWidget {
+  const _ChangeAmount({
+    required this.onAdd,
+    required this.onMinus,
+    required this.amount,
+  });
+
+  final void Function() onAdd;
+
+  final void Function() onMinus;
+
+  final int amount;
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        const Text('Số lượng:'),
+        const SizedBox(width: 5.0),
+        Row(
+          children: [
+            IconButton(
+              onPressed: onMinus,
+              icon: const Icon(
+                Symbols.remove,
               ),
-            )
-            .toList(),
-      ),
+            ),
+            const SizedBox(width: 5.0),
+            Text('$amount'),
+            const SizedBox(width: 5.0),
+            IconButton(
+              onPressed: onAdd,
+              icon: const Icon(Symbols.add),
+            ),
+          ],
+        ),
+      ],
     );
   }
 }

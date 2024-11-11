@@ -30,7 +30,7 @@ class ProductApi {
       return ProductList.fromJson(jsonDecode(response.body));
     } else {
       throw Exception(
-        'Không thể fetch được sản phẩm, mã lỗi: ${response.statusCode}',
+        'Không thể fetch được sản phẩm, mã lỗi: ${response.body}',
       );
     }
   }
@@ -56,7 +56,7 @@ class ProductApi {
       return ProductList.fromJson(jsonDecode(response.body));
     } else {
       throw Exception(
-        'Không thể fetch được sản phẩm, mã lỗi: ${response.statusCode}',
+        'Không thể fetch được sản phẩm, mã lỗi: ${response.body}',
       );
     }
   }
@@ -81,7 +81,7 @@ class ProductApi {
       return ProductList.fromJson(jsonDecode(response.body));
     } else {
       throw Exception(
-        'Không thể fetch được sản phẩm, mã lỗi: ${response.statusCode}',
+        'Không thể fetch được sản phẩm, mã lỗi: ${response.body}',
       );
     }
   }
@@ -106,7 +106,7 @@ class ProductApi {
       return Product.fromJson(jsonDecode(response.body));
     } else {
       throw Exception(
-        'Không thể fetch được sản phẩm, mã lỗi: ${response.statusCode}',
+        'Không thể fetch được sản phẩm, mã lỗi: ${response.body}',
       );
     }
   }
@@ -131,7 +131,7 @@ class ProductApi {
       return ProductList.fromJson(jsonDecode(response.body));
     } else {
       throw Exception(
-        'Không thể fetch được sản phẩm, mã lỗi: ${response.statusCode}',
+        'Không thể fetch được sản phẩm, mã lỗi: ${response.body}',
       );
     }
   }
@@ -155,7 +155,7 @@ class ProductApi {
       return ProductSpecificationList.fromJson(jsonDecode(response.body));
     } else {
       throw Exception(
-        'Không thể fetch được sản phẩm, mã lỗi: ${response.statusCode}',
+        'Không thể fetch được sản phẩm, mã lỗi: ${response.body}',
       );
     }
   }

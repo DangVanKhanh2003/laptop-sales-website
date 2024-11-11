@@ -17,6 +17,8 @@ class _ChangePasswordState extends State<ChangePassword> {
 
   late final TextEditingController _newPasswordController;
 
+  bool _isLoading = false;
+
   @override
   void initState() {
     super.initState();
@@ -119,7 +121,7 @@ class _ChangePasswordState extends State<ChangePassword> {
                   ),
                 ],
               ),
-              const SizedBox(height: 20.0),
+              const SizedBox(height: 30.0),
               TextButton(
                 style: ButtonStyle(
                   shape: WidgetStateProperty.all<RoundedRectangleBorder>(
@@ -132,21 +134,36 @@ class _ChangePasswordState extends State<ChangePassword> {
                   ),
                 ),
                 onPressed: () async {
-                  if (_formKey.currentState!.validate()) {
-                    try {
+                  setState(() {
+                    _isLoading = true;
+                  });
+                  try {
+                    if (_formKey.currentState!.validate()) {
                       // TODO : Thêm tính năng đổi mk
                       _toSucessScreen();
-                    } catch (e) {
-                      _toErrorScreen(e.toString());
                     }
+                  } catch (e) {
+                    _toErrorScreen(e.toString());
+                  } finally {
+                    setState(() {
+                      _isLoading = false;
+                    });
                   }
                 },
-                child: const Padding(
-                  padding: EdgeInsets.symmetric(
-                    horizontal: 20.0,
-                    vertical: 12.0,
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(
+                    vertical: 20.0,
                   ),
-                  child: Text('Đổi mật khẩu'),
+                  child: _isLoading
+                      ? const Center(
+                          child: CircularProgressIndicator.adaptive(),
+                        )
+                      : const SizedBox(
+                          width: double.infinity,
+                          child: Center(
+                            child: Text('Đổi mật khẩu'),
+                          ),
+                        ),
                 ),
               ),
             ],
