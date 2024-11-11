@@ -22,7 +22,7 @@ namespace SellingElectronicWebsite.Helper
             _context = context;
             _configuration = configuration;
         }
-        public async Task<TokenModel> GenerateToken(int id, string[] roles)
+        public async Task<TokenModel> GenerateToken(int id,string email, string[] roles)
         {
             var jwtTokenHandler = new JwtSecurityTokenHandler();
 
@@ -32,6 +32,7 @@ namespace SellingElectronicWebsite.Helper
                 {
                     new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
                     new Claim("Id", id.ToString()),
+                    new Claim("Email", email.ToString()),
 
                 };
 
@@ -44,7 +45,7 @@ namespace SellingElectronicWebsite.Helper
             var tokenDescription = new SecurityTokenDescriptor
             {
                 Subject = new ClaimsIdentity(claims),
-                Expires = DateTime.UtcNow.AddSeconds(10),
+                Expires = DateTime.UtcNow.AddDays(10),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(secretKeyBytes), SecurityAlgorithms.HmacSha512Signature)
             };
 
@@ -61,7 +62,8 @@ namespace SellingElectronicWebsite.Helper
                 IsUsed = false,
                 IsRevoked = false,
                 IssuedAt = DateTime.UtcNow,
-                ExpiredAt = DateTime.UtcNow.AddDays(30)
+                ExpiredAt = DateTime.UtcNow.AddDays(30),
+                Email = email
             };
 
             await _context.AddAsync(refreshTokenEntity);

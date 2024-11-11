@@ -28,7 +28,7 @@ namespace SellingElectronicWebsite.Controllers.Customer
         /// <param name="sortBy">timeAsc/timeDesc/null</param>
         [HttpGet("GetAll")]
         public async Task<IActionResult> GetAll(string status = "pending", string sortBy = null)
-        {
+        { 
 
             try
             {
@@ -87,7 +87,7 @@ namespace SellingElectronicWebsite.Controllers.Customer
                 var check = await _uow.OrderPendings.Add(model);
                 await _uow.Save();
                 _uow.Commit();
-                return Ok();
+                return Ok(check);
             }
             catch (Exception ex)
             {
@@ -96,17 +96,23 @@ namespace SellingElectronicWebsite.Controllers.Customer
 
             }
         }
-
+        /// <summary>
+        /// actor: employee=> employee can change status: cancel, approve. Employee cannot change status if status isn't pending.
+        /// if status is "approve" and input valid => amount of store will reduce by amount order.
+        /// </summary>
+        /// <param name="status" > cancel, approve</param>
+        /// <param name="idStore">if you want to change status is approve. You need provide idStore.</param>
+        /// <returns></returns>
         [HttpPut("ChangeStatusFromEmployee")]
-        public async Task<IActionResult> UpdateStatus(string status, int idOrderPending, int idEmployee)
+        public async Task<IActionResult> UpdateStatus(string status, int idOrderPending, int idEmployee, int idStore = -1)
         {
             try
             {
                 _uow.CreateTransaction();
-                var check = await _uow.OrderPendings.UpdateStatus(status, idOrderPending, idEmployee);
+                var check = await _uow.OrderPendings.UpdateStatus(status, idOrderPending, idEmployee, idStore);
                 await _uow.Save();
                 _uow.Commit();
-                return Ok();
+                return Ok(check);
             }
             catch (Exception ex)
             {

@@ -45,7 +45,7 @@ namespace SellingElectronicWebsite.Repository
                 }
                 //cấp token
                 TokenHelper tokenHelper = new TokenHelper(_context, _configuration);
-                var token = await tokenHelper.GenerateToken(user.CustomerId, ["customer"]);
+                var token = await tokenHelper.GenerateToken(user.CustomerId, email, ["customer"]);
                 string jsonString = JsonSerializer.Serialize(token);
                 return jsonString;
             }

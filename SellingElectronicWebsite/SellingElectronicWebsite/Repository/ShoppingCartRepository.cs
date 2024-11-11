@@ -26,7 +26,7 @@ namespace SellingElectronicWebsite.Repository
         /// <summary>
         /// if exist element(in shopping cart) same idCustomer, idProduct, idColor with this item => addition amount to amount ofelement in this shopping cart.
         /// </summary>
-        public async Task<bool> Add(ShoppingCartModel model)
+        public async Task<bool> Add(ShoppingCartItemModel model)
         {
             if(model.Amount <= 0)
             {
@@ -64,9 +64,9 @@ namespace SellingElectronicWebsite.Repository
             return true;
         }
 
-        public async Task<bool> Delete(int idShoppingCart)
+        public async Task<bool> Delete(int idShoppingCartItem)
         {
-            var item = await _context.ShoppingCarts.Where(p => p.ShoppingCartId == idShoppingCart).FirstOrDefaultAsync();
+            var item = await _context.ShoppingCarts.Where(p => p.ShoppingCartId == idShoppingCartItem).FirstOrDefaultAsync();
             if (item == null)
             {
                 throw new Exception(" Don't exist item!");
@@ -75,16 +75,16 @@ namespace SellingElectronicWebsite.Repository
             return true;
         }
 
-        public async Task<List<ShoppingCartVM>> GetByIdCustomer(int idCustomer)
+        public async Task<List<ShoppingCartItemVM>> GetByIdCustomer(int idCustomer)
         {
             var items = await _context.ShoppingCarts
                                 .Include(p => p.Product)
                                 .Include(p => p.Color)
                                 .Where(p => p.CustomerId == idCustomer)
-                                .Select(p => new ShoppingCartVM(
+                                .Select(p => new ShoppingCartItemVM(
                                                             p.ShoppingCartId,
-                                                            p.CustomerId,
                                                             p.ProductId,
+                                                            p.CustomerId,
                                                             p.Product.ProductName,
                                                             p.Amount,
                                                             p.Color.ColorName,
@@ -110,10 +110,10 @@ namespace SellingElectronicWebsite.Repository
        /// <summary>
        /// update amount for item in shoppingCart by idShoppingCart
        /// </summary>
-        public async Task<bool> UpdateAmount(int amount, int idShoppingCart)
+        public async Task<bool> UpdateAmount(int amount, int idShoppingCartItem)
         {
             
-            var item = await _context.ShoppingCarts.Where(p => p.ShoppingCartId == idShoppingCart).FirstOrDefaultAsync();
+            var item = await _context.ShoppingCarts.Where(p => p.ShoppingCartId == idShoppingCartItem).FirstOrDefaultAsync();
             if (item == null)
             {
                 throw new Exception(" Don't exist item!");
@@ -125,6 +125,21 @@ namespace SellingElectronicWebsite.Repository
             }
             item.Amount = amount;
             _context.ShoppingCarts.Update(item);
+            return true;
+        }
+
+        public async Task<bool> DeleteAllByIdCustomer(int idCustomer)
+        {
+            var items = await _context.ShoppingCarts.Where(p => p.CustomerId == idCustomer).ToListAsync();
+            if (items.Count == 0)
+            {
+                throw new Exception("Don't exist item!");
+            }
+
+           foreach(var item in items)
+            {
+                _context.ShoppingCarts.Remove(item);
+            }
             return true;
         }
     }

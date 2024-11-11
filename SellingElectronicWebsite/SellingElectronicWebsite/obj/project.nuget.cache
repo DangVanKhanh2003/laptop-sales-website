@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "cpD+k0y4l67tEEfwJK0IAktKj283stbxd7iGkZOeYA5PltsJfwXz3NrPfN9mYSD1pYEXGciSUULjIcvsy4V7oA==",
+  "dgSpecHash": "Dk6B4N9hq32SXzawvVlm33/lnE9wEGhvNHLH9yw2/oLntZjxXIsFjPeWbmCMI0OWt04FC7CVkZPjaxNdGVh9jw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\khanh084\\Desktop\\New folder\\SellingElectronicWebsite\\SellingElectronicWebsite.csproj",
+  "projectFilePath": "E:\\Công Việc\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\SellingElectronicWebsite.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\khanh084\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\khanh084\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",

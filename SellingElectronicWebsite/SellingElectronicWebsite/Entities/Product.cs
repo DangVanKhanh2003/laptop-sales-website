@@ -39,7 +39,11 @@ public partial class Product
 
     public virtual ICollection<ShoppingCart> ShoppingCarts { get; set; } = new List<ShoppingCart>();
 
+    public virtual ICollection<StoresProduct> StoresProducts { get; set; } = new List<StoresProduct>();
+
     public virtual ICollection<WarehousesExportProduct> WarehousesExportProducts { get; set; } = new List<WarehousesExportProduct>();
 
     public virtual ICollection<WarehousesImportProduct> WarehousesImportProducts { get; set; } = new List<WarehousesImportProduct>();
+
+    public virtual ICollection<WarehousesProduct> WarehousesProducts { get; set; } = new List<WarehousesProduct>();
 }

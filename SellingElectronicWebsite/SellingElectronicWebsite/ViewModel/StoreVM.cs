@@ -11,7 +11,7 @@ namespace SellingElectronicWebsite.ViewModel
 
 
         public  AddressVM Address { get; set; }
-
+        public StoreVM() { }
         public StoreVM (int storeId, string? storeName, AddressVM address)
         {
             StoreId = storeId;

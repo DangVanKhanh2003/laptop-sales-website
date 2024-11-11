@@ -5354,11 +5354,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\khanh084\\Desktop\\New folder\\SellingElectronicWebsite\\SellingElectronicWebsite.csproj",
+      "projectUniqueName": "E:\\Công Việc\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\SellingElectronicWebsite.csproj",
       "projectName": "SellingElectronicWebsite",
-      "projectPath": "C:\\Users\\khanh084\\Desktop\\New folder\\SellingElectronicWebsite\\SellingElectronicWebsite.csproj",
+      "projectPath": "E:\\Công Việc\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\SellingElectronicWebsite.csproj",
       "packagesPath": "C:\\Users\\khanh084\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\khanh084\\Desktop\\New folder\\SellingElectronicWebsite\\obj\\",
+      "outputPath": "E:\\Công Việc\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\khanh084\\AppData\\Roaming\\NuGet\\NuGet.Config",

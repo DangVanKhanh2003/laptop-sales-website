@@ -71,6 +71,8 @@ public partial class SellingElectronicsContext : DbContext
 
     public virtual DbSet<StoreImport> StoreImports { get; set; }
 
+    public virtual DbSet<StoresProduct> StoresProducts { get; set; }
+
     public virtual DbSet<TypeAccount> TypeAccounts { get; set; }
 
     public virtual DbSet<Warehouse> Warehouses { get; set; }
@@ -83,9 +85,11 @@ public partial class SellingElectronicsContext : DbContext
 
     public virtual DbSet<WarehousesImportProduct> WarehousesImportProducts { get; set; }
 
+    public virtual DbSet<WarehousesProduct> WarehousesProducts { get; set; }
+
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("Data Source=DESKTOP-19ENTAL\\SQLEXPRESS;Initial Catalog=SellingElectronics;Persist Security Info=True;User Id=1;Password=1;Integrated Security=false;Trust Server Certificate=True");
+        => optionsBuilder.UseSqlServer("Data Source=DESKTOP-19ENTAL\\SQLEXPRESS;Initial Catalog=SellingElectronics;Integrated Security=True;Encrypt=True;Trust Server Certificate=True");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -308,10 +312,12 @@ public partial class SellingElectronicsContext : DbContext
         {
             entity.ToTable("Orders", "OrderSchema");
 
-            entity.Property(e => e.OdertDate)
-                .HasDefaultValueSql("(getdate())")
-                .HasColumnType("datetime");
+            entity.Property(e => e.DateExport).HasColumnType("datetime");
+            entity.Property(e => e.OdertDate).HasColumnType("datetime");
             entity.Property(e => e.OrderType).HasMaxLength(10);
+            entity.Property(e => e.Status)
+                .HasMaxLength(20)
+                .IsUnicode(false);
 
             entity.HasOne(d => d.Customer).WithMany(p => p.Orders)
                 .HasForeignKey(d => d.CustomerId)
@@ -321,6 +327,10 @@ public partial class SellingElectronicsContext : DbContext
             entity.HasOne(d => d.Employee).WithMany(p => p.Orders)
                 .HasForeignKey(d => d.EmployeeId)
                 .HasConstraintName("FK_Orders_Employees");
+
+            entity.HasOne(d => d.OrderPending).WithMany(p => p.Orders)
+                .HasForeignKey(d => d.OrderPendingId)
+                .HasConstraintName("FK_Orders_OrderPending");
 
             entity.HasOne(d => d.Store).WithMany(p => p.Orders)
                 .HasForeignKey(d => d.StoreId)
@@ -480,6 +490,10 @@ public partial class SellingElectronicsContext : DbContext
             entity.ToTable("RefreshTokenCustomer", "AccountSchema");
 
             entity.Property(e => e.RefreshTokenCustomerId).HasDefaultValueSql("(newid())");
+            entity.Property(e => e.Email)
+                .HasMaxLength(150)
+                .IsUnicode(false)
+                .HasColumnName("email");
             entity.Property(e => e.ExpiredAt).HasColumnType("datetime");
             entity.Property(e => e.IssuedAt).HasColumnType("datetime");
             entity.Property(e => e.JwtId)
@@ -576,6 +590,28 @@ public partial class SellingElectronicsContext : DbContext
             entity.HasOne(d => d.WarehousesExport).WithMany(p => p.StoreImports)
                 .HasForeignKey(d => d.WarehousesExportId)
                 .HasConstraintName("FK_StoreImport_WarehousesExport");
+        });
+
+        modelBuilder.Entity<StoresProduct>(entity =>
+        {
+            entity.ToTable("StoresProduct", "StoreSchema");
+
+            entity.HasIndex(e => new { e.StoreId, e.ProductId, e.ColorId }, "Unique_StoreIdId_ProductId").IsUnique();
+
+            entity.HasOne(d => d.Color).WithMany(p => p.StoresProducts)
+                .HasForeignKey(d => d.ColorId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_StoresProduct_Color");
+
+            entity.HasOne(d => d.Product).WithMany(p => p.StoresProducts)
+                .HasForeignKey(d => d.ProductId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_StoresProduct_Products");
+
+            entity.HasOne(d => d.Store).WithMany(p => p.StoresProducts)
+                .HasForeignKey(d => d.StoreId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_StoresProduct_Stores");
         });
 
         modelBuilder.Entity<TypeAccount>(entity =>
@@ -699,6 +735,28 @@ public partial class SellingElectronicsContext : DbContext
                 .HasForeignKey(d => d.WarehousesImportId)
                 .OnDelete(DeleteBehavior.SetNull)
                 .HasConstraintName("FK_WarehousesImport_product_WarehousesImport");
+        });
+
+        modelBuilder.Entity<WarehousesProduct>(entity =>
+        {
+            entity.ToTable("WarehousesProduct", "StoreSchema");
+
+            entity.HasIndex(e => new { e.WarehouseId, e.ProductId, e.ColorId }, "Unique_WarehouseId_ProductId").IsUnique();
+
+            entity.HasOne(d => d.Color).WithMany(p => p.WarehousesProducts)
+                .HasForeignKey(d => d.ColorId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_WarehousesProduct_Color");
+
+            entity.HasOne(d => d.Product).WithMany(p => p.WarehousesProducts)
+                .HasForeignKey(d => d.ProductId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_WarehousesProduct_Products");
+
+            entity.HasOne(d => d.Warehouse).WithMany(p => p.WarehousesProducts)
+                .HasForeignKey(d => d.WarehouseId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_WarehousesProduct_Warehouses");
         });
 
         OnModelCreatingPartial(modelBuilder);

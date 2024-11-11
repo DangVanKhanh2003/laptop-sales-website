@@ -1,20 +1,16 @@
-﻿using Microsoft.AspNetCore.Mvc.Filters;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using System.Security.Claims;
-using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
-using System.IdentityModel.Tokens.Jwt;
 using SellingElectronicWebsite.Entities;
-using Microsoft.Extensions.Configuration;
-using System.Text;
-using System;
-using System.Text.Json;
-using SellingElectronicWebsite.Model;
-using Microsoft.AspNet.Identity;
 using SellingElectronicWebsite.Helper;
+using SellingElectronicWebsite.Model;
 using System.Data;
-using System.Security.Principal;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System.Text;
+using System.Text.Json;
 
 namespace SellingElectronicWebsite.Sercurity
 {
@@ -142,7 +138,7 @@ namespace SellingElectronicWebsite.Sercurity
                         //renew token
                         TokenHelper tokenHelper = new TokenHelper(_context, _configuration);
                         var user = await _context.Customers.Where(p => p.CustomerId == storedToken.CustomerId).FirstOrDefaultAsync();
-                        var renewToken = await tokenHelper.GenerateToken(user.CustomerId, _roles);
+                        var renewToken = await tokenHelper.GenerateToken(user.CustomerId, storedToken.Email ,_roles);
                         //convert to json
                         string jsonRenewToken = JsonSerializer.Serialize(renewToken);
                         authorContext.HttpContext.Response.Headers.Add("Authorization", jsonRenewToken);

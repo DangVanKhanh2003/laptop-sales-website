@@ -40,8 +40,8 @@ namespace SellingElectronicWebsite.Controllers.Customer
         /// if exist element(in shopping cart) same idCustomer, idProduct, idColor with this item => 
         /// addition amount to amount of element in this shopping cart. The sale of product automatic addition when shopping cart item add new. 
         /// </summary>
-        [HttpPost]
-        public async Task<IActionResult> Add(ShoppingCartModel model)
+        [HttpPost("AddItemShoppingCart")]
+        public async Task<IActionResult> Add(ShoppingCartItemModel model)
         {
             try
             {
@@ -61,14 +61,14 @@ namespace SellingElectronicWebsite.Controllers.Customer
         /// <summary>
         /// update amount for item in shoppingCart by idShoppingCart
         /// </summary>
-        [HttpPut]
-        public async Task<IActionResult> Update(int amount, int idShoppingCart)
+        [HttpPut("UpdateAmountForItemShoppingCart")]
+        public async Task<IActionResult> Update(int amount, int idShoppingCartItem)
         {
             try
             {
                 _uow.CreateTransaction();
                 //update amount for item in shoppingCart by idShoppingCart
-                var check = await _uow.ShoppingCarts.UpdateAmount(amount, idShoppingCart);
+                var check = await _uow.ShoppingCarts.UpdateAmount(amount, idShoppingCartItem);
                 await _uow.Save();
                 _uow.Commit();
                 return Ok(check);
@@ -81,12 +81,30 @@ namespace SellingElectronicWebsite.Controllers.Customer
             }
         }
         [HttpDelete]
-        public async Task<IActionResult> Delete(int idShoppingCart)
+        public async Task<IActionResult> Delete(int idShoppingCartItem)
         {
             try
             {
                 _uow.CreateTransaction();
-                var check = await _uow.ShoppingCarts.Delete(idShoppingCart);
+                var check = await _uow.ShoppingCarts.Delete(idShoppingCartItem);
+                await _uow.Save();
+                _uow.Commit();
+                return Ok(check);
+            }
+            catch (Exception ex)
+            {
+                _uow.Rollback();
+                return BadRequest(ex.Message);
+
+            }
+        }
+        [HttpDelete("DeleteAllShoppingCartItemByIdCustomer")]
+        public async Task<IActionResult> DeleteAllByIdCustomer(int idCustomer)
+        {
+            try
+            {
+                _uow.CreateTransaction();
+                var check = await _uow.ShoppingCarts.DeleteAllByIdCustomer(idCustomer);
                 await _uow.Save();
                 _uow.Commit();
                 return Ok(check);

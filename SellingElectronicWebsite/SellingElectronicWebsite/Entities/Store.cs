@@ -19,5 +19,7 @@ public partial class Store
 
     public virtual ICollection<StoreImport> StoreImports { get; set; } = new List<StoreImport>();
 
+    public virtual ICollection<StoresProduct> StoresProducts { get; set; } = new List<StoresProduct>();
+
     public virtual ICollection<WarehousesExport> WarehousesExports { get; set; } = new List<WarehousesExport>();
 }

@@ -10,7 +10,7 @@ namespace SellingElectronicWebsite.Repository
         Task<List<OrderPendingVM>> GetByPage(string status, int pageIndex, int pageSize, string sortBy);
         Task<OrderPendingVM> GetById(int id);
         Task<bool> Add(OrderPendingModel model);
-        Task<bool> UpdateStatus(string status, int idOrderPending, int idEmployee);
+        Task<bool> UpdateStatus(string status, int idOrderPending, int idEmployee, int idStore);
         Task<bool> Cancel(int id);
     }
 }

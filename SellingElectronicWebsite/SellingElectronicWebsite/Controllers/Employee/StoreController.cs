@@ -4,6 +4,7 @@ using SellingElectronicWebsite.Entities;
 using SellingElectronicWebsite.Model;
 using SellingElectronicWebsite.Sercurity;
 using SellingElectronicWebsite.UnitOfWork;
+using SellingElectronicWebsite.ViewModel;
 
 namespace SellingElectronicWebsite.Controllers.Employee
 {
@@ -185,5 +186,133 @@ namespace SellingElectronicWebsite.Controllers.Employee
 
             }
         }
+
+        //Task<List<StoreProductVM>> GetAllProductByIdStore(int idStore);
+        //Task<StoreProductVM> GetProductByIdStore(int idStore, int idProduct);
+        [HttpGet("GetAllProductByIdStore{idStore}")]
+        public async Task<IActionResult> GetAllProductByIdStore(int idStore)
+        {
+            try
+            {
+                var data = await _uow.Store.GetAllProductByIdStore(idStore);
+                if (data == null)
+                {
+                    return NotFound();
+                }
+                return Ok(data);
+            }
+            catch
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError);
+            }
+        }
+
+        [HttpGet("GetProductByIdStore")]
+        public async Task<IActionResult> GetProductByIdStore(int idStore, int idProduct)
+        {
+            try
+            {
+                var data = await _uow.Store.GetProductByIdStore(idStore, idProduct);
+                if (data == null)
+                {
+                    return NotFound();
+                }
+                return Ok(data);
+            }
+            catch
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError);
+            }
+        }
+        [HttpGet("GetStoreExistProduct{idProduct}")]
+
+        public async Task<IActionResult> GetStoreExistProduct(int idProduct)
+        {
+            try
+            {
+                var data = await _uow.Store.GetStoreExistProduct(idProduct);
+                if (data == null)
+                {
+                    return NotFound();
+                }
+                return Ok(data);
+            }
+            catch
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError);
+            }
+        }
+        /// <summary>
+        /// if item exist => add. if item don't exist => create new item.
+        /// </summary>
+        /// <param name="idProduct"></param>
+        /// <param name="idStore"></param>
+        /// <param name="amountAdd"></param>
+        /// <param name="idColor"></param>
+        /// <returns></returns>
+        [HttpPut("AddStoreProduct")]
+        public async Task<IActionResult> AddStoreProduct(int idProduct, int idStore, int amountAdd, int idColor)
+        {
+            try
+            {
+                _uow.CreateTransaction();
+
+                var result = await _uow.Store.AddStoreProduct(idProduct, idStore, amountAdd, idColor);
+                await _uow.Save();
+                _uow.Commit();
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                _uow.Rollback();
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+
+            }
+        }
+
+        [HttpPut("ReduceStoreProduct")]
+        public async Task<IActionResult> ReduceStoreProduct(int idProduct, int idStore, int amountReduce, int idColor)
+        {
+            try
+            {
+                _uow.CreateTransaction();
+
+                var result = await _uow.Store.ReduceStoreProduct(idProduct, idStore, amountReduce, idColor);
+                await _uow.Save();
+
+                _uow.Commit();
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                _uow.Rollback();
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+
+            }
+        }
+
+
+
+        [HttpPut("UpdateStoreProduct")]
+        public async Task<IActionResult> UpdateAmountStoreProduct(int idProduct, int idStore, int amount, int idColor)
+        {
+            try
+            {
+                _uow.CreateTransaction();
+
+                var result = await _uow.Store.UpdateAmountStoreProduct(idProduct, idStore, amount, idColor);
+                await _uow.Save();
+
+                _uow.Commit();
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                _uow.Rollback();
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+
+            }
+        }
+
     }
 }

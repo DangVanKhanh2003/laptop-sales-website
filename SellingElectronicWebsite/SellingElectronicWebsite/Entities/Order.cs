@@ -15,13 +15,19 @@ public partial class Order
 
     public int? StoreId { get; set; }
 
-    public int Status { get; set; }
+    public string Status { get; set; } = null!;
 
     public string? OrderType { get; set; }
+
+    public DateTime? DateExport { get; set; }
+
+    public int? OrderPendingId { get; set; }
 
     public virtual Customer? Customer { get; set; }
 
     public virtual Employee? Employee { get; set; }
+
+    public virtual OrderPending? OrderPending { get; set; }
 
     public virtual ICollection<ProductOrder> ProductOrders { get; set; } = new List<ProductOrder>();
 

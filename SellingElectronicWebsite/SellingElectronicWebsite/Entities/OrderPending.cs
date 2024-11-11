@@ -19,5 +19,7 @@ public partial class OrderPending
 
     public virtual Employee? Employee { get; set; }
 
+    public virtual ICollection<Order> Orders { get; set; } = new List<Order>();
+
     public virtual ICollection<ProductOrderPending> ProductOrderPendings { get; set; } = new List<ProductOrderPending>();
 }

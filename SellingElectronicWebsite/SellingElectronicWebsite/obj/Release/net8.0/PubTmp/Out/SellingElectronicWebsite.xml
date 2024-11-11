@@ -53,7 +53,16 @@
             <param name="status">cancel/pending/approve</param>
             <param name="sortBy">timeAsc/timeDesc/null</param>
         </member>
-        <member name="M:SellingElectronicWebsite.Controllers.Customer.ShoppingCartController.Add(SellingElectronicWebsite.Model.ShoppingCartModel)">
+        <member name="M:SellingElectronicWebsite.Controllers.Customer.OrderPendingController.UpdateStatus(System.String,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            actor: employee=> employee can change status: cancel, approve. Employee cannot change status if status isn't pending.
+            if status is "approve" and input valid => amount of store will reduce by amount order.
+            </summary>
+            <param name="status" > cancel, approve</param>
+            <param name="idStore">if you want to change status is approve. You need provide idStore.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SellingElectronicWebsite.Controllers.Customer.ShoppingCartController.Add(SellingElectronicWebsite.Model.ShoppingCartItemModel)">
             <summary>
             if exist element(in shopping cart) same idCustomer, idProduct, idColor with this item => 
             addition amount to amount of element in this shopping cart. The sale of product automatic addition when shopping cart item add new. 
@@ -153,6 +162,16 @@
             <remarks>
             Server find store and delete.
             </remarks>
+        </member>
+        <member name="M:SellingElectronicWebsite.Controllers.Employee.StoreController.AddStoreProduct(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            if item exist => add. if item don't exist => create new item.
+            </summary>
+            <param name="idProduct"></param>
+            <param name="idStore"></param>
+            <param name="amountAdd"></param>
+            <param name="idColor"></param>
+            <returns></returns>
         </member>
         <member name="M:SellingElectronicWebsite.Controllers.ProductController.GetAll(System.String)">
             <summary>
@@ -304,12 +323,13 @@
             <param name="status">cancel/pending/approve</param>
             <param name="sortBy">timeAsc/timeDesc/null</param>
         </member>
-        <member name="M:SellingElectronicWebsite.Repository.OrderPendingRepository.UpdateStatus(System.String,System.Int32,System.Int32)">
+        <member name="M:SellingElectronicWebsite.Repository.OrderPendingRepository.UpdateStatus(System.String,System.Int32,System.Int32,System.Int32)">
             <summary>
             actor: employee=> employee can change status: cancel, approve. Employee cannot change status if status isn't pending.
+            if status is "approve" and input valid => amount of store will reduce by amount order.
             </summary>
         </member>
-        <member name="M:SellingElectronicWebsite.Repository.ShoppingCartRepository.Add(SellingElectronicWebsite.Model.ShoppingCartModel)">
+        <member name="M:SellingElectronicWebsite.Repository.ShoppingCartRepository.Add(SellingElectronicWebsite.Model.ShoppingCartItemModel)">
             <summary>
             if exist element(in shopping cart) same idCustomer, idProduct, idColor with this item => addition amount to amount ofelement in this shopping cart.
             </summary>

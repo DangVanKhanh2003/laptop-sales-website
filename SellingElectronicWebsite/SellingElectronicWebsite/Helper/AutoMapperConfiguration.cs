@@ -31,13 +31,19 @@ namespace SellingElectronicWebsite.Helper
             CreateMap<Customer, CustomerVM>().ReverseMap();
             CreateMap<AddressCustomer, AddressBookModel>().ReverseMap();
             CreateMap<AddressCustomer, AddressBookVM>().ReverseMap();
-            CreateMap<ShoppingCart, ShoppingCartModel>().ReverseMap();
-            CreateMap<ShoppingCart, ShoppingCartVM>().ReverseMap();
+            CreateMap<ShoppingCart, ShoppingCartItemModel>().ReverseMap();
+            CreateMap<ShoppingCart, ShoppingCartItemVM>().ReverseMap();
             CreateMap<OrderPending, OrderPendingModel>().ReverseMap();
             CreateMap<OrderPending, OrderPendingVM>().ReverseMap();
             CreateMap<ProductOrderPending, ProductOrderPendingModel>().ReverseMap();
             CreateMap<ProductOrderPending, ProductOrderPendingVM>().ReverseMap();
-
+            CreateMap<StoresProduct, StoreProductModel>().ReverseMap();
+            CreateMap<StoresProduct, StoreProductVM>()
+           .ForMember(dest => dest.Store, opt => opt.MapFrom(src => src.Store))       
+           .ForMember(dest => dest.Product, opt => opt.MapFrom(src => src.Product))   
+           .ForMember(dest => dest.Color, opt => opt.MapFrom(src => src.Color))       
+           .ForMember(dest => dest.Amount, opt => opt.MapFrom(src => src.Amount))
+           .ReverseMap();
         }
     }
 }

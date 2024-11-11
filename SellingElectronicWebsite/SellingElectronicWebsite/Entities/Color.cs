@@ -16,4 +16,8 @@ public partial class Color
     public virtual ICollection<ProductOrder> ProductOrders { get; set; } = new List<ProductOrder>();
 
     public virtual ICollection<ShoppingCart> ShoppingCarts { get; set; } = new List<ShoppingCart>();
+
+    public virtual ICollection<StoresProduct> StoresProducts { get; set; } = new List<StoresProduct>();
+
+    public virtual ICollection<WarehousesProduct> WarehousesProducts { get; set; } = new List<WarehousesProduct>();
 }

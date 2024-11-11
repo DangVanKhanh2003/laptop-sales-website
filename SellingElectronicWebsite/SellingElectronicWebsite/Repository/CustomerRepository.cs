@@ -151,10 +151,28 @@ namespace SellingElectronicWebsite.Repository
                 throw new Exception("Customer id: " + id + " isn't exist!");
             }
             var address = _context.Addresses.Where(p => p.AddressId == customer.AddressId).FirstOrDefault();
-            _mapper.Map(model.Address, address);   
-            _mapper.Map(model,customer);   
-            _context.Update(address);
-            _context.Update(customer);
+            // customer don't exist address
+            if(address == null)
+            {
+                // add address
+                Address newAddress = new Address();
+                _mapper.Map(model.Address, newAddress);
+                await _context.AddAsync(newAddress);
+                await _context.SaveChangesAsync();
+                // update customer
+                _mapper.Map(model, customer);
+                customer.AddressId = newAddress.AddressId;
+                _context.Update(customer);
+
+            }  
+            else
+            {
+                _mapper.Map(model.Address, address);
+                _mapper.Map(model, customer);
+                _context.Update(address);
+                _context.Update(customer);
+            }
+            
             return true;
         }
 

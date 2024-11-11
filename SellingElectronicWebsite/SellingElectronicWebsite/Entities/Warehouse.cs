@@ -16,4 +16,6 @@ public partial class Warehouse
     public virtual ICollection<WarehousesExport> WarehousesExports { get; set; } = new List<WarehousesExport>();
 
     public virtual ICollection<WarehousesImport> WarehousesImports { get; set; } = new List<WarehousesImport>();
+
+    public virtual ICollection<WarehousesProduct> WarehousesProducts { get; set; } = new List<WarehousesProduct>();
 }

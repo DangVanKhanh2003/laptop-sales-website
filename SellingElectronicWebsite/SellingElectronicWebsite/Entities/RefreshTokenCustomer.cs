@@ -21,5 +21,7 @@ public partial class RefreshTokenCustomer
 
     public DateTime? ExpiredAt { get; set; }
 
+    public string? Email { get; set; }
+
     public virtual Customer Customer { get; set; } = null!;
 }

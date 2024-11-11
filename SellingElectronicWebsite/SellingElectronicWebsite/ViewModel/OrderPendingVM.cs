@@ -8,20 +8,20 @@ namespace SellingElectronicWebsite.ViewModel
 
         public int OrderPendingId { get; set; }
 
-        public String CustomerName { get; set; }
-        public int CustomerId { get; set; }
-        public int EmployeeId { get; set; }
+        public String? CustomerName { get; set; }
+        public int? CustomerId { get; set; }
+        public int? EmployeeId { get; set; }
 
-        public String EmployeeName { get; set; }
+        public String? EmployeeName { get; set; }
 
         public DateTime? OdertDate { get; set; }
 
-        public string Status { get; set; }
+        public string? Status { get; set; }
 
         public List<ProductOrderPendingVM> ListProductOrederPending { get; set; }
 
-        public OrderPendingVM(int orderPendingId, string customerName, int customerId,
-             int employeeId, string employeeName, DateTime? odertDate, string status)
+        public OrderPendingVM(int orderPendingId, string? customerName, int? customerId,
+             int? employeeId, string? employeeName, DateTime? odertDate, string? status)
         {
             OrderPendingId = orderPendingId;
             CustomerName = customerName;
@@ -32,8 +32,8 @@ namespace SellingElectronicWebsite.ViewModel
             Status = status;
         }
 
-        public OrderPendingVM( int orderPendingId, string customerName, int customerId, 
-            int employeeId, string employeeName, DateTime? odertDate, string status, 
+        public OrderPendingVM( int orderPendingId, string? customerName, int? customerId, 
+            int? employeeId, string? employeeName, DateTime? odertDate, string? status, 
             List<ProductOrderPendingVM> listProductOrederPending)
         {
             OrderPendingId = orderPendingId;
