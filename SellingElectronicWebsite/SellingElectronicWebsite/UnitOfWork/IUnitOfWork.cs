@@ -15,6 +15,7 @@ namespace SellingElectronicWebsite.UnitOfWork
         public AddressBookRepository AddressBook { get; }  
         public ShoppingCartRepository ShoppingCarts { get; }  
         public OrderPendingRepository OrderPendings { get; }  
+        public OrderRepository Orders { get; }  
         //This Method will Start the database Transaction
         public void CreateTransaction();
         //This Method will Commit the database Transaction

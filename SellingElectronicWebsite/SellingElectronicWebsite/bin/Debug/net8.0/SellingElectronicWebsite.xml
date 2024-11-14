@@ -86,6 +86,38 @@
             Server find color and delete.
             </remarks>
         </member>
+        <member name="M:SellingElectronicWebsite.Controllers.Employee.OrderController.GetAll(System.String,System.String)">
+            <summary>
+            Get all order by paging
+            </summary>
+            <param name="status">value: "pending"/"cancel"/"approve". Default = "pending"</param>
+            <param name="sortByOrderDate">value: "timeDesc"/"timeAsc". Default = null</param>
+        </member>
+        <member name="M:SellingElectronicWebsite.Controllers.Employee.OrderController.GetAllPaging(System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            Get all order by paging
+            </summary>
+            <param name="status">value: "pending"/"cancel"/"approve". Default = "pending"</param>
+            <param name="sortByOrderDate">value: "timeDesc"/"timeAsc". Default = null</param>
+            <param name="pageIndex">default = 1</param>
+            <param name="pageSize">default = 10</param>
+        </member>
+        <member name="M:SellingElectronicWebsite.Controllers.Employee.OrderController.GetByIdStorePaging(System.Int32,System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            Get all order by paging
+            </summary>
+            <param name="status">value: "pending"/"cancel"/"approve". Default = "pending"</param>
+            <param name="sortByOrderDate">value: "timeDesc"/"timeAsc". Default = null</param>
+            <param name="pageIndex">default = 1</param>
+            <param name="pageSize">default = 10</param>
+        </member>
+        <member name="M:SellingElectronicWebsite.Controllers.Employee.OrderController.GetByIdStore(System.Int32,System.String,System.String)">
+            <summary>
+            Get all order by paging
+            </summary>
+            <param name="status">value: "pending"/"cancel"/"approve". Default = "pending"</param>
+            <param name="sortByOrderDate">value: "timeDesc"/"timeAsc". Default = null</param>
+        </member>
         <member name="M:SellingElectronicWebsite.Controllers.Employee.SalesController.GetByIdProduct(System.Int32)">
             <summary>
             Get all sale by id product

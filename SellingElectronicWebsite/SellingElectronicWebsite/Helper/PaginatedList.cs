@@ -1,4 +1,6 @@
-﻿namespace SellingElectronicWebsite.Helper
+﻿using SellingElectronicWebsite.Entities;
+
+namespace SellingElectronicWebsite.Helper
 {
     public class PaginatedList<T>: List<T>
     {
@@ -19,5 +21,6 @@
             var items = source.Skip((pageIndex - 1) * pageSize).Take(pageSize).ToList();
             return new PaginatedList<T>(items, count, pageIndex, pageSize);
         }
+
     }
 }

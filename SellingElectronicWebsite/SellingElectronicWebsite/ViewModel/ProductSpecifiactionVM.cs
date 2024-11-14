@@ -10,6 +10,7 @@
 
         public int ProductId { get; set; }
 
+        public ProductSpecifiactionVM() { }
         public ProductSpecifiactionVM(int specifiactionsId, string specType, string description, int productId)
         {
             SpecifiactionsId = specifiactionsId;

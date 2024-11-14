@@ -21,11 +21,7 @@ namespace SellingElectronicWebsite.Repository
             _mapper = mapper;
 
         }
-        public async Task<SalesVM> checkSaleByIdProduct(int idProduct)
-        {
-            var sale = await _context.Sales.Where(s => s.ProductId == idProduct && DateTime.Now <= s.EndAt && DateTime.Now >= s.StartAt).FirstOrDefaultAsync();
-            return _mapper.Map<SalesVM>(sale);
-        }
+        
         /// <summary>
         /// after add, The system will automatically set pending for status and auto set time for order. 
         /// </summary>
@@ -104,7 +100,7 @@ namespace SellingElectronicWebsite.Repository
                 switch (sortBy)
                 {
                     case "timeAsc": listOrderPending = listOrderPending.OrderBy(p => p.OdertDate).ToList(); break;
-                    case "timeDesc": listOrderPending = (List<OrderPendingVM>)listOrderPending.OrderByDescending(p => p.OdertDate); break;
+                    case "timeDesc": listOrderPending = listOrderPending.OrderByDescending(p => p.OdertDate).ToList(); break;
                 }
             }
             // add list for order pending item

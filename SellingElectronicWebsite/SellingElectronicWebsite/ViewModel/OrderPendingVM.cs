@@ -19,7 +19,7 @@ namespace SellingElectronicWebsite.ViewModel
         public string? Status { get; set; }
 
         public List<ProductOrderPendingVM> ListProductOrederPending { get; set; }
-
+        public OrderPendingVM() { }
         public OrderPendingVM(int orderPendingId, string? customerName, int? customerId,
              int? employeeId, string? employeeName, DateTime? odertDate, string? status)
         {

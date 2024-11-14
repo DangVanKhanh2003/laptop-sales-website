@@ -25,6 +25,7 @@ namespace SellingElectronicWebsite.UnitOfWork
         public AddressBookRepository AddressBook { get; private set; }
         public ShoppingCartRepository ShoppingCarts { get; private set; }
         public OrderPendingRepository OrderPendings { get; private set; }
+        public OrderRepository Orders { get; private set; }
 
         public UnitOfWork(SellingElectronicsContext _Context, IMapper mapper, IConfiguration configuration)
         {
@@ -41,6 +42,7 @@ namespace SellingElectronicWebsite.UnitOfWork
             AddressBook = new AddressBookRepository(Context, mapper);
             ShoppingCarts = new ShoppingCartRepository(Context, mapper);
             OrderPendings = new OrderPendingRepository(Context, mapper);
+            Orders = new OrderRepository(Context, mapper);
         }
 
         public void CreateTransaction()

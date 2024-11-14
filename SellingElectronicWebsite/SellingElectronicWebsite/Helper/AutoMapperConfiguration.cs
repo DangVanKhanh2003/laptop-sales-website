@@ -52,11 +52,20 @@ namespace SellingElectronicWebsite.Helper
                 .ReverseMap();
             CreateMap<StoresProduct, StoreProductModel>().ReverseMap();
             CreateMap<StoresProduct, StoreProductVM>()
-               .ForMember(dest => dest.Store, opt => opt.MapFrom(src => src.Store))       
-               .ForMember(dest => dest.Product, opt => opt.MapFrom(src => src.Product))   
-               .ForMember(dest => dest.Color, opt => opt.MapFrom(src => src.Color))       
+               .ForMember(dest => dest.Store, opt => opt.MapFrom(src => src.Store))
+               .ForMember(dest => dest.Product, opt => opt.MapFrom(src => src.Product))
+               .ForMember(dest => dest.Color, opt => opt.MapFrom(src => src.Color))
                .ForMember(dest => dest.Amount, opt => opt.MapFrom(src => src.Amount))
                .ReverseMap();
+             CreateMap<ProductOrder, ProductOrderVM>()
+               .ForMember(dest => dest.Product, opt => opt.MapFrom(src => src.Product))
+               .ForMember(dest => dest.Color, opt => opt.MapFrom(src => src.Color))
+               .ReverseMap();
+            CreateMap<Order, OrderVM>()
+                .ForMember(dest => dest.EmployeeName, opt => opt.MapFrom(src => src.Employee.FullName))
+                .ForMember(dest => dest.CustomerName, opt => opt.MapFrom(src => src.Customer.FullName))
+                .ForMember(dest => dest.Store, opt => opt.MapFrom(src => src.Store))
+                .ReverseMap();
         }
     }
 }

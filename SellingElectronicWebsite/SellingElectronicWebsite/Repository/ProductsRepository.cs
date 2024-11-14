@@ -12,7 +12,7 @@ namespace SellingElectronicWebsite.Repository
     public class ProductsRepository : IProductsRepository
     {
         private SellingElectronicsContext _context;
-        private static SellingElectronicsContext _staticContext;
+        private static SellingElectronicsContext _staticContext = new SellingElectronicsContext();
         private readonly IMapper _mapper;
 
 

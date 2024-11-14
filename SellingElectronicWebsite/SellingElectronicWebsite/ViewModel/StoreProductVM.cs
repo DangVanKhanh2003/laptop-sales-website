@@ -9,7 +9,7 @@
         public int? Amount { get; set; }
 
         public ColorVM Color { get; set; }
-
+        public StoreProductVM() { }
         public StoreProductVM(StoreVM store, ProductVM product, int? amount, ColorVM color)
         {
             Store = store;

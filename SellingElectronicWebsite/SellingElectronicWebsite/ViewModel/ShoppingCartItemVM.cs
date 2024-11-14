@@ -25,7 +25,7 @@
 
         public SalesVM sale { get; set; }
 
-
+        public ShoppingCartItemVM() { }
         public ShoppingCartItemVM(int shoppingCartId, int productId, int customerId, string productName, int amount, string colorName, string brand, string series, decimal price, string categoryName, string? mainImg)
         {
             ShoppingCartItemId = shoppingCartId;

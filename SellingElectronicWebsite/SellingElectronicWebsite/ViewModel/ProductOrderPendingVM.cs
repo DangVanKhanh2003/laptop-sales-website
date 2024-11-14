@@ -23,7 +23,7 @@
 
         public SalesVM sale { get; set; }
 
-
+        public ProductOrderPendingVM() { }
         public ProductOrderPendingVM(int productOrderPendingId, int productId, string productName, int amount, string colorName, string brand, string series, decimal price, string categoryName, string? mainImg, SalesVM sale)
         {
             ProductOrderPendingId = productOrderPendingId;
