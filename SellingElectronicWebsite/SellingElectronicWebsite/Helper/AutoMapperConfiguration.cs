@@ -9,7 +9,9 @@ namespace SellingElectronicWebsite.Helper
     {
         public AutoMapperConfiguration()
         {
-            CreateMap<Product, ProductVM>().ReverseMap();
+            CreateMap<Product, ProductVM>()
+                .ForMember(dest => dest.CategoryName, opt => opt.MapFrom(src => src.Category.CategoryName))
+                .ReverseMap();
             CreateMap<Product, ProductModel>().ReverseMap();
             CreateMap<Color, ColorModel>().ReverseMap();
             CreateMap<Color, ColorVM>().ReverseMap();
@@ -22,7 +24,9 @@ namespace SellingElectronicWebsite.Helper
             CreateMap<Sale, SalesModel>().ReverseMap();
             CreateMap<Sale, SalesVM>().ReverseMap();
             CreateMap<Store, StoreModel>().ReverseMap();
-            CreateMap<Store, StoreVM>().ReverseMap();
+            CreateMap<Store, StoreVM>()
+                .ForMember(dest => dest.Address, opt => opt.MapFrom(src => src.Address))
+                .ReverseMap();
             CreateMap<Address, AddressModel>().ReverseMap();
             CreateMap<Address, AddressVM>().ReverseMap();
             CreateMap<AccountCustomer, CustomerAccountModel>().ReverseMap();
@@ -32,18 +36,27 @@ namespace SellingElectronicWebsite.Helper
             CreateMap<AddressCustomer, AddressBookModel>().ReverseMap();
             CreateMap<AddressCustomer, AddressBookVM>().ReverseMap();
             CreateMap<ShoppingCart, ShoppingCartItemModel>().ReverseMap();
-            CreateMap<ShoppingCart, ShoppingCartItemVM>().ReverseMap();
+            CreateMap<ShoppingCart, ShoppingCartItemVM>()
+                .ForMember(dest => dest.ProductName, opt => opt.MapFrom(src => src.Product.ProductName))
+                .ForMember(dest => dest.ColorName, opt => opt.MapFrom(src => src.Color.ColorName))
+                .ReverseMap();
             CreateMap<OrderPending, OrderPendingModel>().ReverseMap();
-            CreateMap<OrderPending, OrderPendingVM>().ReverseMap();
+            CreateMap<OrderPending, OrderPendingVM>()
+                .ForMember(dest => dest.EmployeeName, opt => opt.MapFrom(src => src.Employee.FullName))
+                .ForMember(dest => dest.CustomerName, opt => opt.MapFrom(src => src.Customer.FullName))
+                .ReverseMap();
             CreateMap<ProductOrderPending, ProductOrderPendingModel>().ReverseMap();
-            CreateMap<ProductOrderPending, ProductOrderPendingVM>().ReverseMap();
+            CreateMap<ProductOrderPending, ProductOrderPendingVM>()
+                .ForMember(dest => dest.ProductName, opt => opt.MapFrom(src => src.Product.ProductName))
+                .ForMember(dest => dest.ColorName, opt => opt.MapFrom(src => src.Color.ColorName))
+                .ReverseMap();
             CreateMap<StoresProduct, StoreProductModel>().ReverseMap();
             CreateMap<StoresProduct, StoreProductVM>()
-           .ForMember(dest => dest.Store, opt => opt.MapFrom(src => src.Store))       
-           .ForMember(dest => dest.Product, opt => opt.MapFrom(src => src.Product))   
-           .ForMember(dest => dest.Color, opt => opt.MapFrom(src => src.Color))       
-           .ForMember(dest => dest.Amount, opt => opt.MapFrom(src => src.Amount))
-           .ReverseMap();
+               .ForMember(dest => dest.Store, opt => opt.MapFrom(src => src.Store))       
+               .ForMember(dest => dest.Product, opt => opt.MapFrom(src => src.Product))   
+               .ForMember(dest => dest.Color, opt => opt.MapFrom(src => src.Color))       
+               .ForMember(dest => dest.Amount, opt => opt.MapFrom(src => src.Amount))
+               .ReverseMap();
         }
     }
 }

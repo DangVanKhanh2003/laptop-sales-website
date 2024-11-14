@@ -414,6 +414,7 @@ public partial class SellingElectronicsContext : DbContext
             entity.ToTable("ProductOrder", "OrderSchema");
 
             entity.Property(e => e.ColorId).HasColumnName("colorId");
+            entity.Property(e => e.UntilPrice).HasColumnType("money");
 
             entity.HasOne(d => d.Color).WithMany(p => p.ProductOrders)
                 .HasForeignKey(d => d.ColorId)

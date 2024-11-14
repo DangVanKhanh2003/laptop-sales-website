@@ -97,7 +97,7 @@ namespace SellingElectronicWebsite.Repository
                                 .ToListAsync();
             foreach (var item in items)
             {
-                SalesVM sale = await checkSaleByIdProduct(item.ProductId);
+                SalesVM sale = _mapper.Map<SalesVM>(await ProductsRepository.checkSaleByIdProduct(item.ProductId));
                 if (sale != null)
                 {
                     item.sale = sale;

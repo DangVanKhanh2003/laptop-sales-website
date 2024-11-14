@@ -12,6 +12,7 @@ namespace SellingElectronicWebsite.Repository
     public class ProductsRepository : IProductsRepository
     {
         private SellingElectronicsContext _context;
+        private static SellingElectronicsContext _staticContext;
         private readonly IMapper _mapper;
 
 
@@ -21,10 +22,10 @@ namespace SellingElectronicWebsite.Repository
             _mapper = mapper;
 
         }
-        public async Task<SalesVM> checkSaleByIdProduct(int idProduct)
+        public async static Task<Sale> checkSaleByIdProduct(int idProduct)
         {
-            var sale = await _context.Sales.Where(s => s.ProductId == idProduct && DateTime.Now <= s.EndAt && DateTime.Now >= s.StartAt).FirstOrDefaultAsync();
-            return _mapper.Map<SalesVM>(sale);
+            var sale = await _staticContext.Sales.Where(s => s.ProductId == idProduct && DateTime.Now <= s.EndAt && DateTime.Now >= s.StartAt).FirstOrDefaultAsync();
+            return sale;
         }
         public async Task<bool> CategoryExists(int? categoryId)
         {
@@ -68,7 +69,7 @@ namespace SellingElectronicWebsite.Repository
                     .ToListAsync();
             foreach (var item in products)
             {
-                SalesVM sale = await checkSaleByIdProduct(item.ProductId);
+                SalesVM sale = _mapper.Map<SalesVM>(await checkSaleByIdProduct(item.ProductId));
                 if (sale != null)
                 {
                     item.sale = sale;
@@ -104,7 +105,7 @@ namespace SellingElectronicWebsite.Repository
                     .ToListAsync();
             foreach (var item in products)
             {
-                SalesVM sale = await checkSaleByIdProduct(item.ProductId);
+                SalesVM sale = _mapper.Map<SalesVM>(await checkSaleByIdProduct(item.ProductId));
                 if (sale != null)
                 {
                     item.sale = sale;
@@ -138,7 +139,7 @@ namespace SellingElectronicWebsite.Repository
                     .ToListAsync();
             foreach (var item in products)
             {
-                SalesVM sale = await checkSaleByIdProduct(item.ProductId);
+                SalesVM sale = _mapper.Map<SalesVM>(await checkSaleByIdProduct(item.ProductId));
                 if (sale != null)
                 {
                     item.sale = sale;
@@ -176,7 +177,7 @@ namespace SellingElectronicWebsite.Repository
                                                 })
                                                 .FirstOrDefaultAsync();
 
-            SalesVM sale = await checkSaleByIdProduct(model.ProductId);
+            SalesVM sale = _mapper.Map<SalesVM>(await checkSaleByIdProduct(model.ProductId));
             if (sale != null)
             {
                 model.sale = sale;
@@ -199,7 +200,7 @@ namespace SellingElectronicWebsite.Repository
                                                     ))
                                                 .FirstOrDefaultAsync();
 
-            SalesVM sale = await checkSaleByIdProduct(model.ProductId);
+            SalesVM sale = _mapper.Map<SalesVM>(await checkSaleByIdProduct(model.ProductId));
             if (sale != null)
             {
                 model.sale = sale;

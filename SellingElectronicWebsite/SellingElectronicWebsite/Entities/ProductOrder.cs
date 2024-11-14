@@ -15,6 +15,8 @@ public partial class ProductOrder
 
     public int? ColorId { get; set; }
 
+    public decimal? UntilPrice { get; set; }
+
     public virtual Color? Color { get; set; }
 
     public virtual Order? Order { get; set; }

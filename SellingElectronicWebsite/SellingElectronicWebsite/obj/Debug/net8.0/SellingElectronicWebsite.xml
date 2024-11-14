@@ -42,26 +42,6 @@
             not complete
             </summary>
         </member>
-        <member name="M:SellingElectronicWebsite.Controllers.Customer.OrderPendingController.GetAll(System.String,System.String)">
-            <summary>
-            get all order pending by status and sort by time
-            </summary>
-            <param name="status">cancel/pending/approve</param>
-            <param name="sortBy">timeAsc/timeDesc/null</param>
-        </member>
-        <member name="M:SellingElectronicWebsite.Controllers.Customer.OrderPendingController.GetByPage(System.String,System.Int32,System.Int32,System.String)">
-            <param name="status">cancel/pending/approve</param>
-            <param name="sortBy">timeAsc/timeDesc/null</param>
-        </member>
-        <member name="M:SellingElectronicWebsite.Controllers.Customer.OrderPendingController.UpdateStatus(System.String,System.Int32,System.Int32,System.Int32)">
-            <summary>
-            actor: employee=> employee can change status: cancel, approve. Employee cannot change status if status isn't pending.
-            if status is "approve" and input valid => amount of store will reduce by amount order.
-            </summary>
-            <param name="status" > cancel, approve</param>
-            <param name="idStore">if you want to change status is approve. You need provide idStore.</param>
-            <returns></returns>
-        </member>
         <member name="M:SellingElectronicWebsite.Controllers.Customer.ShoppingCartController.Add(SellingElectronicWebsite.Model.ShoppingCartItemModel)">
             <summary>
             if exist element(in shopping cart) same idCustomer, idProduct, idColor with this item => 
@@ -171,6 +151,26 @@
             <param name="idStore"></param>
             <param name="amountAdd"></param>
             <param name="idColor"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SellingElectronicWebsite.Controllers.OrderPendingController.GetAll(System.String,System.String)">
+            <summary>
+            get all order pending by status and sort by time
+            </summary>
+            <param name="status">cancel/pending/approve</param>
+            <param name="sortBy">timeAsc/timeDesc/null</param>
+        </member>
+        <member name="M:SellingElectronicWebsite.Controllers.OrderPendingController.GetByPage(System.String,System.Int32,System.Int32,System.String)">
+            <param name="status">cancel/pending/approve</param>
+            <param name="sortBy">timeAsc/timeDesc/null</param>
+        </member>
+        <member name="M:SellingElectronicWebsite.Controllers.OrderPendingController.UpdateStatus(System.String,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            actor: employee=> employee can change status: cancel, approve. Employee cannot change status if status isn't pending.
+            if status is "approve" and input valid => amount of store will reduce by amount order.
+            </summary>
+            <param name="status" > cancel, approve</param>
+            <param name="idStore">if you want to change status is approve. You need provide idStore.</param>
             <returns></returns>
         </member>
         <member name="M:SellingElectronicWebsite.Controllers.ProductController.GetAll(System.String)">

@@ -133,7 +133,7 @@ namespace SellingElectronicWebsite.Repository
             {
                 foreach (var itemProduct in itemOrder.ListProductOrederPending)
                 {
-                    SalesVM sale = await checkSaleByIdProduct(itemProduct.ProductId);
+                    SalesVM sale = _mapper.Map<SalesVM>(await ProductsRepository.checkSaleByIdProduct(itemProduct.ProductId));
                     if (sale != null)
                     {
                         itemProduct.sale = sale;
@@ -183,7 +183,7 @@ namespace SellingElectronicWebsite.Repository
             // add sale for product
             foreach (var itemProduct in listProductOrderPendingVM)
             {
-                SalesVM sale = await checkSaleByIdProduct(itemProduct.ProductId);
+                SalesVM sale = _mapper.Map<SalesVM>(await ProductsRepository.checkSaleByIdProduct(itemProduct.ProductId));
                 if (sale != null)
                 {
                     itemProduct.sale = sale;
@@ -245,7 +245,7 @@ namespace SellingElectronicWebsite.Repository
             {
                 foreach (var itemProduct in itemOrder.ListProductOrederPending)
                 {
-                    SalesVM sale = await checkSaleByIdProduct(itemProduct.ProductId);
+                    SalesVM sale = _mapper.Map<SalesVM>(await ProductsRepository.checkSaleByIdProduct(itemProduct.ProductId));
                     if (sale != null)
                     {
                         itemProduct.sale = sale;
