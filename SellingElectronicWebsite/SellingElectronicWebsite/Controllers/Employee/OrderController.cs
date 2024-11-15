@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using SellingElectronicWebsite.Entities;
+using SellingElectronicWebsite.Model;
 using SellingElectronicWebsite.UnitOfWork;
 using SellingElectronicWebsite.ViewModel;
 using System.Drawing.Printing;
@@ -98,18 +99,56 @@ namespace SellingElectronicWebsite.Controllers.Employee
             }
         }
 
-        [HttpPut("ExportOder")]
-        public async Task<IActionResult> ExportOder(int idOrder, int employeeId)
+        [HttpPut("ExportOrder")]
+        public async Task<IActionResult> ExportOrder(int idOrder, int employeeId)
         {
             try
             {
                 _uow.CreateTransaction();
-                var result = await _uow.Orders.ExportOder(idOrder, employeeId);
+                var result = await _uow.Orders.ExportOrder(idOrder, employeeId);
                 await _uow.Save();
                 _uow.Commit();
                 return Ok(result);
             }
             catch(Exception ex)
+            {
+                _uow.Rollback();
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [HttpPut("CancelOrder")]
+        public async Task<IActionResult> CancelOrder(int idOrder, int employeeId)
+        {
+            try
+            {
+                _uow.CreateTransaction();
+                var result = await _uow.Orders.CancelOrder(idOrder, employeeId);
+                await _uow.Save();
+                _uow.Commit();
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                _uow.Rollback();
+                return BadRequest(ex.Message);
+            }
+        }
+
+        /// <param name="model">CustomerId can be null</param>
+        /// <returns>order View Model</returns>
+        [HttpPut("OderOffline")]
+        public async Task<IActionResult> OderOffline(OrderOfflineModel model)
+        {
+            try
+            {
+                _uow.CreateTransaction();
+                var result = await _uow.Orders.OderOffline(model);
+                await _uow.Save();
+                _uow.Commit();
+                return Ok(result);
+            }
+            catch (Exception ex)
             {
                 _uow.Rollback();
                 return BadRequest(ex.Message);

@@ -66,6 +66,9 @@ namespace SellingElectronicWebsite.Helper
                 .ForMember(dest => dest.CustomerName, opt => opt.MapFrom(src => src.Customer.FullName))
                 .ForMember(dest => dest.Store, opt => opt.MapFrom(src => src.Store))
                 .ReverseMap();
+
+            CreateMap<Order, OrderOfflineModel>()
+               .ReverseMap();
         }
     }
 }

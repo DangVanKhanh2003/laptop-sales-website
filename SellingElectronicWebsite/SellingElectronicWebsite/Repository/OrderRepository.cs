@@ -2,7 +2,9 @@
 using Microsoft.EntityFrameworkCore;
 using SellingElectronicWebsite.Entities;
 using SellingElectronicWebsite.Helper;
+using SellingElectronicWebsite.Model;
 using SellingElectronicWebsite.ViewModel;
+using System.Drawing;
 using System.Globalization;
 using System.Net.NetworkInformation;
 
@@ -260,12 +262,9 @@ namespace SellingElectronicWebsite.Repository
             return listOrderVM;
         }
 
-        public Task<OrderVM> OderOffline()
-        {
-            throw new NotImplementedException();
-        }
+       
 
-        public async Task<OrderVM> ExportOder(int idOrder, int employeeId)
+        public async Task<OrderVM> ExportOrder(int idOrder, int employeeId)
         {
             //check idOder exist
             var order = await _context.Orders
@@ -341,9 +340,226 @@ namespace SellingElectronicWebsite.Repository
             return orderVM;
         }
 
-        public Task<OrderVM> CancelOder(int idOrder, int employeeId)
+        public async Task<OrderVM> CancelOrder(int idOrder, int employeeId)
         {
-            throw new NotImplementedException();
+            //check idOder exist
+            var order = await _context.Orders
+                                       .Include(p => p.Customer)
+                                               .Include(p => p.Employee)
+                                               .Include(p => p.Store)
+                                               .Include(p => p.Store.Address)
+                                               .Where(p => p.OrderId == idOrder)
+                                               .FirstOrDefaultAsync();
+
+            if (order == null)
+            {
+                throw new Exception("Order not found!");
+            }
+
+            //check status of order
+            if (order.Status.ToLower() != "pending")
+            {
+                throw new Exception("Status of order isn't pending!");
+            }
+            //check emplpoyee exist
+            var checkEmployee = await _context.Employees
+                                                        .Where(p => p.EmployeeId == employeeId)
+                                                        .FirstOrDefaultAsync();
+            if (checkEmployee == null)
+            {
+                throw new Exception("Employee not found!");
+            }
+
+            // update employee, status, exportDate
+            order.EmployeeId = employeeId;
+            order.Employee = checkEmployee;
+            order.Status = "cancel";
+            order.DateExport = DateTime.Now;
+
+            
+
+            // return product for store
+            var listProductOrder = await _context.ProductOrders
+                                                           .Where(p => p.OrderId == order.OrderId)
+                                                           .Include(p => p.Product)
+                                                           .Include(p => p.Product.Category)
+                                                           .Include(p => p.Color)
+                                                           .ToListAsync();
+
+            foreach(var itemProduct in listProductOrder)
+            {
+                var storeItem = await _context.StoresProducts
+                                   .Include(p => p.Store)
+                                   .Include(p => p.Product)
+                                   .Include(p => p.Color)
+                                   .Include(p => p.Product.Category)
+                                   .Where(p => p.StoreId == order.StoreId 
+                                            && p.ProductId == itemProduct.ProductId 
+                                            && p.ColorId == itemProduct.ColorId)
+                                   .FirstOrDefaultAsync();
+                if (storeItem == null)
+                {
+                    // get store by id
+                    Store store = await _context.Stores.Where(p => p.StoreId == order.StoreId).FirstOrDefaultAsync();
+                    if (store == null)
+                    {
+                        throw new Exception("Store don't exist!");
+
+                    }
+                    //get color by id
+                    Entities.Color color = await _context.Colors.Where(p => p.ColorId == itemProduct.ColorId).FirstOrDefaultAsync();
+                    if (color == null)
+                    {
+                        throw new Exception("Color don't exist!");
+
+                    }
+                    //get product by id
+                    Product product = await _context.Products
+                                                .Include(p => p.Category)
+                                                .Where(p => p.ProductId == itemProduct.ProductId).FirstOrDefaultAsync();
+                    if (product == null)
+                    {
+                        throw new Exception("Product don't exist!");
+
+                    }
+                    // create new store product item
+                    StoresProduct newStoreProduct = new StoresProduct() { ColorId = (int)itemProduct.ColorId,
+                                                                           ProductId = (int)itemProduct.ProductId,
+                                                                           StoreId = (int)order.StoreId, 
+                                                                            Amount = (int)itemProduct.Amount };
+                    newStoreProduct.Store = store;
+                    newStoreProduct.Color = color;
+                    newStoreProduct.Product = product;
+                    await _context.StoresProducts.AddAsync(newStoreProduct);
+                    var vm = _mapper.Map<StoreProductVM>(newStoreProduct);
+
+                }
+                else
+                {
+                    storeItem.Amount = storeItem.Amount + itemProduct.Amount;
+                    _context.Update(storeItem);
+                }
+            }
+
+            //map order to orderVM
+            OrderVM orderVM = _mapper.Map<OrderVM>(order);
+            orderVM.ListProductOrder = _mapper.Map<List<ProductOrderVM>>(listProductOrder);
+            return orderVM;
+        }
+
+
+        /// <param name="model">CustomerId can be null</param>
+        /// <returns>order View Model</returns>
+        public async Task<OrderVM> OderOffline(OrderOfflineModel model)
+        {
+            // check id employee
+            var checkEmployee = await _context.Employees
+                                                        .Where(p => p.EmployeeId == model.EmployeeId)
+                                                        .FirstOrDefaultAsync();
+            if (checkEmployee == null)
+            {
+                throw new Exception("Employee not found!");
+            }
+
+            // check id store
+            Store store = await _context.Stores
+                                            .Include(p => p.Address)
+                                            .Where(p => p.StoreId == model.StoreId)
+                                            .FirstOrDefaultAsync();
+            if (store == null)
+            {
+                throw new Exception("Store don't exist!");
+
+            }
+
+            // check id customer(if id != null)
+            if(model.CustomerId != null)
+            {
+                var customer = await _context.Customers
+                     .Where(p => p.CustomerId == model.CustomerId).FirstOrDefaultAsync();
+                if (customer == null)
+                {
+                    throw new Exception("Customer id: " + model.CustomerId + " isn't exist!");
+                }
+            }
+
+            Order newOrder = _mapper.Map<Order>(model);
+
+            // add order infor
+            newOrder.Status = "approve";
+            newOrder.OrderType = "offline";
+            newOrder.DateExport = DateTime.Now;
+            newOrder.CustomerId = model.CustomerId;
+
+            //add and save change to get id order
+            await _context.AddAsync(newOrder);
+            await _context.SaveChangesAsync();
+
+            List<ProductOrderVM> productOrderVMs = new List<ProductOrderVM>();
+            // check id each product in list
+            foreach (ProductOrderModel item in model.ListProductOrder)
+            {
+
+                //get item in store 
+                var itemProductInStore = await _context.StoresProducts
+                                                .Include(p => p.Product)
+                                                .Include(p => p.Product.Category)
+                                                .Where(p => p.StoreId == model.StoreId
+                                                        && p.ProductId == item.ProductId
+                                                        && p.ColorId == item.ColorId)
+                                                .FirstOrDefaultAsync();
+                if (itemProductInStore == null)
+                {
+                    throw new Exception("This product don't exist in store by id store: " + model.StoreId);
+                }
+                //check amount in store with amount order
+                if (item.Amount > itemProductInStore.Amount)
+                {
+                    throw new Exception("The product not enough of for order!");
+                }
+                else // reduce amount of item product in this store
+                {
+                    itemProductInStore.Amount = itemProductInStore.Amount - item.Amount;
+                }
+
+                // get until price by sale
+                SalesVM sale = _mapper.Map<SalesVM>(await ProductsRepository.checkSaleByIdProduct(itemProductInStore.Product.ProductId));
+                decimal percentSale = 0;
+                if (sale != null)
+                {
+                    percentSale = sale.PercentSale;
+                }
+                var untilPrice = itemProductInStore.Product.Price * (100 - percentSale) / 100;
+                //create new prodcut Order
+                ProductOrder productOrder = new ProductOrder() { 
+                                                                Amount = item.Amount,
+                                                                ProductId = item.ProductId, 
+                                                                ColorId = item.ColorId,
+                                                                OrderId = newOrder.OrderId,
+                                                                UntilPrice = untilPrice
+
+                };
+
+                
+
+                // add new product order
+                await _context.AddAsync(productOrder);
+                // save to get id
+                await _context.SaveChangesAsync();
+                // update new amount of item product in store
+                _context.Update(itemProductInStore);
+
+                // add to list product order view model
+                var productOrderVM = _mapper.Map<ProductOrderVM>(productOrder);
+                productOrderVM.Product.sale = sale;
+                productOrderVMs.Add(productOrderVM);
+            }
+
+            //map to View Model
+            var orderVM = _mapper.Map<OrderVM>(newOrder);
+            orderVM.ListProductOrder = productOrderVMs;
+            
+            return orderVM;
         }
     }
 }

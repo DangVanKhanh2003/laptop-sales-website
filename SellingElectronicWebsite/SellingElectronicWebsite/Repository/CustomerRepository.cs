@@ -139,17 +139,21 @@ namespace SellingElectronicWebsite.Repository
 
         public async Task<bool> Update(CustomerModel model, int id)
         {
+            // check phone number
             var checkPhoneNumber = Regex.IsMatch(model.PhoneNumber, @"^\d{10}$");
             if (checkPhoneNumber == false)
             {
                 throw new Exception("Phone number is invalid!");
             }
+
+            //check customer
             var customer = await _context.Customers
                      .Where(p => p.CustomerId == id).FirstOrDefaultAsync();
             if(customer == null)
             {
                 throw new Exception("Customer id: " + id + " isn't exist!");
             }
+
             var address = _context.Addresses.Where(p => p.AddressId == customer.AddressId).FirstOrDefault();
             // customer don't exist address
             if(address == null)

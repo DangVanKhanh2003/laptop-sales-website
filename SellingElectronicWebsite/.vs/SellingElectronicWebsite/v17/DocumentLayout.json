@@ -1,0 +1,1303 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|e:\\c\u00F4ng vi\u1EC7c\\btl_doanchuyennganh\\laptop-sales-website\\sellingelectronicwebsite\\sellingelectronicwebsite\\controllers\\employee\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|solutionrelative:sellingelectronicwebsite\\controllers\\employee\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|e:\\c\u00F4ng vi\u1EC7c\\btl_doanchuyennganh\\laptop-sales-website\\sellingelectronicwebsite\\sellingelectronicwebsite\\repository\\orderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|solutionrelative:sellingelectronicwebsite\\repository\\orderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|e:\\c\u00F4ng vi\u1EC7c\\btl_doanchuyennganh\\laptop-sales-website\\sellingelectronicwebsite\\sellingelectronicwebsite\\helper\\automapperconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|solutionrelative:sellingelectronicwebsite\\helper\\automapperconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|e:\\c\u00F4ng vi\u1EC7c\\btl_doanchuyennganh\\laptop-sales-website\\sellingelectronicwebsite\\sellingelectronicwebsite\\entities\\productorder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|solutionrelative:sellingelectronicwebsite\\entities\\productorder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|e:\\c\u00F4ng vi\u1EC7c\\btl_doanchuyennganh\\laptop-sales-website\\sellingelectronicwebsite\\sellingelectronicwebsite\\model\\productordermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|solutionrelative:sellingelectronicwebsite\\model\\productordermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|e:\\c\u00F4ng vi\u1EC7c\\btl_doanchuyennganh\\laptop-sales-website\\sellingelectronicwebsite\\sellingelectronicwebsite\\repository\\storerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|solutionrelative:sellingelectronicwebsite\\repository\\storerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|e:\\c\u00F4ng vi\u1EC7c\\btl_doanchuyennganh\\laptop-sales-website\\sellingelectronicwebsite\\sellingelectronicwebsite\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|solutionrelative:sellingelectronicwebsite\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|e:\\c\u00F4ng vi\u1EC7c\\btl_doanchuyennganh\\laptop-sales-website\\sellingelectronicwebsite\\sellingelectronicwebsite\\entities\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|solutionrelative:sellingelectronicwebsite\\entities\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|e:\\c\u00F4ng vi\u1EC7c\\btl_doanchuyennganh\\laptop-sales-website\\sellingelectronicwebsite\\sellingelectronicwebsite\\model\\orderofflinemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|solutionrelative:sellingelectronicwebsite\\model\\orderofflinemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|e:\\c\u00F4ng vi\u1EC7c\\btl_doanchuyennganh\\laptop-sales-website\\sellingelectronicwebsite\\sellingelectronicwebsite\\repository\\orderpendingrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|solutionrelative:sellingelectronicwebsite\\repository\\orderpendingrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|e:\\c\u00F4ng vi\u1EC7c\\btl_doanchuyennganh\\laptop-sales-website\\sellingelectronicwebsite\\sellingelectronicwebsite\\repository\\customerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|solutionrelative:sellingelectronicwebsite\\repository\\customerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|e:\\c\u00F4ng vi\u1EC7c\\btl_doanchuyennganh\\laptop-sales-website\\sellingelectronicwebsite\\sellingelectronicwebsite\\repository\\iorderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|solutionrelative:sellingelectronicwebsite\\repository\\iorderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|e:\\c\u00F4ng vi\u1EC7c\\btl_doanchuyennganh\\laptop-sales-website\\sellingelectronicwebsite\\sellingelectronicwebsite\\model\\productmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|solutionrelative:sellingelectronicwebsite\\model\\productmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|e:\\c\u00F4ng vi\u1EC7c\\btl_doanchuyennganh\\laptop-sales-website\\sellingelectronicwebsite\\sellingelectronicwebsite\\repository\\shoppingcartrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|solutionrelative:sellingelectronicwebsite\\repository\\shoppingcartrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|e:\\c\u00F4ng vi\u1EC7c\\btl_doanchuyennganh\\laptop-sales-website\\sellingelectronicwebsite\\sellingelectronicwebsite\\controllers\\employee\\salescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|solutionrelative:sellingelectronicwebsite\\controllers\\employee\\salescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|e:\\c\u00F4ng vi\u1EC7c\\btl_doanchuyennganh\\laptop-sales-website\\sellingelectronicwebsite\\sellingelectronicwebsite\\controllers\\employee\\storecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|solutionrelative:sellingelectronicwebsite\\controllers\\employee\\storecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|e:\\c\u00F4ng vi\u1EC7c\\btl_doanchuyennganh\\laptop-sales-website\\sellingelectronicwebsite\\sellingelectronicwebsite\\controllers\\employee\\colorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|solutionrelative:sellingelectronicwebsite\\controllers\\employee\\colorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|e:\\c\u00F4ng vi\u1EC7c\\btl_doanchuyennganh\\laptop-sales-website\\sellingelectronicwebsite\\sellingelectronicwebsite\\controllers\\employee\\categorycontroler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|solutionrelative:sellingelectronicwebsite\\controllers\\employee\\categorycontroler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|e:\\c\u00F4ng vi\u1EC7c\\btl_doanchuyennganh\\laptop-sales-website\\sellingelectronicwebsite\\sellingelectronicwebsite\\controllers\\customer\\addressbookcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|solutionrelative:sellingelectronicwebsite\\controllers\\customer\\addressbookcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|e:\\c\u00F4ng vi\u1EC7c\\btl_doanchuyennganh\\laptop-sales-website\\sellingelectronicwebsite\\sellingelectronicwebsite\\controllers\\orderpendingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|solutionrelative:sellingelectronicwebsite\\controllers\\orderpendingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|e:\\c\u00F4ng vi\u1EC7c\\btl_doanchuyennganh\\laptop-sales-website\\sellingelectronicwebsite\\sellingelectronicwebsite\\controllers\\customer\\customerinforcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|solutionrelative:sellingelectronicwebsite\\controllers\\customer\\customerinforcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|e:\\c\u00F4ng vi\u1EC7c\\btl_doanchuyennganh\\laptop-sales-website\\sellingelectronicwebsite\\sellingelectronicwebsite\\unitofwork\\iunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|solutionrelative:sellingelectronicwebsite\\unitofwork\\iunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|e:\\c\u00F4ng vi\u1EC7c\\btl_doanchuyennganh\\laptop-sales-website\\sellingelectronicwebsite\\sellingelectronicwebsite\\unitofwork\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|solutionrelative:sellingelectronicwebsite\\unitofwork\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|e:\\c\u00F4ng vi\u1EC7c\\btl_doanchuyennganh\\laptop-sales-website\\sellingelectronicwebsite\\sellingelectronicwebsite\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|solutionrelative:sellingelectronicwebsite\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|e:\\c\u00F4ng vi\u1EC7c\\btl_doanchuyennganh\\laptop-sales-website\\sellingelectronicwebsite\\sellingelectronicwebsite\\viewmodel\\productspecifiactionvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|solutionrelative:sellingelectronicwebsite\\viewmodel\\productspecifiactionvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|e:\\c\u00F4ng vi\u1EC7c\\btl_doanchuyennganh\\laptop-sales-website\\sellingelectronicwebsite\\sellingelectronicwebsite\\viewmodel\\storeproductvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|solutionrelative:sellingelectronicwebsite\\viewmodel\\storeproductvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|e:\\c\u00F4ng vi\u1EC7c\\btl_doanchuyennganh\\laptop-sales-website\\sellingelectronicwebsite\\sellingelectronicwebsite\\repository\\productsrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|solutionrelative:sellingelectronicwebsite\\repository\\productsrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|e:\\c\u00F4ng vi\u1EC7c\\btl_doanchuyennganh\\laptop-sales-website\\sellingelectronicwebsite\\sellingelectronicwebsite\\helper\\paginatedlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|solutionrelative:sellingelectronicwebsite\\helper\\paginatedlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|e:\\c\u00F4ng vi\u1EC7c\\btl_doanchuyennganh\\laptop-sales-website\\sellingelectronicwebsite\\sellingelectronicwebsite\\repository\\iproductsrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|solutionrelative:sellingelectronicwebsite\\repository\\iproductsrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|e:\\c\u00F4ng vi\u1EC7c\\btl_doanchuyennganh\\laptop-sales-website\\sellingelectronicwebsite\\sellingelectronicwebsite\\entities\\sellingelectronicscontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|solutionrelative:sellingelectronicwebsite\\entities\\sellingelectronicscontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|e:\\c\u00F4ng vi\u1EC7c\\btl_doanchuyennganh\\laptop-sales-website\\sellingelectronicwebsite\\sellingelectronicwebsite\\repository\\salesrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|solutionrelative:sellingelectronicwebsite\\repository\\salesrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|e:\\c\u00F4ng vi\u1EC7c\\btl_doanchuyennganh\\laptop-sales-website\\sellingelectronicwebsite\\sellingelectronicwebsite\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|solutionrelative:sellingelectronicwebsite\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|e:\\c\u00F4ng vi\u1EC7c\\btl_doanchuyennganh\\laptop-sales-website\\sellingelectronicwebsite\\sellingelectronicwebsite\\entities\\orderpending.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|solutionrelative:sellingelectronicwebsite\\entities\\orderpending.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\khanh084\\AppData\\Local\\SourceServer\\f7c0615f62ea20c3a5aa75e1d5e169c318868ce41b28409cceab1ca3205f41a4\\SellingElectronicWebsite\\SellingElectronicWebsite\\Controllers\\Customer\\OrderPendingController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|e:\\c\u00F4ng vi\u1EC7c\\btl_doanchuyennganh\\laptop-sales-website\\sellingelectronicwebsite\\sellingelectronicwebsite\\sercurity\\customauthorizecustomerfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|solutionrelative:sellingelectronicwebsite\\sercurity\\customauthorizecustomerfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|e:\\c\u00F4ng vi\u1EC7c\\btl_doanchuyennganh\\laptop-sales-website\\sellingelectronicwebsite\\sellingelectronicwebsite\\sercurity\\roleservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|solutionrelative:sellingelectronicwebsite\\sercurity\\roleservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|e:\\c\u00F4ng vi\u1EC7c\\btl_doanchuyennganh\\laptop-sales-website\\sellingelectronicwebsite\\sellingelectronicwebsite\\model\\shoppingcartitemmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|solutionrelative:sellingelectronicwebsite\\model\\shoppingcartitemmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|e:\\c\u00F4ng vi\u1EC7c\\btl_doanchuyennganh\\laptop-sales-website\\sellingelectronicwebsite\\sellingelectronicwebsite\\controllers\\customeraccountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|solutionrelative:sellingelectronicwebsite\\controllers\\customeraccountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|e:\\c\u00F4ng vi\u1EC7c\\btl_doanchuyennganh\\laptop-sales-website\\sellingelectronicwebsite\\sellingelectronicwebsite\\controllers\\customer\\shoppingcartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|solutionrelative:sellingelectronicwebsite\\controllers\\customer\\shoppingcartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|e:\\c\u00F4ng vi\u1EC7c\\btl_doanchuyennganh\\laptop-sales-website\\sellingelectronicwebsite\\sellingelectronicwebsite\\helper\\tokenhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|solutionrelative:sellingelectronicwebsite\\helper\\tokenhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|e:\\c\u00F4ng vi\u1EC7c\\btl_doanchuyennganh\\laptop-sales-website\\sellingelectronicwebsite\\sellingelectronicwebsite\\model\\tokenmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|solutionrelative:sellingelectronicwebsite\\model\\tokenmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|e:\\c\u00F4ng vi\u1EC7c\\btl_doanchuyennganh\\laptop-sales-website\\sellingelectronicwebsite\\sellingelectronicwebsite\\repository\\customeraccountrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|solutionrelative:sellingelectronicwebsite\\repository\\customeraccountrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|e:\\c\u00F4ng vi\u1EC7c\\btl_doanchuyennganh\\laptop-sales-website\\sellingelectronicwebsite\\sellingelectronicwebsite\\repository\\iorderpendingrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|solutionrelative:sellingelectronicwebsite\\repository\\iorderpendingrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|e:\\c\u00F4ng vi\u1EC7c\\btl_doanchuyennganh\\laptop-sales-website\\sellingelectronicwebsite\\sellingelectronicwebsite\\repository\\ishoppingcartrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|solutionrelative:sellingelectronicwebsite\\repository\\ishoppingcartrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|e:\\c\u00F4ng vi\u1EC7c\\btl_doanchuyennganh\\laptop-sales-website\\sellingelectronicwebsite\\sellingelectronicwebsite\\repository\\addressbookrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|solutionrelative:sellingelectronicwebsite\\repository\\addressbookrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|e:\\c\u00F4ng vi\u1EC7c\\btl_doanchuyennganh\\laptop-sales-website\\sellingelectronicwebsite\\sellingelectronicwebsite\\viewmodel\\colorvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|solutionrelative:sellingelectronicwebsite\\viewmodel\\colorvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|e:\\c\u00F4ng vi\u1EC7c\\btl_doanchuyennganh\\laptop-sales-website\\sellingelectronicwebsite\\sellingelectronicwebsite\\entities\\storesproduct.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|solutionrelative:sellingelectronicwebsite\\entities\\storesproduct.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|e:\\c\u00F4ng vi\u1EC7c\\btl_doanchuyennganh\\laptop-sales-website\\sellingelectronicwebsite\\sellingelectronicwebsite\\repository\\istorerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|solutionrelative:sellingelectronicwebsite\\repository\\istorerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|e:\\c\u00F4ng vi\u1EC7c\\btl_doanchuyennganh\\laptop-sales-website\\sellingelectronicwebsite\\sellingelectronicwebsite\\model\\storeproductmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|solutionrelative:sellingelectronicwebsite\\model\\storeproductmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|e:\\c\u00F4ng vi\u1EC7c\\btl_doanchuyennganh\\laptop-sales-website\\sellingelectronicwebsite\\sellingelectronicwebsite\\entities\\qlbanhangcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|solutionrelative:sellingelectronicwebsite\\entities\\qlbanhangcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|e:\\c\u00F4ng vi\u1EC7c\\btl_doanchuyennganh\\laptop-sales-website\\sellingelectronicwebsite\\sellingelectronicwebsite\\entities\\productspecifiaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|solutionrelative:sellingelectronicwebsite\\entities\\productspecifiaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|e:\\c\u00F4ng vi\u1EC7c\\btl_doanchuyennganh\\laptop-sales-website\\sellingelectronicwebsite\\sellingelectronicwebsite\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|solutionrelative:sellingelectronicwebsite\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|e:\\c\u00F4ng vi\u1EC7c\\btl_doanchuyennganh\\laptop-sales-website\\sellingelectronicwebsite\\sellingelectronicwebsite\\sellingelectronicwebsite.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "RelativeMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|solutionrelative:sellingelectronicwebsite\\sellingelectronicwebsite.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|e:\\c\u00F4ng vi\u1EC7c\\btl_doanchuyennganh\\laptop-sales-website\\sellingelectronicwebsite\\sellingelectronicwebsite\\model\\productspecifiactionmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|solutionrelative:sellingelectronicwebsite\\model\\productspecifiactionmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|e:\\c\u00F4ng vi\u1EC7c\\btl_doanchuyennganh\\laptop-sales-website\\sellingelectronicwebsite\\sellingelectronicwebsite\\sellingelectronicwebsite.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|solutionrelative:sellingelectronicwebsite\\sellingelectronicwebsite.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|e:\\c\u00F4ng vi\u1EC7c\\btl_doanchuyennganh\\laptop-sales-website\\sellingelectronicwebsite\\sellingelectronicwebsite\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|solutionrelative:sellingelectronicwebsite\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|e:\\c\u00F4ng vi\u1EC7c\\btl_doanchuyennganh\\laptop-sales-website\\sellingelectronicwebsite\\sellingelectronicwebsite\\viewmodel\\imageproductsvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|solutionrelative:sellingelectronicwebsite\\viewmodel\\imageproductsvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|e:\\c\u00F4ng vi\u1EC7c\\btl_doanchuyennganh\\laptop-sales-website\\sellingelectronicwebsite\\sellingelectronicwebsite\\viewmodel\\categoryvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|solutionrelative:sellingelectronicwebsite\\viewmodel\\categoryvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|e:\\c\u00F4ng vi\u1EC7c\\btl_doanchuyennganh\\laptop-sales-website\\sellingelectronicwebsite\\sellingelectronicwebsite\\model\\categorymodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|solutionrelative:sellingelectronicwebsite\\model\\categorymodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|e:\\c\u00F4ng vi\u1EC7c\\btl_doanchuyennganh\\laptop-sales-website\\sellingelectronicwebsite\\sellingelectronicwebsite\\entities\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|solutionrelative:sellingelectronicwebsite\\entities\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|e:\\c\u00F4ng vi\u1EC7c\\btl_doanchuyennganh\\laptop-sales-website\\sellingelectronicwebsite\\sellingelectronicwebsite\\repository\\icategoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|solutionrelative:sellingelectronicwebsite\\repository\\icategoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|e:\\c\u00F4ng vi\u1EC7c\\btl_doanchuyennganh\\laptop-sales-website\\sellingelectronicwebsite\\sellingelectronicwebsite\\repository\\categoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|solutionrelative:sellingelectronicwebsite\\repository\\categoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|e:\\c\u00F4ng vi\u1EC7c\\btl_doanchuyennganh\\laptop-sales-website\\sellingelectronicwebsite\\sellingelectronicwebsite\\repository\\icolorsrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|solutionrelative:sellingelectronicwebsite\\repository\\icolorsrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|e:\\c\u00F4ng vi\u1EC7c\\btl_doanchuyennganh\\laptop-sales-website\\sellingelectronicwebsite\\sellingelectronicwebsite\\entities\\store.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|solutionrelative:sellingelectronicwebsite\\entities\\store.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|e:\\c\u00F4ng vi\u1EC7c\\btl_doanchuyennganh\\laptop-sales-website\\sellingelectronicwebsite\\sellingelectronicwebsite\\model\\addressmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|solutionrelative:sellingelectronicwebsite\\model\\addressmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|e:\\c\u00F4ng vi\u1EC7c\\btl_doanchuyennganh\\laptop-sales-website\\sellingelectronicwebsite\\sellingelectronicwebsite\\entities\\sale.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|solutionrelative:sellingelectronicwebsite\\entities\\sale.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|e:\\c\u00F4ng vi\u1EC7c\\btl_doanchuyennganh\\laptop-sales-website\\sellingelectronicwebsite\\sellingelectronicwebsite\\viewmodel\\salesvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|solutionrelative:sellingelectronicwebsite\\viewmodel\\salesvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|e:\\c\u00F4ng vi\u1EC7c\\btl_doanchuyennganh\\laptop-sales-website\\sellingelectronicwebsite\\sellingelectronicwebsite\\repository\\isalesrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|solutionrelative:sellingelectronicwebsite\\repository\\isalesrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|e:\\c\u00F4ng vi\u1EC7c\\btl_doanchuyennganh\\laptop-sales-website\\sellingelectronicwebsite\\sellingelectronicwebsite\\model\\salesmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|solutionrelative:sellingelectronicwebsite\\model\\salesmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|e:\\c\u00F4ng vi\u1EC7c\\btl_doanchuyennganh\\laptop-sales-website\\sellingelectronicwebsite\\sellingelectronicwebsite\\entities\\color.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|solutionrelative:sellingelectronicwebsite\\entities\\color.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|e:\\c\u00F4ng vi\u1EC7c\\btl_doanchuyennganh\\laptop-sales-website\\sellingelectronicwebsite\\sellingelectronicwebsite\\model\\imageproductsmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|solutionrelative:sellingelectronicwebsite\\model\\imageproductsmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|e:\\c\u00F4ng vi\u1EC7c\\btl_doanchuyennganh\\laptop-sales-website\\sellingelectronicwebsite\\sellingelectronicwebsite\\model\\colormodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|solutionrelative:sellingelectronicwebsite\\model\\colormodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|e:\\c\u00F4ng vi\u1EC7c\\btl_doanchuyennganh\\laptop-sales-website\\sellingelectronicwebsite\\sellingelectronicwebsite\\entities\\imageproduct.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|solutionrelative:sellingelectronicwebsite\\entities\\imageproduct.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|e:\\c\u00F4ng vi\u1EC7c\\btl_doanchuyennganh\\laptop-sales-website\\sellingelectronicwebsite\\sellingelectronicwebsite\\entities\\warehousesexportproduct.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|solutionrelative:sellingelectronicwebsite\\entities\\warehousesexportproduct.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|e:\\c\u00F4ng vi\u1EC7c\\btl_doanchuyennganh\\laptop-sales-website\\sellingelectronicwebsite\\sellingelectronicwebsite\\entities\\warehousesimportproduct.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|solutionrelative:sellingelectronicwebsite\\entities\\warehousesimportproduct.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|e:\\c\u00F4ng vi\u1EC7c\\btl_doanchuyennganh\\laptop-sales-website\\sellingelectronicwebsite\\sellingelectronicwebsite\\entities\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|solutionrelative:sellingelectronicwebsite\\entities\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Controllers\\Employee\\ProductController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:SellingElectronicWebsite\\Controllers\\Employee\\ProductController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 12,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Program.cs",
+              "RelativeDocumentMoniker": "SellingElectronicWebsite\\Program.cs",
+              "ToolTip": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Program.cs",
+              "RelativeToolTip": "SellingElectronicWebsite\\Program.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAEwGEAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-12T07:04:59.489Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "StoreRepository.cs",
+              "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Repository\\StoreRepository.cs",
+              "RelativeDocumentMoniker": "SellingElectronicWebsite\\Repository\\StoreRepository.cs",
+              "ToolTip": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Repository\\StoreRepository.cs",
+              "RelativeToolTip": "SellingElectronicWebsite\\Repository\\StoreRepository.cs",
+              "ViewState": "AgIAAO0AAAAAAAAAAAAqwPcAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-16T12:21:09.11Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "OrderRepository.cs",
+              "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Repository\\OrderRepository.cs",
+              "RelativeDocumentMoniker": "SellingElectronicWebsite\\Repository\\OrderRepository.cs",
+              "ToolTip": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Repository\\OrderRepository.cs",
+              "RelativeToolTip": "SellingElectronicWebsite\\Repository\\OrderRepository.cs",
+              "ViewState": "AgIAALIBAAAAAAAAAAAcwMMBAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-14T03:32:07Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Order.cs",
+              "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Entities\\Order.cs",
+              "RelativeDocumentMoniker": "SellingElectronicWebsite\\Entities\\Order.cs",
+              "ToolTip": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Entities\\Order.cs",
+              "RelativeToolTip": "SellingElectronicWebsite\\Entities\\Order.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwBUAAAAtAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-11T09:29:12.408Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "IOrderRepository.cs",
+              "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Repository\\IOrderRepository.cs",
+              "RelativeDocumentMoniker": "SellingElectronicWebsite\\Repository\\IOrderRepository.cs",
+              "ToolTip": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Repository\\IOrderRepository.cs",
+              "RelativeToolTip": "SellingElectronicWebsite\\Repository\\IOrderRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAA5AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-14T03:24:01.875Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "CustomerRepository.cs",
+              "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Repository\\CustomerRepository.cs",
+              "RelativeDocumentMoniker": "SellingElectronicWebsite\\Repository\\CustomerRepository.cs",
+              "ToolTip": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Repository\\CustomerRepository.cs",
+              "RelativeToolTip": "SellingElectronicWebsite\\Repository\\CustomerRepository.cs",
+              "ViewState": "AQIAAIgAAAAAAAAAAIAwwJoAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-11T07:34:53.315Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "OrderOfflineModel.cs",
+              "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Model\\OrderOfflineModel.cs",
+              "RelativeDocumentMoniker": "SellingElectronicWebsite\\Model\\OrderOfflineModel.cs",
+              "ToolTip": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Model\\OrderOfflineModel.cs",
+              "RelativeToolTip": "SellingElectronicWebsite\\Model\\OrderOfflineModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAQAAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-15T00:26:22.731Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AutoMapperConfiguration.cs",
+              "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Helper\\AutoMapperConfiguration.cs",
+              "RelativeDocumentMoniker": "SellingElectronicWebsite\\Helper\\AutoMapperConfiguration.cs",
+              "ToolTip": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Helper\\AutoMapperConfiguration.cs",
+              "RelativeToolTip": "SellingElectronicWebsite\\Helper\\AutoMapperConfiguration.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAAAAAEUAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-15T01:42:03.458Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "OrderController.cs",
+              "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Controllers\\Employee\\OrderController.cs",
+              "RelativeDocumentMoniker": "SellingElectronicWebsite\\Controllers\\Employee\\OrderController.cs",
+              "ToolTip": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Controllers\\Employee\\OrderController.cs",
+              "RelativeToolTip": "SellingElectronicWebsite\\Controllers\\Employee\\OrderController.cs",
+              "ViewState": "AgIAAHkAAAAAAAAAAAAvwIgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-14T07:11:41.058Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "OrderPendingRepository.cs",
+              "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Repository\\OrderPendingRepository.cs",
+              "RelativeDocumentMoniker": "SellingElectronicWebsite\\Repository\\OrderPendingRepository.cs",
+              "ToolTip": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Repository\\OrderPendingRepository.cs",
+              "RelativeToolTip": "SellingElectronicWebsite\\Repository\\OrderPendingRepository.cs",
+              "ViewState": "AQIAABkBAAAAAAAAAAAiwDkBAAA8AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-11T02:24:55.1Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "ProductModel.cs",
+              "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Model\\ProductModel.cs",
+              "RelativeDocumentMoniker": "SellingElectronicWebsite\\Model\\ProductModel.cs",
+              "ToolTip": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Model\\ProductModel.cs",
+              "RelativeToolTip": "SellingElectronicWebsite\\Model\\ProductModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABgAAAAeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-12T07:17:09.135Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "CategoryControler.cs",
+              "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Controllers\\Employee\\CategoryControler.cs",
+              "RelativeDocumentMoniker": "SellingElectronicWebsite\\Controllers\\Employee\\CategoryControler.cs",
+              "ToolTip": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Controllers\\Employee\\CategoryControler.cs",
+              "RelativeToolTip": "SellingElectronicWebsite\\Controllers\\Employee\\CategoryControler.cs",
+              "ViewState": "AQIAAIoAAAAAAAAAAAAmwJYAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-15T13:22:00.945Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "StoreController.cs",
+              "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Controllers\\Employee\\StoreController.cs",
+              "RelativeDocumentMoniker": "SellingElectronicWebsite\\Controllers\\Employee\\StoreController.cs",
+              "ToolTip": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Controllers\\Employee\\StoreController.cs",
+              "RelativeToolTip": "SellingElectronicWebsite\\Controllers\\Employee\\StoreController.cs",
+              "ViewState": "AQIAABwBAAAAAAAAAAAYwBgBAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-16T12:34:57.33Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "SalesController.cs",
+              "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Controllers\\Employee\\SalesController.cs",
+              "RelativeDocumentMoniker": "SellingElectronicWebsite\\Controllers\\Employee\\SalesController.cs",
+              "ToolTip": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Controllers\\Employee\\SalesController.cs",
+              "RelativeToolTip": "SellingElectronicWebsite\\Controllers\\Employee\\SalesController.cs",
+              "ViewState": "AQIAAMAAAAAAAAAAAAAowNwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-16T03:52:39.507Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "ShoppingCartRepository.cs",
+              "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Repository\\ShoppingCartRepository.cs",
+              "RelativeDocumentMoniker": "SellingElectronicWebsite\\Repository\\ShoppingCartRepository.cs",
+              "ToolTip": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Repository\\ShoppingCartRepository.cs",
+              "RelativeToolTip": "SellingElectronicWebsite\\Repository\\ShoppingCartRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAGMAAABCAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-10T11:34:53.862Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "ColorController.cs",
+              "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Controllers\\Employee\\ColorController.cs",
+              "RelativeDocumentMoniker": "SellingElectronicWebsite\\Controllers\\Employee\\ColorController.cs",
+              "ToolTip": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Controllers\\Employee\\ColorController.cs",
+              "RelativeToolTip": "SellingElectronicWebsite\\Controllers\\Employee\\ColorController.cs",
+              "ViewState": "AQIAAJwAAAAAAAAAAAAmwKYAAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-15T00:52:11.934Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "OrderPendingController.cs",
+              "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Controllers\\OrderPendingController.cs",
+              "RelativeDocumentMoniker": "SellingElectronicWebsite\\Controllers\\OrderPendingController.cs",
+              "ToolTip": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Controllers\\OrderPendingController.cs",
+              "RelativeToolTip": "SellingElectronicWebsite\\Controllers\\OrderPendingController.cs",
+              "ViewState": "AQIAAF8AAAAAAAAAAADwv28AAABBAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-11T02:23:51.903Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "CustomerInforController.cs",
+              "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Controllers\\Customer\\CustomerInforController.cs",
+              "RelativeDocumentMoniker": "SellingElectronicWebsite\\Controllers\\Customer\\CustomerInforController.cs",
+              "ToolTip": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Controllers\\Customer\\CustomerInforController.cs",
+              "RelativeToolTip": "SellingElectronicWebsite\\Controllers\\Customer\\CustomerInforController.cs",
+              "ViewState": "AQIAAFgAAAAAAAAAAAAcwGwAAAA3AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-11T07:33:15.321Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "AddressBookController.cs",
+              "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Controllers\\Customer\\AddressBookController.cs",
+              "RelativeDocumentMoniker": "SellingElectronicWebsite\\Controllers\\Customer\\AddressBookController.cs",
+              "ToolTip": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Controllers\\Customer\\AddressBookController.cs",
+              "RelativeToolTip": "SellingElectronicWebsite\\Controllers\\Customer\\AddressBookController.cs",
+              "ViewState": "AQIAADgAAAAAAAAAAAAwwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-14T12:37:34.073Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "UnitOfWork.cs",
+              "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\UnitOfWork\\UnitOfWork.cs",
+              "RelativeDocumentMoniker": "SellingElectronicWebsite\\UnitOfWork\\UnitOfWork.cs",
+              "ToolTip": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\UnitOfWork\\UnitOfWork.cs",
+              "RelativeToolTip": "SellingElectronicWebsite\\UnitOfWork\\UnitOfWork.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAkAAAApAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-14T03:47:13.203Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "ProductSpecifiactionVM.cs",
+              "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\ViewModel\\ProductSpecifiactionVM.cs",
+              "RelativeDocumentMoniker": "SellingElectronicWebsite\\ViewModel\\ProductSpecifiactionVM.cs",
+              "ToolTip": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\ViewModel\\ProductSpecifiactionVM.cs",
+              "RelativeToolTip": "SellingElectronicWebsite\\ViewModel\\ProductSpecifiactionVM.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-14T03:03:37.28Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "StoreProductVM.cs",
+              "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\ViewModel\\StoreProductVM.cs",
+              "RelativeDocumentMoniker": "SellingElectronicWebsite\\ViewModel\\StoreProductVM.cs",
+              "ToolTip": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\ViewModel\\StoreProductVM.cs",
+              "RelativeToolTip": "SellingElectronicWebsite\\ViewModel\\StoreProductVM.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-09T12:44:28.483Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "ProductController.cs",
+              "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Controllers\\ProductController.cs",
+              "RelativeDocumentMoniker": "SellingElectronicWebsite\\Controllers\\ProductController.cs",
+              "ToolTip": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Controllers\\ProductController.cs",
+              "RelativeToolTip": "SellingElectronicWebsite\\Controllers\\ProductController.cs",
+              "ViewState": "AQIAAC8AAAAAAAAAAAAAAD0AAAAzAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-14T07:34:46.406Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "IUnitOfWork.cs",
+              "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\UnitOfWork\\IUnitOfWork.cs",
+              "RelativeDocumentMoniker": "SellingElectronicWebsite\\UnitOfWork\\IUnitOfWork.cs",
+              "ToolTip": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\UnitOfWork\\IUnitOfWork.cs",
+              "RelativeToolTip": "SellingElectronicWebsite\\UnitOfWork\\IUnitOfWork.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAqwAYAAAAPAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-14T03:46:09.291Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "ProductsRepository.cs",
+              "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Repository\\ProductsRepository.cs",
+              "RelativeDocumentMoniker": "SellingElectronicWebsite\\Repository\\ProductsRepository.cs",
+              "ToolTip": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Repository\\ProductsRepository.cs",
+              "RelativeToolTip": "SellingElectronicWebsite\\Repository\\ProductsRepository.cs",
+              "ViewState": "AQIAAAoAAAAAAAAAAAAewA4AAABhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-12T07:38:34.762Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "PaginatedList.cs",
+              "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Helper\\PaginatedList.cs",
+              "RelativeDocumentMoniker": "SellingElectronicWebsite\\Helper\\PaginatedList.cs",
+              "ToolTip": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Helper\\PaginatedList.cs",
+              "RelativeToolTip": "SellingElectronicWebsite\\Helper\\PaginatedList.cs",
+              "ViewState": "AQIAAAQAAAAAAAAAAAAnwBgAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-14T04:24:50.217Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\appsettings.json",
+              "RelativeDocumentMoniker": "SellingElectronicWebsite\\appsettings.json",
+              "ToolTip": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\appsettings.json",
+              "RelativeToolTip": "SellingElectronicWebsite\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAACoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-11-10T09:05:12.571Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "IProductsRepository.cs",
+              "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Repository\\IProductsRepository.cs",
+              "RelativeDocumentMoniker": "SellingElectronicWebsite\\Repository\\IProductsRepository.cs",
+              "ToolTip": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Repository\\IProductsRepository.cs",
+              "RelativeToolTip": "SellingElectronicWebsite\\Repository\\IProductsRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAABDAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-12T07:16:49.952Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "SellingElectronicsContext.cs",
+              "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Entities\\SellingElectronicsContext.cs",
+              "RelativeDocumentMoniker": "SellingElectronicWebsite\\Entities\\SellingElectronicsContext.cs",
+              "ToolTip": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Entities\\SellingElectronicsContext.cs",
+              "RelativeToolTip": "SellingElectronicWebsite\\Entities\\SellingElectronicsContext.cs",
+              "ViewState": "AQIAAEgAAAAAAAAAAAAAwFsAAAALAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-12T07:33:21.754Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "SalesRepository.cs",
+              "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Repository\\SalesRepository.cs",
+              "RelativeDocumentMoniker": "SellingElectronicWebsite\\Repository\\SalesRepository.cs",
+              "ToolTip": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Repository\\SalesRepository.cs",
+              "RelativeToolTip": "SellingElectronicWebsite\\Repository\\SalesRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-14T03:09:45.736Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "OrderPending.cs",
+              "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Entities\\OrderPending.cs",
+              "RelativeDocumentMoniker": "SellingElectronicWebsite\\Entities\\OrderPending.cs",
+              "ToolTip": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Entities\\OrderPending.cs",
+              "RelativeToolTip": "SellingElectronicWebsite\\Entities\\OrderPending.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-11T09:28:40.37Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "CustomAuthorizeCustomerFilter.cs",
+              "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Sercurity\\CustomAuthorizeCustomerFilter.cs",
+              "RelativeDocumentMoniker": "SellingElectronicWebsite\\Sercurity\\CustomAuthorizeCustomerFilter.cs",
+              "ToolTip": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Sercurity\\CustomAuthorizeCustomerFilter.cs",
+              "RelativeToolTip": "SellingElectronicWebsite\\Sercurity\\CustomAuthorizeCustomerFilter.cs",
+              "ViewState": "AQIAAAQAAAAAAAAAAAAAwBcAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-11T03:37:39.961Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "OrderPendingController.cs",
+              "DocumentMoniker": "C:\\Users\\khanh084\\AppData\\Local\\SourceServer\\f7c0615f62ea20c3a5aa75e1d5e169c318868ce41b28409cceab1ca3205f41a4\\SellingElectronicWebsite\\SellingElectronicWebsite\\Controllers\\Customer\\OrderPendingController.cs",
+              "ToolTip": "C:\\Users\\khanh084\\AppData\\Local\\SourceServer\\f7c0615f62ea20c3a5aa75e1d5e169c318868ce41b28409cceab1ca3205f41a4\\SellingElectronicWebsite\\SellingElectronicWebsite\\Controllers\\Customer\\OrderPendingController.cs",
+              "ViewState": "AQIAAAoAAAAAAAAAAAAYwB4AAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-11T08:55:28.294Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "RoleService.cs",
+              "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Sercurity\\RoleService.cs",
+              "RelativeDocumentMoniker": "SellingElectronicWebsite\\Sercurity\\RoleService.cs",
+              "ToolTip": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Sercurity\\RoleService.cs",
+              "RelativeToolTip": "SellingElectronicWebsite\\Sercurity\\RoleService.cs",
+              "ViewState": "AQIAAA8AAAAAAAAAAAA5wAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-11T07:52:47.838Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "CustomerAccountController.cs",
+              "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Controllers\\CustomerAccountController.cs",
+              "RelativeDocumentMoniker": "SellingElectronicWebsite\\Controllers\\CustomerAccountController.cs",
+              "ToolTip": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Controllers\\CustomerAccountController.cs",
+              "RelativeToolTip": "SellingElectronicWebsite\\Controllers\\CustomerAccountController.cs",
+              "ViewState": "AQIAAGMAAAAAAAAAAAAmwHQAAAA7AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-11T03:36:56.597Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "ShoppingCartItemModel.cs",
+              "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Model\\ShoppingCartItemModel.cs",
+              "RelativeDocumentMoniker": "SellingElectronicWebsite\\Model\\ShoppingCartItemModel.cs",
+              "ToolTip": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Model\\ShoppingCartItemModel.cs",
+              "RelativeToolTip": "SellingElectronicWebsite\\Model\\ShoppingCartItemModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-10T11:42:16.699Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "TokenHelper.cs",
+              "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Helper\\TokenHelper.cs",
+              "RelativeDocumentMoniker": "SellingElectronicWebsite\\Helper\\TokenHelper.cs",
+              "ToolTip": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Helper\\TokenHelper.cs",
+              "RelativeToolTip": "SellingElectronicWebsite\\Helper\\TokenHelper.cs",
+              "ViewState": "AQIAACsAAAAAAAAAAAAqwD4AAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-09T08:00:00.215Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "CustomerAccountRepository.cs",
+              "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Repository\\CustomerAccountRepository.cs",
+              "RelativeDocumentMoniker": "SellingElectronicWebsite\\Repository\\CustomerAccountRepository.cs",
+              "ToolTip": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Repository\\CustomerAccountRepository.cs",
+              "RelativeToolTip": "SellingElectronicWebsite\\Repository\\CustomerAccountRepository.cs",
+              "ViewState": "AQIAACcAAAAAAAAAAAAMwC8AAABSAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-11T03:37:04.434Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "ShoppingCartController.cs",
+              "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Controllers\\Customer\\ShoppingCartController.cs",
+              "RelativeDocumentMoniker": "SellingElectronicWebsite\\Controllers\\Customer\\ShoppingCartController.cs",
+              "ToolTip": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Controllers\\Customer\\ShoppingCartController.cs",
+              "RelativeToolTip": "SellingElectronicWebsite\\Controllers\\Customer\\ShoppingCartController.cs",
+              "ViewState": "AQIAACwAAAAAAAAAAAAYwDMAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-10T11:25:24.989Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "TokenModel.cs",
+              "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Model\\TokenModel.cs",
+              "RelativeDocumentMoniker": "SellingElectronicWebsite\\Model\\TokenModel.cs",
+              "ToolTip": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Model\\TokenModel.cs",
+              "RelativeToolTip": "SellingElectronicWebsite\\Model\\TokenModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-11T03:47:48.987Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "IOrderPendingRepository.cs",
+              "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Repository\\IOrderPendingRepository.cs",
+              "RelativeDocumentMoniker": "SellingElectronicWebsite\\Repository\\IOrderPendingRepository.cs",
+              "ToolTip": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Repository\\IOrderPendingRepository.cs",
+              "RelativeToolTip": "SellingElectronicWebsite\\Repository\\IOrderPendingRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAwAAABWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-11T02:30:41.146Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "IShoppingCartRepository.cs",
+              "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Repository\\IShoppingCartRepository.cs",
+              "RelativeDocumentMoniker": "SellingElectronicWebsite\\Repository\\IShoppingCartRepository.cs",
+              "ToolTip": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Repository\\IShoppingCartRepository.cs",
+              "RelativeToolTip": "SellingElectronicWebsite\\Repository\\IShoppingCartRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAUAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-10T11:34:27.166Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "AddressBookRepository.cs",
+              "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Repository\\AddressBookRepository.cs",
+              "RelativeDocumentMoniker": "SellingElectronicWebsite\\Repository\\AddressBookRepository.cs",
+              "ToolTip": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Repository\\AddressBookRepository.cs",
+              "RelativeToolTip": "SellingElectronicWebsite\\Repository\\AddressBookRepository.cs",
+              "ViewState": "AQIAABAAAAAAAAAAAAA1wAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-10T09:08:27.08Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "ColorVM.cs",
+              "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\ViewModel\\ColorVM.cs",
+              "RelativeDocumentMoniker": "SellingElectronicWebsite\\ViewModel\\ColorVM.cs",
+              "ToolTip": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\ViewModel\\ColorVM.cs",
+              "RelativeToolTip": "SellingElectronicWebsite\\ViewModel\\ColorVM.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-14T13:58:38.628Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
+              "Title": "StoresProduct.cs",
+              "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Entities\\StoresProduct.cs",
+              "RelativeDocumentMoniker": "SellingElectronicWebsite\\Entities\\StoresProduct.cs",
+              "ToolTip": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Entities\\StoresProduct.cs",
+              "RelativeToolTip": "SellingElectronicWebsite\\Entities\\StoresProduct.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-09T12:41:40.061Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 47,
+              "Title": "IStoreRepository.cs",
+              "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Repository\\IStoreRepository.cs",
+              "RelativeDocumentMoniker": "SellingElectronicWebsite\\Repository\\IStoreRepository.cs",
+              "ToolTip": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Repository\\IStoreRepository.cs",
+              "RelativeToolTip": "SellingElectronicWebsite\\Repository\\IStoreRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwBQAAABcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-16T12:19:23.14Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 51,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "SellingElectronicWebsite\\appsettings.Development.json",
+              "ToolTip": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\appsettings.Development.json",
+              "RelativeToolTip": "SellingElectronicWebsite\\appsettings.Development.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-10-12T09:01:42.973Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 48,
+              "Title": "StoreProductModel.cs",
+              "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Model\\StoreProductModel.cs",
+              "RelativeDocumentMoniker": "SellingElectronicWebsite\\Model\\StoreProductModel.cs",
+              "ToolTip": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Model\\StoreProductModel.cs",
+              "RelativeToolTip": "SellingElectronicWebsite\\Model\\StoreProductModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAApAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-09T12:41:34.213Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 53,
+              "Title": "ProductSpecifiactionModel.cs",
+              "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Model\\ProductSpecifiactionModel.cs",
+              "RelativeDocumentMoniker": "SellingElectronicWebsite\\Model\\ProductSpecifiactionModel.cs",
+              "ToolTip": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Model\\ProductSpecifiactionModel.cs",
+              "RelativeToolTip": "SellingElectronicWebsite\\Model\\ProductSpecifiactionModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-15T10:20:07.927Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 49,
+              "Title": "QlbanHangContext.cs",
+              "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Entities\\QlbanHangContext.cs",
+              "RelativeDocumentMoniker": "SellingElectronicWebsite\\Entities\\QlbanHangContext.cs",
+              "ToolTip": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Entities\\QlbanHangContext.cs",
+              "RelativeToolTip": "SellingElectronicWebsite\\Entities\\QlbanHangContext.cs",
+              "ViewState": "AQIAABMAAAAAAAAAAADgvxoAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-15T10:19:15.565Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 52,
+              "Title": "SellingElectronicWebsite.http",
+              "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\SellingElectronicWebsite.http",
+              "RelativeDocumentMoniker": "SellingElectronicWebsite\\SellingElectronicWebsite.http",
+              "ToolTip": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\SellingElectronicWebsite.http",
+              "RelativeToolTip": "SellingElectronicWebsite\\SellingElectronicWebsite.http",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
+              "WhenOpened": "2024-10-12T09:02:23.838Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 50,
+              "Title": "ProductSpecifiaction.cs",
+              "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Entities\\ProductSpecifiaction.cs",
+              "RelativeDocumentMoniker": "SellingElectronicWebsite\\Entities\\ProductSpecifiaction.cs",
+              "ToolTip": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Entities\\ProductSpecifiaction.cs",
+              "RelativeToolTip": "SellingElectronicWebsite\\Entities\\ProductSpecifiaction.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAUAAAApAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-15T10:19:37.802Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 54,
+              "Title": "SellingElectronicWebsite.csproj",
+              "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\SellingElectronicWebsite.csproj",
+              "RelativeDocumentMoniker": "SellingElectronicWebsite\\SellingElectronicWebsite.csproj",
+              "ToolTip": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\SellingElectronicWebsite.csproj",
+              "RelativeToolTip": "SellingElectronicWebsite\\SellingElectronicWebsite.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAATAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-10-14T09:16:33.501Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 55,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "SellingElectronicWebsite\\Properties\\launchSettings.json",
+              "ToolTip": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Properties\\launchSettings.json",
+              "RelativeToolTip": "SellingElectronicWebsite\\Properties\\launchSettings.json",
+              "ViewState": "AQIAABUAAAAAAAAAAAAAAAkAAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-10-12T09:01:49.557Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 59,
+              "Title": "Category.cs",
+              "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Entities\\Category.cs",
+              "RelativeDocumentMoniker": "SellingElectronicWebsite\\Entities\\Category.cs",
+              "ToolTip": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Entities\\Category.cs",
+              "RelativeToolTip": "SellingElectronicWebsite\\Entities\\Category.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-15T13:01:05.71Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 56,
+              "Title": "ImageProductsVM.cs",
+              "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\ViewModel\\ImageProductsVM.cs",
+              "RelativeDocumentMoniker": "SellingElectronicWebsite\\ViewModel\\ImageProductsVM.cs",
+              "ToolTip": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\ViewModel\\ImageProductsVM.cs",
+              "RelativeToolTip": "SellingElectronicWebsite\\ViewModel\\ImageProductsVM.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-15T03:01:59.334Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 57,
+              "Title": "CategoryVM.cs",
+              "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\ViewModel\\CategoryVM.cs",
+              "RelativeDocumentMoniker": "SellingElectronicWebsite\\ViewModel\\CategoryVM.cs",
+              "ToolTip": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\ViewModel\\CategoryVM.cs",
+              "RelativeToolTip": "SellingElectronicWebsite\\ViewModel\\CategoryVM.cs",
+              "ViewState": "AQIAAAIAAAAAAAAAAAA1wAgAAAAPAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-15T13:01:38.58Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 60,
+              "Title": "ICategoryRepository.cs",
+              "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Repository\\ICategoryRepository.cs",
+              "RelativeDocumentMoniker": "SellingElectronicWebsite\\Repository\\ICategoryRepository.cs",
+              "ToolTip": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Repository\\ICategoryRepository.cs",
+              "RelativeToolTip": "SellingElectronicWebsite\\Repository\\ICategoryRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-15T13:05:41.647Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 58,
+              "Title": "CategoryModel.cs",
+              "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Model\\CategoryModel.cs",
+              "RelativeDocumentMoniker": "SellingElectronicWebsite\\Model\\CategoryModel.cs",
+              "ToolTip": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Model\\CategoryModel.cs",
+              "RelativeToolTip": "SellingElectronicWebsite\\Model\\CategoryModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-15T13:01:28.646Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 76,
+              "Title": "ProductController.cs",
+              "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Controllers\\Employee\\ProductController.cs",
+              "RelativeDocumentMoniker": "SellingElectronicWebsite\\Controllers\\Employee\\ProductController.cs",
+              "ToolTip": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Controllers\\Employee\\ProductController.cs",
+              "RelativeToolTip": "SellingElectronicWebsite\\Controllers\\Employee\\ProductController.cs",
+              "ViewState": "AQIAANoBAAAAAAAAAAAAAPEBAAAwAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-09T07:58:48.953Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 61,
+              "Title": "CategoryRepository.cs",
+              "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Repository\\CategoryRepository.cs",
+              "RelativeDocumentMoniker": "SellingElectronicWebsite\\Repository\\CategoryRepository.cs",
+              "ToolTip": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Repository\\CategoryRepository.cs",
+              "RelativeToolTip": "SellingElectronicWebsite\\Repository\\CategoryRepository.cs",
+              "ViewState": "AQIAAB0AAAAAAAAAAAAswDIAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-15T13:08:24.739Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 62,
+              "Title": "IColorsRepository.cs",
+              "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Repository\\IColorsRepository.cs",
+              "RelativeDocumentMoniker": "SellingElectronicWebsite\\Repository\\IColorsRepository.cs",
+              "ToolTip": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Repository\\IColorsRepository.cs",
+              "RelativeToolTip": "SellingElectronicWebsite\\Repository\\IColorsRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-14T14:01:55.145Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 63,
+              "Title": "Store.cs",
+              "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Entities\\Store.cs",
+              "RelativeDocumentMoniker": "SellingElectronicWebsite\\Entities\\Store.cs",
+              "ToolTip": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Entities\\Store.cs",
+              "RelativeToolTip": "SellingElectronicWebsite\\Entities\\Store.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-16T12:11:32.901Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 64,
+              "Title": "AddressModel.cs",
+              "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Model\\AddressModel.cs",
+              "RelativeDocumentMoniker": "SellingElectronicWebsite\\Model\\AddressModel.cs",
+              "ToolTip": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Model\\AddressModel.cs",
+              "RelativeToolTip": "SellingElectronicWebsite\\Model\\AddressModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-16T12:01:52.955Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 66,
+              "Title": "SalesVM.cs",
+              "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\ViewModel\\SalesVM.cs",
+              "RelativeDocumentMoniker": "SellingElectronicWebsite\\ViewModel\\SalesVM.cs",
+              "ToolTip": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\ViewModel\\SalesVM.cs",
+              "RelativeToolTip": "SellingElectronicWebsite\\ViewModel\\SalesVM.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-16T03:29:48.563Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 67,
+              "Title": "ISalesRepository.cs",
+              "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Repository\\ISalesRepository.cs",
+              "RelativeDocumentMoniker": "SellingElectronicWebsite\\Repository\\ISalesRepository.cs",
+              "ToolTip": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Repository\\ISalesRepository.cs",
+              "RelativeToolTip": "SellingElectronicWebsite\\Repository\\ISalesRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAyAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-16T03:35:04.936Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 65,
+              "Title": "Sale.cs",
+              "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Entities\\Sale.cs",
+              "RelativeDocumentMoniker": "SellingElectronicWebsite\\Entities\\Sale.cs",
+              "ToolTip": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Entities\\Sale.cs",
+              "RelativeToolTip": "SellingElectronicWebsite\\Entities\\Sale.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-16T03:30:26.382Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 68,
+              "Title": "SalesModel.cs",
+              "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Model\\SalesModel.cs",
+              "RelativeDocumentMoniker": "SellingElectronicWebsite\\Model\\SalesModel.cs",
+              "ToolTip": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Model\\SalesModel.cs",
+              "RelativeToolTip": "SellingElectronicWebsite\\Model\\SalesModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAABrAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-16T03:29:38.053Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 70,
+              "Title": "ImageProductsModel.cs",
+              "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Model\\ImageProductsModel.cs",
+              "RelativeDocumentMoniker": "SellingElectronicWebsite\\Model\\ImageProductsModel.cs",
+              "ToolTip": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Model\\ImageProductsModel.cs",
+              "RelativeToolTip": "SellingElectronicWebsite\\Model\\ImageProductsModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-15T03:01:49.412Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 69,
+              "Title": "Color.cs",
+              "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Entities\\Color.cs",
+              "RelativeDocumentMoniker": "SellingElectronicWebsite\\Entities\\Color.cs",
+              "ToolTip": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Entities\\Color.cs",
+              "RelativeToolTip": "SellingElectronicWebsite\\Entities\\Color.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-14T13:57:55.314Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 71,
+              "Title": "ColorModel.cs",
+              "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Model\\ColorModel.cs",
+              "RelativeDocumentMoniker": "SellingElectronicWebsite\\Model\\ColorModel.cs",
+              "ToolTip": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Model\\ColorModel.cs",
+              "RelativeToolTip": "SellingElectronicWebsite\\Model\\ColorModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-14T13:58:23.429Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 72,
+              "Title": "ImageProduct.cs",
+              "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Entities\\ImageProduct.cs",
+              "RelativeDocumentMoniker": "SellingElectronicWebsite\\Entities\\ImageProduct.cs",
+              "ToolTip": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Entities\\ImageProduct.cs",
+              "RelativeToolTip": "SellingElectronicWebsite\\Entities\\ImageProduct.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-15T01:39:13.277Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 74,
+              "Title": "WarehousesImportProduct.cs",
+              "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Entities\\WarehousesImportProduct.cs",
+              "RelativeDocumentMoniker": "SellingElectronicWebsite\\Entities\\WarehousesImportProduct.cs",
+              "ToolTip": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Entities\\WarehousesImportProduct.cs",
+              "RelativeToolTip": "SellingElectronicWebsite\\Entities\\WarehousesImportProduct.cs",
+              "ViewState": "AQIAAAQAAAAAAAAAAAAlwBEAAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-14T09:11:46.891Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 73,
+              "Title": "WarehousesExportProduct.cs",
+              "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Entities\\WarehousesExportProduct.cs",
+              "RelativeDocumentMoniker": "SellingElectronicWebsite\\Entities\\WarehousesExportProduct.cs",
+              "ToolTip": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Entities\\WarehousesExportProduct.cs",
+              "RelativeToolTip": "SellingElectronicWebsite\\Entities\\WarehousesExportProduct.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-14T13:26:34.083Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 75,
+              "Title": "Product.cs",
+              "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Entities\\Product.cs",
+              "RelativeDocumentMoniker": "SellingElectronicWebsite\\Entities\\Product.cs",
+              "ToolTip": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Entities\\Product.cs",
+              "RelativeToolTip": "SellingElectronicWebsite\\Entities\\Product.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAzwBMAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-12T07:21:16.899Z"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 1498,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "FloatingWindowState": {
+        "Id": "7a963cc7-9175-4e96-a216-b36f8cc107e9",
+        "Display": 1,
+        "X": 229,
+        "Y": 16,
+        "Width": 1510,
+        "Height": 937,
+        "WindowState": 2
+      },
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ProductOrder.cs",
+              "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Entities\\ProductOrder.cs",
+              "RelativeDocumentMoniker": "SellingElectronicWebsite\\Entities\\ProductOrder.cs",
+              "ToolTip": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Entities\\ProductOrder.cs",
+              "RelativeToolTip": "SellingElectronicWebsite\\Entities\\ProductOrder.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-14T03:15:43.119Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ProductOrderModel.cs",
+              "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Model\\ProductOrderModel.cs",
+              "RelativeDocumentMoniker": "SellingElectronicWebsite\\Model\\ProductOrderModel.cs",
+              "ToolTip": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Model\\ProductOrderModel.cs",
+              "RelativeToolTip": "SellingElectronicWebsite\\Model\\ProductOrderModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-15T00:29:19.136Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

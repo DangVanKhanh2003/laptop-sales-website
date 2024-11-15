@@ -118,6 +118,10 @@
             <param name="status">value: "pending"/"cancel"/"approve". Default = "pending"</param>
             <param name="sortByOrderDate">value: "timeDesc"/"timeAsc". Default = null</param>
         </member>
+        <member name="M:SellingElectronicWebsite.Controllers.Employee.OrderController.OderOffline(SellingElectronicWebsite.Model.OrderOfflineModel)">
+            <param name="model">CustomerId can be null</param>
+            <returns>order View Model</returns>
+        </member>
         <member name="M:SellingElectronicWebsite.Controllers.Employee.SalesController.GetByIdProduct(System.Int32)">
             <summary>
             Get all sale by id product
@@ -360,6 +364,10 @@
             actor: employee=> employee can change status: cancel, approve. Employee cannot change status if status isn't pending.
             if status is "approve" and input valid => amount of store will reduce by amount order.
             </summary>
+        </member>
+        <member name="M:SellingElectronicWebsite.Repository.OrderRepository.OderOffline(SellingElectronicWebsite.Model.OrderOfflineModel)">
+            <param name="model">CustomerId can be null</param>
+            <returns>order View Model</returns>
         </member>
         <member name="M:SellingElectronicWebsite.Repository.ShoppingCartRepository.Add(SellingElectronicWebsite.Model.ShoppingCartItemModel)">
             <summary>

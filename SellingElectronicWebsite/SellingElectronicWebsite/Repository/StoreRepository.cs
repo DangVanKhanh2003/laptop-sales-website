@@ -174,7 +174,7 @@ namespace SellingElectronicWebsite.Repository
                                     .Include(p => p.Product)
                                     .Include(p => p.Color)
                                     .Include(p => p.Product.Category)
-                                    .Where(p => p.StoreId == idStore && idProduct == idProduct && p.ColorId == idColor).FirstOrDefaultAsync();
+                                    .Where(p => p.StoreId == idStore && p.ProductId == idProduct && p.ColorId == idColor).FirstOrDefaultAsync();
             if(item == null)
             {
                 // get store by id
@@ -195,7 +195,7 @@ namespace SellingElectronicWebsite.Repository
                 Product product = await _context.Products
                                             .Include(p => p.Category)
                                             .Where(p => p.ProductId == idProduct).FirstOrDefaultAsync();
-                if (color == null)
+                if (product == null)
                 {
                     throw new Exception("Product don't exist!");
 
@@ -231,7 +231,7 @@ namespace SellingElectronicWebsite.Repository
                                                 .Include(p => p.Product)
                                                 .Include(p => p.Color)
                                                 .Include(p => p.Product.Category)
-                                                .Where(p => p.StoreId == idStore && idProduct == idProduct && p.ColorId == idColor)
+                                                .Where(p => p.StoreId == idStore && p.ProductId == idProduct && p.ColorId == idColor)
                                                 .FirstOrDefaultAsync(); 
             if (item == null)
             {
@@ -262,7 +262,7 @@ namespace SellingElectronicWebsite.Repository
                                                 .Include(p => p.Product)
                                                 .Include(p => p.Color)
                                                 .Include(p => p.Product.Category)
-                                                .Where(p => p.StoreId == idStore && idProduct == idProduct && p.ColorId == idColor)
+                                                .Where(p => p.StoreId == idStore && p.ProductId == idProduct && p.ColorId == idColor)
                                                 .FirstOrDefaultAsync();
             if (item == null)
             {
