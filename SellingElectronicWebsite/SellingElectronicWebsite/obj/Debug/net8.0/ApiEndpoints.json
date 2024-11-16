@@ -1,6 +1,27 @@
 [
   {
     "ContainingType": "SellingElectronicWebsite.Controllers.Customer.AddressBookController",
+    "Method": "GetByPage",
+    "RelativePath": "api/AddressBook",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "pageIndex",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SellingElectronicWebsite.Controllers.Customer.AddressBookController",
     "Method": "Add",
     "RelativePath": "api/AddressBook",
     "HttpMethod": "POST",
@@ -38,40 +59,8 @@
   },
   {
     "ContainingType": "SellingElectronicWebsite.Controllers.Customer.AddressBookController",
-    "Method": "Delete",
-    "RelativePath": "api/AddressBook",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "idCustomer",
-        "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "SellingElectronicWebsite.Controllers.Customer.AddressBookController",
-    "Method": "GetAllByIdCustomer",
-    "RelativePath": "api/AddressBook/GetAllByIdCustomer{idCustomer}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "idCustomer",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "SellingElectronicWebsite.Controllers.Customer.AddressBookController",
     "Method": "GetByIdAddressBook",
-    "RelativePath": "api/AddressBook/GetByIdAddressBook{idAddress}",
+    "RelativePath": "api/AddressBook/{idAddress}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -86,21 +75,16 @@
   },
   {
     "ContainingType": "SellingElectronicWebsite.Controllers.Customer.AddressBookController",
-    "Method": "GetByPage",
-    "RelativePath": "api/AddressBook/GetByPage",
-    "HttpMethod": "GET",
+    "Method": "Delete",
+    "RelativePath": "api/AddressBook/{idAddress}",
+    "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "pageIndex",
+        "Name": "idAddress",
         "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "pageSize",
-        "Type": "System.Int32",
-        "IsRequired": false
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
@@ -108,7 +92,33 @@
   {
     "ContainingType": "SellingElectronicWebsite.Controllers.Customer.AddressBookController",
     "Method": "GetCountAddress",
-    "RelativePath": "api/AddressBook/GetCountAddress",
+    "RelativePath": "api/AddressBook/Count-Address",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SellingElectronicWebsite.Controllers.Customer.AddressBookController",
+    "Method": "GetAllByIdCustomer",
+    "RelativePath": "api/AddressBook/Customer/{idCustomer}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idCustomer",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SellingElectronicWebsite.Controllers.CustomerAccountController",
+    "Method": "getAllAccount",
+    "RelativePath": "api/CustomerAccount",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -160,7 +170,7 @@
   {
     "ContainingType": "SellingElectronicWebsite.Controllers.CustomerAccountController",
     "Method": "GetByIdCustomer",
-    "RelativePath": "api/CustomerAccount/GetAccByIdCustomer{idCustomer}",
+    "RelativePath": "api/CustomerAccount/Customer/{idCustomer}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -169,37 +179,6 @@
         "Name": "idCustomer",
         "Type": "System.Int32",
         "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "SellingElectronicWebsite.Controllers.CustomerAccountController",
-    "Method": "getAllAccount",
-    "RelativePath": "api/CustomerAccount/getAllAccount",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "SellingElectronicWebsite.Controllers.CustomerAccountController",
-    "Method": "getByPage",
-    "RelativePath": "api/CustomerAccount/getByPage",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "pageIndex",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "pageSize",
-        "Type": "System.Int32",
-        "IsRequired": false
       }
     ],
     "ReturnTypes": []
@@ -220,6 +199,27 @@
       {
         "Name": "password",
         "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SellingElectronicWebsite.Controllers.CustomerAccountController",
+    "Method": "getByPage",
+    "RelativePath": "api/CustomerAccount/Page",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "pageIndex",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageSize",
+        "Type": "System.Int32",
         "IsRequired": false
       }
     ],
@@ -248,6 +248,22 @@
   },
   {
     "ContainingType": "SellingElectronicWebsite.Controllers.Customer.CustomerInforController",
+    "Method": "GetAll",
+    "RelativePath": "api/CustomerInfor",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "sortBy",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SellingElectronicWebsite.Controllers.Customer.CustomerInforController",
     "Method": "addNewCustomer",
     "RelativePath": "api/CustomerInfor",
     "HttpMethod": "POST",
@@ -264,45 +280,8 @@
   },
   {
     "ContainingType": "SellingElectronicWebsite.Controllers.Customer.CustomerInforController",
-    "Method": "updateInfoCustomer",
-    "RelativePath": "api/CustomerInfor",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "model",
-        "Type": "SellingElectronicWebsite.Model.CustomerModel",
-        "IsRequired": true
-      },
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "SellingElectronicWebsite.Controllers.Customer.CustomerInforController",
-    "Method": "deleteCustomerById",
-    "RelativePath": "api/CustomerInfor",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "SellingElectronicWebsite.Controllers.Customer.CustomerInforController",
     "Method": "GetByIdCustomer",
-    "RelativePath": "api/CustomerInfor/GetAccByIdCustomer{idCustomer}",
+    "RelativePath": "api/CustomerInfor/{idCustomer}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -317,16 +296,42 @@
   },
   {
     "ContainingType": "SellingElectronicWebsite.Controllers.Customer.CustomerInforController",
-    "Method": "GetAll",
-    "RelativePath": "api/CustomerInfor/getAllCustomerInfor",
-    "HttpMethod": "GET",
+    "Method": "updateInfoCustomer",
+    "RelativePath": "api/CustomerInfor/{idCustomer}",
+    "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "sortBy",
-        "Type": "System.String",
+        "Name": "model",
+        "Type": "SellingElectronicWebsite.Model.CustomerModel",
+        "IsRequired": true
+      },
+      {
+        "Name": "idCustomer",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SellingElectronicWebsite.Controllers.Customer.CustomerInforController",
+    "Method": "deleteCustomerById",
+    "RelativePath": "api/CustomerInfor/{idCustomer}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
         "IsRequired": false
+      },
+      {
+        "Name": "idCustomer",
+        "Type": "",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
@@ -334,7 +339,7 @@
   {
     "ContainingType": "SellingElectronicWebsite.Controllers.Customer.CustomerInforController",
     "Method": "getByPage",
-    "RelativePath": "api/CustomerInfor/getByPage",
+    "RelativePath": "api/CustomerInfor/page",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -359,6 +364,16 @@
   },
   {
     "ContainingType": "SellingElectronicWebsite.Controllers.Employee.CategoryControler",
+    "Method": "GetAll",
+    "RelativePath": "api/employee/CategoryControler",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SellingElectronicWebsite.Controllers.Employee.CategoryControler",
     "Method": "Add",
     "RelativePath": "api/employee/CategoryControler",
     "HttpMethod": "POST",
@@ -369,43 +384,6 @@
         "Name": "model",
         "Type": "SellingElectronicWebsite.Model.CategoryModel",
         "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "SellingElectronicWebsite.Controllers.Employee.CategoryControler",
-    "Method": "Update",
-    "RelativePath": "api/employee/CategoryControler",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "model",
-        "Type": "SellingElectronicWebsite.Model.CategoryModel",
-        "IsRequired": true
-      },
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "SellingElectronicWebsite.Controllers.Employee.CategoryControler",
-    "Method": "Delete",
-    "RelativePath": "api/employee/CategoryControler",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": false
       }
     ],
     "ReturnTypes": []
@@ -428,8 +406,45 @@
   },
   {
     "ContainingType": "SellingElectronicWebsite.Controllers.Employee.CategoryControler",
+    "Method": "Update",
+    "RelativePath": "api/employee/CategoryControler/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "SellingElectronicWebsite.Model.CategoryModel",
+        "IsRequired": true
+      },
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SellingElectronicWebsite.Controllers.Employee.CategoryControler",
+    "Method": "Delete",
+    "RelativePath": "api/employee/CategoryControler/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SellingElectronicWebsite.Controllers.Employee.ColorController",
     "Method": "GetAll",
-    "RelativePath": "api/employee/CategoryControler/getAllCategory",
+    "RelativePath": "api/employee/Color",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -448,43 +463,6 @@
         "Name": "model",
         "Type": "SellingElectronicWebsite.Model.ColorModel",
         "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "SellingElectronicWebsite.Controllers.Employee.ColorController",
-    "Method": "Update",
-    "RelativePath": "api/employee/Color",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "model",
-        "Type": "SellingElectronicWebsite.Model.ColorModel",
-        "IsRequired": true
-      },
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "SellingElectronicWebsite.Controllers.Employee.ColorController",
-    "Method": "Delete",
-    "RelativePath": "api/employee/Color",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": false
       }
     ],
     "ReturnTypes": []
@@ -507,12 +485,71 @@
   },
   {
     "ContainingType": "SellingElectronicWebsite.Controllers.Employee.ColorController",
+    "Method": "Update",
+    "RelativePath": "api/employee/Color/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "SellingElectronicWebsite.Model.ColorModel",
+        "IsRequired": true
+      },
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SellingElectronicWebsite.Controllers.Employee.ColorController",
+    "Method": "Delete",
+    "RelativePath": "api/employee/Color/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SellingElectronicWebsite.Controllers.ProductController",
     "Method": "GetAll",
-    "RelativePath": "api/employee/Color/getAllColor",
+    "RelativePath": "api/employee/Product",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "sortBy",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SellingElectronicWebsite.Controllers.ProductController",
+    "Method": "Add",
+    "RelativePath": "api/employee/Product",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "SellingElectronicWebsite.Model.ProductModel",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
   },
   {
@@ -533,9 +570,9 @@
   },
   {
     "ContainingType": "SellingElectronicWebsite.Controllers.ProductController",
-    "Method": "Add",
-    "RelativePath": "api/employee/Product/AddNewProduct",
-    "HttpMethod": "POST",
+    "Method": "Update",
+    "RelativePath": "api/employee/Product/{id}",
+    "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
     "Parameters": [
@@ -543,64 +580,11 @@
         "Name": "model",
         "Type": "SellingElectronicWebsite.Model.ProductModel",
         "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "SellingElectronicWebsite.Controllers.ProductController",
-    "Method": "CountProducts",
-    "RelativePath": "api/employee/Product/count",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "SellingElectronicWebsite.Controllers.ProductController",
-    "Method": "DeleteImgByIdImg",
-    "RelativePath": "api/employee/Product/DeleteImageByIdImg",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
+      },
       {
-        "Name": "idImg",
+        "Name": "id",
         "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "SellingElectronicWebsite.Controllers.ProductController",
-    "Method": "DeleteAllImgByIdProduct",
-    "RelativePath": "api/employee/Product/DeleteListImagesOfProduct",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "idProduct",
-        "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "SellingElectronicWebsite.Controllers.ProductController",
-    "Method": "DeleteAllSpebyIdProduct",
-    "RelativePath": "api/employee/Product/DeleteListSpecificationsOfProduct",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "idProduct",
-        "Type": "System.Int32",
-        "IsRequired": false
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
@@ -608,7 +592,7 @@
   {
     "ContainingType": "SellingElectronicWebsite.Controllers.ProductController",
     "Method": "Delete",
-    "RelativePath": "api/employee/Product/DeleteProductById",
+    "RelativePath": "api/employee/Product/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -616,39 +600,81 @@
       {
         "Name": "id",
         "Type": "System.Int32",
-        "IsRequired": false
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
     "ContainingType": "SellingElectronicWebsite.Controllers.ProductController",
-    "Method": "DeleteSpeByIdSpe",
-    "RelativePath": "api/employee/Product/DeleteSpecificationsByIdSpecifications",
+    "Method": "UpdateImgs",
+    "RelativePath": "api/employee/Product/{idProduct}/Image",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "models",
+        "Type": "System.Collections.Generic.List\u00601[[SellingElectronicWebsite.Model.ImageProductsModel, SellingElectronicWebsite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": true
+      },
+      {
+        "Name": "idProduct",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SellingElectronicWebsite.Controllers.ProductController",
+    "Method": "DeleteAllImgByIdProduct",
+    "RelativePath": "api/employee/Product/{idProduct}/Image",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "idSpecifications",
+        "Name": "idProduct",
         "Type": "System.Int32",
-        "IsRequired": false
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
     "ContainingType": "SellingElectronicWebsite.Controllers.ProductController",
-    "Method": "GetAllcolor",
-    "RelativePath": "api/employee/Product/getAllColorOfProduct",
-    "HttpMethod": "GET",
+    "Method": "UpdateSpes",
+    "RelativePath": "api/employee/Product/{idProduct}/Specification",
+    "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "ProudctId",
+        "Name": "models",
+        "Type": "System.Collections.Generic.List\u00601[[SellingElectronicWebsite.Model.ProductSpecifiactionModel, SellingElectronicWebsite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": true
+      },
+      {
+        "Name": "idProduct",
         "Type": "System.Int32",
-        "IsRequired": false
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SellingElectronicWebsite.Controllers.ProductController",
+    "Method": "DeleteAllSpebyIdProduct",
+    "RelativePath": "api/employee/Product/{idProduct}/Specification",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idProduct",
+        "Type": "System.Int32",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
@@ -656,7 +682,7 @@
   {
     "ContainingType": "SellingElectronicWebsite.Controllers.ProductController",
     "Method": "GetImgsByProduct",
-    "RelativePath": "api/employee/Product/GetAllImagesByIdProduct",
+    "RelativePath": "api/employee/Product/{ProductId}/Image",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -664,23 +690,39 @@
       {
         "Name": "ProductId",
         "Type": "System.Int32",
-        "IsRequired": false
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
     "ContainingType": "SellingElectronicWebsite.Controllers.ProductController",
-    "Method": "GetAll",
-    "RelativePath": "api/employee/Product/getAllProduct",
+    "Method": "GetSpesByProduct",
+    "RelativePath": "api/employee/Product/{ProductId}/Specification",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "sortBy",
-        "Type": "System.String",
-        "IsRequired": false
+        "Name": "ProductId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SellingElectronicWebsite.Controllers.ProductController",
+    "Method": "GetAllcolor",
+    "RelativePath": "api/employee/Product/{ProudctId}/Color",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "ProudctId",
+        "Type": "System.Int32",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
@@ -688,7 +730,7 @@
   {
     "ContainingType": "SellingElectronicWebsite.Controllers.ProductController",
     "Method": "getAllProductByCategory",
-    "RelativePath": "api/employee/Product/getAllProductByCategory{idCategory}",
+    "RelativePath": "api/employee/Product/Category/{idCategory}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -708,24 +750,18 @@
   },
   {
     "ContainingType": "SellingElectronicWebsite.Controllers.ProductController",
-    "Method": "GetSpesByProduct",
-    "RelativePath": "api/employee/Product/GetAllSpecificationsByIdProduct",
+    "Method": "CountProducts",
+    "RelativePath": "api/employee/Product/Count",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [
-      {
-        "Name": "ProductId",
-        "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
+    "Parameters": [],
     "ReturnTypes": []
   },
   {
     "ContainingType": "SellingElectronicWebsite.Controllers.ProductController",
     "Method": "GetByPage",
-    "RelativePath": "api/employee/Product/page",
+    "RelativePath": "api/employee/Product/Page",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -750,40 +786,8 @@
   },
   {
     "ContainingType": "SellingElectronicWebsite.Controllers.ProductController",
-    "Method": "AddImgsForProduct",
-    "RelativePath": "api/employee/Product/postListImagesForProduct",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "models",
-        "Type": "System.Collections.Generic.List\u00601[[SellingElectronicWebsite.Model.ImageProductsModel, SellingElectronicWebsite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "SellingElectronicWebsite.Controllers.ProductController",
-    "Method": "AddSpesForProduct",
-    "RelativePath": "api/employee/Product/postListSpecificationsForProduct",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "models",
-        "Type": "System.Collections.Generic.List\u00601[[SellingElectronicWebsite.Model.ProductSpecifiactionModel, SellingElectronicWebsite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "SellingElectronicWebsite.Controllers.ProductController",
     "Method": "SearchProductByName",
-    "RelativePath": "api/employee/Product/SearchProductByName",
+    "RelativePath": "api/employee/Product/Search",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -797,66 +801,13 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "SellingElectronicWebsite.Controllers.ProductController",
-    "Method": "UpdateImgs",
-    "RelativePath": "api/employee/Product/UpdateListImageOfProduct",
-    "HttpMethod": "PUT",
+    "ContainingType": "SellingElectronicWebsite.Controllers.Employee.SalesController",
+    "Method": "GetAll",
+    "RelativePath": "api/employee/Sales",
+    "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [
-      {
-        "Name": "models",
-        "Type": "System.Collections.Generic.List\u00601[[SellingElectronicWebsite.Model.ImageProductsModel, SellingElectronicWebsite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "IsRequired": true
-      },
-      {
-        "Name": "idProduct",
-        "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "SellingElectronicWebsite.Controllers.ProductController",
-    "Method": "UpdateSpes",
-    "RelativePath": "api/employee/Product/UpdateListSpecificationsOfProduct",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "models",
-        "Type": "System.Collections.Generic.List\u00601[[SellingElectronicWebsite.Model.ProductSpecifiactionModel, SellingElectronicWebsite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "IsRequired": true
-      },
-      {
-        "Name": "idProduct",
-        "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "SellingElectronicWebsite.Controllers.ProductController",
-    "Method": "Update",
-    "RelativePath": "api/employee/Product/updateproductbyidProduct",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "model",
-        "Type": "SellingElectronicWebsite.Model.ProductModel",
-        "IsRequired": true
-      },
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
+    "Parameters": [],
     "ReturnTypes": []
   },
   {
@@ -871,43 +822,6 @@
         "Name": "model",
         "Type": "SellingElectronicWebsite.Model.SalesModel",
         "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "SellingElectronicWebsite.Controllers.Employee.SalesController",
-    "Method": "Update",
-    "RelativePath": "api/employee/Sales",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "model",
-        "Type": "SellingElectronicWebsite.Model.SalesModel",
-        "IsRequired": true
-      },
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "SellingElectronicWebsite.Controllers.Employee.SalesController",
-    "Method": "Delete",
-    "RelativePath": "api/employee/Sales",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": false
       }
     ],
     "ReturnTypes": []
@@ -930,9 +844,46 @@
   },
   {
     "ContainingType": "SellingElectronicWebsite.Controllers.Employee.SalesController",
-    "Method": "DeleteByIdProduct",
-    "RelativePath": "api/employee/Sales/{idProduct}",
+    "Method": "Update",
+    "RelativePath": "api/employee/Sales/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "SellingElectronicWebsite.Model.SalesModel",
+        "IsRequired": true
+      },
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SellingElectronicWebsite.Controllers.Employee.SalesController",
+    "Method": "Delete",
+    "RelativePath": "api/employee/Sales/{id}",
     "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SellingElectronicWebsite.Controllers.Employee.SalesController",
+    "Method": "GetByIdProduct",
+    "RelativePath": "api/employee/Sales/Product/{idProduct}",
+    "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
@@ -946,8 +897,24 @@
   },
   {
     "ContainingType": "SellingElectronicWebsite.Controllers.Employee.SalesController",
-    "Method": "GetAll",
-    "RelativePath": "api/employee/Sales/getAllSales",
+    "Method": "DeleteByIdProduct",
+    "RelativePath": "api/employee/Sales/Product/{idProduct}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idProduct",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SellingElectronicWebsite.Controllers.Employee.StoreController",
+    "Method": "GetAllStore",
+    "RelativePath": "api/employee/Store",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -955,9 +922,62 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "SellingElectronicWebsite.Controllers.Employee.SalesController",
-    "Method": "GetByIdProduct",
-    "RelativePath": "api/employee/Sales/getSalesByIdProduct",
+    "ContainingType": "SellingElectronicWebsite.Controllers.Employee.StoreController",
+    "Method": "AddStore",
+    "RelativePath": "api/employee/Store",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "SellingElectronicWebsite.Model.StoreModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SellingElectronicWebsite.Controllers.Employee.StoreController",
+    "Method": "Update",
+    "RelativePath": "api/employee/Store/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "SellingElectronicWebsite.Model.StoreModel",
+        "IsRequired": true
+      },
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SellingElectronicWebsite.Controllers.Employee.StoreController",
+    "Method": "Delete",
+    "RelativePath": "api/employee/Store/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SellingElectronicWebsite.Controllers.Employee.StoreController",
+    "Method": "GetStoreExistProduct",
+    "RelativePath": "api/employee/Store/{idProduct}/exist-in-store",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -965,7 +985,7 @@
       {
         "Name": "idProduct",
         "Type": "System.Int32",
-        "IsRequired": false
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
@@ -988,15 +1008,36 @@
   },
   {
     "ContainingType": "SellingElectronicWebsite.Controllers.Employee.StoreController",
-    "Method": "AddStore",
-    "RelativePath": "api/employee/Store/AddStore",
-    "HttpMethod": "POST",
+    "Method": "GetAllProductByIdStore",
+    "RelativePath": "api/employee/Store/{idStore}/Product",
+    "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "model",
-        "Type": "SellingElectronicWebsite.Model.StoreModel",
+        "Name": "idStore",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SellingElectronicWebsite.Controllers.Employee.StoreController",
+    "Method": "GetProductByIdStore",
+    "RelativePath": "api/employee/Store/{idStore}/Product/{idProduct}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idStore",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "idProduct",
+        "Type": "System.Int32",
         "IsRequired": true
       }
     ],
@@ -1005,7 +1046,7 @@
   {
     "ContainingType": "SellingElectronicWebsite.Controllers.Employee.StoreController",
     "Method": "AddStoreProduct",
-    "RelativePath": "api/employee/Store/AddStoreProduct",
+    "RelativePath": "api/employee/Store/{idStore}/Product/{idProduct}/Color/{idColor}/add-new-product",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -1013,12 +1054,12 @@
       {
         "Name": "idProduct",
         "Type": "System.Int32",
-        "IsRequired": false
+        "IsRequired": true
       },
       {
         "Name": "idStore",
         "Type": "System.Int32",
-        "IsRequired": false
+        "IsRequired": true
       },
       {
         "Name": "amountAdd",
@@ -1028,85 +1069,6 @@
       {
         "Name": "idColor",
         "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "SellingElectronicWebsite.Controllers.Employee.StoreController",
-    "Method": "Delete",
-    "RelativePath": "api/employee/Store/DeleteStore",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "SellingElectronicWebsite.Controllers.Employee.StoreController",
-    "Method": "GetAllProductByIdStore",
-    "RelativePath": "api/employee/Store/GetAllProductByIdStore{idStore}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "idStore",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "SellingElectronicWebsite.Controllers.Employee.StoreController",
-    "Method": "GetAllStore",
-    "RelativePath": "api/employee/Store/getAllStore",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "SellingElectronicWebsite.Controllers.Employee.StoreController",
-    "Method": "GetProductByIdStore",
-    "RelativePath": "api/employee/Store/GetProductByIdStore",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "idStore",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "idProduct",
-        "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "SellingElectronicWebsite.Controllers.Employee.StoreController",
-    "Method": "GetStoreExistProduct",
-    "RelativePath": "api/employee/Store/GetStoreExistProduct{idProduct}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "idProduct",
-        "Type": "System.Int32",
         "IsRequired": true
       }
     ],
@@ -1115,7 +1077,7 @@
   {
     "ContainingType": "SellingElectronicWebsite.Controllers.Employee.StoreController",
     "Method": "ReduceStoreProduct",
-    "RelativePath": "api/employee/Store/ReduceStoreProduct",
+    "RelativePath": "api/employee/Store/{idStore}/Product/{idProduct}/Color/{idColor}/reduce-new-product",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -1123,12 +1085,12 @@
       {
         "Name": "idProduct",
         "Type": "System.Int32",
-        "IsRequired": false
+        "IsRequired": true
       },
       {
         "Name": "idStore",
         "Type": "System.Int32",
-        "IsRequired": false
+        "IsRequired": true
       },
       {
         "Name": "amountReduce",
@@ -1138,28 +1100,7 @@
       {
         "Name": "idColor",
         "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "SellingElectronicWebsite.Controllers.Employee.StoreController",
-    "Method": "Update",
-    "RelativePath": "api/employee/Store/UpdateStore",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "model",
-        "Type": "SellingElectronicWebsite.Model.StoreModel",
         "IsRequired": true
-      },
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": false
       }
     ],
     "ReturnTypes": []
@@ -1167,7 +1108,7 @@
   {
     "ContainingType": "SellingElectronicWebsite.Controllers.Employee.StoreController",
     "Method": "UpdateAmountStoreProduct",
-    "RelativePath": "api/employee/Store/UpdateStoreProduct",
+    "RelativePath": "api/employee/Store/{idStore}/Product/{idProduct}/Color/{idColor}/update-amount-product",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -1175,12 +1116,12 @@
       {
         "Name": "idProduct",
         "Type": "System.Int32",
-        "IsRequired": false
+        "IsRequired": true
       },
       {
         "Name": "idStore",
         "Type": "System.Int32",
-        "IsRequired": false
+        "IsRequired": true
       },
       {
         "Name": "amount",
@@ -1190,6 +1131,27 @@
       {
         "Name": "idColor",
         "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SellingElectronicWebsite.Controllers.Employee.OrderController",
+    "Method": "GetAll",
+    "RelativePath": "api/Order",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "status",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "sortByOrderDate",
+        "Type": "System.String",
         "IsRequired": false
       }
     ],
@@ -1198,7 +1160,7 @@
   {
     "ContainingType": "SellingElectronicWebsite.Controllers.Employee.OrderController",
     "Method": "CancelOrder",
-    "RelativePath": "api/Order/CancelOrder",
+    "RelativePath": "api/Order/Cancel",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -1219,7 +1181,7 @@
   {
     "ContainingType": "SellingElectronicWebsite.Controllers.Employee.OrderController",
     "Method": "ExportOrder",
-    "RelativePath": "api/Order/ExportOrder",
+    "RelativePath": "api/Order/Export",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -1239,8 +1201,24 @@
   },
   {
     "ContainingType": "SellingElectronicWebsite.Controllers.Employee.OrderController",
-    "Method": "GetAll",
-    "RelativePath": "api/Order/GetAllOrder",
+    "Method": "OderOffline",
+    "RelativePath": "api/Order/Oder-offline",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "SellingElectronicWebsite.Model.OrderOfflineModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SellingElectronicWebsite.Controllers.Employee.OrderController",
+    "Method": "GetAllPaging",
+    "RelativePath": "api/Order/page",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -1254,6 +1232,16 @@
         "Name": "sortByOrderDate",
         "Type": "System.String",
         "IsRequired": false
+      },
+      {
+        "Name": "pageIndex",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []
@@ -1261,7 +1249,7 @@
   {
     "ContainingType": "SellingElectronicWebsite.Controllers.Employee.OrderController",
     "Method": "GetByIdStore",
-    "RelativePath": "api/Order/GetAllOrderByIdStore",
+    "RelativePath": "api/Order/store/{idStore}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -1269,7 +1257,7 @@
       {
         "Name": "idStore",
         "Type": "System.Int32",
-        "IsRequired": false
+        "IsRequired": true
       },
       {
         "Name": "status",
@@ -1287,7 +1275,7 @@
   {
     "ContainingType": "SellingElectronicWebsite.Controllers.Employee.OrderController",
     "Method": "GetByIdStorePaging",
-    "RelativePath": "api/Order/GetAllOrderByIdStorePaging",
+    "RelativePath": "api/Order/store/{idStore}/page",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -1295,7 +1283,7 @@
       {
         "Name": "idStore",
         "Type": "System.Int32",
-        "IsRequired": false
+        "IsRequired": true
       },
       {
         "Name": "status",
@@ -1321,9 +1309,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "SellingElectronicWebsite.Controllers.Employee.OrderController",
-    "Method": "GetAllPaging",
-    "RelativePath": "api/Order/GetAllOrderPaging",
+    "ContainingType": "SellingElectronicWebsite.Controllers.OrderPendingController",
+    "Method": "GetAll",
+    "RelativePath": "api/OrderPending",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -1334,35 +1322,9 @@
         "IsRequired": false
       },
       {
-        "Name": "sortByOrderDate",
+        "Name": "sortBy",
         "Type": "System.String",
         "IsRequired": false
-      },
-      {
-        "Name": "pageIndex",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "pageSize",
-        "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "SellingElectronicWebsite.Controllers.Employee.OrderController",
-    "Method": "OderOffline",
-    "RelativePath": "api/Order/OderOffline",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "model",
-        "Type": "SellingElectronicWebsite.Model.OrderOfflineModel",
-        "IsRequired": true
       }
     ],
     "ReturnTypes": []
@@ -1385,8 +1347,24 @@
   },
   {
     "ContainingType": "SellingElectronicWebsite.Controllers.OrderPendingController",
+    "Method": "GetByIdOrderPending",
+    "RelativePath": "api/OrderPending/{idOrderPending}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idOrderPending",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SellingElectronicWebsite.Controllers.OrderPendingController",
     "Method": "Cancel",
-    "RelativePath": "api/OrderPending/cancelFromCustomer",
+    "RelativePath": "api/OrderPending/{idOrderPending}/Customer-Cancel",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -1394,7 +1372,7 @@
       {
         "Name": "idOrderPending",
         "Type": "System.Int32",
-        "IsRequired": false
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
@@ -1402,7 +1380,7 @@
   {
     "ContainingType": "SellingElectronicWebsite.Controllers.OrderPendingController",
     "Method": "UpdateStatus",
-    "RelativePath": "api/OrderPending/ChangeStatusFromEmployee",
+    "RelativePath": "api/OrderPending/{idOrderPending}/Employee/{idEmployee}/Change-status",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -1415,12 +1393,12 @@
       {
         "Name": "idOrderPending",
         "Type": "System.Int32",
-        "IsRequired": false
+        "IsRequired": true
       },
       {
         "Name": "idEmployee",
         "Type": "System.Int32",
-        "IsRequired": false
+        "IsRequired": true
       },
       {
         "Name": "idStore",
@@ -1432,45 +1410,8 @@
   },
   {
     "ContainingType": "SellingElectronicWebsite.Controllers.OrderPendingController",
-    "Method": "GetAll",
-    "RelativePath": "api/OrderPending/GetAll",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "status",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "sortBy",
-        "Type": "System.String",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "SellingElectronicWebsite.Controllers.OrderPendingController",
-    "Method": "GetByIdOrderPending",
-    "RelativePath": "api/OrderPending/GetByIdOrderPending",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "idOrderPending",
-        "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "SellingElectronicWebsite.Controllers.OrderPendingController",
     "Method": "GetByPage",
-    "RelativePath": "api/OrderPending/GetByPage",
+    "RelativePath": "api/OrderPending/Page",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -1516,24 +1457,8 @@
   },
   {
     "ContainingType": "SellingElectronicWebsite.Controllers.Customer.ShoppingCartController",
-    "Method": "Delete",
-    "RelativePath": "api/ShoppingCart",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "idShoppingCartItem",
-        "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "SellingElectronicWebsite.Controllers.Customer.ShoppingCartController",
     "Method": "Add",
-    "RelativePath": "api/ShoppingCart/AddItemShoppingCart",
+    "RelativePath": "api/ShoppingCart",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -1548,24 +1473,8 @@
   },
   {
     "ContainingType": "SellingElectronicWebsite.Controllers.Customer.ShoppingCartController",
-    "Method": "DeleteAllByIdCustomer",
-    "RelativePath": "api/ShoppingCart/DeleteAllShoppingCartItemByIdCustomer",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "idCustomer",
-        "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "SellingElectronicWebsite.Controllers.Customer.ShoppingCartController",
     "Method": "Update",
-    "RelativePath": "api/ShoppingCart/UpdateAmountForItemShoppingCart",
+    "RelativePath": "api/ShoppingCart/{idShoppingCartItem}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -1578,7 +1487,103 @@
       {
         "Name": "idShoppingCartItem",
         "Type": "System.Int32",
-        "IsRequired": false
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SellingElectronicWebsite.Controllers.Customer.ShoppingCartController",
+    "Method": "Delete",
+    "RelativePath": "api/ShoppingCart/{idShoppingCartItem}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idShoppingCartItem",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SellingElectronicWebsite.Controllers.Customer.ShoppingCartController",
+    "Method": "DeleteAllByIdCustomer",
+    "RelativePath": "api/ShoppingCart/customer{idCustomer}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idCustomer",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SellingElectronicWebsite.Controllers.ProductController",
+    "Method": "AddImgsForProduct",
+    "RelativePath": "Image",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "models",
+        "Type": "System.Collections.Generic.List\u00601[[SellingElectronicWebsite.Model.ImageProductsModel, SellingElectronicWebsite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SellingElectronicWebsite.Controllers.ProductController",
+    "Method": "DeleteImgByIdImg",
+    "RelativePath": "Image/{idImg}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idImg",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SellingElectronicWebsite.Controllers.ProductController",
+    "Method": "AddSpesForProduct",
+    "RelativePath": "Specification",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "models",
+        "Type": "System.Collections.Generic.List\u00601[[SellingElectronicWebsite.Model.ProductSpecifiactionModel, SellingElectronicWebsite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SellingElectronicWebsite.Controllers.ProductController",
+    "Method": "DeleteSpeByIdSpe",
+    "RelativePath": "Specification/{idSpecifications}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idSpecifications",
+        "Type": "System.Int32",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []

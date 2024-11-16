@@ -6,7 +6,7 @@ using SellingElectronicWebsite.UnitOfWork;
 
 namespace SellingElectronicWebsite.Controllers.Employee
 {
-    [Route("api/employee/[controller]")]
+    [Route("api/[controller]")]
     [ApiController]
     public class ColorController : ControllerBase
     {
@@ -21,7 +21,7 @@ namespace SellingElectronicWebsite.Controllers.Employee
         /// List all colors. Color used for chossing color of color image
         /// </summary>
 
-        [HttpGet("getAllColor")]
+        [HttpGet]
         [CustomAuthorizeCustomer("customer")]
 
         public async Task<IActionResult> GetAll()
@@ -103,7 +103,7 @@ namespace SellingElectronicWebsite.Controllers.Employee
         /// server find color by id(input) and update the color.
         /// </remarks>
 
-        [HttpPut]
+        [HttpPut("{id}")]
         public async Task<IActionResult> Update(ColorModel model, int id)
         {
             try
@@ -146,7 +146,7 @@ namespace SellingElectronicWebsite.Controllers.Employee
         /// Server find color and delete.
         /// </remarks>
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {
             try

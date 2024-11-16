@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Http.HttpResults;
 
 namespace SellingElectronicWebsite.Controllers
 {
-    [Route("api/employee/[controller]")]
+    [Route("api/[controller]")]
     [ApiController]
     public class ProductController : ControllerBase
     {
@@ -29,7 +29,7 @@ namespace SellingElectronicWebsite.Controllers
         /// </remarks>
         /// 
         /// <param name="sortBy">sortBy: price_desc/price_asc/name_desc/null(default)</param>
-        [HttpGet("getAllProduct")]
+        [HttpGet]
         public async Task<IActionResult> GetAll(string sortBy = null)
         {
             try
@@ -54,7 +54,7 @@ namespace SellingElectronicWebsite.Controllers
         /// </remarks>
         /// 
         /// <param name="sortBy">sortBy: price_desc/price_asc/name_desc/null(default)</param>
-        [HttpGet("getAllProductByCategory{idCategory}")]
+        [HttpGet("Category/{idCategory}")]
         public async Task<IActionResult> getAllProductByCategory(int idCategory, string sortBy = null)
         {
             try
@@ -96,7 +96,7 @@ namespace SellingElectronicWebsite.Controllers
         /// Count products.
         /// </summary>
         /// 
-        [HttpGet("count")]
+        [HttpGet("Count")]
         public async Task<IActionResult> CountProducts()
         {
             try
@@ -121,7 +121,7 @@ namespace SellingElectronicWebsite.Controllers
         /// 
         /// <param name="sortBy">sortBy: price_desc/price_asc/name_desc/null(default)</param>
 
-        [HttpGet("page")]
+        [HttpGet("Page")]
         public async Task<IActionResult> GetByPage(int pageIndex = 1, int pageSize = 10, string sortBy = null)
         {
             try
@@ -142,7 +142,7 @@ namespace SellingElectronicWebsite.Controllers
         /// <summary>
         /// get all colors of product.
         /// </summary>
-        [HttpGet("getAllColorOfProduct")]
+        [HttpGet("{ProudctId}/Color")]
         public async Task<IActionResult> GetAllcolor(int ProudctId)
         {
             try
@@ -158,7 +158,12 @@ namespace SellingElectronicWebsite.Controllers
 
         }
 
-        [HttpGet("GetAllSpecificationsByIdProduct")]
+        /// <summary>
+        /// Get all specification by productId
+        /// </summary>
+        /// <param name="ProductId"></param>
+        /// <returns></returns>
+        [HttpGet("{ProductId}/Specification")]
         public async Task<IActionResult> GetSpesByProduct(int ProductId)
         {
             try
@@ -176,7 +181,7 @@ namespace SellingElectronicWebsite.Controllers
 
         }
 
-        [HttpGet("GetAllImagesByIdProduct")]
+        [HttpGet("{ProductId}/Image")]
         public async Task<IActionResult> GetImgsByProduct(int ProductId)
         {
             try
@@ -194,9 +199,13 @@ namespace SellingElectronicWebsite.Controllers
 
         }
 
-
-        [HttpGet("SearchProductByName")]
-        public async Task<IActionResult> SearchProductByName(string nameProduct = null)
+        /// <summary>
+        /// Search product by nameProduct
+        /// </summary>
+        /// <param name="nameProduct"></param>
+        /// <returns></returns>
+        [HttpGet("Search")]
+        public async Task<IActionResult> SearchProductByName([FromQuery]string nameProduct = null)
         {
             try
             {
@@ -214,7 +223,7 @@ namespace SellingElectronicWebsite.Controllers
         /// Add new product. 
         /// </summary>
         /// <remarks>mainImg used for show image product in the card product of list product(mainImg is link img)</remarks>
-        [HttpPost("AddNewProduct")]
+        [HttpPost]
         public async Task<IActionResult> Add(ProductModel model)
         {
             try
@@ -261,7 +270,7 @@ namespace SellingElectronicWebsite.Controllers
         /// add a list images of product.
         /// </summary>
         ///  <param name="models"> Enter a list images</param>
-        [HttpPost("postListImagesForProduct")]
+        [HttpPost("/Image")]
         public async Task<IActionResult> AddImgsForProduct(List<ImageProductsModel> models)
         {
             try
@@ -288,7 +297,7 @@ namespace SellingElectronicWebsite.Controllers
         /// add a list specifications of product.
         /// </summary>
         ///  <param name="models"> Enter a list images</param>
-        [HttpPost("postListSpecificationsForProduct")]
+        [HttpPost("/Specification")]
         public async Task<IActionResult> AddSpesForProduct(List<ProductSpecifiactionModel> models)
         {
             try
@@ -314,7 +323,7 @@ namespace SellingElectronicWebsite.Controllers
         /// <summary>
         /// Delete all images of product, and then add new list images of product.
         /// </summary>
-        [HttpPut("UpdateListImageOfProduct")]
+        [HttpPut("{idProduct}/Image")]
         public async Task<IActionResult> UpdateImgs(List<ImageProductsModel> models, int idProduct)
         {
             try
@@ -340,7 +349,7 @@ namespace SellingElectronicWebsite.Controllers
         /// Delete all specifications of product, and then add new list specifications of product.
         /// </summary>
         /// 
-        [HttpPut("UpdateListSpecificationsOfProduct")]
+        [HttpPut("{idProduct}/Specification")]
         public async Task<IActionResult> UpdateSpes(List<ProductSpecifiactionModel> models, int idProduct)
         {
             try
@@ -369,7 +378,7 @@ namespace SellingElectronicWebsite.Controllers
         /// server find prouduct by id(input) and update the product. mainImg used for show image product in the card product of list product(mainImg is link img)
         /// </remarks>
 
-        [HttpPut("updateproductbyidProduct")]
+        [HttpPut("{id}")]
         public async Task<IActionResult> Update(ProductModel model, int id)
         {
             try
@@ -429,7 +438,7 @@ namespace SellingElectronicWebsite.Controllers
         /// <remarks>
         /// Server find product and delete.
         /// </remarks>
-        [HttpDelete("DeleteProductById")]
+        [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {
             try
@@ -457,7 +466,7 @@ namespace SellingElectronicWebsite.Controllers
         /// <summary>
         /// Delete all images of product.
         /// </summary>
-        [HttpDelete("DeleteListImagesOfProduct")]
+        [HttpDelete("{idProduct}/Image")]
         public async Task<IActionResult> DeleteAllImgByIdProduct(int idProduct)
         {
             try
@@ -478,8 +487,12 @@ namespace SellingElectronicWebsite.Controllers
         }
 
 
-
-        [HttpDelete("DeleteImageByIdImg")]
+        /// <summary>
+        /// Delete Image by idImg
+        /// </summary>
+        /// <param name="idImg"></param>
+        /// <returns></returns>
+        [HttpDelete("/Image/{idImg}")]
         public async Task<IActionResult> DeleteImgByIdImg(int idImg)
         {
             try
@@ -506,7 +519,12 @@ namespace SellingElectronicWebsite.Controllers
             }
         }
 
-        [HttpDelete("DeleteSpecificationsByIdSpecifications")]
+        /// <summary>
+        /// Delete Specification by idSpecification
+        /// </summary>
+        /// <param name="idSpecifications"></param>
+        /// <returns></returns>
+        [HttpDelete("/Specification/{idSpecifications}")]
         public async Task<IActionResult> DeleteSpeByIdSpe(int idSpecifications)
         {
             try
@@ -535,7 +553,7 @@ namespace SellingElectronicWebsite.Controllers
         /// <summary>
         /// Delete all specifications of product.
         /// </summary>
-        [HttpDelete("DeleteListSpecificationsOfProduct")]
+        [HttpDelete("{idProduct}/Specification")]
         public async Task<IActionResult> DeleteAllSpebyIdProduct(int idProduct)
         {
             try

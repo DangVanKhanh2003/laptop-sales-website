@@ -6,26 +6,31 @@
     "version": "V1"
   },
   "paths": {
-    "/api/AddressBook/GetByPage": {
+    "/api/AddressBook": {
       "get": {
         "tags": [
           "AddressBook"
         ],
+        "summary": "get all address by page",
         "parameters": [
           {
             "name": "pageIndex",
             "in": "query",
+            "description": "default = 1",
             "schema": {
               "type": "integer",
-              "format": "int32"
+              "format": "int32",
+              "default": 1
             }
           },
           {
             "name": "pageSize",
             "in": "query",
+            "description": "default = 10",
             "schema": {
               "type": "integer",
-              "format": "int32"
+              "format": "int32",
+              "default": 10
             }
           }
         ],
@@ -34,72 +39,14 @@
             "description": "OK"
           }
         }
-      }
-    },
-    "/api/AddressBook/GetByIdAddressBook{idAddress}": {
-      "get": {
-        "tags": [
-          "AddressBook"
-        ],
-        "parameters": [
-          {
-            "name": "idAddress",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/AddressBook/GetAllByIdCustomer{idCustomer}": {
-      "get": {
-        "tags": [
-          "AddressBook"
-        ],
-        "parameters": [
-          {
-            "name": "idCustomer",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/AddressBook/GetCountAddress": {
-      "get": {
-        "tags": [
-          "AddressBook"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/AddressBook": {
+      },
       "post": {
         "tags": [
           "AddressBook"
         ],
+        "summary": "Add new address in address book of customer",
         "requestBody": {
+          "description": "",
           "content": {
             "application/json": {
               "schema": {
@@ -128,10 +75,12 @@
         "tags": [
           "AddressBook"
         ],
+        "summary": "Change infor address book by idAddressBook",
         "parameters": [
           {
             "name": "idAddressbook",
             "in": "query",
+            "description": "",
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -139,6 +88,7 @@
           }
         ],
         "requestBody": {
+          "description": "",
           "content": {
             "application/json": {
               "schema": {
@@ -162,15 +112,43 @@
             "description": "OK"
           }
         }
+      }
+    },
+    "/api/AddressBook/{idAddress}": {
+      "get": {
+        "tags": [
+          "AddressBook"
+        ],
+        "summary": "get address by id address",
+        "parameters": [
+          {
+            "name": "idAddress",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
       },
       "delete": {
         "tags": [
           "AddressBook"
         ],
+        "summary": "Delete address by id",
         "parameters": [
           {
-            "name": "idCustomer",
-            "in": "query",
+            "name": "idAddress",
+            "in": "path",
+            "description": "",
+            "required": true,
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -184,11 +162,78 @@
         }
       }
     },
-    "/api/employee/CategoryControler/getAllCategory": {
+    "/api/AddressBook/Customer/{idCustomer}": {
+      "get": {
+        "tags": [
+          "AddressBook"
+        ],
+        "summary": "get all address by id customer",
+        "parameters": [
+          {
+            "name": "idCustomer",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/AddressBook/Count-Address": {
+      "get": {
+        "tags": [
+          "AddressBook"
+        ],
+        "summary": "Count address",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/employee/CategoryControler": {
       "get": {
         "tags": [
           "CategoryControler"
         ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "CategoryControler"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CategoryModel"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CategoryModel"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CategoryModel"
+              }
+            }
+          }
+        },
         "responses": {
           "200": {
             "description": "OK"
@@ -217,37 +262,6 @@
             "description": "OK"
           }
         }
-      }
-    },
-    "/api/employee/CategoryControler": {
-      "post": {
-        "tags": [
-          "CategoryControler"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/CategoryModel"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/CategoryModel"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/CategoryModel"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
       },
       "put": {
         "tags": [
@@ -256,7 +270,8 @@
         "parameters": [
           {
             "name": "id",
-            "in": "query",
+            "in": "path",
+            "required": true,
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -295,42 +310,6 @@
         "parameters": [
           {
             "name": "id",
-            "in": "query",
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/employee/Color/getAllColor": {
-      "get": {
-        "tags": [
-          "Color"
-        ],
-        "summary": "List all colors. Color used for chossing color of color image",
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/employee/Color/{id}": {
-      "get": {
-        "tags": [
-          "Color"
-        ],
-        "summary": "Get colors by id.",
-        "parameters": [
-          {
-            "name": "id",
             "in": "path",
             "required": true,
             "schema": {
@@ -347,6 +326,17 @@
       }
     },
     "/api/employee/Color": {
+      "get": {
+        "tags": [
+          "Color"
+        ],
+        "summary": "List all colors. Color used for chossing color of color image",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
       "post": {
         "tags": [
           "Color"
@@ -376,6 +366,30 @@
             "description": "OK"
           }
         }
+      }
+    },
+    "/api/employee/Color/{id}": {
+      "get": {
+        "tags": [
+          "Color"
+        ],
+        "summary": "Get colors by id.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
       },
       "put": {
         "tags": [
@@ -386,7 +400,8 @@
         "parameters": [
           {
             "name": "id",
-            "in": "query",
+            "in": "path",
+            "required": true,
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -427,6 +442,78 @@
         "parameters": [
           {
             "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/CustomerAccount": {
+      "get": {
+        "tags": [
+          "CustomerAccount"
+        ],
+        "summary": "Get all account customer",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "CustomerAccount"
+        ],
+        "summary": "Change Pasword",
+        "parameters": [
+          {
+            "name": "email",
+            "in": "query",
+            "description": "",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "password",
+            "in": "query",
+            "description": "",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "newPassword",
+            "in": "query",
+            "description": "",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "CustomerAccount"
+        ],
+        "summary": "not code yet",
+        "parameters": [
+          {
+            "name": "id",
             "in": "query",
             "schema": {
               "type": "integer",
@@ -441,27 +528,17 @@
         }
       }
     },
-    "/api/CustomerAccount/getAllAccount": {
+    "/api/CustomerAccount/Page": {
       "get": {
         "tags": [
           "CustomerAccount"
         ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/CustomerAccount/getByPage": {
-      "get": {
-        "tags": [
-          "CustomerAccount"
-        ],
+        "summary": "get all account by page",
         "parameters": [
           {
             "name": "pageIndex",
             "in": "query",
+            "description": "",
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -470,6 +547,7 @@
           {
             "name": "pageSize",
             "in": "query",
+            "description": "",
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -483,15 +561,17 @@
         }
       }
     },
-    "/api/CustomerAccount/GetAccByIdCustomer{idCustomer}": {
+    "/api/CustomerAccount/Customer/{idCustomer}": {
       "get": {
         "tags": [
           "CustomerAccount"
         ],
+        "summary": "Get account by idCustomer",
         "parameters": [
           {
             "name": "idCustomer",
             "in": "path",
+            "description": "",
             "required": true,
             "schema": {
               "type": "integer",
@@ -564,63 +644,7 @@
         }
       }
     },
-    "/api/CustomerAccount": {
-      "put": {
-        "tags": [
-          "CustomerAccount"
-        ],
-        "parameters": [
-          {
-            "name": "email",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "password",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "newPassword",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "delete": {
-        "tags": [
-          "CustomerAccount"
-        ],
-        "summary": "not code yet",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "query",
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/CustomerInfor/getAllCustomerInfor": {
+    "/api/CustomerInfor": {
       "get": {
         "tags": [
           "CustomerInfor"
@@ -641,9 +665,39 @@
             "description": "OK"
           }
         }
+      },
+      "post": {
+        "tags": [
+          "CustomerInfor"
+        ],
+        "summary": "add success => infor new customer",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CustomerModel"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CustomerModel"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CustomerModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
       }
     },
-    "/api/CustomerInfor/getByPage": {
+    "/api/CustomerInfor/page": {
       "get": {
         "tags": [
           "CustomerInfor"
@@ -682,7 +736,7 @@
         }
       }
     },
-    "/api/CustomerInfor/GetAccByIdCustomer{idCustomer}": {
+    "/api/CustomerInfor/{idCustomer}": {
       "get": {
         "tags": [
           "CustomerInfor"
@@ -703,47 +757,18 @@
             "description": "OK"
           }
         }
-      }
-    },
-    "/api/CustomerInfor": {
-      "post": {
-        "tags": [
-          "CustomerInfor"
-        ],
-        "summary": "add success => infor new customer",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/CustomerModel"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/CustomerModel"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/CustomerModel"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
       },
       "put": {
         "tags": [
           "CustomerInfor"
         ],
+        "summary": "update customer by id",
         "parameters": [
           {
-            "name": "id",
-            "in": "query",
+            "name": "idCustomer",
+            "in": "path",
+            "description": "",
+            "required": true,
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -751,6 +776,7 @@
           }
         ],
         "requestBody": {
+          "description": "",
           "content": {
             "application/json": {
               "schema": {
@@ -788,6 +814,14 @@
               "type": "integer",
               "format": "int32"
             }
+          },
+          {
+            "name": "idCustomer",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -797,7 +831,7 @@
         }
       }
     },
-    "/api/Order/GetAllOrder": {
+    "/api/Order": {
       "get": {
         "tags": [
           "Order"
@@ -829,7 +863,7 @@
         }
       }
     },
-    "/api/Order/GetAllOrderPaging": {
+    "/api/Order/page": {
       "get": {
         "tags": [
           "Order"
@@ -881,7 +915,7 @@
         }
       }
     },
-    "/api/Order/GetAllOrderByIdStorePaging": {
+    "/api/Order/store/{idStore}/page": {
       "get": {
         "tags": [
           "Order"
@@ -890,7 +924,8 @@
         "parameters": [
           {
             "name": "idStore",
-            "in": "query",
+            "in": "path",
+            "required": true,
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -941,7 +976,7 @@
         }
       }
     },
-    "/api/Order/GetAllOrderByIdStore": {
+    "/api/Order/store/{idStore}": {
       "get": {
         "tags": [
           "Order"
@@ -950,7 +985,8 @@
         "parameters": [
           {
             "name": "idStore",
-            "in": "query",
+            "in": "path",
+            "required": true,
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -981,15 +1017,17 @@
         }
       }
     },
-    "/api/Order/ExportOrder": {
+    "/api/Order/Export": {
       "put": {
         "tags": [
           "Order"
         ],
+        "summary": "Export order",
         "parameters": [
           {
             "name": "idOrder",
             "in": "query",
+            "description": "",
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -998,6 +1036,7 @@
           {
             "name": "employeeId",
             "in": "query",
+            "description": "",
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -1011,15 +1050,17 @@
         }
       }
     },
-    "/api/Order/CancelOrder": {
+    "/api/Order/Cancel": {
       "put": {
         "tags": [
           "Order"
         ],
+        "summary": "Cancel order",
         "parameters": [
           {
             "name": "idOrder",
             "in": "query",
+            "description": "",
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -1028,6 +1069,7 @@
           {
             "name": "employeeId",
             "in": "query",
+            "description": "",
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -1041,11 +1083,12 @@
         }
       }
     },
-    "/api/Order/OderOffline": {
+    "/api/Order/Oder-offline": {
       "put": {
         "tags": [
           "Order"
         ],
+        "summary": "Create order offline. Used for employee create order at store.",
         "requestBody": {
           "description": "CustomerId can be null",
           "content": {
@@ -1073,12 +1116,12 @@
         }
       }
     },
-    "/api/OrderPending/GetAll": {
+    "/api/OrderPending": {
       "get": {
         "tags": [
           "OrderPending"
         ],
-        "summary": "get all order pending by status and sort by time",
+        "summary": "get all order pending",
         "parameters": [
           {
             "name": "status",
@@ -1103,13 +1146,45 @@
             "description": "OK"
           }
         }
+      },
+      "post": {
+        "tags": [
+          "OrderPending"
+        ],
+        "summary": "Add order pending",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OrderPendingModel"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OrderPendingModel"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/OrderPendingModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
       }
     },
-    "/api/OrderPending/GetByPage": {
+    "/api/OrderPending/Page": {
       "get": {
         "tags": [
           "OrderPending"
         ],
+        "summary": "get all order pending by page",
         "parameters": [
           {
             "name": "status",
@@ -1154,7 +1229,7 @@
         }
       }
     },
-    "/api/OrderPending/GetByIdOrderPending": {
+    "/api/OrderPending/{idOrderPending}": {
       "get": {
         "tags": [
           "OrderPending"
@@ -1162,7 +1237,8 @@
         "parameters": [
           {
             "name": "idOrderPending",
-            "in": "query",
+            "in": "path",
+            "required": true,
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -1176,43 +1252,12 @@
         }
       }
     },
-    "/api/OrderPending": {
-      "post": {
-        "tags": [
-          "OrderPending"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/OrderPendingModel"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/OrderPendingModel"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/OrderPendingModel"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/OrderPending/ChangeStatusFromEmployee": {
+    "/api/OrderPending/{idOrderPending}/Employee/{idEmployee}/Change-status": {
       "put": {
         "tags": [
           "OrderPending"
         ],
-        "summary": "actor: employee=> employee can change status: cancel, approve. Employee cannot change status if status isn't pending.\r\nif status is \"approve\" and input valid => amount of store will reduce by amount order.",
+        "summary": "Change status from employee.\r\nactor: employee=> employee can change status: cancel, approve. Employee cannot change status if status isn't pending.\r\nif status is \"approve\" and input valid => amount of store will reduce by amount order.",
         "parameters": [
           {
             "name": "status",
@@ -1224,7 +1269,8 @@
           },
           {
             "name": "idOrderPending",
-            "in": "query",
+            "in": "path",
+            "required": true,
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -1232,7 +1278,8 @@
           },
           {
             "name": "idEmployee",
-            "in": "query",
+            "in": "path",
+            "required": true,
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -1256,15 +1303,18 @@
         }
       }
     },
-    "/api/OrderPending/cancelFromCustomer": {
+    "/api/OrderPending/{idOrderPending}/Customer-Cancel": {
       "put": {
         "tags": [
           "OrderPending"
         ],
+        "summary": "Cancel order pending from customer",
         "parameters": [
           {
             "name": "idOrderPending",
-            "in": "query",
+            "in": "path",
+            "description": "",
+            "required": true,
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -1278,7 +1328,7 @@
         }
       }
     },
-    "/api/employee/Product/getAllProduct": {
+    "/api/employee/Product": {
       "get": {
         "tags": [
           "Product"
@@ -1300,9 +1350,40 @@
             "description": "OK"
           }
         }
+      },
+      "post": {
+        "tags": [
+          "Product"
+        ],
+        "summary": "Add new product.",
+        "description": "mainImg used for show image product in the card product of list product(mainImg is link img)",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProductModel"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProductModel"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProductModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
       }
     },
-    "/api/employee/Product/getAllProductByCategory{idCategory}": {
+    "/api/employee/Product/Category/{idCategory}": {
       "get": {
         "tags": [
           "Product"
@@ -1357,9 +1438,74 @@
             "description": "OK"
           }
         }
+      },
+      "put": {
+        "tags": [
+          "Product"
+        ],
+        "summary": "Update product",
+        "description": "server find prouduct by id(input) and update the product. mainImg used for show image product in the card product of list product(mainImg is link img)",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProductModel"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProductModel"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProductModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Product"
+        ],
+        "summary": "Delete product.",
+        "description": "Server find product and delete.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
       }
     },
-    "/api/employee/Product/count": {
+    "/api/employee/Product/Count": {
       "get": {
         "tags": [
           "Product"
@@ -1372,7 +1518,7 @@
         }
       }
     },
-    "/api/employee/Product/page": {
+    "/api/employee/Product/Page": {
       "get": {
         "tags": [
           "Product"
@@ -1411,7 +1557,7 @@
         }
       }
     },
-    "/api/employee/Product/getAllColorOfProduct": {
+    "/api/employee/Product/{ProudctId}/Color": {
       "get": {
         "tags": [
           "Product"
@@ -1420,7 +1566,8 @@
         "parameters": [
           {
             "name": "ProudctId",
-            "in": "query",
+            "in": "path",
+            "required": true,
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -1434,7 +1581,32 @@
         }
       }
     },
-    "/api/employee/Product/GetAllSpecificationsByIdProduct": {
+    "/api/employee/Product/{ProductId}/Specification": {
+      "get": {
+        "tags": [
+          "Product"
+        ],
+        "summary": "Get all specification by productId",
+        "parameters": [
+          {
+            "name": "ProductId",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/employee/Product/{ProductId}/Image": {
       "get": {
         "tags": [
           "Product"
@@ -1442,7 +1614,8 @@
         "parameters": [
           {
             "name": "ProductId",
-            "in": "query",
+            "in": "path",
+            "required": true,
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -1456,37 +1629,17 @@
         }
       }
     },
-    "/api/employee/Product/GetAllImagesByIdProduct": {
+    "/api/employee/Product/Search": {
       "get": {
         "tags": [
           "Product"
         ],
-        "parameters": [
-          {
-            "name": "ProductId",
-            "in": "query",
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/employee/Product/SearchProductByName": {
-      "get": {
-        "tags": [
-          "Product"
-        ],
+        "summary": "Search product by nameProduct",
         "parameters": [
           {
             "name": "nameProduct",
             "in": "query",
+            "description": "",
             "schema": {
               "type": "string"
             }
@@ -1499,40 +1652,7 @@
         }
       }
     },
-    "/api/employee/Product/AddNewProduct": {
-      "post": {
-        "tags": [
-          "Product"
-        ],
-        "summary": "Add new product.",
-        "description": "mainImg used for show image product in the card product of list product(mainImg is link img)",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ProductModel"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ProductModel"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/ProductModel"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/employee/Product/postListImagesForProduct": {
+    "/Image": {
       "post": {
         "tags": [
           "Product"
@@ -1574,7 +1694,7 @@
         }
       }
     },
-    "/api/employee/Product/postListSpecificationsForProduct": {
+    "/Specification": {
       "post": {
         "tags": [
           "Product"
@@ -1616,7 +1736,7 @@
         }
       }
     },
-    "/api/employee/Product/UpdateListImageOfProduct": {
+    "/api/employee/Product/{idProduct}/Image": {
       "put": {
         "tags": [
           "Product"
@@ -1625,7 +1745,8 @@
         "parameters": [
           {
             "name": "idProduct",
-            "in": "query",
+            "in": "path",
+            "required": true,
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -1665,127 +1786,7 @@
             "description": "OK"
           }
         }
-      }
-    },
-    "/api/employee/Product/UpdateListSpecificationsOfProduct": {
-      "put": {
-        "tags": [
-          "Product"
-        ],
-        "summary": "Delete all specifications of product, and then add new list specifications of product.",
-        "parameters": [
-          {
-            "name": "idProduct",
-            "in": "query",
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/ProductSpecifiactionModel"
-                }
-              }
-            },
-            "text/json": {
-              "schema": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/ProductSpecifiactionModel"
-                }
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/ProductSpecifiactionModel"
-                }
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/employee/Product/updateproductbyidProduct": {
-      "put": {
-        "tags": [
-          "Product"
-        ],
-        "summary": "Update product",
-        "description": "server find prouduct by id(input) and update the product. mainImg used for show image product in the card product of list product(mainImg is link img)",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "query",
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ProductModel"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ProductModel"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/ProductModel"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/employee/Product/DeleteProductById": {
-      "delete": {
-        "tags": [
-          "Product"
-        ],
-        "summary": "Delete product.",
-        "description": "Server find product and delete.",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "query",
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/employee/Product/DeleteListImagesOfProduct": {
+      },
       "delete": {
         "tags": [
           "Product"
@@ -1794,107 +1795,6 @@
         "parameters": [
           {
             "name": "idProduct",
-            "in": "query",
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/employee/Product/DeleteImageByIdImg": {
-      "delete": {
-        "tags": [
-          "Product"
-        ],
-        "parameters": [
-          {
-            "name": "idImg",
-            "in": "query",
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/employee/Product/DeleteSpecificationsByIdSpecifications": {
-      "delete": {
-        "tags": [
-          "Product"
-        ],
-        "parameters": [
-          {
-            "name": "idSpecifications",
-            "in": "query",
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/employee/Product/DeleteListSpecificationsOfProduct": {
-      "delete": {
-        "tags": [
-          "Product"
-        ],
-        "summary": "Delete all specifications of product.",
-        "parameters": [
-          {
-            "name": "idProduct",
-            "in": "query",
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/employee/Sales/getAllSales": {
-      "get": {
-        "tags": [
-          "Sales"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/employee/Sales/{id}": {
-      "get": {
-        "tags": [
-          "Sales"
-        ],
-        "parameters": [
-          {
-            "name": "id",
             "in": "path",
             "required": true,
             "schema": {
@@ -1910,16 +1810,117 @@
         }
       }
     },
-    "/api/employee/Sales/getSalesByIdProduct": {
-      "get": {
+    "/api/employee/Product/{idProduct}/Specification": {
+      "put": {
         "tags": [
-          "Sales"
+          "Product"
         ],
-        "summary": "Get all sale by id product",
+        "summary": "Delete all specifications of product, and then add new list specifications of product.",
         "parameters": [
           {
             "name": "idProduct",
-            "in": "query",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/ProductSpecifiactionModel"
+                }
+              }
+            },
+            "text/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/ProductSpecifiactionModel"
+                }
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/ProductSpecifiactionModel"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Product"
+        ],
+        "summary": "Delete all specifications of product.",
+        "parameters": [
+          {
+            "name": "idProduct",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/Image/{idImg}": {
+      "delete": {
+        "tags": [
+          "Product"
+        ],
+        "summary": "Delete Image by idImg",
+        "parameters": [
+          {
+            "name": "idImg",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/Specification/{idSpecifications}": {
+      "delete": {
+        "tags": [
+          "Product"
+        ],
+        "summary": "Delete Specification by idSpecification",
+        "parameters": [
+          {
+            "name": "idSpecifications",
+            "in": "path",
+            "description": "",
+            "required": true,
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -1934,11 +1935,22 @@
       }
     },
     "/api/employee/Sales": {
+      "get": {
+        "tags": [
+          "Sales"
+        ],
+        "summary": "get all sales",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
       "post": {
         "tags": [
           "Sales"
         ],
-        "summary": "",
+        "summary": "add new sale",
         "requestBody": {
           "description": "\"numProduct = null\" is not limited number products sale",
           "content": {
@@ -1964,16 +1976,42 @@
             "description": "OK"
           }
         }
+      }
+    },
+    "/api/employee/Sales/{id}": {
+      "get": {
+        "tags": [
+          "Sales"
+        ],
+        "summary": "get sale by id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
       },
       "put": {
         "tags": [
           "Sales"
         ],
-        "summary": "",
+        "summary": "update sale by id",
         "parameters": [
           {
             "name": "id",
-            "in": "query",
+            "in": "path",
+            "required": true,
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -2010,10 +2048,13 @@
         "tags": [
           "Sales"
         ],
+        "summary": "delete sale by id",
         "parameters": [
           {
             "name": "id",
-            "in": "query",
+            "in": "path",
+            "description": "",
+            "required": true,
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -2027,7 +2068,29 @@
         }
       }
     },
-    "/api/employee/Sales/{idProduct}": {
+    "/api/employee/Sales/Product/{idProduct}": {
+      "get": {
+        "tags": [
+          "Sales"
+        ],
+        "summary": "Get all sale by id product",
+        "parameters": [
+          {
+            "name": "idProduct",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
       "delete": {
         "tags": [
           "Sales"
@@ -2056,10 +2119,12 @@
         "tags": [
           "ShoppingCart"
         ],
+        "summary": "get all shopping cart item by id customer",
         "parameters": [
           {
             "name": "idCustomer",
             "in": "query",
+            "description": "",
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -2072,28 +2137,6 @@
           }
         }
       },
-      "delete": {
-        "tags": [
-          "ShoppingCart"
-        ],
-        "parameters": [
-          {
-            "name": "idShoppingCartItem",
-            "in": "query",
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/ShoppingCart/AddItemShoppingCart": {
       "post": {
         "tags": [
           "ShoppingCart"
@@ -2125,7 +2168,7 @@
         }
       }
     },
-    "/api/ShoppingCart/UpdateAmountForItemShoppingCart": {
+    "/api/ShoppingCart/{idShoppingCartItem}": {
       "put": {
         "tags": [
           "ShoppingCart"
@@ -2142,7 +2185,8 @@
           },
           {
             "name": "idShoppingCartItem",
-            "in": "query",
+            "in": "path",
+            "required": true,
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -2154,53 +2198,17 @@
             "description": "OK"
           }
         }
-      }
-    },
-    "/api/ShoppingCart/DeleteAllShoppingCartItemByIdCustomer": {
+      },
       "delete": {
         "tags": [
           "ShoppingCart"
         ],
+        "summary": "delete by idShoppingCartItem",
         "parameters": [
           {
-            "name": "idCustomer",
-            "in": "query",
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/employee/Store/getAllStore": {
-      "get": {
-        "tags": [
-          "Store"
-        ],
-        "summary": "List all Stores.",
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/employee/Store/{idStore}": {
-      "get": {
-        "tags": [
-          "Store"
-        ],
-        "summary": "Get stores by id.",
-        "parameters": [
-          {
-            "name": "idStore",
+            "name": "idShoppingCartItem",
             "in": "path",
+            "description": "",
             "required": true,
             "schema": {
               "type": "integer",
@@ -2215,7 +2223,43 @@
         }
       }
     },
-    "/api/employee/Store/AddStore": {
+    "/api/ShoppingCart/customer{idCustomer}": {
+      "delete": {
+        "tags": [
+          "ShoppingCart"
+        ],
+        "summary": "Delete all shopping cart item by idCustomer",
+        "parameters": [
+          {
+            "name": "idCustomer",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/employee/Store": {
+      "get": {
+        "tags": [
+          "Store"
+        ],
+        "summary": "List all Stores.",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
       "post": {
         "tags": [
           "Store"
@@ -2247,7 +2291,31 @@
         }
       }
     },
-    "/api/employee/Store/UpdateStore": {
+    "/api/employee/Store/{idStore}": {
+      "get": {
+        "tags": [
+          "Store"
+        ],
+        "summary": "Get stores by id.",
+        "parameters": [
+          {
+            "name": "idStore",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/employee/Store/{id}": {
       "put": {
         "tags": [
           "Store"
@@ -2257,7 +2325,8 @@
         "parameters": [
           {
             "name": "id",
-            "in": "query",
+            "in": "path",
+            "required": true,
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -2288,9 +2357,7 @@
             "description": "OK"
           }
         }
-      }
-    },
-    "/api/employee/Store/DeleteStore": {
+      },
       "delete": {
         "tags": [
           "Store"
@@ -2300,28 +2367,6 @@
         "parameters": [
           {
             "name": "id",
-            "in": "query",
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/employee/Store/GetAllProductByIdStore{idStore}": {
-      "get": {
-        "tags": [
-          "Store"
-        ],
-        "parameters": [
-          {
-            "name": "idStore",
             "in": "path",
             "required": true,
             "schema": {
@@ -2337,15 +2382,43 @@
         }
       }
     },
-    "/api/employee/Store/GetProductByIdStore": {
+    "/api/employee/Store/{idStore}/Product": {
       "get": {
         "tags": [
           "Store"
         ],
+        "summary": "Get all product in store by idStore",
         "parameters": [
           {
             "name": "idStore",
-            "in": "query",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/employee/Store/{idStore}/Product/{idProduct}": {
+      "get": {
+        "tags": [
+          "Store"
+        ],
+        "summary": "get product in store by idProduct and idStore",
+        "parameters": [
+          {
+            "name": "idStore",
+            "in": "path",
+            "description": "",
+            "required": true,
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -2353,29 +2426,8 @@
           },
           {
             "name": "idProduct",
-            "in": "query",
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/employee/Store/GetStoreExistProduct{idProduct}": {
-      "get": {
-        "tags": [
-          "Store"
-        ],
-        "parameters": [
-          {
-            "name": "idProduct",
             "in": "path",
+            "description": "",
             "required": true,
             "schema": {
               "type": "integer",
@@ -2390,17 +2442,43 @@
         }
       }
     },
-    "/api/employee/Store/AddStoreProduct": {
+    "/api/employee/Store/{idProduct}/exist-in-store": {
+      "get": {
+        "tags": [
+          "Store"
+        ],
+        "summary": "get all store exist product",
+        "parameters": [
+          {
+            "name": "idProduct",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/employee/Store/{idStore}/Product/{idProduct}/Color/{idColor}/add-new-product": {
       "put": {
         "tags": [
           "Store"
         ],
-        "summary": "if item exist => add. if item don't exist => create new item.",
+        "summary": "Add product in store by idStore, idColor and idProduct.\r\nif item exist => add. if item don't exist => create new item.",
         "parameters": [
           {
             "name": "idProduct",
-            "in": "query",
+            "in": "path",
             "description": "",
+            "required": true,
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -2408,8 +2486,9 @@
           },
           {
             "name": "idStore",
-            "in": "query",
+            "in": "path",
             "description": "",
+            "required": true,
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -2426,8 +2505,9 @@
           },
           {
             "name": "idColor",
-            "in": "query",
+            "in": "path",
             "description": "",
+            "required": true,
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -2441,15 +2521,18 @@
         }
       }
     },
-    "/api/employee/Store/ReduceStoreProduct": {
+    "/api/employee/Store/{idStore}/Product/{idProduct}/Color/{idColor}/reduce-new-product": {
       "put": {
         "tags": [
           "Store"
         ],
+        "summary": "Reduce product in store by idStore, idColor and idProduct",
         "parameters": [
           {
             "name": "idProduct",
-            "in": "query",
+            "in": "path",
+            "description": "",
+            "required": true,
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -2457,7 +2540,9 @@
           },
           {
             "name": "idStore",
-            "in": "query",
+            "in": "path",
+            "description": "",
+            "required": true,
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -2466,6 +2551,7 @@
           {
             "name": "amountReduce",
             "in": "query",
+            "description": "",
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -2473,7 +2559,9 @@
           },
           {
             "name": "idColor",
-            "in": "query",
+            "in": "path",
+            "description": "",
+            "required": true,
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -2487,15 +2575,18 @@
         }
       }
     },
-    "/api/employee/Store/UpdateStoreProduct": {
+    "/api/employee/Store/{idStore}/Product/{idProduct}/Color/{idColor}/update-amount-product": {
       "put": {
         "tags": [
           "Store"
         ],
+        "summary": "Update amount of product by idStore, idProduct and idColor",
         "parameters": [
           {
             "name": "idProduct",
-            "in": "query",
+            "in": "path",
+            "description": "",
+            "required": true,
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -2503,7 +2594,9 @@
           },
           {
             "name": "idStore",
-            "in": "query",
+            "in": "path",
+            "description": "",
+            "required": true,
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -2512,6 +2605,7 @@
           {
             "name": "amount",
             "in": "query",
+            "description": "",
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -2519,7 +2613,9 @@
           },
           {
             "name": "idColor",
-            "in": "query",
+            "in": "path",
+            "description": "",
+            "required": true,
             "schema": {
               "type": "integer",
               "format": "int32"

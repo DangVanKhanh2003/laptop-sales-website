@@ -22,15 +22,12 @@ namespace SellingElectronicWebsite.Controllers.Customer
             _uow = uow;
         }
 
-        //Task<Customer> Add(CustomerModel model);
-        //Task<bool> Update(CustomerModel model, int id);
-        //Task<bool> DeleteByIdCustomer(int id);
 
         /// <summary>
         /// get all customer infor
         /// </summary>
         /// <param name="sortBy">defaul is null. you can fill:name_asc(sort ascending by name)/  name_desc(sort descending by name)</param>
-        [HttpGet("getAllCustomerInfor")]
+        [HttpGet]
         public async Task<IActionResult> GetAll(string sortBy= null)
         {
             try
@@ -49,7 +46,7 @@ namespace SellingElectronicWebsite.Controllers.Customer
         /// </summary>
         /// <param name="sortBy">defaul is null. you can fill:name_asc(sort ascending by name)/  name_desc(sort descending by name)</param>
         /// <returns></returns>
-        [HttpGet("getByPage")]
+        [HttpGet("page")]
         public async Task<IActionResult> getByPage(int pageIndex, int pageSize, string sortBy=null)
         {
             try
@@ -63,7 +60,7 @@ namespace SellingElectronicWebsite.Controllers.Customer
 
             }
         }
-        [HttpGet("GetAccByIdCustomer{idCustomer}")]
+        [HttpGet("{idCustomer}")]
         public async Task<IActionResult> GetByIdCustomer(int idCustomer)
         {
             try
@@ -99,14 +96,21 @@ namespace SellingElectronicWebsite.Controllers.Customer
                 return BadRequest(ex.Message);
             }
         }
-        [HttpPut]
-        public async Task<IActionResult> updateInfoCustomer(CustomerModel model, int id)
+
+        /// <summary>
+        /// update customer by id
+        /// </summary>
+        /// <param name="model"></param>
+        /// <param name="idCustomer"></param>
+        /// <returns></returns>
+        [HttpPut("{idCustomer}")]
+        public async Task<IActionResult> updateInfoCustomer(CustomerModel model, int idCustomer)
         {
             try
             {
                 _uow.CreateTransaction();
 
-                var check = await _uow.Customers.Update(model, id);
+                var check = await _uow.Customers.Update(model, idCustomer);
                 await _uow.Save();
                 _uow.Commit();
                 return Ok(check);
@@ -121,7 +125,7 @@ namespace SellingElectronicWebsite.Controllers.Customer
         /// <summary>
         /// not complete
         /// </summary>
-        [HttpDelete]
+        [HttpDelete("{idCustomer}")]
         public async Task<IActionResult> deleteCustomerById(int id)
         {
             return null;

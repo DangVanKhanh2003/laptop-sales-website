@@ -8,7 +8,7 @@ using SellingElectronicWebsite.UnitOfWork;
 
 namespace SellingElectronicWebsite.Controllers.Employee
 {
-    [Route("api/employee/[controller]")]
+    [Route("api/[controller]")]
     [ApiController]
     public class CategoryControler : ControllerBase
     {
@@ -18,10 +18,12 @@ namespace SellingElectronicWebsite.Controllers.Employee
         {
             _uow = uow;
         }
-
-        [HttpGet("getAllCategory")]
+        /// <summary>
+        /// Get all category
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
         [CustomAuthorizeCustomer("customer")]
-
         public async Task<IActionResult> GetAll()
         {
             try
@@ -40,7 +42,11 @@ namespace SellingElectronicWebsite.Controllers.Employee
             }
         }
 
-
+        /// <summary>
+        /// get category by id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet("{id}")]
         [CustomAuthorizeCustomer("customer")]
 
@@ -61,8 +67,12 @@ namespace SellingElectronicWebsite.Controllers.Employee
             }
         }
 
-        
-       
+
+        /// <summary>
+        /// Add Category
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
         [HttpPost]
         public async Task<IActionResult> Add(CategoryModel model)
         {
@@ -90,7 +100,13 @@ namespace SellingElectronicWebsite.Controllers.Employee
             }
         }
 
-        [HttpPut]
+        /// <summary>
+        /// Update category by id 
+        /// </summary>
+        /// <param name="model"></param>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpPut("{id}")]
         public async Task<IActionResult> Update(CategoryModel model, int id)
         {
             try
@@ -126,8 +142,12 @@ namespace SellingElectronicWebsite.Controllers.Employee
             }
         }
         
-
-        [HttpDelete]
+        /// <summary>
+        /// Delete catory by id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {
             try

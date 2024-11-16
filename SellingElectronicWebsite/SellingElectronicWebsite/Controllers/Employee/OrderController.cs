@@ -25,7 +25,7 @@ namespace SellingElectronicWebsite.Controllers.Employee
         /// <param name="status">value: "pending"/"cancel"/"approve". Default = "pending"</param>
         /// <param name="sortByOrderDate">value: "timeDesc"/"timeAsc". Default = null</param>
 
-        [HttpGet("GetAllOrder")]
+        [HttpGet]
         public async Task<IActionResult> GetAll(string status = "pending", string sortByOrderDate = null)
         {
             try
@@ -45,7 +45,7 @@ namespace SellingElectronicWebsite.Controllers.Employee
         /// <param name="sortByOrderDate">value: "timeDesc"/"timeAsc". Default = null</param>
         /// <param name="pageIndex">default = 1</param>
         /// <param name="pageSize">default = 10</param>
-        [HttpGet("GetAllOrderPaging")]
+        [HttpGet("page")]
         public async Task<IActionResult> GetAllPaging(string status = "pending", string sortByOrderDate = null, int pageIndex = 1, int pageSize= 10)
         {
             try
@@ -65,7 +65,7 @@ namespace SellingElectronicWebsite.Controllers.Employee
         /// <param name="sortByOrderDate">value: "timeDesc"/"timeAsc". Default = null</param>
         /// <param name="pageIndex">default = 1</param>
         /// <param name="pageSize">default = 10</param>
-        [HttpGet("GetAllOrderByIdStorePaging")]
+        [HttpGet("store/{idStore}/page")]
         public async Task<IActionResult> GetByIdStorePaging( int idStore, string status = "pending", 
             string sortByOrderDate = null, int pageIndex = 1, int pageSize = 10)
         {
@@ -85,7 +85,7 @@ namespace SellingElectronicWebsite.Controllers.Employee
         /// <param name="status">value: "pending"/"cancel"/"approve". Default = "pending"</param>
         /// <param name="sortByOrderDate">value: "timeDesc"/"timeAsc". Default = null</param>
 
-        [HttpGet("GetAllOrderByIdStore")]
+        [HttpGet("store/{idStore}")]
         public async Task<IActionResult> GetByIdStore(int idStore,string status = "pending", string sortByOrderDate = null)
         {
             try
@@ -99,7 +99,13 @@ namespace SellingElectronicWebsite.Controllers.Employee
             }
         }
 
-        [HttpPut("ExportOrder")]
+        /// <summary>
+        /// Export order
+        /// </summary>
+        /// <param name="idOrder"></param>
+        /// <param name="employeeId"></param>
+        /// <returns></returns>
+        [HttpPut("Export")]
         public async Task<IActionResult> ExportOrder(int idOrder, int employeeId)
         {
             try
@@ -117,7 +123,13 @@ namespace SellingElectronicWebsite.Controllers.Employee
             }
         }
 
-        [HttpPut("CancelOrder")]
+        /// <summary>
+        /// Cancel order
+        /// </summary>
+        /// <param name="idOrder"></param>
+        /// <param name="employeeId"></param>
+        /// <returns></returns>
+        [HttpPut("Cancel")]
         public async Task<IActionResult> CancelOrder(int idOrder, int employeeId)
         {
             try
@@ -135,9 +147,12 @@ namespace SellingElectronicWebsite.Controllers.Employee
             }
         }
 
+        /// <summary>
+        /// Create order offline. Used for employee create order at store.
+        /// </summary>
         /// <param name="model">CustomerId can be null</param>
         /// <returns>order View Model</returns>
-        [HttpPut("OderOffline")]
+        [HttpPut("Oder-offline")]
         public async Task<IActionResult> OderOffline(OrderOfflineModel model)
         {
             try

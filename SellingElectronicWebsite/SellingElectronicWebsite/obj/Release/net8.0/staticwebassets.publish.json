@@ -1,11 +1,12 @@
 {
   "Version": 1,
-  "Hash": "bCYVXB2k5g24Ro58qfFOFzk7eo/8DW7DzQ3vL0ohj44=",
+  "Hash": "4ZNAV91RrK6HZ0L6vfKC0cpMfW7cOYl2IXS4oZ1BQCI=",
   "Source": "SellingElectronicWebsite",
   "BasePath": "_content/SellingElectronicWebsite",
   "Mode": "Default",
   "ManifestType": "Publish",
   "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [],
-  "Assets": []
+  "Assets": [],
+  "Endpoints": []
 }

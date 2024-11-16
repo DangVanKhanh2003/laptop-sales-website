@@ -22,11 +22,11 @@ namespace SellingElectronicWebsite.Controllers
 
 
         /// <summary>
-        /// get all order pending by status and sort by time
+        /// get all order pending
         /// </summary>
         /// <param name="status">cancel/pending/approve</param>
         /// <param name="sortBy">timeAsc/timeDesc/null</param>
-        [HttpGet("GetAll")]
+        [HttpGet]
         public async Task<IActionResult> GetAll(string status = "pending", string sortBy = null)
         {
 
@@ -41,9 +41,13 @@ namespace SellingElectronicWebsite.Controllers
 
             }
         }
+
+        /// <summary>
+        /// get all order pending by page
+        /// </summary>
         /// <param name="status">cancel/pending/approve</param>
         /// <param name="sortBy">timeAsc/timeDesc/null</param>
-        [HttpGet("GetByPage")]
+        [HttpGet("Page")]
         public async Task<IActionResult> GetByPage(string status = "pending", int pageIndex = 1,
             int pageSize = 10, string sortBy = null)
         {
@@ -60,7 +64,7 @@ namespace SellingElectronicWebsite.Controllers
             }
         }
 
-        [HttpGet("GetByIdOrderPending")]
+        [HttpGet("{idOrderPending}")]
         public async Task<IActionResult> GetByIdOrderPending(int idOrderPending)
         {
 
@@ -77,7 +81,11 @@ namespace SellingElectronicWebsite.Controllers
         }
 
 
-
+        /// <summary>
+        /// Add order pending
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
         [HttpPost]
         public async Task<IActionResult> Add(OrderPendingModel model)
         {
@@ -96,14 +104,16 @@ namespace SellingElectronicWebsite.Controllers
 
             }
         }
+
         /// <summary>
+        /// Change status from employee.
         /// actor: employee=> employee can change status: cancel, approve. Employee cannot change status if status isn't pending.
         /// if status is "approve" and input valid => amount of store will reduce by amount order.
         /// </summary>
         /// <param name="status" > cancel, approve</param>
         /// <param name="idStore">if you want to change status is approve. You need provide idStore.</param>
         /// <returns></returns>
-        [HttpPut("ChangeStatusFromEmployee")]
+        [HttpPut("{idOrderPending}/Employee/{idEmployee}/Change-status")]
         public async Task<IActionResult> UpdateStatus(string status, int idOrderPending, int idEmployee, int idStore = -1)
         {
             try
@@ -121,8 +131,12 @@ namespace SellingElectronicWebsite.Controllers
 
             }
         }
-
-        [HttpPut("cancelFromCustomer")]
+        /// <summary>
+        /// Cancel order pending from customer
+        /// </summary>
+        /// <param name="idOrderPending"></param>
+        /// <returns></returns>
+        [HttpPut("{idOrderPending}/Customer-Cancel")]
         public async Task<IActionResult> Cancel(int idOrderPending)
         {
             try

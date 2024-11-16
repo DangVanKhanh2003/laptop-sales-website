@@ -22,6 +22,11 @@ namespace SellingElectronicWebsite.Controllers.Customer
             _uow = uow;
         }
        
+        /// <summary>
+        /// get all shopping cart item by id customer
+        /// </summary>
+        /// <param name="idCustomer"></param>
+        /// <returns></returns>
         [HttpGet]
         public async Task<IActionResult> GetByIdCustomer(int idCustomer)
         {
@@ -40,7 +45,7 @@ namespace SellingElectronicWebsite.Controllers.Customer
         /// if exist element(in shopping cart) same idCustomer, idProduct, idColor with this item => 
         /// addition amount to amount of element in this shopping cart. The sale of product automatic addition when shopping cart item add new. 
         /// </summary>
-        [HttpPost("AddItemShoppingCart")]
+        [HttpPost]
         public async Task<IActionResult> Add(ShoppingCartItemModel model)
         {
             try
@@ -61,7 +66,7 @@ namespace SellingElectronicWebsite.Controllers.Customer
         /// <summary>
         /// update amount for item in shoppingCart by idShoppingCart
         /// </summary>
-        [HttpPut("UpdateAmountForItemShoppingCart")]
+        [HttpPut("{idShoppingCartItem}")]
         public async Task<IActionResult> Update(int amount, int idShoppingCartItem)
         {
             try
@@ -80,7 +85,13 @@ namespace SellingElectronicWebsite.Controllers.Customer
 
             }
         }
-        [HttpDelete]
+
+        /// <summary>
+        /// delete by idShoppingCartItem
+        /// </summary>
+        /// <param name="idShoppingCartItem"></param>
+        /// <returns></returns>
+        [HttpDelete("{idShoppingCartItem}")]
         public async Task<IActionResult> Delete(int idShoppingCartItem)
         {
             try
@@ -98,7 +109,13 @@ namespace SellingElectronicWebsite.Controllers.Customer
 
             }
         }
-        [HttpDelete("DeleteAllShoppingCartItemByIdCustomer")]
+
+        /// <summary>
+        /// Delete all shopping cart item by idCustomer
+        /// </summary>
+        /// <param name="idCustomer"></param>
+        /// <returns></returns>
+        [HttpDelete("customer{idCustomer}")]
         public async Task<IActionResult> DeleteAllByIdCustomer(int idCustomer)
         {
             try

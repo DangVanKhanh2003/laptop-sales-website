@@ -8,7 +8,7 @@ using SellingElectronicWebsite.ViewModel;
 
 namespace SellingElectronicWebsite.Controllers.Employee
 {
-    [Route("api/employee/[controller]")]
+    [Route("api/[controller]")]
     [ApiController]
     public class SalesController : ControllerBase
     {
@@ -20,8 +20,11 @@ namespace SellingElectronicWebsite.Controllers.Employee
             _uow = uow;
         }
 
-
-        [HttpGet("getAllSales")]
+        /// <summary>
+        /// get all sales
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
         public async Task<IActionResult> GetAll()
         {
             try
@@ -39,6 +42,11 @@ namespace SellingElectronicWebsite.Controllers.Employee
             }
         }
 
+        /// <summary>
+        /// get sale by id 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)
         {
@@ -56,11 +64,11 @@ namespace SellingElectronicWebsite.Controllers.Employee
                 return BadRequest(ex.Message);
             }
         }
+
         /// <summary>
         /// Get all sale by id product
         /// </summary>
-
-        [HttpGet("getSalesByIdProduct")]
+        [HttpGet("Product/{idProduct}")]
         public async Task<IActionResult> GetByIdProduct(int idProduct)
         {
             try
@@ -85,11 +93,10 @@ namespace SellingElectronicWebsite.Controllers.Employee
         }
 
         /// <summary>
-        /// 
+        /// add new sale
         /// </summary>
         /// <param name="model">"numProduct = null" is not limited number products sale</param>
         /// <returns></returns>
-
         [HttpPost]
         public async Task<IActionResult> Add(SalesModel model)
         {
@@ -121,12 +128,12 @@ namespace SellingElectronicWebsite.Controllers.Employee
             }
         }
         /// <summary>
-        /// 
+        /// update sale by id
         /// </summary>
         /// <param name="model">"numProduct = null" is not limited number products sale</param>
         /// <returns></returns>
 
-        [HttpPut]
+        [HttpPut("{id}")]
         public async Task<IActionResult> Update(SalesModel model, int id)
         {
             try
@@ -164,8 +171,12 @@ namespace SellingElectronicWebsite.Controllers.Employee
             }
         }
 
-
-        [HttpDelete]
+        /// <summary>
+        /// delete sale by id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {
             try
@@ -192,7 +203,7 @@ namespace SellingElectronicWebsite.Controllers.Employee
         /// <summary>
         /// Delete all sales of product by idProduct
         /// </summary>
-        [HttpDelete("{idProduct}")]
+        [HttpDelete("Product/{idProduct}")]
         public async Task<IActionResult> DeleteByIdProduct(int idProduct)
         {
             try

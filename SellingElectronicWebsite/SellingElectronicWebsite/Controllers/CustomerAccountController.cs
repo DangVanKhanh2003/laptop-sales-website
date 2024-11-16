@@ -25,7 +25,12 @@ namespace SellingElectronicWebsite.Controllers
         {
             _uow = uow;
         }
-        [HttpGet("getAllAccount")]
+
+        /// <summary>
+        /// Get all account customer
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
         public async Task<IActionResult> getAllAccount()
         {
             try
@@ -40,7 +45,13 @@ namespace SellingElectronicWebsite.Controllers
             }
         }
 
-        [HttpGet("getByPage")]
+        /// <summary>
+        /// get all account by page
+        /// </summary>
+        /// <param name="pageIndex"></param>
+        /// <param name="pageSize"></param>
+        /// <returns></returns>
+        [HttpGet("Page")]
         public async Task<IActionResult> getByPage(int pageIndex, int pageSize)
         {
             try
@@ -54,7 +65,13 @@ namespace SellingElectronicWebsite.Controllers
 
             }
         }
-        [HttpGet("GetAccByIdCustomer{idCustomer}")]
+
+        /// <summary>
+        /// Get account by idCustomer
+        /// </summary>
+        /// <param name="idCustomer"></param>
+        /// <returns></returns>
+        [HttpGet("Customer/{idCustomer}")]
         public async Task<IActionResult> GetByIdCustomer(int idCustomer)
         {
             try
@@ -139,6 +156,13 @@ namespace SellingElectronicWebsite.Controllers
             }
         }
 
+        /// <summary>
+        /// Change Pasword
+        /// </summary>
+        /// <param name="email"></param>
+        /// <param name="password"></param>
+        /// <param name="newPassword"></param>
+        /// <returns></returns>
         [HttpPut]
         [CustomAuthorizeCustomer("customer")]
 

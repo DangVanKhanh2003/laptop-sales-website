@@ -138,7 +138,6 @@ E:\Công Việc\BTL_DoAnChuyenNganh\laptop-sales-website\SellingElectronicWebsit
 E:\Công Việc\BTL_DoAnChuyenNganh\laptop-sales-website\SellingElectronicWebsite\SellingElectronicWebsite\obj\Release\net8.0\staticwebassets\msbuild.buildTransitive.SellingElectronicWebsite.props
 E:\Công Việc\BTL_DoAnChuyenNganh\laptop-sales-website\SellingElectronicWebsite\SellingElectronicWebsite\obj\Release\net8.0\staticwebassets.pack.json
 E:\Công Việc\BTL_DoAnChuyenNganh\laptop-sales-website\SellingElectronicWebsite\SellingElectronicWebsite\obj\Release\net8.0\scopedcss\bundle\SellingElectronicWebsite.styles.css
-E:\Công Việc\BTL_DoAnChuyenNganh\laptop-sales-website\SellingElectronicWebsite\SellingElectronicWebsite\obj\Release\net8.0\SellingElectronicWebsite.csproj.CopyComplete
 E:\Công Việc\BTL_DoAnChuyenNganh\laptop-sales-website\SellingElectronicWebsite\SellingElectronicWebsite\obj\Release\net8.0\SellingElectronicWebsite.dll
 E:\Công Việc\BTL_DoAnChuyenNganh\laptop-sales-website\SellingElectronicWebsite\SellingElectronicWebsite\obj\Release\net8.0\refint\SellingElectronicWebsite.dll
 E:\Công Việc\BTL_DoAnChuyenNganh\laptop-sales-website\SellingElectronicWebsite\SellingElectronicWebsite\obj\Release\net8.0\SellingElectronicWebsite.xml
@@ -153,3 +152,8 @@ E:\Công Việc\BTL_DoAnChuyenNganh\laptop-sales-website\SellingElectronicWebsit
 E:\Công Việc\BTL_DoAnChuyenNganh\laptop-sales-website\SellingElectronicWebsite\SellingElectronicWebsite\bin\Release\net8.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 E:\Công Việc\BTL_DoAnChuyenNganh\laptop-sales-website\SellingElectronicWebsite\SellingElectronicWebsite\bin\Release\net8.0\Microsoft.Extensions.Identity.Core.dll
 E:\Công Việc\BTL_DoAnChuyenNganh\laptop-sales-website\SellingElectronicWebsite\SellingElectronicWebsite\bin\Release\net8.0\Microsoft.Extensions.Identity.Stores.dll
+E:\Công Việc\BTL_DoAnChuyenNganh\laptop-sales-website\SellingElectronicWebsite\SellingElectronicWebsite\bin\Release\net8.0\SellingElectronicWebsite.staticwebassets.endpoints.json
+E:\Công Việc\BTL_DoAnChuyenNganh\laptop-sales-website\SellingElectronicWebsite\SellingElectronicWebsite\obj\Release\net8.0\staticwebassets.build.endpoints.json
+E:\Công Việc\BTL_DoAnChuyenNganh\laptop-sales-website\SellingElectronicWebsite\SellingElectronicWebsite\obj\Release\net8.0\staticwebassets\msbuild.SellingElectronicWebsite.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+E:\Công Việc\BTL_DoAnChuyenNganh\laptop-sales-website\SellingElectronicWebsite\SellingElectronicWebsite\obj\Release\net8.0\staticwebassets.upToDateCheck.txt
+E:\Công Việc\BTL_DoAnChuyenNganh\laptop-sales-website\SellingElectronicWebsite\SellingElectronicWebsite\obj\Release\net8.0\SellingE.6CB75715.Up2Date

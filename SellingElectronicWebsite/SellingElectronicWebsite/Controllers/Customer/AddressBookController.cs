@@ -5,6 +5,7 @@ using SellingElectronicWebsite.Model;
 using SellingElectronicWebsite.Sercurity;
 using SellingElectronicWebsite.UnitOfWork;
 using SellingElectronicWebsite.ViewModel;
+using System.Net;
 
 namespace SellingElectronicWebsite.Controllers.Customer
 {
@@ -21,15 +22,14 @@ namespace SellingElectronicWebsite.Controllers.Customer
             _uow = uow;
         }
 
-        //Task<List<AddressBookVM>> GetByPage(int pageIndex, int pageSize);
-        //Task<List<AddressBookVM>> GetAllByIdCustomer(int id);
-        //Task<AddressBookVM> GetByIdAddressBook(int id);
-        //Task<bool> Add(AddressBookModel model);
-        //Task<bool> Update(AddressBookModel model, int idAddressbook);
-        //Task<bool> Delete(int id);
-
-        [HttpGet("GetByPage")]
-        public async Task<IActionResult> GetByPage(int pageIndex, int pageSize)
+        /// <summary>
+        /// get all address by page
+        /// </summary>
+        /// <param name="pageIndex">default = 1</param>
+        /// <param name="pageSize"> default = 10</param>
+        /// <returns></returns>
+        [HttpGet]
+        public async Task<IActionResult> GetByPage([FromQuery] int pageIndex= 1 , [FromQuery] int pageSize = 10)
         {
             try
             {
@@ -43,7 +43,12 @@ namespace SellingElectronicWebsite.Controllers.Customer
             }
         }
 
-        [HttpGet("GetByIdAddressBook{idAddress}")]
+        /// <summary>
+        /// get address by id address
+        /// </summary>
+        /// <param name="idAddress"></param>
+        /// <returns></returns>
+        [HttpGet("{idAddress}")]
         public async Task<IActionResult> GetByIdAddressBook(int idAddress)
         {
             try
@@ -58,7 +63,12 @@ namespace SellingElectronicWebsite.Controllers.Customer
             }
         }
 
-        [HttpGet("GetAllByIdCustomer{idCustomer}")]
+        /// <summary>
+        /// get all address by id customer
+        /// </summary>
+        /// <param name="idCustomer"></param>
+        /// <returns></returns>
+        [HttpGet("Customer/{idCustomer}")]
         public async Task<IActionResult> GetAllByIdCustomer(int idCustomer)
         {
             try
@@ -73,7 +83,11 @@ namespace SellingElectronicWebsite.Controllers.Customer
             }
         }
 
-        [HttpGet("GetCountAddress")]
+        /// <summary>
+        /// Count address
+        /// </summary>
+        /// <returns>Return amount address</returns>
+        [HttpGet("Count-Address")]
         public async Task<IActionResult> GetCountAddress()
         {
             try
@@ -88,8 +102,13 @@ namespace SellingElectronicWebsite.Controllers.Customer
             }
         }
 
+        /// <summary>
+        /// Add new address in address book of customer
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
         [HttpPost]
-        public async Task<IActionResult> Add(AddressBookModel model)
+        public async Task<IActionResult> Add([FromBody] AddressBookModel model)
         {
             try
             {
@@ -107,8 +126,14 @@ namespace SellingElectronicWebsite.Controllers.Customer
             }
         }
 
+        /// <summary>
+        /// Change infor address book by idAddressBook
+        /// </summary>
+        /// <param name="model"></param>
+        /// <param name="idAddressbook"></param>
+        /// <returns></returns>
         [HttpPut]
-        public async Task<IActionResult> Update(AddressBookModel model, int idAddressbook)
+        public async Task<IActionResult> Update([FromBody] AddressBookModel model, [FromQuery] int idAddressbook)
         {
             try
             {
@@ -126,13 +151,18 @@ namespace SellingElectronicWebsite.Controllers.Customer
             }
         }
 
-        [HttpDelete]
-        public async Task<IActionResult> Delete(int idCustomer)
+        /// <summary>
+        /// Delete address by id
+        /// </summary>
+        /// <param name="idAddress"></param>
+        /// <returns></returns>
+        [HttpDelete("{idAddress}")]
+        public async Task<IActionResult> Delete(int idAddress)
         {
             try
             {
                 _uow.CreateTransaction();
-                await _uow.AddressBook.Delete(idCustomer);
+                await _uow.AddressBook.Delete(idAddress);
                 await _uow.Save();
                 _uow.Commit();
                 return Ok();

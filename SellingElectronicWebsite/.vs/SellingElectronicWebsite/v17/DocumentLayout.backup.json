@@ -3,12 +3,72 @@
   "WorkspaceRootPath": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|e:\\c\u00F4ng vi\u1EC7c\\btl_doanchuyennganh\\laptop-sales-website\\sellingelectronicwebsite\\sellingelectronicwebsite\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|solutionrelative:sellingelectronicwebsite\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|e:\\c\u00F4ng vi\u1EC7c\\btl_doanchuyennganh\\laptop-sales-website\\sellingelectronicwebsite\\sellingelectronicwebsite\\controllers\\orderpendingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|solutionrelative:sellingelectronicwebsite\\controllers\\orderpendingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|e:\\c\u00F4ng vi\u1EC7c\\btl_doanchuyennganh\\laptop-sales-website\\sellingelectronicwebsite\\sellingelectronicwebsite\\controllers\\customeraccountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|solutionrelative:sellingelectronicwebsite\\controllers\\customeraccountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|e:\\c\u00F4ng vi\u1EC7c\\btl_doanchuyennganh\\laptop-sales-website\\sellingelectronicwebsite\\sellingelectronicwebsite\\controllers\\customer\\shoppingcartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|solutionrelative:sellingelectronicwebsite\\controllers\\customer\\shoppingcartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|e:\\c\u00F4ng vi\u1EC7c\\btl_doanchuyennganh\\laptop-sales-website\\sellingelectronicwebsite\\sellingelectronicwebsite\\controllers\\customer\\customerinforcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|solutionrelative:sellingelectronicwebsite\\controllers\\customer\\customerinforcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|e:\\c\u00F4ng vi\u1EC7c\\btl_doanchuyennganh\\laptop-sales-website\\sellingelectronicwebsite\\sellingelectronicwebsite\\controllers\\customer\\addressbookcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|solutionrelative:sellingelectronicwebsite\\controllers\\customer\\addressbookcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|e:\\c\u00F4ng vi\u1EC7c\\btl_doanchuyennganh\\laptop-sales-website\\sellingelectronicwebsite\\sellingelectronicwebsite\\controllers\\employee\\storecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|solutionrelative:sellingelectronicwebsite\\controllers\\employee\\storecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|e:\\c\u00F4ng vi\u1EC7c\\btl_doanchuyennganh\\laptop-sales-website\\sellingelectronicwebsite\\sellingelectronicwebsite\\controllers\\employee\\salescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|solutionrelative:sellingelectronicwebsite\\controllers\\employee\\salescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|e:\\c\u00F4ng vi\u1EC7c\\btl_doanchuyennganh\\laptop-sales-website\\sellingelectronicwebsite\\sellingelectronicwebsite\\controllers\\employee\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|solutionrelative:sellingelectronicwebsite\\controllers\\employee\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|e:\\c\u00F4ng vi\u1EC7c\\btl_doanchuyennganh\\laptop-sales-website\\sellingelectronicwebsite\\sellingelectronicwebsite\\controllers\\employee\\colorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|solutionrelative:sellingelectronicwebsite\\controllers\\employee\\colorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|e:\\c\u00F4ng vi\u1EC7c\\btl_doanchuyennganh\\laptop-sales-website\\sellingelectronicwebsite\\sellingelectronicwebsite\\controllers\\employee\\categorycontroler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|solutionrelative:sellingelectronicwebsite\\controllers\\employee\\categorycontroler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|e:\\c\u00F4ng vi\u1EC7c\\btl_doanchuyennganh\\laptop-sales-website\\sellingelectronicwebsite\\sellingelectronicwebsite\\repository\\orderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|solutionrelative:sellingelectronicwebsite\\repository\\orderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|e:\\c\u00F4ng vi\u1EC7c\\btl_doanchuyennganh\\laptop-sales-website\\sellingelectronicwebsite\\sellingelectronicwebsite\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|solutionrelative:sellingelectronicwebsite\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|e:\\c\u00F4ng vi\u1EC7c\\btl_doanchuyennganh\\laptop-sales-website\\sellingelectronicwebsite\\sellingelectronicwebsite\\entities\\sellingelectronicscontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|solutionrelative:sellingelectronicwebsite\\entities\\sellingelectronicscontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|e:\\c\u00F4ng vi\u1EC7c\\btl_doanchuyennganh\\laptop-sales-website\\sellingelectronicwebsite\\sellingelectronicwebsite\\repository\\customerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|solutionrelative:sellingelectronicwebsite\\repository\\customerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|e:\\c\u00F4ng vi\u1EC7c\\btl_doanchuyennganh\\laptop-sales-website\\sellingelectronicwebsite\\sellingelectronicwebsite\\repository\\addressbookrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|solutionrelative:sellingelectronicwebsite\\repository\\addressbookrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|e:\\c\u00F4ng vi\u1EC7c\\btl_doanchuyennganh\\laptop-sales-website\\sellingelectronicwebsite\\sellingelectronicwebsite\\repository\\orderpendingrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|solutionrelative:sellingelectronicwebsite\\repository\\orderpendingrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|e:\\c\u00F4ng vi\u1EC7c\\btl_doanchuyennganh\\laptop-sales-website\\sellingelectronicwebsite\\sellingelectronicwebsite\\helper\\automapperconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -39,14 +99,6 @@
       "RelativeMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|solutionrelative:sellingelectronicwebsite\\model\\orderofflinemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|e:\\c\u00F4ng vi\u1EC7c\\btl_doanchuyennganh\\laptop-sales-website\\sellingelectronicwebsite\\sellingelectronicwebsite\\repository\\orderpendingrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|solutionrelative:sellingelectronicwebsite\\repository\\orderpendingrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|e:\\c\u00F4ng vi\u1EC7c\\btl_doanchuyennganh\\laptop-sales-website\\sellingelectronicwebsite\\sellingelectronicwebsite\\repository\\customerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|solutionrelative:sellingelectronicwebsite\\repository\\customerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|e:\\c\u00F4ng vi\u1EC7c\\btl_doanchuyennganh\\laptop-sales-website\\sellingelectronicwebsite\\sellingelectronicwebsite\\repository\\iorderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|solutionrelative:sellingelectronicwebsite\\repository\\iorderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -59,44 +111,12 @@
       "RelativeMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|solutionrelative:sellingelectronicwebsite\\repository\\shoppingcartrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|e:\\c\u00F4ng vi\u1EC7c\\btl_doanchuyennganh\\laptop-sales-website\\sellingelectronicwebsite\\sellingelectronicwebsite\\controllers\\employee\\salescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|solutionrelative:sellingelectronicwebsite\\controllers\\employee\\salescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|e:\\c\u00F4ng vi\u1EC7c\\btl_doanchuyennganh\\laptop-sales-website\\sellingelectronicwebsite\\sellingelectronicwebsite\\controllers\\employee\\storecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|solutionrelative:sellingelectronicwebsite\\controllers\\employee\\storecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|e:\\c\u00F4ng vi\u1EC7c\\btl_doanchuyennganh\\laptop-sales-website\\sellingelectronicwebsite\\sellingelectronicwebsite\\controllers\\employee\\colorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|solutionrelative:sellingelectronicwebsite\\controllers\\employee\\colorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|e:\\c\u00F4ng vi\u1EC7c\\btl_doanchuyennganh\\laptop-sales-website\\sellingelectronicwebsite\\sellingelectronicwebsite\\controllers\\employee\\categorycontroler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|solutionrelative:sellingelectronicwebsite\\controllers\\employee\\categorycontroler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|e:\\c\u00F4ng vi\u1EC7c\\btl_doanchuyennganh\\laptop-sales-website\\sellingelectronicwebsite\\sellingelectronicwebsite\\controllers\\customer\\addressbookcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|solutionrelative:sellingelectronicwebsite\\controllers\\customer\\addressbookcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|e:\\c\u00F4ng vi\u1EC7c\\btl_doanchuyennganh\\laptop-sales-website\\sellingelectronicwebsite\\sellingelectronicwebsite\\controllers\\orderpendingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|solutionrelative:sellingelectronicwebsite\\controllers\\orderpendingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|e:\\c\u00F4ng vi\u1EC7c\\btl_doanchuyennganh\\laptop-sales-website\\sellingelectronicwebsite\\sellingelectronicwebsite\\controllers\\customer\\customerinforcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|solutionrelative:sellingelectronicwebsite\\controllers\\customer\\customerinforcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|e:\\c\u00F4ng vi\u1EC7c\\btl_doanchuyennganh\\laptop-sales-website\\sellingelectronicwebsite\\sellingelectronicwebsite\\unitofwork\\iunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|solutionrelative:sellingelectronicwebsite\\unitofwork\\iunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|e:\\c\u00F4ng vi\u1EC7c\\btl_doanchuyennganh\\laptop-sales-website\\sellingelectronicwebsite\\sellingelectronicwebsite\\unitofwork\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|solutionrelative:sellingelectronicwebsite\\unitofwork\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|e:\\c\u00F4ng vi\u1EC7c\\btl_doanchuyennganh\\laptop-sales-website\\sellingelectronicwebsite\\sellingelectronicwebsite\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|solutionrelative:sellingelectronicwebsite\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|e:\\c\u00F4ng vi\u1EC7c\\btl_doanchuyennganh\\laptop-sales-website\\sellingelectronicwebsite\\sellingelectronicwebsite\\viewmodel\\productspecifiactionvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -119,16 +139,8 @@
       "RelativeMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|solutionrelative:sellingelectronicwebsite\\repository\\iproductsrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|e:\\c\u00F4ng vi\u1EC7c\\btl_doanchuyennganh\\laptop-sales-website\\sellingelectronicwebsite\\sellingelectronicwebsite\\entities\\sellingelectronicscontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|solutionrelative:sellingelectronicwebsite\\entities\\sellingelectronicscontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|e:\\c\u00F4ng vi\u1EC7c\\btl_doanchuyennganh\\laptop-sales-website\\sellingelectronicwebsite\\sellingelectronicwebsite\\repository\\salesrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|solutionrelative:sellingelectronicwebsite\\repository\\salesrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|e:\\c\u00F4ng vi\u1EC7c\\btl_doanchuyennganh\\laptop-sales-website\\sellingelectronicwebsite\\sellingelectronicwebsite\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|solutionrelative:sellingelectronicwebsite\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|e:\\c\u00F4ng vi\u1EC7c\\btl_doanchuyennganh\\laptop-sales-website\\sellingelectronicwebsite\\sellingelectronicwebsite\\entities\\orderpending.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -150,14 +162,6 @@
       "RelativeMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|solutionrelative:sellingelectronicwebsite\\model\\shoppingcartitemmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|e:\\c\u00F4ng vi\u1EC7c\\btl_doanchuyennganh\\laptop-sales-website\\sellingelectronicwebsite\\sellingelectronicwebsite\\controllers\\customeraccountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|solutionrelative:sellingelectronicwebsite\\controllers\\customeraccountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|e:\\c\u00F4ng vi\u1EC7c\\btl_doanchuyennganh\\laptop-sales-website\\sellingelectronicwebsite\\sellingelectronicwebsite\\controllers\\customer\\shoppingcartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|solutionrelative:sellingelectronicwebsite\\controllers\\customer\\shoppingcartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|e:\\c\u00F4ng vi\u1EC7c\\btl_doanchuyennganh\\laptop-sales-website\\sellingelectronicwebsite\\sellingelectronicwebsite\\helper\\tokenhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|solutionrelative:sellingelectronicwebsite\\helper\\tokenhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -176,10 +180,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|e:\\c\u00F4ng vi\u1EC7c\\btl_doanchuyennganh\\laptop-sales-website\\sellingelectronicwebsite\\sellingelectronicwebsite\\repository\\ishoppingcartrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|solutionrelative:sellingelectronicwebsite\\repository\\ishoppingcartrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|e:\\c\u00F4ng vi\u1EC7c\\btl_doanchuyennganh\\laptop-sales-website\\sellingelectronicwebsite\\sellingelectronicwebsite\\repository\\addressbookrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|solutionrelative:sellingelectronicwebsite\\repository\\addressbookrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{28BD6E7E-3D78-47A9-A403-41A086B90F81}|SellingElectronicWebsite\\SellingElectronicWebsite.csproj|e:\\c\u00F4ng vi\u1EC7c\\btl_doanchuyennganh\\laptop-sales-website\\sellingelectronicwebsite\\sellingelectronicwebsite\\viewmodel\\colorvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -317,7 +317,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 12,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Bookmark",
@@ -333,82 +333,238 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Program.cs",
-              "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Program.cs",
-              "RelativeDocumentMoniker": "SellingElectronicWebsite\\Program.cs",
-              "ToolTip": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Program.cs",
-              "RelativeToolTip": "SellingElectronicWebsite\\Program.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAEwGEAAAAkAAAAAAAAAA==",
+              "DocumentIndex": 5,
+              "Title": "AddressBookController.cs",
+              "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Controllers\\Customer\\AddressBookController.cs",
+              "RelativeDocumentMoniker": "SellingElectronicWebsite\\Controllers\\Customer\\AddressBookController.cs",
+              "ToolTip": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Controllers\\Customer\\AddressBookController.cs",
+              "RelativeToolTip": "SellingElectronicWebsite\\Controllers\\Customer\\AddressBookController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEYAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-12T07:04:59.489Z",
+              "WhenOpened": "2024-11-14T12:37:34.073Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "StoreRepository.cs",
-              "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Repository\\StoreRepository.cs",
-              "RelativeDocumentMoniker": "SellingElectronicWebsite\\Repository\\StoreRepository.cs",
-              "ToolTip": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Repository\\StoreRepository.cs",
-              "RelativeToolTip": "SellingElectronicWebsite\\Repository\\StoreRepository.cs",
-              "ViewState": "AgIAAO0AAAAAAAAAAAAqwPcAAAAQAAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "CustomerInforController.cs",
+              "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Controllers\\Customer\\CustomerInforController.cs",
+              "RelativeDocumentMoniker": "SellingElectronicWebsite\\Controllers\\Customer\\CustomerInforController.cs",
+              "ToolTip": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Controllers\\Customer\\CustomerInforController.cs",
+              "RelativeToolTip": "SellingElectronicWebsite\\Controllers\\Customer\\CustomerInforController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAD4AAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-16T12:21:09.11Z",
+              "WhenOpened": "2024-11-11T07:33:15.321Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ShoppingCartController.cs",
+              "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Controllers\\Customer\\ShoppingCartController.cs",
+              "RelativeDocumentMoniker": "SellingElectronicWebsite\\Controllers\\Customer\\ShoppingCartController.cs",
+              "ToolTip": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Controllers\\Customer\\ShoppingCartController.cs",
+              "RelativeToolTip": "SellingElectronicWebsite\\Controllers\\Customer\\ShoppingCartController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHEAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-10T11:25:24.989Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CustomerAccountController.cs",
+              "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Controllers\\CustomerAccountController.cs",
+              "RelativeDocumentMoniker": "SellingElectronicWebsite\\Controllers\\CustomerAccountController.cs",
+              "ToolTip": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Controllers\\CustomerAccountController.cs",
+              "RelativeToolTip": "SellingElectronicWebsite\\Controllers\\CustomerAccountController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEkAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-11T03:36:56.597Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "OrderPendingController.cs",
+              "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Controllers\\OrderPendingController.cs",
+              "RelativeDocumentMoniker": "SellingElectronicWebsite\\Controllers\\OrderPendingController.cs",
+              "ToolTip": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Controllers\\OrderPendingController.cs",
+              "RelativeToolTip": "SellingElectronicWebsite\\Controllers\\OrderPendingController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHMAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-11T02:23:51.903Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ProductController.cs",
+              "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Controllers\\ProductController.cs",
+              "RelativeDocumentMoniker": "SellingElectronicWebsite\\Controllers\\ProductController.cs",
+              "ToolTip": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Controllers\\ProductController.cs*",
+              "RelativeToolTip": "SellingElectronicWebsite\\Controllers\\ProductController.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-14T07:34:46.406Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "StoreController.cs",
+              "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Controllers\\Employee\\StoreController.cs",
+              "RelativeDocumentMoniker": "SellingElectronicWebsite\\Controllers\\Employee\\StoreController.cs",
+              "ToolTip": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Controllers\\Employee\\StoreController.cs*",
+              "RelativeToolTip": "SellingElectronicWebsite\\Controllers\\Employee\\StoreController.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-16T12:34:57.33Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "SalesController.cs",
+              "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Controllers\\Employee\\SalesController.cs",
+              "RelativeDocumentMoniker": "SellingElectronicWebsite\\Controllers\\Employee\\SalesController.cs",
+              "ToolTip": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Controllers\\Employee\\SalesController.cs*",
+              "RelativeToolTip": "SellingElectronicWebsite\\Controllers\\Employee\\SalesController.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-16T03:52:39.507Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "OrderController.cs",
+              "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Controllers\\Employee\\OrderController.cs",
+              "RelativeDocumentMoniker": "SellingElectronicWebsite\\Controllers\\Employee\\OrderController.cs",
+              "ToolTip": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Controllers\\Employee\\OrderController.cs",
+              "RelativeToolTip": "SellingElectronicWebsite\\Controllers\\Employee\\OrderController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFcAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-14T07:11:41.058Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ColorController.cs",
+              "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Controllers\\Employee\\ColorController.cs",
+              "RelativeDocumentMoniker": "SellingElectronicWebsite\\Controllers\\Employee\\ColorController.cs",
+              "ToolTip": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Controllers\\Employee\\ColorController.cs*",
+              "RelativeToolTip": "SellingElectronicWebsite\\Controllers\\Employee\\ColorController.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-15T00:52:11.934Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "CategoryControler.cs",
+              "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Controllers\\Employee\\CategoryControler.cs",
+              "RelativeDocumentMoniker": "SellingElectronicWebsite\\Controllers\\Employee\\CategoryControler.cs",
+              "ToolTip": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Controllers\\Employee\\CategoryControler.cs*",
+              "RelativeToolTip": "SellingElectronicWebsite\\Controllers\\Employee\\CategoryControler.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-15T13:22:00.945Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
               "Title": "OrderRepository.cs",
               "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Repository\\OrderRepository.cs",
               "RelativeDocumentMoniker": "SellingElectronicWebsite\\Repository\\OrderRepository.cs",
-              "ToolTip": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Repository\\OrderRepository.cs*",
-              "RelativeToolTip": "SellingElectronicWebsite\\Repository\\OrderRepository.cs*",
-              "ViewState": "AgIAALIBAAAAAAAAAAAcwMMBAAAvAAAAAAAAAA==",
+              "ToolTip": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Repository\\OrderRepository.cs",
+              "RelativeToolTip": "SellingElectronicWebsite\\Repository\\OrderRepository.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAowMkBAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-14T03:32:07Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Order.cs",
-              "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Entities\\Order.cs",
-              "RelativeDocumentMoniker": "SellingElectronicWebsite\\Entities\\Order.cs",
-              "ToolTip": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Entities\\Order.cs",
-              "RelativeToolTip": "SellingElectronicWebsite\\Entities\\Order.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAuwBUAAAAtAAAA",
+              "DocumentIndex": 13,
+              "Title": "SellingElectronicsContext.cs",
+              "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Entities\\SellingElectronicsContext.cs",
+              "RelativeDocumentMoniker": "SellingElectronicWebsite\\Entities\\SellingElectronicsContext.cs",
+              "ToolTip": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Entities\\SellingElectronicsContext.cs",
+              "RelativeToolTip": "SellingElectronicWebsite\\Entities\\SellingElectronicsContext.cs",
+              "ViewState": "AgIAAEgAAAAAAAAAAAAAwFsAAADXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-11T09:29:12.408Z"
+              "WhenOpened": "2024-10-12T07:33:21.754Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "IOrderRepository.cs",
-              "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Repository\\IOrderRepository.cs",
-              "RelativeDocumentMoniker": "SellingElectronicWebsite\\Repository\\IOrderRepository.cs",
-              "ToolTip": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Repository\\IOrderRepository.cs",
-              "RelativeToolTip": "SellingElectronicWebsite\\Repository\\IOrderRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAA5AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-14T03:24:01.875Z"
+              "DocumentIndex": 12,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\appsettings.json",
+              "RelativeDocumentMoniker": "SellingElectronicWebsite\\appsettings.json",
+              "ToolTip": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\appsettings.json",
+              "RelativeToolTip": "SellingElectronicWebsite\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAADJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-11-10T09:05:12.571Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 14,
               "Title": "CustomerRepository.cs",
               "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Repository\\CustomerRepository.cs",
               "RelativeDocumentMoniker": "SellingElectronicWebsite\\Repository\\CustomerRepository.cs",
               "ToolTip": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Repository\\CustomerRepository.cs",
               "RelativeToolTip": "SellingElectronicWebsite\\Repository\\CustomerRepository.cs",
-              "ViewState": "AQIAAIgAAAAAAAAAAIAwwJoAAAANAAAA",
+              "ViewState": "AgIAAHUAAAAAAAAAAAAmwIsAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-11T07:34:53.315Z"
+              "WhenOpened": "2024-11-11T07:34:53.315Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 15,
+              "Title": "AddressBookRepository.cs",
+              "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Repository\\AddressBookRepository.cs",
+              "RelativeDocumentMoniker": "SellingElectronicWebsite\\Repository\\AddressBookRepository.cs",
+              "ToolTip": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Repository\\AddressBookRepository.cs",
+              "RelativeToolTip": "SellingElectronicWebsite\\Repository\\AddressBookRepository.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAIwCgAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-10T09:08:27.08Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "OrderPendingRepository.cs",
+              "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Repository\\OrderPendingRepository.cs",
+              "RelativeDocumentMoniker": "SellingElectronicWebsite\\Repository\\OrderPendingRepository.cs",
+              "ToolTip": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Repository\\OrderPendingRepository.cs",
+              "RelativeToolTip": "SellingElectronicWebsite\\Repository\\OrderPendingRepository.cs",
+              "ViewState": "AgIAAPMAAAAAAAAAAAAAADkBAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-11T02:24:55.1Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "AutoMapperConfiguration.cs",
+              "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Helper\\AutoMapperConfiguration.cs",
+              "RelativeDocumentMoniker": "SellingElectronicWebsite\\Helper\\AutoMapperConfiguration.cs",
+              "ToolTip": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Helper\\AutoMapperConfiguration.cs",
+              "RelativeToolTip": "SellingElectronicWebsite\\Helper\\AutoMapperConfiguration.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAAAAAEUAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-15T01:42:03.458Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
               "Title": "OrderOfflineModel.cs",
               "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Model\\OrderOfflineModel.cs",
               "RelativeDocumentMoniker": "SellingElectronicWebsite\\Model\\OrderOfflineModel.cs",
@@ -420,45 +576,55 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "AutoMapperConfiguration.cs",
-              "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Helper\\AutoMapperConfiguration.cs",
-              "RelativeDocumentMoniker": "SellingElectronicWebsite\\Helper\\AutoMapperConfiguration.cs",
-              "ToolTip": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Helper\\AutoMapperConfiguration.cs",
-              "RelativeToolTip": "SellingElectronicWebsite\\Helper\\AutoMapperConfiguration.cs",
-              "ViewState": "AgIAACMAAAAAAAAAAAAAAEUAAAAbAAAAAAAAAA==",
+              "DocumentIndex": 24,
+              "Title": "IOrderRepository.cs",
+              "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Repository\\IOrderRepository.cs",
+              "RelativeDocumentMoniker": "SellingElectronicWebsite\\Repository\\IOrderRepository.cs",
+              "ToolTip": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Repository\\IOrderRepository.cs",
+              "RelativeToolTip": "SellingElectronicWebsite\\Repository\\IOrderRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAA5AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-15T01:42:03.458Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-14T03:24:01.875Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "OrderController.cs",
-              "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Controllers\\Employee\\OrderController.cs",
-              "RelativeDocumentMoniker": "SellingElectronicWebsite\\Controllers\\Employee\\OrderController.cs",
-              "ToolTip": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Controllers\\Employee\\OrderController.cs*",
-              "RelativeToolTip": "SellingElectronicWebsite\\Controllers\\Employee\\OrderController.cs*",
-              "ViewState": "AgIAAHkAAAAAAAAAAAAvwIgAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 22,
+              "Title": "Order.cs",
+              "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Entities\\Order.cs",
+              "RelativeDocumentMoniker": "SellingElectronicWebsite\\Entities\\Order.cs",
+              "ToolTip": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Entities\\Order.cs",
+              "RelativeToolTip": "SellingElectronicWebsite\\Entities\\Order.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwBUAAAAtAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-14T07:11:41.058Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-11T09:29:12.408Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "OrderPendingRepository.cs",
-              "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Repository\\OrderPendingRepository.cs",
-              "RelativeDocumentMoniker": "SellingElectronicWebsite\\Repository\\OrderPendingRepository.cs",
-              "ToolTip": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Repository\\OrderPendingRepository.cs",
-              "RelativeToolTip": "SellingElectronicWebsite\\Repository\\OrderPendingRepository.cs",
-              "ViewState": "AQIAABkBAAAAAAAAAAAiwDkBAAA8AAAA",
+              "DocumentIndex": 20,
+              "Title": "StoreRepository.cs",
+              "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Repository\\StoreRepository.cs",
+              "RelativeDocumentMoniker": "SellingElectronicWebsite\\Repository\\StoreRepository.cs",
+              "ToolTip": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Repository\\StoreRepository.cs",
+              "RelativeToolTip": "SellingElectronicWebsite\\Repository\\StoreRepository.cs",
+              "ViewState": "AgIAAO0AAAAAAAAAAAAqwPcAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-11T02:24:55.1Z"
+              "WhenOpened": "2024-10-16T12:21:09.11Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 21,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Program.cs",
+              "RelativeDocumentMoniker": "SellingElectronicWebsite\\Program.cs",
+              "ToolTip": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Program.cs",
+              "RelativeToolTip": "SellingElectronicWebsite\\Program.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAEwGEAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-12T07:04:59.489Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
               "Title": "ProductModel.cs",
               "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Model\\ProductModel.cs",
               "RelativeDocumentMoniker": "SellingElectronicWebsite\\Model\\ProductModel.cs",
@@ -470,44 +636,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "CategoryControler.cs",
-              "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Controllers\\Employee\\CategoryControler.cs",
-              "RelativeDocumentMoniker": "SellingElectronicWebsite\\Controllers\\Employee\\CategoryControler.cs",
-              "ToolTip": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Controllers\\Employee\\CategoryControler.cs",
-              "RelativeToolTip": "SellingElectronicWebsite\\Controllers\\Employee\\CategoryControler.cs",
-              "ViewState": "AQIAAIoAAAAAAAAAAAAmwJYAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-15T13:22:00.945Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "StoreController.cs",
-              "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Controllers\\Employee\\StoreController.cs",
-              "RelativeDocumentMoniker": "SellingElectronicWebsite\\Controllers\\Employee\\StoreController.cs",
-              "ToolTip": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Controllers\\Employee\\StoreController.cs",
-              "RelativeToolTip": "SellingElectronicWebsite\\Controllers\\Employee\\StoreController.cs",
-              "ViewState": "AQIAABwBAAAAAAAAAAAYwBgBAAAQAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-16T12:34:57.33Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "SalesController.cs",
-              "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Controllers\\Employee\\SalesController.cs",
-              "RelativeDocumentMoniker": "SellingElectronicWebsite\\Controllers\\Employee\\SalesController.cs",
-              "ToolTip": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Controllers\\Employee\\SalesController.cs",
-              "RelativeToolTip": "SellingElectronicWebsite\\Controllers\\Employee\\SalesController.cs",
-              "ViewState": "AQIAAMAAAAAAAAAAAAAowNwAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-16T03:52:39.507Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 26,
               "Title": "ShoppingCartRepository.cs",
               "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Repository\\ShoppingCartRepository.cs",
               "RelativeDocumentMoniker": "SellingElectronicWebsite\\Repository\\ShoppingCartRepository.cs",
@@ -520,56 +649,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "ColorController.cs",
-              "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Controllers\\Employee\\ColorController.cs",
-              "RelativeDocumentMoniker": "SellingElectronicWebsite\\Controllers\\Employee\\ColorController.cs",
-              "ToolTip": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Controllers\\Employee\\ColorController.cs",
-              "RelativeToolTip": "SellingElectronicWebsite\\Controllers\\Employee\\ColorController.cs",
-              "ViewState": "AQIAAJwAAAAAAAAAAAAmwKYAAAAgAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-15T00:52:11.934Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "OrderPendingController.cs",
-              "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Controllers\\OrderPendingController.cs",
-              "RelativeDocumentMoniker": "SellingElectronicWebsite\\Controllers\\OrderPendingController.cs",
-              "ToolTip": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Controllers\\OrderPendingController.cs",
-              "RelativeToolTip": "SellingElectronicWebsite\\Controllers\\OrderPendingController.cs",
-              "ViewState": "AQIAAF8AAAAAAAAAAADwv28AAABBAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-11T02:23:51.903Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "CustomerInforController.cs",
-              "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Controllers\\Customer\\CustomerInforController.cs",
-              "RelativeDocumentMoniker": "SellingElectronicWebsite\\Controllers\\Customer\\CustomerInforController.cs",
-              "ToolTip": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Controllers\\Customer\\CustomerInforController.cs",
-              "RelativeToolTip": "SellingElectronicWebsite\\Controllers\\Customer\\CustomerInforController.cs",
-              "ViewState": "AQIAAFgAAAAAAAAAAAAcwGwAAAA3AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-11T07:33:15.321Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "AddressBookController.cs",
-              "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Controllers\\Customer\\AddressBookController.cs",
-              "RelativeDocumentMoniker": "SellingElectronicWebsite\\Controllers\\Customer\\AddressBookController.cs",
-              "ToolTip": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Controllers\\Customer\\AddressBookController.cs",
-              "RelativeToolTip": "SellingElectronicWebsite\\Controllers\\Customer\\AddressBookController.cs",
-              "ViewState": "AQIAADgAAAAAAAAAAAAwwAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-14T12:37:34.073Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 28,
               "Title": "UnitOfWork.cs",
               "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\UnitOfWork\\UnitOfWork.cs",
               "RelativeDocumentMoniker": "SellingElectronicWebsite\\UnitOfWork\\UnitOfWork.cs",
@@ -581,7 +661,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 29,
               "Title": "ProductSpecifiactionVM.cs",
               "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\ViewModel\\ProductSpecifiactionVM.cs",
               "RelativeDocumentMoniker": "SellingElectronicWebsite\\ViewModel\\ProductSpecifiactionVM.cs",
@@ -593,7 +673,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 30,
               "Title": "StoreProductVM.cs",
               "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\ViewModel\\StoreProductVM.cs",
               "RelativeDocumentMoniker": "SellingElectronicWebsite\\ViewModel\\StoreProductVM.cs",
@@ -605,19 +685,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "ProductController.cs",
-              "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Controllers\\ProductController.cs",
-              "RelativeDocumentMoniker": "SellingElectronicWebsite\\Controllers\\ProductController.cs",
-              "ToolTip": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Controllers\\ProductController.cs",
-              "RelativeToolTip": "SellingElectronicWebsite\\Controllers\\ProductController.cs",
-              "ViewState": "AQIAAC8AAAAAAAAAAAAAAD0AAAAzAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-14T07:34:46.406Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 27,
               "Title": "IUnitOfWork.cs",
               "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\UnitOfWork\\IUnitOfWork.cs",
               "RelativeDocumentMoniker": "SellingElectronicWebsite\\UnitOfWork\\IUnitOfWork.cs",
@@ -629,7 +697,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 31,
               "Title": "ProductsRepository.cs",
               "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Repository\\ProductsRepository.cs",
               "RelativeDocumentMoniker": "SellingElectronicWebsite\\Repository\\ProductsRepository.cs",
@@ -642,7 +710,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 32,
               "Title": "PaginatedList.cs",
               "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Helper\\PaginatedList.cs",
               "RelativeDocumentMoniker": "SellingElectronicWebsite\\Helper\\PaginatedList.cs",
@@ -654,19 +722,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\appsettings.json",
-              "RelativeDocumentMoniker": "SellingElectronicWebsite\\appsettings.json",
-              "ToolTip": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\appsettings.json",
-              "RelativeToolTip": "SellingElectronicWebsite\\appsettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAACoAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-11-10T09:05:12.571Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 33,
               "Title": "IProductsRepository.cs",
               "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Repository\\IProductsRepository.cs",
               "RelativeDocumentMoniker": "SellingElectronicWebsite\\Repository\\IProductsRepository.cs",
@@ -678,19 +734,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
-              "Title": "SellingElectronicsContext.cs",
-              "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Entities\\SellingElectronicsContext.cs",
-              "RelativeDocumentMoniker": "SellingElectronicWebsite\\Entities\\SellingElectronicsContext.cs",
-              "ToolTip": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Entities\\SellingElectronicsContext.cs",
-              "RelativeToolTip": "SellingElectronicWebsite\\Entities\\SellingElectronicsContext.cs",
-              "ViewState": "AQIAAEgAAAAAAAAAAAAAwFsAAAALAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-12T07:33:21.754Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 34,
               "Title": "SalesRepository.cs",
               "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Repository\\SalesRepository.cs",
               "RelativeDocumentMoniker": "SellingElectronicWebsite\\Repository\\SalesRepository.cs",
@@ -702,7 +746,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 35,
               "Title": "OrderPending.cs",
               "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Entities\\OrderPending.cs",
               "RelativeDocumentMoniker": "SellingElectronicWebsite\\Entities\\OrderPending.cs",
@@ -714,7 +758,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 37,
               "Title": "CustomAuthorizeCustomerFilter.cs",
               "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Sercurity\\CustomAuthorizeCustomerFilter.cs",
               "RelativeDocumentMoniker": "SellingElectronicWebsite\\Sercurity\\CustomAuthorizeCustomerFilter.cs",
@@ -726,7 +770,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 36,
               "Title": "OrderPendingController.cs",
               "DocumentMoniker": "C:\\Users\\khanh084\\AppData\\Local\\SourceServer\\f7c0615f62ea20c3a5aa75e1d5e169c318868ce41b28409cceab1ca3205f41a4\\SellingElectronicWebsite\\SellingElectronicWebsite\\Controllers\\Customer\\OrderPendingController.cs",
               "ToolTip": "C:\\Users\\khanh084\\AppData\\Local\\SourceServer\\f7c0615f62ea20c3a5aa75e1d5e169c318868ce41b28409cceab1ca3205f41a4\\SellingElectronicWebsite\\SellingElectronicWebsite\\Controllers\\Customer\\OrderPendingController.cs",
@@ -736,7 +780,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 38,
               "Title": "RoleService.cs",
               "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Sercurity\\RoleService.cs",
               "RelativeDocumentMoniker": "SellingElectronicWebsite\\Sercurity\\RoleService.cs",
@@ -748,19 +792,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
-              "Title": "CustomerAccountController.cs",
-              "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Controllers\\CustomerAccountController.cs",
-              "RelativeDocumentMoniker": "SellingElectronicWebsite\\Controllers\\CustomerAccountController.cs",
-              "ToolTip": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Controllers\\CustomerAccountController.cs",
-              "RelativeToolTip": "SellingElectronicWebsite\\Controllers\\CustomerAccountController.cs",
-              "ViewState": "AQIAAGMAAAAAAAAAAAAmwHQAAAA7AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-11T03:36:56.597Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 39,
               "Title": "ShoppingCartItemModel.cs",
               "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Model\\ShoppingCartItemModel.cs",
               "RelativeDocumentMoniker": "SellingElectronicWebsite\\Model\\ShoppingCartItemModel.cs",
@@ -772,7 +804,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 40,
               "Title": "TokenHelper.cs",
               "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Helper\\TokenHelper.cs",
               "RelativeDocumentMoniker": "SellingElectronicWebsite\\Helper\\TokenHelper.cs",
@@ -784,7 +816,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 42,
               "Title": "CustomerAccountRepository.cs",
               "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Repository\\CustomerAccountRepository.cs",
               "RelativeDocumentMoniker": "SellingElectronicWebsite\\Repository\\CustomerAccountRepository.cs",
@@ -796,19 +828,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
-              "Title": "ShoppingCartController.cs",
-              "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Controllers\\Customer\\ShoppingCartController.cs",
-              "RelativeDocumentMoniker": "SellingElectronicWebsite\\Controllers\\Customer\\ShoppingCartController.cs",
-              "ToolTip": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Controllers\\Customer\\ShoppingCartController.cs",
-              "RelativeToolTip": "SellingElectronicWebsite\\Controllers\\Customer\\ShoppingCartController.cs",
-              "ViewState": "AQIAACwAAAAAAAAAAAAYwDMAAAAQAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-10T11:25:24.989Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 41,
               "Title": "TokenModel.cs",
               "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Model\\TokenModel.cs",
               "RelativeDocumentMoniker": "SellingElectronicWebsite\\Model\\TokenModel.cs",
@@ -820,7 +840,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 43,
               "Title": "IOrderPendingRepository.cs",
               "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Repository\\IOrderPendingRepository.cs",
               "RelativeDocumentMoniker": "SellingElectronicWebsite\\Repository\\IOrderPendingRepository.cs",
@@ -832,7 +852,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 44,
               "Title": "IShoppingCartRepository.cs",
               "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Repository\\IShoppingCartRepository.cs",
               "RelativeDocumentMoniker": "SellingElectronicWebsite\\Repository\\IShoppingCartRepository.cs",
@@ -841,18 +861,6 @@
               "ViewState": "AQIAAAAAAAAAAAAAAAAqwAUAAAAsAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-10T11:34:27.166Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 44,
-              "Title": "AddressBookRepository.cs",
-              "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Repository\\AddressBookRepository.cs",
-              "RelativeDocumentMoniker": "SellingElectronicWebsite\\Repository\\AddressBookRepository.cs",
-              "ToolTip": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Repository\\AddressBookRepository.cs",
-              "RelativeToolTip": "SellingElectronicWebsite\\Repository\\AddressBookRepository.cs",
-              "ViewState": "AQIAABAAAAAAAAAAAAA1wAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-10T09:08:27.08Z"
             },
             {
               "$type": "Document",
@@ -1271,7 +1279,7 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 18,
               "Title": "ProductOrder.cs",
               "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Entities\\ProductOrder.cs",
               "RelativeDocumentMoniker": "SellingElectronicWebsite\\Entities\\ProductOrder.cs",
@@ -1284,7 +1292,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 19,
               "Title": "ProductOrderModel.cs",
               "DocumentMoniker": "E:\\C\u00F4ng Vi\u1EC7c\\BTL_DoAnChuyenNganh\\laptop-sales-website\\SellingElectronicWebsite\\SellingElectronicWebsite\\Model\\ProductOrderModel.cs",
               "RelativeDocumentMoniker": "SellingElectronicWebsite\\Model\\ProductOrderModel.cs",
@@ -1292,8 +1300,7 @@
               "RelativeToolTip": "SellingElectronicWebsite\\Model\\ProductOrderModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-15T00:29:19.136Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-15T00:29:19.136Z"
             }
           ]
         }
