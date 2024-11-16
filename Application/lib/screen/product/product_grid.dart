@@ -21,20 +21,17 @@ class ProductGrid extends StatelessWidget {
       crossAxisCount: 2,
       children: List.generate(
         products.length,
-        (index) => Hero(
-          tag: products[index].productId!,
-          child: ProductItem(
-            product: products[index],
-            onTap: () {
-              Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (context) => ProductDetail(
-                    product: products[index],
-                  ),
+        (index) => ProductItem(
+          product: products[index],
+          onTap: () {
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (context) => ProductDetail(
+                  product: products[index],
                 ),
-              );
-            },
-          ),
+              ),
+            );
+          },
         ),
       ),
     );

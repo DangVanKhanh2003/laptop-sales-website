@@ -130,16 +130,36 @@ class _ProductNavbarState extends ConsumerState<ProductNavbar> {
         Expanded(
           flex: 2,
           child: ElevatedButton(
-            onPressed: () {
-              Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (context) => const PaymentPage(),
-                ),
-              );
+            onPressed: () async {
+              navigatePayment(CartItem cart) => {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => PaymentPage(
+                          cart: [cart],
+                          money: widget.product.price!,
+                        ),
+                      ),
+                    )
+                  };
+              try {
+                await GetItHelper.get<CartRepository>().addItem(
+                  token: ref.read(tokenProvider),
+                  cart: Cart(
+                    customerId: ref.read(tokenProvider.notifier).customerId,
+                    amount: 1,
+                    colorId: 1,
+                    productId: widget.product.productId,
+                  ),
+                );
+                //navigatePayment();
+              } catch (e, s) {
+                _showError(e.toString(), s.toString());
+              }
             },
             style: ElevatedButton.styleFrom(
-              backgroundColor:
-                  Theme.of(context).colorScheme.secondary.withOpacity(0.50),
+              backgroundColor: Theme.of(context).brightness == Brightness.dark
+                  ? Theme.of(context).colorScheme.secondary.withOpacity(0.50)
+                  : Colors.pink[50],
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,

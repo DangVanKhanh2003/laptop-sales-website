@@ -16,6 +16,10 @@ class TokenProvider extends StateNotifier<TokenState> {
 
   int get customerId => _customerId;
 
+  late String _email;
+
+  String get email => _email;
+
   Future<void> loadToken() async {
     final prefs = await SharedPreferences.getInstance();
     final token = prefs.getString('token');
@@ -25,6 +29,7 @@ class TokenProvider extends StateNotifier<TokenState> {
     state = state.copy(TokenState.fromJson(jsonDecode(token)));
     final jwtToken = JwtHelper.decodeJWT(state);
     _customerId = int.parse(jwtToken['Id']);
+    _email = jwtToken['Email'];
   }
 
   Future<void> clearToken() async {

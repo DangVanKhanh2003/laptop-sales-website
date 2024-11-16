@@ -94,7 +94,13 @@ class _AccountDetailState extends ConsumerState<AccountDetail> {
       context: context,
       builder: (context) => AlertDialog(
         title: const Text('Lỗi xảy ra'),
-        content: Text(message),
+        content: SingleChildScrollView(
+          child: Column(
+            children: [
+              Text(message),
+            ],
+          ),
+        ),
         actions: [
           TextButton(
             onPressed: () {
@@ -295,18 +301,18 @@ class _AccountDetailState extends ConsumerState<AccountDetail> {
                       ElevatedButton(
                         onPressed: _isLoading ? null : _onEdit,
                         child: SizedBox(
-                            width: double.infinity,
-                            child: Padding(
-                              padding: const EdgeInsets.symmetric(
-                                vertical: 20.0,
-                                horizontal: 24.0,
-                              ),
-                              child: _isLoading
-                                  ? const Center(
-                                      child:
-                                          CircularProgressIndicator.adaptive())
-                                  : const Center(child: Text('Sửa')),
-                            )),
+                          width: double.infinity,
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(
+                              vertical: 20.0,
+                              horizontal: 24.0,
+                            ),
+                            child: _isLoading
+                                ? const Center(
+                                    child: CircularProgressIndicator.adaptive())
+                                : const Center(child: Text('Sửa')),
+                          ),
+                        ),
                       ),
                     ],
                   ),

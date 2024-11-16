@@ -1,16 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:page_transition/page_transition.dart';
+import 'package:shopping_app/provider/token_provider.dart';
+import 'package:shopping_app/repository/customer_repository.dart';
 import 'package:shopping_app/screen/setting/change_password/change_fail.dart';
 import 'package:shopping_app/screen/setting/change_password/change_success.dart';
+import 'package:shopping_app/service/getit_helper.dart';
 
-class ChangePassword extends StatefulWidget {
+class ChangePassword extends ConsumerStatefulWidget {
   const ChangePassword({super.key});
 
   @override
-  State<ChangePassword> createState() => _ChangePasswordState();
+  ConsumerState<ChangePassword> createState() => _ChangePasswordState();
 }
 
-class _ChangePasswordState extends State<ChangePassword> {
+class _ChangePasswordState extends ConsumerState<ChangePassword> {
   late final GlobalKey<FormState> _formKey;
 
   late final TextEditingController _oldPasswordController;
@@ -139,7 +143,13 @@ class _ChangePasswordState extends State<ChangePassword> {
                   });
                   try {
                     if (_formKey.currentState!.validate()) {
-                      // TODO : Thêm tính năng đổi mk
+                      await GetItHelper.get<CustomerRepository>()
+                          .updateCustomerPassword(
+                        email: ref.read(tokenProvider.notifier).email,
+                        oldPassword: _oldPasswordController.text,
+                        newPassword: _newPasswordController.text,
+                        token: ref.read(tokenProvider),
+                      );
                       _toSucessScreen();
                     }
                   } catch (e) {

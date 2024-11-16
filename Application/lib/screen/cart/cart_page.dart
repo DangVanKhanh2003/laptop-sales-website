@@ -57,6 +57,9 @@ class _CartPageState extends ConsumerState<CartPage> {
             return CartView(
               items: data,
               selectedItems: _selectedItems,
+              updateState: () {
+                setState(() {});
+              },
               onChangeSelectedItem: (CartItem cart) {
                 setState(() {
                   if (_selectedItems.contains(cart)) {

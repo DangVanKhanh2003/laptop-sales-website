@@ -18,6 +18,7 @@ class CartView extends ConsumerStatefulWidget {
     required this.items,
     required this.selectedItems,
     required this.onChangeSelectedItem,
+    required this.updateState,
   });
 
   final List<CartItem> selectedItems;
@@ -25,6 +26,8 @@ class CartView extends ConsumerStatefulWidget {
   final void Function(CartItem cart) onChangeSelectedItem;
 
   final List<CartItem> items;
+
+  final void Function() updateState;
 
   @override
   ConsumerState<CartView> createState() => _CartViewState();
@@ -118,6 +121,7 @@ class _CartViewState extends ConsumerState<CartView> {
                   onDelete: () => _deleteProduct(cart: e),
                   selectedItems: widget.selectedItems,
                   onChangeSelectedItem: widget.onChangeSelectedItem,
+                  onUpdate: widget.updateState,
                 ),
               )
               .toList(),
@@ -128,18 +132,21 @@ class _CartViewState extends ConsumerState<CartView> {
 }
 
 class _ProductCard extends ConsumerStatefulWidget {
-  const _ProductCard(
-      {required this.cart,
-      required this.onDelete,
-      required this.originalAmount,
-      required this.selectedItems,
-      required this.onChangeSelectedItem});
+  const _ProductCard({
+    required this.cart,
+    required this.onDelete,
+    required this.originalAmount,
+    required this.selectedItems,
+    required this.onChangeSelectedItem,
+    required this.onUpdate,
+  });
 
   final int originalAmount;
   final CartItem cart;
   final List<CartItem> selectedItems;
   final void Function(CartItem cart) onChangeSelectedItem;
   final void Function() onDelete;
+  final void Function() onUpdate;
 
   @override
   ConsumerState<_ProductCard> createState() => __ProductCardState();
@@ -239,18 +246,46 @@ class __ProductCardState extends ConsumerState<_ProductCard> {
               ],
             ),
             title: Text(widget.cart.productName!),
-            subtitle: _ChangeAmount(
-              amount: widget.cart.amount!,
-              onAdd: () {
-                setState(() {
-                  widget.cart.amount = (widget.cart.amount!) + 1;
-                });
-              },
-              onMinus: () {
-                setState(() {
-                  widget.cart.amount = (widget.cart.amount!) - 1;
-                });
-              },
+            subtitle: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                _ChangeAmount(
+                  amount: widget.cart.amount!,
+                  onAdd: () {
+                    setState(() {
+                      widget.cart.amount = (widget.cart.amount!) + 1;
+                    });
+                    widget.onUpdate();
+                  },
+                  onMinus: () async {
+                    var value = (widget.cart.amount!) - 1;
+                    if (value > 0) {
+                      setState(() {
+                        widget.cart.amount = (widget.cart.amount!) - 1;
+                      });
+                      widget.onUpdate();
+                    } else {
+                      await showDialog(
+                        context: context,
+                        builder: (context) => AlertDialog(
+                          title: const Text('Không thể chỉnh sửa sản phẩm'),
+                          content: const Text('Số lượng không thể dưới 1'),
+                          actions: [
+                            TextButton(
+                              onPressed: () {
+                                Navigator.of(context).pop();
+                              },
+                              child: const Text('OK'),
+                            ),
+                          ],
+                        ),
+                      );
+                    }
+                  },
+                ),
+                Text('Giá bán: \$${widget.cart.price}'),
+              ],
             ),
             trailing: Row(
               mainAxisSize: MainAxisSize.min,
@@ -308,23 +343,30 @@ class _ChangeAmount extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisAlignment: MainAxisAlignment.start,
       children: [
-        const Text('Số lượng:'),
-        const SizedBox(width: 5.0),
-        Row(
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            IconButton(
-              onPressed: onMinus,
-              icon: const Icon(
-                Symbols.remove,
-              ),
-            ),
-            const SizedBox(width: 5.0),
-            Text('$amount'),
-            const SizedBox(width: 5.0),
-            IconButton(
-              onPressed: onAdd,
-              icon: const Icon(Symbols.add),
+            const Text('Số lượng:'),
+            Row(
+              children: [
+                IconButton(
+                  onPressed: onMinus,
+                  icon: const Icon(
+                    Symbols.remove,
+                  ),
+                ),
+                const SizedBox(width: 5.0),
+                Text('$amount'),
+                const SizedBox(width: 5.0),
+                IconButton(
+                  onPressed: onAdd,
+                  icon: const Icon(Symbols.add),
+                ),
+              ],
             ),
           ],
         ),

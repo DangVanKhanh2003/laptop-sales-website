@@ -83,8 +83,6 @@ class CustomerApi {
     final url = Uri.parse(
       '$_urlInfo/?id=${customerInfo.customerId!}',
     );
-    print('$_urlInfo/?id=${customerInfo.customerId!}');
-    print(jsonEncode(customerInfo.toJson()));
     final response = await http
         .put(url,
             headers: {
