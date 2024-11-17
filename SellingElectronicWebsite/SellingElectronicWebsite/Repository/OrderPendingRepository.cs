@@ -129,7 +129,7 @@ namespace SellingElectronicWebsite.Repository
             {
                 foreach (var itemProduct in itemOrder.ListProductOrederPending)
                 {
-                    SalesVM sale = _mapper.Map<SalesVM>(await ProductsRepository.checkSaleByIdProduct(itemProduct.ProductId));
+                    SalesVM sale = _mapper.Map<SalesVM>(await ProductsRepository.checkSaleByIdProduct(itemProduct.ProductId, (DateTime)itemOrder.OdertDate));
                     if (sale != null)
                     {
                         itemProduct.sale = sale;
@@ -142,7 +142,7 @@ namespace SellingElectronicWebsite.Repository
 
         public async Task<OrderPendingVM> GetById(int id)
         {
-            var listOrderPending = await _context.OrderPendings
+            var OrderPending = await _context.OrderPendings
                                                         .Include(p => p.Customer)
                                                         .Include(p => p.Employee)
                                                         .Where(p => p.OrderPendingId == id)
@@ -155,13 +155,13 @@ namespace SellingElectronicWebsite.Repository
                                                                                         p.Status
                                                                                         ))
                                                         .FirstOrDefaultAsync();
-            if (listOrderPending == null)
+            if (OrderPending == null)
             {
                 throw new Exception("Don't exist item by id: " + id);
             }
             // add list for item order pending
             var listProductOrderPendingVM = await _context.ProductOrderPendings
-                                                             .Where(p => p.OrderPendingId == listOrderPending.OrderPendingId)
+                                                             .Where(p => p.OrderPendingId == OrderPending.OrderPendingId)
                                                              .Include(p => p.Product)
                                                              .Select(p => new ProductOrderPendingVM(
                                                                                                 p.ProductOrderPendingId,
@@ -179,14 +179,14 @@ namespace SellingElectronicWebsite.Repository
             // add sale for product
             foreach (var itemProduct in listProductOrderPendingVM)
             {
-                SalesVM sale = _mapper.Map<SalesVM>(await ProductsRepository.checkSaleByIdProduct(itemProduct.ProductId));
+                SalesVM sale = _mapper.Map<SalesVM>(await ProductsRepository.checkSaleByIdProduct(itemProduct.ProductId, (DateTime)OrderPending.OdertDate));
                 if (sale != null)
                 {
                     itemProduct.sale = sale;
                 }
             }
-            listOrderPending.ListProductOrederPending = listProductOrderPendingVM;
-            return listOrderPending;
+            OrderPending.ListProductOrederPending = listProductOrderPendingVM;
+            return OrderPending;
         }
 
         /// <param name="status">cancel/pending/approve</param>
@@ -241,7 +241,7 @@ namespace SellingElectronicWebsite.Repository
             {
                 foreach (var itemProduct in itemOrder.ListProductOrederPending)
                 {
-                    SalesVM sale = _mapper.Map<SalesVM>(await ProductsRepository.checkSaleByIdProduct(itemProduct.ProductId));
+                    SalesVM sale = _mapper.Map<SalesVM>(await ProductsRepository.checkSaleByIdProduct(itemProduct.ProductId, (DateTime)itemOrder.OdertDate));
                     if (sale != null)
                     {
                         itemProduct.sale = sale;

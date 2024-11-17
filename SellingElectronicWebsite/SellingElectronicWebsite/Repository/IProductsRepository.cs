@@ -24,6 +24,7 @@ namespace SellingElectronicWebsite.Repository
         Task<bool> UpdateImgs(List<ImageProductsModel> models, int idProduct);
         Task<bool> DeleteImgByIdImg(int idImg);
         Task<bool> DeleteAllImgByIdProduct(int idProduct);
+        Task<int> SaveImg(SaveImageModel img);
         //specification
         Task<List<ProductSpecifiactionVM>> GetSpeciByIdProduct(int idProduct);
         Task<bool> AddSpecifications(List<ProductSpecifiactionModel> models);

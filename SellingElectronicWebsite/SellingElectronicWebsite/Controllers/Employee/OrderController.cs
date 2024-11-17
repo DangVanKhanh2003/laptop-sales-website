@@ -20,7 +20,7 @@ namespace SellingElectronicWebsite.Controllers.Employee
             _uow = uow;
         }
         /// <summary>
-        /// Get all order by paging
+        /// Get all order 
         /// </summary>
         /// <param name="status">value: "pending"/"cancel"/"approve". Default = "pending"</param>
         /// <param name="sortByOrderDate">value: "timeDesc"/"timeAsc". Default = null</param>

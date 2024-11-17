@@ -69,6 +69,29 @@ namespace SellingElectronicWebsite.Helper
 
             CreateMap<Order, OrderOfflineModel>()
                .ReverseMap();
+
+            CreateMap<Order, CancelOrderVM>()
+               .ReverseMap();
+            CreateMap<OrderPending, CancelOrderVM>()
+               .ReverseMap();
+
+            CreateMap<ProductOrder, ProductOrderCancelVM>()
+                .ForMember(dest => dest.Product, opt => opt.MapFrom(src => src.Product))
+                .ForMember(dest => dest.Color, opt => opt.MapFrom(src => src.Color))
+                .ReverseMap();
+            CreateMap<ProductOrderPending, ProductOrderCancelVM>()
+                .ForMember(dest => dest.Product, opt => opt.MapFrom(src => src.Product))
+                .ForMember(dest => dest.Color, opt => opt.MapFrom(src => src.Color))
+                .ReverseMap();
+
+            CreateMap<ImagesSave, SaveImageModel>()
+                .ForMember(dest => dest.Extension, opt => opt.MapFrom(src => src.FileExtension))
+                .ForMember(dest => dest.FileName, opt => opt.MapFrom(src => src.FileName))
+              .ReverseMap();
+            CreateMap<ImagesSave, SaveImageVM>()
+                .ForMember(dest => dest.Extension, opt => opt.MapFrom(src => src.FileExtension))
+                .ForMember(dest => dest.FileName, opt => opt.MapFrom(src => src.FileName))
+              .ReverseMap();
         }
     }
 }

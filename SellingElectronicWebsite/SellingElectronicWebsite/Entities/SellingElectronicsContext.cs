@@ -39,6 +39,8 @@ public partial class SellingElectronicsContext : DbContext
 
     public virtual DbSet<ImageProduct> ImageProducts { get; set; }
 
+    public virtual DbSet<ImagesSave> ImagesSaves { get; set; }
+
     public virtual DbSet<Message> Messages { get; set; }
 
     public virtual DbSet<Order> Orders { get; set; }
@@ -285,6 +287,16 @@ public partial class SellingElectronicsContext : DbContext
             entity.HasOne(d => d.Product).WithMany(p => p.ImageProducts)
                 .HasForeignKey(d => d.ProductId)
                 .HasConstraintName("FK_ImageProduct_Products");
+        });
+
+        modelBuilder.Entity<ImagesSave>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PK__ImagesSa__3214EC073FDA9B2F");
+
+            entity.ToTable("ImagesSave");
+
+            entity.Property(e => e.FileExtension).HasMaxLength(10);
+            entity.Property(e => e.FileName).HasMaxLength(255);
         });
 
         modelBuilder.Entity<Message>(entity =>

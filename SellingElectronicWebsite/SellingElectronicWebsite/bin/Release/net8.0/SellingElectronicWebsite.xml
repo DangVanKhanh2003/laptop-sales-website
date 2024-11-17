@@ -232,7 +232,7 @@
         </member>
         <member name="M:SellingElectronicWebsite.Controllers.Employee.OrderController.GetAll(System.String,System.String)">
             <summary>
-            Get all order by paging
+            Get all order 
             </summary>
             <param name="status">value: "pending"/"cancel"/"approve". Default = "pending"</param>
             <param name="sortByOrderDate">value: "timeDesc"/"timeAsc". Default = null</param>
@@ -415,6 +415,18 @@
             <param name="idColor"></param>
             <returns></returns>
         </member>
+        <member name="M:SellingElectronicWebsite.Controllers.HistoryOrderController.GetAllSuccessOrderByIdCustomer(System.Int32,System.String)">
+            <summary>
+            Get all success order by id customer
+            </summary>
+            <param name="sortByOrderDate">value: "timeDesc"/"timeAsc". Default = null</param>
+        </member>
+        <member name="M:SellingElectronicWebsite.Controllers.HistoryOrderController.GetAllCancelOrderByIdCustomer(System.Int32,System.String)">
+            <summary>
+            Get all cancel order by id customer
+            </summary>
+            <param name="sortByOrderDate">value: "timeDesc"/"timeAsc". Default = null</param>
+        </member>
         <member name="M:SellingElectronicWebsite.Controllers.OrderPendingController.GetAll(System.String,System.String)">
             <summary>
             get all order pending
@@ -451,6 +463,13 @@
             Cancel order pending from customer
             </summary>
             <param name="idOrderPending"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SellingElectronicWebsite.Controllers.ProductController.SaveImage(SellingElectronicWebsite.Model.SaveImageModel)">
+            <summary>
+            
+            </summary>
+            <param name="request">Extension exemple: .jpg, .png,...</param>
             <returns></returns>
         </member>
         <member name="M:SellingElectronicWebsite.Controllers.ProductController.GetAll(System.String)">
@@ -610,6 +629,18 @@
             </summary>
             <param name="sortBy">defaul is null. you can fill:name_asc(sort ascending by name)/  name_desc(sort descending by name)</param>
         </member>
+        <member name="M:SellingElectronicWebsite.Repository.HistoryOrderRepository.GetAllCancelOrderByIdCustomer(System.Int32,System.String)">
+            <summary>
+            Get all cancel order by id customer
+            </summary>
+            <param name="sortByOrderDate">value: "timeDesc"/"timeAsc". Default = null</param>
+        </member>
+        <member name="M:SellingElectronicWebsite.Repository.HistoryOrderRepository.GetAllSuccessOrderByIdCustomer(System.Int32,System.String)">
+            <summary>
+            Get all success order by id customer
+            </summary>
+            <param name="sortByOrderDate">value: "timeDesc"/"timeAsc". Default = null</param>
+        </member>
         <member name="M:SellingElectronicWebsite.Repository.OrderPendingRepository.Add(SellingElectronicWebsite.Model.OrderPendingModel)">
             <summary>
             after add, The system will automatically set pending for status and auto set time for order. 
@@ -636,6 +667,34 @@
             actor: employee=> employee can change status: cancel, approve. Employee cannot change status if status isn't pending.
             if status is "approve" and input valid => amount of store will reduce by amount order.
             </summary>
+        </member>
+        <member name="M:SellingElectronicWebsite.Repository.OrderRepository.GetAll(System.String,System.String)">
+            <summary>
+            Get all order 
+            </summary>
+            <param name="status">value: "pending"/"cancel"/"approve". Default = "pending"</param>
+            <param name="sortByOrderDate">value: "timeDesc"/"timeAsc". Default = null</param>
+        </member>
+        <member name="M:SellingElectronicWebsite.Repository.OrderRepository.GetAllPaging(System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            Get all order by page
+            </summary>
+            <param name="status">value: "pending"/"cancel"/"approve". Default = "pending"</param>
+            <param name="sortByOrderDate">value: "timeDesc"/"timeAsc". Default = null</param>
+        </member>
+        <member name="M:SellingElectronicWebsite.Repository.OrderRepository.GetByIdStorePaging(System.String,System.String,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Get all order by id Store paging
+            </summary>
+            <param name="status">value: "pending"/"cancel"/"approve". Default = "pending"</param>
+            <param name="sortByOrderDate">value: "timeDesc"/"timeAsc". Default = null</param>
+        </member>
+        <member name="M:SellingElectronicWebsite.Repository.OrderRepository.GetByIdStore(System.String,System.String,System.Int32)">
+            <summary>
+            Get all order by id Store 
+            </summary>
+            <param name="status">value: "pending"/"cancel"/"approve". Default = "pending"</param>
+            <param name="sortByOrderDate">value: "timeDesc"/"timeAsc". Default = null</param>
         </member>
         <member name="M:SellingElectronicWebsite.Repository.OrderRepository.OderOffline(SellingElectronicWebsite.Model.OrderOfflineModel)">
             <param name="model">CustomerId can be null</param>

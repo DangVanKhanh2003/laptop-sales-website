@@ -1,9 +1,12 @@
 ﻿using AutoMapper;
+using Azure.Core;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using SellingElectronicWebsite.Entities;
 using SellingElectronicWebsite.Helper;
 using SellingElectronicWebsite.Model;
 using SellingElectronicWebsite.ViewModel;
+using System.Data;
 using System.Globalization;
 using System.Runtime.Intrinsics.X86;
 
@@ -22,9 +25,9 @@ namespace SellingElectronicWebsite.Repository
             _mapper = mapper;
 
         }
-        public async static Task<Sale> checkSaleByIdProduct(int idProduct)
+        public async static Task<Sale> checkSaleByIdProduct(int idProduct, DateTime time)
         {
-            var sale = await _staticContext.Sales.Where(s => s.ProductId == idProduct && DateTime.Now <= s.EndAt && DateTime.Now >= s.StartAt).FirstOrDefaultAsync();
+            var sale = await _staticContext.Sales.Where(s => s.ProductId == idProduct && time <= s.EndAt && time >= s.StartAt).FirstOrDefaultAsync();
             return sale;
         }
         public async Task<bool> CategoryExists(int? categoryId)
@@ -69,7 +72,7 @@ namespace SellingElectronicWebsite.Repository
                     .ToListAsync();
             foreach (var item in products)
             {
-                SalesVM sale = _mapper.Map<SalesVM>(await checkSaleByIdProduct(item.ProductId));
+                SalesVM sale = _mapper.Map<SalesVM>(await checkSaleByIdProduct(item.ProductId, DateTime.Now));
                 if (sale != null)
                 {
                     item.sale = sale;
@@ -105,7 +108,7 @@ namespace SellingElectronicWebsite.Repository
                     .ToListAsync();
             foreach (var item in products)
             {
-                SalesVM sale = _mapper.Map<SalesVM>(await checkSaleByIdProduct(item.ProductId));
+                SalesVM sale = _mapper.Map<SalesVM>(await checkSaleByIdProduct(item.ProductId, DateTime.Now));
                 if (sale != null)
                 {
                     item.sale = sale;
@@ -139,7 +142,7 @@ namespace SellingElectronicWebsite.Repository
                     .ToListAsync();
             foreach (var item in products)
             {
-                SalesVM sale = _mapper.Map<SalesVM>(await checkSaleByIdProduct(item.ProductId));
+                SalesVM sale = _mapper.Map<SalesVM>(await checkSaleByIdProduct(item.ProductId, DateTime.Now));
                 if (sale != null)
                 {
                     item.sale = sale;
@@ -177,7 +180,7 @@ namespace SellingElectronicWebsite.Repository
                                                 })
                                                 .FirstOrDefaultAsync();
 
-            SalesVM sale = _mapper.Map<SalesVM>(await checkSaleByIdProduct(model.ProductId));
+            SalesVM sale = _mapper.Map<SalesVM>(await checkSaleByIdProduct(model.ProductId, DateTime.Now));
             if (sale != null)
             {
                 model.sale = sale;
@@ -200,7 +203,7 @@ namespace SellingElectronicWebsite.Repository
                                                     ))
                                                 .FirstOrDefaultAsync();
 
-            SalesVM sale = _mapper.Map<SalesVM>(await checkSaleByIdProduct(model.ProductId));
+            SalesVM sale = _mapper.Map<SalesVM>(await checkSaleByIdProduct(model.ProductId, DateTime.Now));
             if (sale != null)
             {
                 model.sale = sale;
@@ -347,7 +350,37 @@ namespace SellingElectronicWebsite.Repository
             
             var listProductVM = _mapper.Map<List<ProductVM>>(listProduct);
             return listProductVM;
+        }
 
+        public async Task<int> SaveImg(SaveImageModel img)
+        {
+            if (string.IsNullOrEmpty(img.Base64Image))
+            {
+                throw new Exception("Invalid image data.");
+            }
+            // Decode Base64 string to byte array
+            byte[] imageBytes = Convert.FromBase64String(img.Base64Image);
+             ImagesSave imagesSave = _mapper.Map<ImagesSave>(img);
+            imagesSave.ImageData = imageBytes;
+            await _context.AddAsync(imagesSave);
+            await _context.SaveChangesAsync();  
+            return imagesSave.Id;
+        }
+
+        public async Task<SaveImageVM> GetImageByIdSaveImage(int id)
+        {
+            var img = await _context.ImagesSaves.Where(p => p.Id == id).FirstOrDefaultAsync();
+            if (img == null)
+            {
+                throw new Exception("Id don't exist.");
+            }
+            // Decode Base64 string to byte array
+            string base64Image = Convert.ToBase64String(img.ImageData);
+            SaveImageVM imagesSaveVM = _mapper.Map<SaveImageVM>(img);
+            imagesSaveVM.Base64Image = base64Image;
+            return imagesSaveVM;
         }
     }
+
+
 }

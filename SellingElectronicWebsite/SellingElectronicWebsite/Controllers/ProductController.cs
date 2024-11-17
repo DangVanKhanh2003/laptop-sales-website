@@ -7,6 +7,8 @@ using SellingElectronicWebsite.Repository;
 using SellingElectronicWebsite.ViewModel;
 using SellingElectronicWebsite.UnitOfWork;
 using Microsoft.AspNetCore.Http.HttpResults;
+using Microsoft.Data.SqlClient;
+using System.Data;
 
 namespace SellingElectronicWebsite.Controllers
 {
@@ -15,11 +17,61 @@ namespace SellingElectronicWebsite.Controllers
     public class ProductController : ControllerBase
     {
         private IUnitOfWork _uow;
+        private readonly string _targetFilePath = Path.Combine(Directory.GetCurrentDirectory(), "UploadedImages");
+
 
         public ProductController(IUnitOfWork uow)
         {
             _uow = uow;
+            if (!Directory.Exists(_targetFilePath))
+            {
+                Directory.CreateDirectory(_targetFilePath);
+            }
         }
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Extension exemple: .jpg, .png,...</param>
+        /// <returns></returns>
+        [HttpPost("save-image")]
+        public async Task<IActionResult> SaveImage([FromBody] SaveImageModel img)
+        {
+
+            try
+            {
+                _uow.CreateTransaction();
+                var result = await _uow.Products.SaveImg(img);
+                _uow.Save();
+                _uow.Commit();
+                return Ok(result );
+            }
+            catch (Exception ex)
+            {
+                _uow.Rollback();
+                return StatusCode(500, $"Internal server error: {ex.Message}");
+            }
+        } 
+        [HttpGet("get-image")]
+        public async Task<IActionResult> getImage(int idSaveImg)
+        {
+
+            try
+            {
+                _uow.CreateTransaction();
+                var result = await _uow.Products.GetImageByIdSaveImage(idSaveImg);
+                _uow.Save();
+                _uow.Commit();
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                _uow.Rollback();
+                return StatusCode(500, $"Internal server error: {ex.Message}");
+            }
+        }
+
         /// <summary>
         /// List all products.
         /// </summary>

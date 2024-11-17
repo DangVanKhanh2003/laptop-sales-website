@@ -22,7 +22,11 @@ namespace SellingElectronicWebsite.Repository
             _mapper = mapper;
 
         }
-
+        /// <summary>
+        /// Get all order 
+        /// </summary>
+        /// <param name="status">value: "pending"/"cancel"/"approve". Default = "pending"</param>
+        /// <param name="sortByOrderDate">value: "timeDesc"/"timeAsc". Default = null</param>
         public async Task<List<OrderVM>> GetAll(string status, string sortByOrderDate)
         {
             var listOrder = await _context.Orders
@@ -61,17 +65,25 @@ namespace SellingElectronicWebsite.Repository
             {
                 foreach (var itemProduct in itemOrder.ListProductOrder)
                 {
-                    SalesVM sale = _mapper.Map<SalesVM>(await ProductsRepository.checkSaleByIdProduct(itemProduct.Product.ProductId));
-                    if (sale != null)
+                    if (itemOrder.OdertDate != null)
                     {
-                        itemProduct.Product.sale = sale;
+                        SalesVM sale = _mapper.Map<SalesVM>(await ProductsRepository.checkSaleByIdProduct(itemProduct.Product.ProductId, (DateTime)itemOrder.OdertDate));
+                        if (sale != null)
+                        {
+                            itemProduct.Product.sale = sale;
+                        }
                     }
+                    
                 }
 
             }
             return listOrderVM;
         }
-
+        /// <summary>
+        /// Get all order by page
+        /// </summary>
+        /// <param name="status">value: "pending"/"cancel"/"approve". Default = "pending"</param>
+        /// <param name="sortByOrderDate">value: "timeDesc"/"timeAsc". Default = null</param>
         public async Task<List<OrderVM>> GetAllPaging(string status, string sortByOrderDate, int pageIndex, int pageSize)
         {
             var listOrder = await _context.Orders
@@ -115,7 +127,7 @@ namespace SellingElectronicWebsite.Repository
             {
                 foreach (var itemProduct in itemOrder.ListProductOrder)
                 {
-                    SalesVM sale = _mapper.Map<SalesVM>(await ProductsRepository.checkSaleByIdProduct(itemProduct.Product.ProductId));
+                    SalesVM sale = _mapper.Map<SalesVM>(await ProductsRepository.checkSaleByIdProduct(itemProduct.Product.ProductId, (DateTime)itemOrder.OdertDate));
                     if (sale != null)
                     {
                         itemProduct.Product.sale = sale;
@@ -126,6 +138,11 @@ namespace SellingElectronicWebsite.Repository
             return listOrderVM;
         }
 
+        /// <summary>
+        /// Get all order by id Store paging
+        /// </summary>
+        /// <param name="status">value: "pending"/"cancel"/"approve". Default = "pending"</param>
+        /// <param name="sortByOrderDate">value: "timeDesc"/"timeAsc". Default = null</param>
         public async Task<List<OrderVM>> GetByIdStorePaging(string status, string? sortByOrderDate, int idStore, int pageIndex, int pageSize)
         {
             var listOrder = await _context.Orders
@@ -169,7 +186,7 @@ namespace SellingElectronicWebsite.Repository
             {
                 foreach (var itemProduct in itemOrder.ListProductOrder)
                 {
-                    SalesVM sale = _mapper.Map<SalesVM>(await ProductsRepository.checkSaleByIdProduct(itemProduct.Product.ProductId));
+                    SalesVM sale = _mapper.Map<SalesVM>(await ProductsRepository.checkSaleByIdProduct(itemProduct.Product.ProductId, (DateTime)itemOrder.OdertDate));
                     if (sale != null)
                     {
                         itemProduct.Product.sale = sale;
@@ -180,6 +197,11 @@ namespace SellingElectronicWebsite.Repository
             return listOrderVM;
         }
 
+        /// <summary>
+        /// Get all order by id Store 
+        /// </summary>
+        /// <param name="status">value: "pending"/"cancel"/"approve". Default = "pending"</param>
+        /// <param name="sortByOrderDate">value: "timeDesc"/"timeAsc". Default = null</param>
         public async Task<List<OrderVM>> GetByIdStore(string status, string sortByOrderDate, int idStore)
         {
             var listOrder = await _context.Orders
@@ -216,7 +238,7 @@ namespace SellingElectronicWebsite.Repository
             {
                 foreach (var itemProduct in itemOrder.ListProductOrder)
                 {
-                    SalesVM sale = _mapper.Map<SalesVM>(await ProductsRepository.checkSaleByIdProduct(itemProduct.Product.ProductId));
+                    SalesVM sale = _mapper.Map<SalesVM>(await ProductsRepository.checkSaleByIdProduct(itemProduct.Product.ProductId, (DateTime)itemOrder.OdertDate));
                     if (sale != null)
                     {
                         itemProduct.Product.sale = sale;
@@ -238,28 +260,28 @@ namespace SellingElectronicWebsite.Repository
                                                .FirstOrDefaultAsync();
 
            
-            OrderVM listOrderVM = _mapper.Map<OrderVM>(order);
+            OrderVM OrderVM = _mapper.Map<OrderVM>(order);
             
             // add product for list for order
             var listProductOrder = await _context.ProductOrders
-                                                            .Where(p => p.OrderId == listOrderVM.OrderId)
+                                                            .Where(p => p.OrderId == OrderVM.OrderId)
                                                             .Include(p => p.Product)
                                                             .Include(p => p.Product.Category)
                                                             .Include(p => p.Color)
                                                             .ToListAsync();
-            listOrderVM.ListProductOrder = _mapper.Map<List<ProductOrderVM>>(listProductOrder);
+            OrderVM.ListProductOrder = _mapper.Map<List<ProductOrderVM>>(listProductOrder);
             
             //add sale
-            foreach (var itemProduct in listOrderVM.ListProductOrder)
+            foreach (var itemProduct in OrderVM.ListProductOrder)
             {
-                SalesVM sale = _mapper.Map<SalesVM>(await ProductsRepository.checkSaleByIdProduct(itemProduct.Product.ProductId));
+                SalesVM sale = _mapper.Map<SalesVM>(await ProductsRepository.checkSaleByIdProduct(itemProduct.Product.ProductId, (DateTime)OrderVM.OdertDate));
                 if (sale != null)
                 {
                     itemProduct.Product.sale = sale;
                 }
             }
 
-            return listOrderVM;
+            return OrderVM;
         }
 
        
@@ -313,7 +335,7 @@ namespace SellingElectronicWebsite.Repository
             
             foreach (var itemProduct in listProductOrder)
             {
-                SalesVM sale = _mapper.Map<SalesVM>(await ProductsRepository.checkSaleByIdProduct(itemProduct.Product.ProductId));
+                SalesVM sale = _mapper.Map<SalesVM>(await ProductsRepository.checkSaleByIdProduct(itemProduct.Product.ProductId, (DateTime)orderVM.OdertDate));
 
                 decimal percentSale = 0;
                 if (sale != null)
@@ -523,7 +545,7 @@ namespace SellingElectronicWebsite.Repository
                 }
 
                 // get until price by sale
-                SalesVM sale = _mapper.Map<SalesVM>(await ProductsRepository.checkSaleByIdProduct(itemProductInStore.Product.ProductId));
+                SalesVM sale = _mapper.Map<SalesVM>(await ProductsRepository.checkSaleByIdProduct(itemProductInStore.Product.ProductId, (DateTime)newOrder.OdertDate));
                 decimal percentSale = 0;
                 if (sale != null)
                 {

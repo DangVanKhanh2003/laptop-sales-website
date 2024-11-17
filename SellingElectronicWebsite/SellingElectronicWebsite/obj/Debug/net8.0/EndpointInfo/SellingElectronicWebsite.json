@@ -200,11 +200,12 @@
         }
       }
     },
-    "/api/employee/CategoryControler": {
+    "/api/CategoryControler": {
       "get": {
         "tags": [
           "CategoryControler"
         ],
+        "summary": "Get all category",
         "responses": {
           "200": {
             "description": "OK"
@@ -215,7 +216,9 @@
         "tags": [
           "CategoryControler"
         ],
+        "summary": "Add Category",
         "requestBody": {
+          "description": "",
           "content": {
             "application/json": {
               "schema": {
@@ -241,15 +244,17 @@
         }
       }
     },
-    "/api/employee/CategoryControler/{id}": {
+    "/api/CategoryControler/{id}": {
       "get": {
         "tags": [
           "CategoryControler"
         ],
+        "summary": "get category by id",
         "parameters": [
           {
             "name": "id",
             "in": "path",
+            "description": "",
             "required": true,
             "schema": {
               "type": "integer",
@@ -267,10 +272,12 @@
         "tags": [
           "CategoryControler"
         ],
+        "summary": "Update category by id",
         "parameters": [
           {
             "name": "id",
             "in": "path",
+            "description": "",
             "required": true,
             "schema": {
               "type": "integer",
@@ -279,6 +286,7 @@
           }
         ],
         "requestBody": {
+          "description": "",
           "content": {
             "application/json": {
               "schema": {
@@ -307,10 +315,12 @@
         "tags": [
           "CategoryControler"
         ],
+        "summary": "Delete catory by id",
         "parameters": [
           {
             "name": "id",
             "in": "path",
+            "description": "",
             "required": true,
             "schema": {
               "type": "integer",
@@ -325,7 +335,7 @@
         }
       }
     },
-    "/api/employee/Color": {
+    "/api/Color": {
       "get": {
         "tags": [
           "Color"
@@ -368,7 +378,7 @@
         }
       }
     },
-    "/api/employee/Color/{id}": {
+    "/api/Color/{id}": {
       "get": {
         "tags": [
           "Color"
@@ -831,12 +841,74 @@
         }
       }
     },
+    "/api/HistoryOrder/SuccessOrder": {
+      "get": {
+        "tags": [
+          "HistoryOrder"
+        ],
+        "summary": "Get all success order by id customer",
+        "parameters": [
+          {
+            "name": "idCustomer",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "sortByOrderDate",
+            "in": "query",
+            "description": "value: \"timeDesc\"/\"timeAsc\". Default = null",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/HistoryOrder/CancelOrder": {
+      "get": {
+        "tags": [
+          "HistoryOrder"
+        ],
+        "summary": "Get all cancel order by id customer",
+        "parameters": [
+          {
+            "name": "idCustomer",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "sortByOrderDate",
+            "in": "query",
+            "description": "value: \"timeDesc\"/\"timeAsc\". Default = null",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Order": {
       "get": {
         "tags": [
           "Order"
         ],
-        "summary": "Get all order by paging",
+        "summary": "Get all order",
         "parameters": [
           {
             "name": "status",
@@ -1328,7 +1400,61 @@
         }
       }
     },
-    "/api/employee/Product": {
+    "/api/Product/save-image": {
+      "post": {
+        "tags": [
+          "Product"
+        ],
+        "summary": "",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SaveImageModel"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SaveImageModel"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SaveImageModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Product/get-image": {
+      "get": {
+        "tags": [
+          "Product"
+        ],
+        "parameters": [
+          {
+            "name": "idSaveImg",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Product": {
       "get": {
         "tags": [
           "Product"
@@ -1383,7 +1509,7 @@
         }
       }
     },
-    "/api/employee/Product/Category/{idCategory}": {
+    "/api/Product/Category/{idCategory}": {
       "get": {
         "tags": [
           "Product"
@@ -1416,7 +1542,7 @@
         }
       }
     },
-    "/api/employee/Product/{id}": {
+    "/api/Product/{id}": {
       "get": {
         "tags": [
           "Product"
@@ -1505,7 +1631,7 @@
         }
       }
     },
-    "/api/employee/Product/Count": {
+    "/api/Product/Count": {
       "get": {
         "tags": [
           "Product"
@@ -1518,7 +1644,7 @@
         }
       }
     },
-    "/api/employee/Product/Page": {
+    "/api/Product/Page": {
       "get": {
         "tags": [
           "Product"
@@ -1557,7 +1683,7 @@
         }
       }
     },
-    "/api/employee/Product/{ProudctId}/Color": {
+    "/api/Product/{ProudctId}/Color": {
       "get": {
         "tags": [
           "Product"
@@ -1581,7 +1707,7 @@
         }
       }
     },
-    "/api/employee/Product/{ProductId}/Specification": {
+    "/api/Product/{ProductId}/Specification": {
       "get": {
         "tags": [
           "Product"
@@ -1606,7 +1732,7 @@
         }
       }
     },
-    "/api/employee/Product/{ProductId}/Image": {
+    "/api/Product/{ProductId}/Image": {
       "get": {
         "tags": [
           "Product"
@@ -1629,7 +1755,7 @@
         }
       }
     },
-    "/api/employee/Product/Search": {
+    "/api/Product/Search": {
       "get": {
         "tags": [
           "Product"
@@ -1736,7 +1862,7 @@
         }
       }
     },
-    "/api/employee/Product/{idProduct}/Image": {
+    "/api/Product/{idProduct}/Image": {
       "put": {
         "tags": [
           "Product"
@@ -1810,7 +1936,7 @@
         }
       }
     },
-    "/api/employee/Product/{idProduct}/Specification": {
+    "/api/Product/{idProduct}/Specification": {
       "put": {
         "tags": [
           "Product"
@@ -1934,7 +2060,7 @@
         }
       }
     },
-    "/api/employee/Sales": {
+    "/api/Sales": {
       "get": {
         "tags": [
           "Sales"
@@ -1978,7 +2104,7 @@
         }
       }
     },
-    "/api/employee/Sales/{id}": {
+    "/api/Sales/{id}": {
       "get": {
         "tags": [
           "Sales"
@@ -2068,7 +2194,7 @@
         }
       }
     },
-    "/api/employee/Sales/Product/{idProduct}": {
+    "/api/Sales/Product/{idProduct}": {
       "get": {
         "tags": [
           "Sales"
@@ -2248,7 +2374,7 @@
         }
       }
     },
-    "/api/employee/Store": {
+    "/api/Store": {
       "get": {
         "tags": [
           "Store"
@@ -2291,7 +2417,7 @@
         }
       }
     },
-    "/api/employee/Store/{idStore}": {
+    "/api/Store/{idStore}": {
       "get": {
         "tags": [
           "Store"
@@ -2315,7 +2441,7 @@
         }
       }
     },
-    "/api/employee/Store/{id}": {
+    "/api/Store/{id}": {
       "put": {
         "tags": [
           "Store"
@@ -2382,7 +2508,7 @@
         }
       }
     },
-    "/api/employee/Store/{idStore}/Product": {
+    "/api/Store/{idStore}/Product": {
       "get": {
         "tags": [
           "Store"
@@ -2407,7 +2533,7 @@
         }
       }
     },
-    "/api/employee/Store/{idStore}/Product/{idProduct}": {
+    "/api/Store/{idStore}/Product/{idProduct}": {
       "get": {
         "tags": [
           "Store"
@@ -2442,7 +2568,7 @@
         }
       }
     },
-    "/api/employee/Store/{idProduct}/exist-in-store": {
+    "/api/Store/{idProduct}/exist-in-store": {
       "get": {
         "tags": [
           "Store"
@@ -2467,7 +2593,7 @@
         }
       }
     },
-    "/api/employee/Store/{idStore}/Product/{idProduct}/Color/{idColor}/add-new-product": {
+    "/api/Store/{idStore}/Product/{idProduct}/Color/{idColor}/add-new-product": {
       "put": {
         "tags": [
           "Store"
@@ -2521,7 +2647,7 @@
         }
       }
     },
-    "/api/employee/Store/{idStore}/Product/{idProduct}/Color/{idColor}/reduce-new-product": {
+    "/api/Store/{idStore}/Product/{idProduct}/Color/{idColor}/reduce-new-product": {
       "put": {
         "tags": [
           "Store"
@@ -2575,7 +2701,7 @@
         }
       }
     },
-    "/api/employee/Store/{idStore}/Product/{idProduct}/Color/{idColor}/update-amount-product": {
+    "/api/Store/{idStore}/Product/{idProduct}/Color/{idColor}/update-amount-product": {
       "put": {
         "tags": [
           "Store"
@@ -2910,6 +3036,24 @@
           "percentSale": {
             "type": "integer",
             "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "SaveImageModel": {
+        "type": "object",
+        "properties": {
+          "base64Image": {
+            "type": "string",
+            "nullable": true
+          },
+          "fileName": {
+            "type": "string",
+            "nullable": true
+          },
+          "extension": {
+            "type": "string",
+            "nullable": true
           }
         },
         "additionalProperties": false
