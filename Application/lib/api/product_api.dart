@@ -16,7 +16,7 @@ class ProductApi {
   Future<ProductList> getAllProduct({
     required TokenState token,
   }) async {
-    final uri = Uri.parse('$_url/getAllProduct');
+    final uri = Uri.parse(_url);
     final response = await http.get(uri, headers: {
       'Authorization': token.toAuthorizationJson(),
     }).timeout(const Duration(seconds: 10));
@@ -42,7 +42,7 @@ class ProductApi {
     required int limit,
     required TokenState token,
   }) async {
-    final uri = Uri.parse('$_url/page?pageIndex=$page&pageSize=$limit');
+    final uri = Uri.parse('$_url/Page?pageIndex=$page&pageSize=$limit');
     final response = await http.get(uri, headers: {
       'Authorization': token.toAuthorizationJson(),
     }).timeout(const Duration(seconds: 10));
@@ -67,7 +67,7 @@ class ProductApi {
     required int categoryId,
     required TokenState token,
   }) async {
-    final uri = Uri.parse('$_url/getAllProductByCategory$categoryId');
+    final uri = Uri.parse('$_url/Category/$categoryId');
     final response = await http.get(uri, headers: {
       'Authorization': token.toAuthorizationJson(),
     }).timeout(const Duration(seconds: 10));
@@ -117,7 +117,7 @@ class ProductApi {
     required String name,
     required TokenState token,
   }) async {
-    final uri = Uri.parse('$_url/SearchProductByName?nameProduct=$name');
+    final uri = Uri.parse('$_url/Search?nameProduct=$name');
     final response = await http.get(uri, headers: {
       'Authorization': token.toAuthorizationJson(),
     }).timeout(const Duration(seconds: 10));
@@ -140,8 +140,7 @@ class ProductApi {
     required int id,
     required TokenState token,
   }) async {
-    final uri =
-        Uri.parse('$_url/GetAllSpecificationsByIdProduct?ProductId=$id');
+    final uri = Uri.parse('$_url/$id/Specification');
     final response = await http.get(uri, headers: {
       'Authorization': token.toAuthorizationJson(),
     }).timeout(const Duration(seconds: 10));

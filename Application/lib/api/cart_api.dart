@@ -39,7 +39,7 @@ class CartApi {
     required TokenState token,
     required Cart cart,
   }) async {
-    final url = Uri.parse('$_url/AddItemShoppingCart');
+    final url = Uri.parse(_url);
     final response = await http
         .post(
           url,
@@ -71,7 +71,7 @@ class CartApi {
     required CartItem cart,
   }) async {
     final url = Uri.parse(
-      '$_url/UpdateAmountForItemShoppingCart?amount=${cart.amount}&idShoppingCartItem=${cart.shoppingCartItemId}',
+      '$_url/${cart.shoppingCartItemId}?amount=${cart.amount}',
     );
     final response = await http.put(
       url,

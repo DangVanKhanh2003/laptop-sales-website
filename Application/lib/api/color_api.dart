@@ -8,10 +8,10 @@ import 'package:shopping_app/model/token_state.dart';
 class CategoryApi {
   final String _url = dotenv.get('COLOR_LINK');
 
-  Future<ColorList> getAllCategory({
+  Future<ColorList> getAllColor({
     required TokenState token,
   }) async {
-    final url = Uri.parse('$_url/getAllColor');
+    final url = Uri.parse(_url);
     final response = await http.get(url, headers: {
       'Authorization': token.toAuthorizationJson(),
     }).timeout(

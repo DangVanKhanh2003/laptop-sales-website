@@ -53,7 +53,7 @@ class CustomerApi {
     required TokenState token,
   }) async {
     final url = Uri.parse(
-      '$_urlInfo/GetAccByIdCustomer$customerId',
+      '$_urlInfo/$customerId',
     );
     final response = await http.get(url, headers: {
       'Authorization': token.toAuthorizationJson(),

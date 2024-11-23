@@ -11,7 +11,7 @@ class CategoryApi {
   Future<CategoryList> getAllCategory({
     required TokenState token,
   }) async {
-    final url = Uri.parse('$_url/getAllCategory');
+    final url = Uri.parse(_url);
     final response = await http.get(url, headers: {
       'Authorization': token.toAuthorizationJson(),
     }).timeout(
