@@ -3,6 +3,7 @@ import 'package:material_symbols_icons/symbols.dart';
 import 'package:shopping_app/screen/cart/cart_page.dart';
 import 'package:shopping_app/screen/history/history_page.dart';
 import 'package:shopping_app/screen/order/order_page.dart';
+import 'package:shopping_app/screen/order_pending/order_pending_page.dart';
 
 class StoreSetting extends StatefulWidget {
   const StoreSetting({super.key});
@@ -57,6 +58,18 @@ class _StoreSettingState extends State<StoreSetting> {
             ),
             const SizedBox(width: 12.0),
             _iconButton(
+              icon: Symbols.pending,
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => const OrderPendingPage(),
+                  ),
+                );
+              },
+              name: 'Đơn Hàng chờ duyệt',
+            ),
+            const SizedBox(width: 12.0),
+            _iconButton(
               icon: Symbols.shopping_bag,
               onPressed: () {
                 Navigator.of(context).push(
@@ -65,7 +78,7 @@ class _StoreSettingState extends State<StoreSetting> {
                   ),
                 );
               },
-              name: 'Đơn Hàng',
+              name: 'Đơn hàng hoàn tất',
             ),
             const SizedBox(width: 12.0),
             _iconButton(

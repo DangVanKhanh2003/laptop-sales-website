@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:shopping_app/model/product.dart';
+import 'package:shopping_app/service/convert_helper.dart';
 
 class ProductItem extends StatelessWidget {
   const ProductItem({
@@ -25,11 +26,15 @@ class ProductItem extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              CachedNetworkImage(
-                imageUrl:
-                    product.mainImg ?? 'http://via.placeholder.com/350x150',
-                fit: BoxFit.cover,
-              ),
+              product.mainImg != null
+                  ? Image(
+                      image: MemoryImage(
+                          ConvertHelper.decodeBase64(data: product.mainImg!)),
+                    )
+                  : CachedNetworkImage(
+                      imageUrl: 'http://via.placeholder.com/350x150',
+                      fit: BoxFit.cover,
+                    ),
               const SizedBox(height: 25.0),
               Text(
                 product.productName!,

@@ -1,28 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:shopping_app/model/order.dart';
+import 'package:shopping_app/model/order_pending.dart';
 import 'package:shopping_app/provider/token_provider.dart';
-import 'package:shopping_app/repository/order_repository.dart';
+import 'package:shopping_app/repository/order_pending_repository.dart';
 import 'package:shopping_app/screen/exception/exception_page.dart';
-import 'package:shopping_app/screen/order/order_empty.dart';
-import 'package:shopping_app/screen/order/order_list.dart';
+import 'package:shopping_app/screen/order_pending/order_empty.dart';
+import 'package:shopping_app/screen/order_pending/order_list.dart';
 import 'package:shopping_app/service/getit_helper.dart';
 
-class OrderPage extends ConsumerStatefulWidget {
-  const OrderPage({super.key});
+class OrderPendingPage extends ConsumerStatefulWidget {
+  const OrderPendingPage({super.key});
 
   @override
-  ConsumerState<OrderPage> createState() => _OrderPageState();
+  ConsumerState<OrderPendingPage> createState() => _OrderPendingPageState();
 }
 
-class _OrderPageState extends ConsumerState<OrderPage> {
-  late Future<List<Order>> _future;
+class _OrderPendingPageState extends ConsumerState<OrderPendingPage> {
+  late Future<List<OrderPending>> _future;
 
   @override
   void initState() {
-    _future = GetItHelper.get<OrderRepository>().getAllOrders(
+    _future = GetItHelper.get<OrderPendingRepository>().getAllOrderPending(
       token: ref.read(tokenProvider),
-      customerId: ref.read(tokenProvider.notifier).customerId,
+      status: 'pending',
     );
     super.initState();
   }
@@ -41,7 +41,7 @@ class _OrderPageState extends ConsumerState<OrderPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Đơn hàng hoàn tất'),
+        title: const Text('Đơn hàng chờ duyệt'),
       ),
       body: FutureBuilder(
         future: _future,

@@ -1,16 +1,18 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:shopping_app/model/order.dart';
+import 'package:material_symbols_icons/symbols.dart';
+import 'package:shopping_app/model/order_pending.dart';
 import 'package:shopping_app/model/product.dart';
 import 'package:shopping_app/provider/token_provider.dart';
+import 'package:shopping_app/repository/order_pending_repository.dart';
 import 'package:shopping_app/repository/product_repository.dart';
 import 'package:shopping_app/screen/product_detail/product_detail.dart';
 import 'package:shopping_app/service/convert_helper.dart';
 import 'package:shopping_app/service/getit_helper.dart';
 
 class OrderList extends StatelessWidget {
-  final List<Order> data;
+  final List<OrderPending> data;
 
   const OrderList({super.key, required this.data});
 
@@ -27,7 +29,7 @@ class OrderList extends StatelessWidget {
 }
 
 class OrderCard extends StatelessWidget {
-  final Order order;
+  final OrderPending order;
   final int orderIndex;
 
   const OrderCard({
@@ -42,8 +44,8 @@ class OrderCard extends StatelessWidget {
       child: ListTile(
         leading: Text('$orderIndex'),
         title: Column(
-          children: order.listProductOrder!.map((e) {
-            return ProductItem(order: e);
+          children: order.listProductOrederPending!.map((e) {
+            return ProductItem(product: e);
           }).toList(),
         ),
       ),
@@ -52,11 +54,11 @@ class OrderCard extends StatelessWidget {
 }
 
 class ProductItem extends ConsumerStatefulWidget {
-  final ListProductOrder order;
+  final ListProductOrederPending product;
 
   const ProductItem({
     super.key,
-    required this.order,
+    required this.product,
   });
 
   @override
@@ -84,12 +86,10 @@ class _ProductItem extends ConsumerState<ProductItem> {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      leading: widget.order.product!.mainImg != null
+      leading: widget.product.mainImg != null
           ? Image(
               image: MemoryImage(
-                ConvertHelper.decodeBase64(
-                  data: widget.order.product!.mainImg!,
-                ),
+                ConvertHelper.decodeBase64(data: widget.product.mainImg!),
               ),
               width: 100,
               height: 100,
@@ -100,25 +100,66 @@ class _ProductItem extends ConsumerState<ProductItem> {
               width: 100,
               height: 100,
             ),
-      title: Text(widget.order.product!.productName!),
+      title: Text(widget.product.productName!),
       subtitle: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text('Giá: \$${widget.order.product!.price}'),
+          Text('Giá: \$${widget.product.price}'),
+          Text('Số lượng: ${widget.product.amount}'),
         ],
       ),
-      trailing: Tooltip(
-        message: 'Xem chi tiết',
-        child: _isLoading
-            ? const CircularProgressIndicator.adaptive()
-            : IconButton(
-                onPressed: () => _viewProductDetails(
-                  widget.order.product!.productId!,
-                ),
-                icon: const Icon(Icons.info),
-              ),
+      trailing: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Tooltip(
+            message: 'Xem chi tiết',
+            child: _isLoading
+                ? const CircularProgressIndicator.adaptive()
+                : IconButton(
+                    onPressed: () => _viewProductDetails(
+                      widget.product.productId!,
+                    ),
+                    icon: const Icon(Symbols.info),
+                  ),
+          ),
+          Tooltip(
+            message: 'Huỷ đơn hàng',
+            child: _isLoading
+                ? const CircularProgressIndicator.adaptive()
+                : IconButton(
+                    onPressed: () => _cancelProduct(
+                      widget.product.productOrderPendingId!,
+                    ),
+                    icon: const Icon(
+                      Symbols.remove,
+                      color: Colors.red,
+                    ),
+                  ),
+          ),
+        ],
       ),
     );
+  }
+
+  Future<void> _cancelProduct(
+    int orderId,
+  ) async {
+    setState(() {
+      _isLoading = true;
+    });
+    try {
+      await GetItHelper.get<OrderPendingRepository>().cancelOrderPending(
+        token: ref.read(tokenProvider),
+        orderId: orderId,
+      );
+      _showSuccess('Đã xoá đơn hàng!');
+    } catch (e) {
+      _showError(e.toString());
+    } finally {
+      setState(() {
+        _isLoading = false;
+      });
+    }
   }
 
   Future<void> _viewProductDetails(
