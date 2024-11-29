@@ -116,7 +116,6 @@ class _CartViewState extends ConsumerState<CartView> {
           children: widget.items
               .map(
                 (e) => _ProductCard(
-                  originalAmount: e.amount!,
                   cart: e,
                   onDelete: () => _deleteProduct(cart: e),
                   selectedItems: widget.selectedItems,
@@ -135,13 +134,11 @@ class _ProductCard extends ConsumerStatefulWidget {
   const _ProductCard({
     required this.cart,
     required this.onDelete,
-    required this.originalAmount,
     required this.selectedItems,
     required this.onChangeSelectedItem,
     required this.onUpdate,
   });
 
-  final int originalAmount;
   final CartItem cart;
   final List<CartItem> selectedItems;
   final void Function(CartItem cart) onChangeSelectedItem;
@@ -154,18 +151,20 @@ class _ProductCard extends ConsumerStatefulWidget {
 
 class __ProductCardState extends ConsumerState<_ProductCard> {
   bool _isLoading = false;
+  late final int _originalAmount;
 
   late final TokenState token;
 
   @override
   void initState() {
     token = ref.read(tokenProvider);
+    _originalAmount = widget.cart.amount!;
     super.initState();
   }
 
   @override
   void dispose() {
-    if (widget.cart.amount != widget.originalAmount) {
+    if (widget.cart.amount != _originalAmount) {
       Future.microtask(() async {
         await GetItHelper.get<CartRepository>().updateItem(
           token: token,
@@ -254,7 +253,7 @@ class __ProductCardState extends ConsumerState<_ProductCard> {
                   amount: widget.cart.amount!,
                   onAdd: () {
                     setState(() {
-                      widget.cart.amount = (widget.cart.amount!) + 1;
+                      widget.cart.amount = widget.cart.amount! + 1;
                     });
                     widget.onUpdate();
                   },
@@ -262,7 +261,7 @@ class __ProductCardState extends ConsumerState<_ProductCard> {
                     var value = (widget.cart.amount!) - 1;
                     if (value > 0) {
                       setState(() {
-                        widget.cart.amount = (widget.cart.amount!) - 1;
+                        widget.cart.amount = value;
                       });
                       widget.onUpdate();
                     } else {

@@ -41,7 +41,7 @@ class _OrderPageState extends ConsumerState<OrderPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Đơn hàng hoàn tất'),
+        title: const Text('Đơn hàng'),
       ),
       body: FutureBuilder(
         future: _future,

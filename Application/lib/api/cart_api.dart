@@ -100,7 +100,7 @@ class CartApi {
     required CartItem cart,
   }) async {
     final url = Uri.parse(
-      '$_url?idShoppingCartItem=${cart.shoppingCartItemId}',
+      '$_url/${cart.shoppingCartItemId}',
     );
     final response = await http.delete(
       url,

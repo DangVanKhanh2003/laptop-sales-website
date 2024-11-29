@@ -12,16 +12,24 @@ import 'package:shopping_app/service/convert_helper.dart';
 import 'package:shopping_app/service/getit_helper.dart';
 
 class OrderList extends StatelessWidget {
+  const OrderList({
+    super.key,
+    required this.data,
+    required this.onRefreshFuture,
+  });
   final List<OrderPending> data;
-
-  const OrderList({super.key, required this.data});
+  final void Function() onRefreshFuture;
 
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Column(
         children: data.asMap().entries.map((entry) {
-          return OrderCard(order: entry.value, orderIndex: entry.key + 1);
+          return OrderCard(
+            order: entry.value,
+            orderIndex: entry.key + 1,
+            onRefreshFuture: onRefreshFuture,
+          );
         }).toList(),
       ),
     );
@@ -31,11 +39,13 @@ class OrderList extends StatelessWidget {
 class OrderCard extends StatelessWidget {
   final OrderPending order;
   final int orderIndex;
+  final void Function() onRefreshFuture;
 
   const OrderCard({
     super.key,
     required this.order,
     required this.orderIndex,
+    required this.onRefreshFuture,
   });
 
   @override
@@ -45,7 +55,10 @@ class OrderCard extends StatelessWidget {
         leading: Text('$orderIndex'),
         title: Column(
           children: order.listProductOrederPending!.map((e) {
-            return ProductItem(product: e);
+            return ProductItem(
+              product: e,
+              onRefreshFuture: onRefreshFuture,
+            );
           }).toList(),
         ),
       ),
@@ -59,7 +72,9 @@ class ProductItem extends ConsumerStatefulWidget {
   const ProductItem({
     super.key,
     required this.product,
+    required this.onRefreshFuture,
   });
+  final void Function() onRefreshFuture;
 
   @override
   ConsumerState<ProductItem> createState() => _ProductItem();
@@ -105,6 +120,7 @@ class _ProductItem extends ConsumerState<ProductItem> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text('Giá: \$${widget.product.price}'),
+          const SizedBox(height: 4.0),
           Text('Số lượng: ${widget.product.amount}'),
         ],
       ),
@@ -159,6 +175,7 @@ class _ProductItem extends ConsumerState<ProductItem> {
       setState(() {
         _isLoading = false;
       });
+      widget.onRefreshFuture();
     }
   }
 

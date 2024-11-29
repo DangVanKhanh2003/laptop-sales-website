@@ -20,11 +20,20 @@ class _OrderPendingPageState extends ConsumerState<OrderPendingPage> {
 
   @override
   void initState() {
+    _refreshFuture();
+    super.initState();
+  }
+
+  void _refreshFuture() {
     _future = GetItHelper.get<OrderPendingRepository>().getAllOrderPending(
       token: ref.read(tokenProvider),
       status: 'pending',
     );
-    super.initState();
+  }
+
+  void _onRefreshFuture() {
+    _refreshFuture();
+    setState(() {});
   }
 
   @override
@@ -61,7 +70,10 @@ class _OrderPendingPageState extends ConsumerState<OrderPendingPage> {
             }
             return Padding(
               padding: const EdgeInsets.all(8.0),
-              child: OrderList(data: data),
+              child: OrderList(
+                data: data,
+                onRefreshFuture: _onRefreshFuture,
+              ),
             );
           } else {
             return const SizedBox.shrink();

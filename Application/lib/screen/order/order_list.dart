@@ -158,24 +158,4 @@ class _ProductItem extends ConsumerState<ProductItem> {
       )),
     );
   }
-
-  void _showSuccess(
-    String message,
-  ) async {
-    await showDialog(
-      context: context,
-      builder: (context) => AlertDialog(
-        title: const Text('Thành công'),
-        content: Text(message),
-        actions: [
-          TextButton(
-            onPressed: () {
-              Navigator.of(context).pop();
-            },
-            child: const Text('OK'),
-          ),
-        ],
-      ),
-    );
-  }
 }

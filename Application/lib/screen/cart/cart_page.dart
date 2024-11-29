@@ -61,13 +61,12 @@ class _CartPageState extends ConsumerState<CartPage> {
                 setState(() {});
               },
               onChangeSelectedItem: (CartItem cart) {
-                setState(() {
-                  if (_selectedItems.contains(cart)) {
-                    _selectedItems.remove(cart);
-                  } else {
-                    _selectedItems.add(cart);
-                  }
-                });
+                if (_selectedItems.contains(cart)) {
+                  _selectedItems.remove(cart);
+                } else {
+                  _selectedItems.add(cart);
+                }
+                setState(() {});
               },
             );
           } else if (snapshot.hasError) {

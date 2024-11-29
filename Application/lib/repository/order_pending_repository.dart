@@ -26,4 +26,14 @@ class OrderPendingRepository {
       orderId: orderId,
     );
   }
+
+  Future<bool> addOrderPending({
+    required TokenState token,
+    required OrderPending order,
+  }) async {
+    return await _orderPendingApi.addOrderPending(
+      token: token,
+      order: order,
+    );
+  }
 }

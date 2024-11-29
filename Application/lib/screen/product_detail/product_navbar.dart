@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:material_symbols_icons/symbols.dart';
 import 'package:shopping_app/model/cart.dart';
+import 'package:shopping_app/model/payment.dart';
 import 'package:shopping_app/model/product.dart';
 import 'package:shopping_app/provider/token_provider.dart';
 import 'package:shopping_app/repository/cart_repository.dart';
@@ -131,11 +132,18 @@ class _ProductNavbarState extends ConsumerState<ProductNavbar> {
           flex: 2,
           child: ElevatedButton(
             onPressed: () async {
-              navigatePayment(CartItem cart) => {
+              navigatePayment() => {
                     Navigator.of(context).push(
                       MaterialPageRoute(
                         builder: (context) => PaymentPage(
-                          cart: [cart],
+                          data: [
+                            Payment(
+                              productId: widget.product.productId!,
+                              productName: widget.product.productName!,
+                              amount: 1,
+                              price: widget.product.price!,
+                            )
+                          ],
                           money: widget.product.price!,
                         ),
                       ),
@@ -151,7 +159,7 @@ class _ProductNavbarState extends ConsumerState<ProductNavbar> {
                     productId: widget.product.productId,
                   ),
                 );
-                //navigatePayment();
+                navigatePayment();
               } catch (e, s) {
                 _showError(e.toString(), s.toString());
               }

@@ -1,38 +1,45 @@
 import 'package:flutter/material.dart';
-import 'package:shopping_app/model/cart.dart';
-import 'package:shopping_app/screen/payment/booking_payment.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:shopping_app/model/customer_info.dart';
+import 'package:shopping_app/model/order_pending.dart';
+import 'package:shopping_app/model/payment.dart';
+import 'package:shopping_app/provider/token_provider.dart';
+import 'package:shopping_app/repository/customer_repository.dart';
+import 'package:shopping_app/screen/exception/exception_page.dart';
+import 'package:shopping_app/screen/payment/finish_payment.dart';
+import 'package:shopping_app/service/getit_helper.dart';
 
-class PaymentPage extends StatefulWidget {
+class PaymentPage extends ConsumerStatefulWidget {
   const PaymentPage({
     super.key,
-    required this.cart,
+    required this.data,
     required this.money,
   });
 
-  final List<CartItem> cart;
+  final List<Payment> data;
 
   final double money;
 
   @override
-  State<PaymentPage> createState() => _PaymentPageState();
+  ConsumerState<PaymentPage> createState() => _PaymentPageState();
 }
 
-class _PaymentPageState extends State<PaymentPage> {
-  TableRow _sizedRow({
-    required double height,
-  }) {
-    return TableRow(children: [
-      SizedBox(height: height),
-      SizedBox(height: height),
-    ]);
-  }
-
+class _PaymentPageState extends ConsumerState<PaymentPage> {
   late final TextEditingController _customerNameController;
 
   late final TextEditingController _customerPhone;
 
+  late Future<CustomerInfo> _future;
+
+  late GlobalKey<FormState> _formKey;
+
   @override
   void initState() {
+    _future = GetItHelper.get<CustomerRepository>().getCustomerInfoById(
+      customerId: ref.read(tokenProvider.notifier).customerId,
+      token: ref.read(tokenProvider),
+    );
+    _formKey = GlobalKey<FormState>();
     super.initState();
     _customerNameController = TextEditingController();
     _customerPhone = TextEditingController();
@@ -43,6 +50,20 @@ class _PaymentPageState extends State<PaymentPage> {
     _customerNameController.dispose();
     _customerPhone.dispose();
     super.dispose();
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+  }
+
+  TableRow _sizedRow({
+    required double height,
+  }) {
+    return TableRow(children: [
+      SizedBox(height: height),
+      SizedBox(height: height),
+    ]);
   }
 
   TableRow _makeRow({
@@ -74,36 +95,38 @@ class _PaymentPageState extends State<PaymentPage> {
       children: [
         const SizedBox(height: 8.0),
         const Text(
-          'Thông tin sân',
+          'Thông tin sản phẩm',
           style: TextStyle(
             fontWeight: FontWeight.bold,
           ),
         ),
-        const SizedBox(height: 15.0),
-        const Text('Tên sân A'),
-        const SizedBox(height: 15.0),
-        const Text('Sân số 01'),
-        const SizedBox(height: 15.0),
-        const Text('Minh Khai, Bắc Từ Liêm, Hà Nội'),
-        const SizedBox(height: 10.0),
+        const SizedBox(height: 7.0),
         const Divider(
           thickness: 1.0,
           color: Colors.grey,
         ),
-        const SizedBox(height: 10.0),
-        Table(
-          columnWidths: const {
-            0: FlexColumnWidth(1),
-            1: FlexColumnWidth(1),
-          },
+        const SizedBox(height: 7.0),
+        Column(
           children: [
-            _makeRow(title: 'Số lượng người', message: '7 VS 7'),
-            _sizedRow(height: 8.0),
-            _makeRow(title: 'Ngày', message: '11/07/2024'),
-            _sizedRow(height: 8.0),
-            _makeRow(title: 'Thời gian', message: '16:00 - 18:00'),
-            _sizedRow(height: 8.0),
-            _makeRow(title: 'Số điện thoại chủ sân', message: '0123456789'),
+            ...widget.data.asMap().entries.map(
+                  (e) => Card(
+                    child: ListTile(
+                      leading: Text('${e.key + 1}'),
+                      title: Text(e.value.productName),
+                      subtitle: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          SizedBox(height: 4.0),
+                          Text('Giá: \$${e.value.price}'),
+                          SizedBox(height: 4.0),
+                          Text('Số lượng sản phẩm: ${e.value.amount}'),
+                          SizedBox(height: 4.0),
+                        ],
+                      ),
+                    ),
+                  ),
+                )
           ],
         ),
         const SizedBox(height: 10.0),
@@ -118,9 +141,9 @@ class _PaymentPageState extends State<PaymentPage> {
             1: FlexColumnWidth(1),
           },
           children: [
-            _makeRow(title: 'Đơn giá', message: '400.000đ'),
+            _makeRow(title: 'Đơn giá', message: '\$${widget.money}'),
             _sizedRow(height: 8.0),
-            _makeRow(title: 'Giá cọc', message: '100.000đ'),
+            _makeRow(title: 'Thuế VAT', message: '\$0.0'),
           ],
         ),
       ],
@@ -140,40 +163,31 @@ class _PaymentPageState extends State<PaymentPage> {
           ),
         ),
         const SizedBox(height: 8.0),
-        Column(
-          children: [
-            Row(
-              children: [
-                const Text('Tên khách hàng'),
-                const SizedBox(width: 30.0),
-                Expanded(
-                  child: TextField(
-                    controller: _customerNameController,
-                    decoration: const InputDecoration(
-                      border: UnderlineInputBorder(),
-                      enabledBorder: UnderlineInputBorder(),
-                    ),
-                  ),
+        Form(
+          key: _formKey,
+          child: Column(
+            children: [
+              const SizedBox(height: 8.0),
+              TextField(
+                controller: _customerNameController,
+                decoration: const InputDecoration(
+                  label: Text('Tên khách hàng'),
+                  border: UnderlineInputBorder(),
+                  enabledBorder: UnderlineInputBorder(),
                 ),
-              ],
-            ),
-            const SizedBox(height: 8.0),
-            Row(
-              children: [
-                const Text('Số điện thoại'),
-                const SizedBox(width: 54.0),
-                Expanded(
-                  child: TextField(
-                    controller: _customerPhone,
-                    decoration: const InputDecoration(
-                      border: UnderlineInputBorder(),
-                      enabledBorder: UnderlineInputBorder(),
-                    ),
-                  ),
+              ),
+              const SizedBox(height: 8.0),
+              TextField(
+                controller: _customerPhone,
+                decoration: const InputDecoration(
+                  label: Text('Số điện thoại'),
+                  border: UnderlineInputBorder(),
+                  enabledBorder: UnderlineInputBorder(),
                 ),
-              ],
-            ),
-          ],
+              ),
+              const SizedBox(height: 8.0),
+            ],
+          ),
         ),
       ],
     );
@@ -191,45 +205,66 @@ class _PaymentPageState extends State<PaymentPage> {
           ),
         ),
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const Divider(
-              thickness: 1.0,
-              color: Colors.grey,
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(
-                horizontal: 20.0,
-                vertical: 12.0,
+      body: FutureBuilder(
+        future: _future,
+        builder: (context, snapshot) {
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            return const Center(
+              child: CircularProgressIndicator.adaptive(),
+            );
+          } else if (snapshot.hasError) {
+            return Center(
+              child: ExceptionPage(
+                message: snapshot.error.toString(),
               ),
-              child: _fieldInformation(),
-            ),
-            const Divider(
-              thickness: 1.0,
-              color: Colors.grey,
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(
-                horizontal: 20.0,
-                vertical: 12.0,
+            );
+          } else if (snapshot.hasData) {
+            final data = snapshot.data!;
+            if (_customerNameController.text.isEmpty) {
+              _customerNameController.text = data.fullName!;
+            }
+            if (_customerPhone.text.isEmpty) {
+              _customerPhone.text = data.phoneNumber!;
+            }
+            return SingleChildScrollView(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Divider(
+                    thickness: 1.0,
+                    color: Colors.grey,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 20.0,
+                      vertical: 12.0,
+                    ),
+                    child: _fieldInformation(),
+                  ),
+                  const Divider(
+                    thickness: 1.0,
+                    color: Colors.grey,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 20.0,
+                      vertical: 12.0,
+                    ),
+                    child: _customerInfo(),
+                  ),
+                ],
               ),
-              child: _customerInfo(),
-            ),
-            ClipPath(
-              child: Container(
-                height: 50,
-                color: Colors.grey[300],
-              ),
-            ),
-          ],
-        ),
+            );
+          } else {
+            return const SizedBox.shrink();
+          }
+        },
       ),
       bottomNavigationBar: BottomAppBar(
         child: _PaymentAppbar(
           money: widget.money,
+          data: widget.data,
         ),
       ),
     );
@@ -240,9 +275,11 @@ class _PaymentPageState extends State<PaymentPage> {
 
 class _PaymentAppbar extends StatelessWidget {
   final double money;
+  final List<Payment> data;
 
   const _PaymentAppbar({
     required this.money,
+    required this.data,
   });
 
   @override
@@ -269,8 +306,15 @@ class _PaymentAppbar extends StatelessWidget {
           onPressed: () {
             Navigator.of(context).push(
               MaterialPageRoute(
-                builder: (context) => BookingPayment(
-                  money: money,
+                builder: (context) => FinishPayment(
+                  list: [
+                    ...data.map(
+                      (e) => ListProductOrederPending(
+                        productId: e.productId,
+                        amount: e.amount,
+                      ),
+                    ),
+                  ],
                 ),
               ),
             );

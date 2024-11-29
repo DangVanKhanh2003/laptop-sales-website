@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shopping_app/model/cart.dart';
+import 'package:shopping_app/model/payment.dart';
 import 'package:shopping_app/screen/payment/payment_page.dart';
 
 class CartNavbar extends StatefulWidget {
@@ -51,7 +52,14 @@ class _CartNavbarState extends State<CartNavbar> {
             Navigator.of(context).push(
               MaterialPageRoute(
                 builder: (context) => PaymentPage(
-                  cart: widget.cartItems,
+                  data: [
+                    ...widget.cartItems.map((e) => Payment(
+                          productId: e.productId!,
+                          productName: e.productName!,
+                          amount: e.amount!,
+                          price: e.price!,
+                        ))
+                  ],
                   money: _calculatePrice(),
                 ),
               ),

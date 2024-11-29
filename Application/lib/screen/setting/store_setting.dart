@@ -78,7 +78,7 @@ class _StoreSettingState extends State<StoreSetting> {
                   ),
                 );
               },
-              name: 'Đơn hàng hoàn tất',
+              name: 'Đơn hàng đã duyệt',
             ),
             const SizedBox(width: 12.0),
             _iconButton(
