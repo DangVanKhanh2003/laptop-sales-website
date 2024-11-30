@@ -34,6 +34,7 @@ class _CartNavbarState extends State<CartNavbar> {
 
   @override
   Widget build(BuildContext context) {
+    final price = _calculatePrice();
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
@@ -41,30 +42,32 @@ class _CartNavbarState extends State<CartNavbar> {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text('Tổng cộng: \$${_calculatePrice()}'),
+            Text('Tổng cộng: \$$price'),
             const SizedBox(height: 10.0),
             Text('Tổng số sản phẩm: ${_getTotalProducts()}'),
           ],
         ),
         ElevatedButton(
           style: ElevatedButton.styleFrom(),
-          onPressed: () {
-            Navigator.of(context).push(
-              MaterialPageRoute(
-                builder: (context) => PaymentPage(
-                  data: [
-                    ...widget.cartItems.map((e) => Payment(
-                          productId: e.productId!,
-                          productName: e.productName!,
-                          amount: e.amount!,
-                          price: e.price!,
-                        ))
-                  ],
-                  money: _calculatePrice(),
-                ),
-              ),
-            );
-          },
+          onPressed: price == 0
+              ? null
+              : () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => PaymentPage(
+                        data: [
+                          ...widget.cartItems.map((e) => Payment(
+                                productId: e.productId!,
+                                productName: e.productName!,
+                                amount: e.amount!,
+                                price: e.price!,
+                              ))
+                        ],
+                        money: _calculatePrice(),
+                      ),
+                    ),
+                  );
+                },
           child: const Padding(
             padding: EdgeInsets.symmetric(
               vertical: 8.0,
