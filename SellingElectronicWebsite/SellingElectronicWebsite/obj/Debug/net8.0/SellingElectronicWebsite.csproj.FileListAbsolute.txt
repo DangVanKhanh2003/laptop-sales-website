@@ -155,5 +155,5 @@ E:\Công Việc\BTL_DoAnChuyenNganh\laptop-sales-website\SellingElectronicWebsit
 E:\Công Việc\BTL_DoAnChuyenNganh\laptop-sales-website\SellingElectronicWebsite\SellingElectronicWebsite\bin\Debug\net8.0\SellingElectronicWebsite.staticwebassets.endpoints.json
 E:\Công Việc\BTL_DoAnChuyenNganh\laptop-sales-website\SellingElectronicWebsite\SellingElectronicWebsite\obj\Debug\net8.0\staticwebassets.build.endpoints.json
 E:\Công Việc\BTL_DoAnChuyenNganh\laptop-sales-website\SellingElectronicWebsite\SellingElectronicWebsite\obj\Debug\net8.0\staticwebassets\msbuild.SellingElectronicWebsite.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
-E:\Công Việc\BTL_DoAnChuyenNganh\laptop-sales-website\SellingElectronicWebsite\SellingElectronicWebsite\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 E:\Công Việc\BTL_DoAnChuyenNganh\laptop-sales-website\SellingElectronicWebsite\SellingElectronicWebsite\obj\Debug\net8.0\SellingE.6CB75715.Up2Date
+E:\Công Việc\BTL_DoAnChuyenNganh\laptop-sales-website\SellingElectronicWebsite\SellingElectronicWebsite\bin\Debug\net8.0\web.config

@@ -23,7 +23,6 @@ namespace SellingElectronicWebsite.Controllers.Employee
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        [CustomAuthorizeCustomer("customer")]
         public async Task<IActionResult> GetAll()
         {
             try
@@ -48,7 +47,6 @@ namespace SellingElectronicWebsite.Controllers.Employee
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpGet("{id}")]
-        [CustomAuthorizeCustomer("customer")]
 
         public async Task<IActionResult> GetById(int id)
         {

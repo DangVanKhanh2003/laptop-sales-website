@@ -467,6 +467,116 @@
         }
       }
     },
+    "/api/Comment": {
+      "get": {
+        "tags": [
+          "Comment"
+        ],
+        "summary": "get all comment by id product",
+        "parameters": [
+          {
+            "name": "idProduct",
+            "in": "query",
+            "description": "",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Comment"
+        ],
+        "summary": "add new comment",
+        "requestBody": {
+          "description": "\"parentId\", \"toCustomerId\": can null. If comment is sub comment. \"toCustomerId\" and \"parentId\" must not null",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CommentModel"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CommentModel"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CommentModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Comment"
+        ],
+        "summary": "Delete comment by id comment",
+        "parameters": [
+          {
+            "name": "idComment",
+            "in": "query",
+            "description": "",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Comment/{idComment}": {
+      "put": {
+        "tags": [
+          "Comment"
+        ],
+        "summary": "Update content of comment by id comment",
+        "parameters": [
+          {
+            "name": "idComment",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "content",
+            "in": "query",
+            "description": "",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/CustomerAccount": {
       "get": {
         "tags": [
@@ -1089,6 +1199,39 @@
         }
       }
     },
+    "/api/Order/customer/{idCustomer}": {
+      "get": {
+        "tags": [
+          "Order"
+        ],
+        "summary": "Get all order by id customer",
+        "parameters": [
+          {
+            "name": "idCustomer",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "description": "value: \"pending\"/\"cancel\"/\"approve\". Default = \"pending\"",
+            "schema": {
+              "type": "string",
+              "default": "pending"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Order/Export": {
       "put": {
         "tags": [
@@ -1324,6 +1467,39 @@
         }
       }
     },
+    "/api/OrderPending/Customer/{idCustomer}": {
+      "get": {
+        "tags": [
+          "OrderPending"
+        ],
+        "summary": "get all order pending by id customer",
+        "parameters": [
+          {
+            "name": "idCustomer",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "description": "cancel/pending/approve",
+            "schema": {
+              "type": "string",
+              "default": "pending"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/OrderPending/{idOrderPending}/Employee/{idEmployee}/Change-status": {
       "put": {
         "tags": [
@@ -1406,6 +1582,7 @@
           "Product"
         ],
         "summary": "",
+        "description": "{\r\n   \"base64Image\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9\",\r\n  \"fileName\": \"Iphone14Xanh\",\r\n   \"extension\": \".png\"\r\n }",
         "requestBody": {
           "content": {
             "application/json": {
@@ -1427,7 +1604,10 @@
         },
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Returns the requested item."
+          },
+          "404": {
+            "description": "If the item is not found."
           }
         }
       }
@@ -2374,6 +2554,98 @@
         }
       }
     },
+    "/api/Stats": {
+      "get": {
+        "tags": [
+          "Stats"
+        ],
+        "parameters": [
+          {
+            "name": "startDate",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date"
+            }
+          },
+          {
+            "name": "endDate",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date"
+            }
+          },
+          {
+            "name": "unit",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "default": "date"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Stats/Category{id}": {
+      "get": {
+        "tags": [
+          "Stats"
+        ],
+        "parameters": [
+          {
+            "name": "startDate",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date"
+            }
+          },
+          {
+            "name": "endDate",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date"
+            }
+          },
+          {
+            "name": "categoryId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "unit",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "default": "date"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Store": {
       "get": {
         "tags": [
@@ -2838,6 +3110,35 @@
         "properties": {
           "colorName": {
             "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CommentModel": {
+        "type": "object",
+        "properties": {
+          "customerId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "productId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "commentDetail": {
+            "type": "string",
+            "nullable": true
+          },
+          "parentId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "toCustomerId": {
+            "type": "integer",
+            "format": "int32",
             "nullable": true
           }
         },

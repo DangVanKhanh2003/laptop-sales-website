@@ -202,7 +202,10 @@ namespace SellingElectronicWebsite.Repository
                                                             p.MainImg
                                                     ))
                                                 .FirstOrDefaultAsync();
-
+            if (model == null)
+            {
+                return model;
+            }
             SalesVM sale = _mapper.Map<SalesVM>(await checkSaleByIdProduct(model.ProductId, DateTime.Now));
             if (sale != null)
             {

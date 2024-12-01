@@ -274,6 +274,75 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "SellingElectronicWebsite.Controllers.Customer.CommentController",
+    "Method": "GetAllByIdProduct",
+    "RelativePath": "api/Comment",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idProduct",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SellingElectronicWebsite.Controllers.Customer.CommentController",
+    "Method": "AddComment",
+    "RelativePath": "api/Comment",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "SellingElectronicWebsite.Model.CommentModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SellingElectronicWebsite.Controllers.Customer.CommentController",
+    "Method": "DeleteByIdComment",
+    "RelativePath": "api/Comment",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idComment",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SellingElectronicWebsite.Controllers.Customer.CommentController",
+    "Method": "UpdateCommentByIdComment",
+    "RelativePath": "api/Comment/{idComment}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idComment",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "content",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "SellingElectronicWebsite.Controllers.CustomerAccountController",
     "Method": "getAllAccount",
     "RelativePath": "api/CustomerAccount",
@@ -606,6 +675,27 @@
   },
   {
     "ContainingType": "SellingElectronicWebsite.Controllers.Employee.OrderController",
+    "Method": "GetByIdCustomer",
+    "RelativePath": "api/Order/customer/{idCustomer}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idCustomer",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "status",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SellingElectronicWebsite.Controllers.Employee.OrderController",
     "Method": "ExportOrder",
     "RelativePath": "api/Order/Export",
     "HttpMethod": "PUT",
@@ -829,6 +919,27 @@
       {
         "Name": "idStore",
         "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SellingElectronicWebsite.Controllers.OrderPendingController",
+    "Method": "GetByIdCustomer",
+    "RelativePath": "api/OrderPending/Customer/{idCustomer}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idCustomer",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "status",
+        "Type": "System.String",
         "IsRequired": false
       }
     ],
@@ -1368,6 +1479,68 @@
       {
         "Name": "idCustomer",
         "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SellingElectronicWebsite.Controllers.Employee.StatsController",
+    "Method": "GetStats",
+    "RelativePath": "api/Stats",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "startDate",
+        "Type": "System.DateOnly",
+        "IsRequired": false
+      },
+      {
+        "Name": "endDate",
+        "Type": "System.DateOnly",
+        "IsRequired": false
+      },
+      {
+        "Name": "unit",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SellingElectronicWebsite.Controllers.Employee.StatsController",
+    "Method": "GetStatsByIdCategory",
+    "RelativePath": "api/Stats/Category{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "startDate",
+        "Type": "System.DateOnly",
+        "IsRequired": false
+      },
+      {
+        "Name": "endDate",
+        "Type": "System.DateOnly",
+        "IsRequired": false
+      },
+      {
+        "Name": "categoryId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "unit",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "id",
+        "Type": "",
         "IsRequired": true
       }
     ],

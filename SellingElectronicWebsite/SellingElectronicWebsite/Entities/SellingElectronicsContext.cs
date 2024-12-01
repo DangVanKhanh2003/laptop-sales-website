@@ -63,6 +63,8 @@ public partial class SellingElectronicsContext : DbContext
 
     public virtual DbSet<RefreshTokenCustomer> RefreshTokenCustomers { get; set; }
 
+    public virtual DbSet<RefreshTokenEmployee> RefreshTokenEmployees { get; set; }
+
     public virtual DbSet<Role> Roles { get; set; }
 
     public virtual DbSet<Sale> Sales { get; set; }
@@ -120,6 +122,9 @@ public partial class SellingElectronicsContext : DbContext
             entity.ToTable("AccountEmp", "AccountSchema");
 
             entity.Property(e => e.AccEmpId).HasDefaultValueSql("(newid())");
+            entity.Property(e => e.Email)
+                .HasMaxLength(200)
+                .IsUnicode(false);
             entity.Property(e => e.Password).IsUnicode(false);
 
             entity.HasOne(d => d.Employee).WithMany(p => p.AccountEmps)
@@ -191,7 +196,7 @@ public partial class SellingElectronicsContext : DbContext
                 .HasDefaultValueSql("(getdate())")
                 .HasColumnType("datetime");
 
-            entity.HasOne(d => d.Customer).WithMany(p => p.Comments)
+            entity.HasOne(d => d.Customer).WithMany(p => p.CommentCustomers)
                 .HasForeignKey(d => d.CustomerId)
                 .OnDelete(DeleteBehavior.SetNull)
                 .HasConstraintName("FK_Comments_Customers");
@@ -203,6 +208,10 @@ public partial class SellingElectronicsContext : DbContext
             entity.HasOne(d => d.Product).WithMany(p => p.Comments)
                 .HasForeignKey(d => d.ProductId)
                 .HasConstraintName("FK_Comments_Products");
+
+            entity.HasOne(d => d.ToCustomer).WithMany(p => p.CommentToCustomers)
+                .HasForeignKey(d => d.ToCustomerId)
+                .HasConstraintName("FK_Comments_Customer_replyToId");
         });
 
         modelBuilder.Entity<Customer>(entity =>
@@ -520,6 +529,28 @@ public partial class SellingElectronicsContext : DbContext
                 .HasForeignKey(d => d.CustomerId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_RefreshTokenCustomer_Customer");
+        });
+
+        modelBuilder.Entity<RefreshTokenEmployee>(entity =>
+        {
+            entity.HasKey(e => e.RefreshTokenEmployeeId).HasName("PK__RefreshT__01865F84701F24CD");
+
+            entity.ToTable("RefreshTokenEmployee", "AccountSchema");
+
+            entity.Property(e => e.RefreshTokenEmployeeId).HasDefaultValueSql("(newid())");
+            entity.Property(e => e.ExpiredAt).HasColumnType("datetime");
+            entity.Property(e => e.IssuedAt).HasColumnType("datetime");
+            entity.Property(e => e.JwtId)
+                .HasMaxLength(200)
+                .IsUnicode(false);
+            entity.Property(e => e.Token)
+                .HasMaxLength(1000)
+                .IsUnicode(false);
+
+            entity.HasOne(d => d.AccEmp).WithMany(p => p.RefreshTokenEmployees)
+                .HasForeignKey(d => d.AccEmpId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_RefreshTokenEmployee_AccountEmp");
         });
 
         modelBuilder.Entity<Role>(entity =>

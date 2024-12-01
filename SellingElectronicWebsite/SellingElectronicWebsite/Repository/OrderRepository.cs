@@ -583,5 +583,51 @@ namespace SellingElectronicWebsite.Repository
             
             return orderVM;
         }
+
+        public async Task<List<OrderVM>> GetByIdCustomer(int idCustomer, string status)
+        {
+            var listOrder = await _context.Orders
+                                                .Include(p => p.Customer)
+                                                .Include(p => p.Employee)
+                                                .Include(p => p.Store)
+                                                .Include(p => p.Store.Address)
+                                                .Where(p => p.Status == status && p.CustomerId == idCustomer)
+                                                .ToListAsync();
+
+            
+
+            List<OrderVM> listOrderVM = _mapper.Map<List<OrderVM>>(listOrder);
+
+            // add product for list for order
+            foreach (OrderVM item in listOrderVM)
+            {
+                var listProductOrder = await _context.ProductOrders
+                                                             .Where(p => p.OrderId == item.OrderId)
+                                                             .Include(p => p.Product)
+                                                             .Include(p => p.Product.Category)
+                                                             .Include(p => p.Color)
+                                                             .ToListAsync();
+                item.ListProductOrder = _mapper.Map<List<ProductOrderVM>>(listProductOrder);
+            }
+
+            //add sale
+            foreach (var itemOrder in listOrderVM)
+            {
+                foreach (var itemProduct in itemOrder.ListProductOrder)
+                {
+                    if (itemOrder.OdertDate != null)
+                    {
+                        SalesVM sale = _mapper.Map<SalesVM>(await ProductsRepository.checkSaleByIdProduct(itemProduct.Product.ProductId, (DateTime)itemOrder.OdertDate));
+                        if (sale != null)
+                        {
+                            itemProduct.Product.sale = sale;
+                        }
+                    }
+
+                }
+
+            }
+            return listOrderVM;
+        }
     }
 }

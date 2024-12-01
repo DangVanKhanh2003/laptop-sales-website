@@ -25,7 +25,7 @@ namespace SellingElectronicWebsite.Repository
         /// <param name="sortByOrderDate">value: "timeDesc"/"timeAsc". Default = null</param>
         public async Task<List<CancelOrderVM>> GetAllCancelOrderByIdCustomer(int idCustomer, string sortByOrderDate = null)
         {
-            
+
             List<CancelOrderVM> listCancelOrderVM = new List<CancelOrderVM>();
 
             //get all order cancel by orderPending table
@@ -115,6 +115,7 @@ namespace SellingElectronicWebsite.Repository
         /// <param name="sortByOrderDate">value: "timeDesc"/"timeAsc". Default = null</param>
         public async Task<List<OrderVM>> GetAllSuccessOrderByIdCustomer(int idCustomer, string sortByOrderDate = null)
         {
+
             var listOrder = await _context.Orders
                                                 .Include(p => p.Customer)
                                                 .Include(p => p.Employee)
@@ -122,6 +123,7 @@ namespace SellingElectronicWebsite.Repository
                                                 .Include(p => p.Store.Address)
                                                 .Where(p => p.Status.ToLower() == "approve" && p.CustomerId == idCustomer)
                                                 .ToListAsync();
+            
 
             if (!string.IsNullOrEmpty(sortByOrderDate))
             {

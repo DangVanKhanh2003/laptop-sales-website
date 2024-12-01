@@ -22,7 +22,6 @@ namespace SellingElectronicWebsite.Controllers.Employee
         /// </summary>
 
         [HttpGet]
-        [CustomAuthorizeCustomer("customer")]
 
         public async Task<IActionResult> GetAll()
         {
@@ -46,7 +45,6 @@ namespace SellingElectronicWebsite.Controllers.Employee
         /// </summary>
 
         [HttpGet("{id}")]
-        [CustomAuthorizeCustomer("customer")]
 
         public async Task<IActionResult> GetById(int id)
         {

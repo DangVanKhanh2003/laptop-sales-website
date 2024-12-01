@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using SellingElectronicWebsite.Entities;
 using SellingElectronicWebsite.Model;
 using SellingElectronicWebsite.Sercurity;
 using SellingElectronicWebsite.UnitOfWork;
@@ -80,6 +81,25 @@ namespace SellingElectronicWebsite.Controllers
             }
         }
 
+        /// <summary>
+        /// get all order pending by id customer
+        /// </summary>
+        /// <param name="status">cancel/pending/approve</param>
+        [HttpGet("Customer/{idCustomer}")]
+        public async Task<IActionResult> GetByIdCustomer(int idCustomer, string status = "pending")
+        {
+            try
+            {
+                var result = await _uow.OrderPendings.GetByIdCustomer(idCustomer, status);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+
+            }
+
+        }
 
         /// <summary>
         /// Add order pending

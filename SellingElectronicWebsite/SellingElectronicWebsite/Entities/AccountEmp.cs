@@ -13,7 +13,11 @@ public partial class AccountEmp
 
     public Guid? TypeAccId { get; set; }
 
+    public string Email { get; set; } = null!;
+
     public virtual Employee Employee { get; set; } = null!;
+
+    public virtual ICollection<RefreshTokenEmployee> RefreshTokenEmployees { get; set; } = new List<RefreshTokenEmployee>();
 
     public virtual TypeAccount? TypeAcc { get; set; }
 }

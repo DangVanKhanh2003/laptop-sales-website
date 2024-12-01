@@ -27,6 +27,8 @@ namespace SellingElectronicWebsite.UnitOfWork
         public OrderPendingRepository OrderPendings { get; private set; }
         public OrderRepository Orders { get; private set; }
         public HistoryOrderRepository Histories { get; private set; }
+        public CommentRepository Comments { get; private set; }
+        public StatsRepository Stats { get; private set; }
 
         public UnitOfWork(SellingElectronicsContext _Context, IMapper mapper, IConfiguration configuration)
         {
@@ -45,6 +47,8 @@ namespace SellingElectronicWebsite.UnitOfWork
             OrderPendings = new OrderPendingRepository(Context, mapper);
             Orders = new OrderRepository(Context, mapper);
             Histories = new HistoryOrderRepository(Context, mapper);
+            Comments = new CommentRepository(Context, mapper);
+            Stats = new StatsRepository(Context, mapper);
         }
 
         public void CreateTransaction()

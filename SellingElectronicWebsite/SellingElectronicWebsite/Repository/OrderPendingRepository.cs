@@ -4,6 +4,7 @@ using SellingElectronicWebsite.Entities;
 using SellingElectronicWebsite.Helper;
 using SellingElectronicWebsite.Model;
 using SellingElectronicWebsite.ViewModel;
+using System.Globalization;
 using System.Linq;
 using System.Net.NetworkInformation;
 
@@ -346,6 +347,60 @@ namespace SellingElectronicWebsite.Repository
             item.Status = status;
             _context.OrderPendings.Update(item);
             return true;
+        }
+
+        public async Task<List<OrderPendingVM>> GetByIdCustomer(int idCustomer, string status)
+        {
+            var listOrderPending = await _context.OrderPendings
+                                                       .Include(p => p.Customer)
+                                                       .Include(p => p.Employee)
+                                                       .Where(p => p.Status == status && p.CustomerId == idCustomer)
+                                                       .Select(p => new OrderPendingVM(
+                                                                                       p.OrderPendingId,
+                                                                                       p.Customer.FullName,
+                                                                                       p.Customer.CustomerId,
+                                                                                       p.Employee.EmployeeId,
+                                                                                       p.Employee.FullName,
+                                                                                       p.OdertDate,
+                                                                                       p.Status
+                                                                                       ))
+            .ToListAsync();
+
+            // add list for order pending item
+            foreach (var item in listOrderPending)
+            {
+                var listProductOrderPendingVM = await _context.ProductOrderPendings
+                                                             .Where(p => p.OrderPendingId == item.OrderPendingId)
+                                                             .Include(p => p.Product)
+                                                             .Select(p => new ProductOrderPendingVM(
+                                                                                                p.ProductOrderPendingId,
+                                                                                                p.Product.ProductId,
+                                                                                                p.Product.ProductName,
+                                                                                                p.Amount,
+                                                                                                p.Color.ColorName,
+                                                                                                p.Product.Brand,
+                                                                                                p.Product.Series,
+                                                                                                p.Product.Price,
+                                                                                                p.Product.Category.CategoryName,
+                                                                                                p.Product.MainImg
+                                                                                                ))
+                                                             .ToListAsync();
+                item.ListProductOrederPending = listProductOrderPendingVM;
+            }
+            //add sale
+            foreach (var itemOrder in listOrderPending)
+            {
+                foreach (var itemProduct in itemOrder.ListProductOrederPending)
+                {
+                    SalesVM sale = _mapper.Map<SalesVM>(await ProductsRepository.checkSaleByIdProduct(itemProduct.ProductId, (DateTime)itemOrder.OdertDate));
+                    if (sale != null)
+                    {
+                        itemProduct.sale = sale;
+                    }
+                }
+
+            }
+            return listOrderPending;
         }
     }
 }

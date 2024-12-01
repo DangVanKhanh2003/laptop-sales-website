@@ -11,7 +11,6 @@ namespace SellingElectronicWebsite.Controllers.Customer
 {
     [Route("api/[controller]")]
     [ApiController]
-    [CustomAuthorizeCustomer("customer")]
 
     public class CustomerInforController : ControllerBase
     {

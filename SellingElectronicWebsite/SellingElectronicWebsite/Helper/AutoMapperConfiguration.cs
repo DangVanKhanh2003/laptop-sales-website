@@ -92,6 +92,8 @@ namespace SellingElectronicWebsite.Helper
                 .ForMember(dest => dest.Extension, opt => opt.MapFrom(src => src.FileExtension))
                 .ForMember(dest => dest.FileName, opt => opt.MapFrom(src => src.FileName))
               .ReverseMap();
+            CreateMap<Comment, CommentModel>().ReverseMap();
+            CreateMap<Comment, CommentVM>().ReverseMap();
         }
     }
 }

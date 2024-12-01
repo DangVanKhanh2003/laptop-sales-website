@@ -100,6 +100,26 @@ namespace SellingElectronicWebsite.Controllers.Employee
         }
 
         /// <summary>
+        /// Get all order by id customer
+        /// </summary>
+        /// <param name="status">value: "pending"/"cancel"/"approve". Default = "pending"</param>
+
+        [HttpGet("customer/{idCustomer}")]
+        public async Task<IActionResult> GetByIdCustomer(int idCustomer, string status = "pending")
+        {
+            try
+            {
+                var result = await _uow.Orders.GetByIdCustomer(idCustomer, status);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+
+        /// <summary>
         /// Export order
         /// </summary>
         /// <param name="idOrder"></param>

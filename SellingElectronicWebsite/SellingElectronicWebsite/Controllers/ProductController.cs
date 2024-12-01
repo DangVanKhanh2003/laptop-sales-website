@@ -33,8 +33,17 @@ namespace SellingElectronicWebsite.Controllers
         /// <summary>
         /// 
         /// </summary>
+        /// <remarks>
+        /// {
+        ///    "base64Image": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9",
+        ///   "fileName": "Iphone14Xanh",
+        ///    "extension": ".png"
+        ///  }
+        /// </remarks>
         /// <param name="request">Extension exemple: .jpg, .png,...</param>
-        /// <returns></returns>
+        /// <returns>The requested item, if found.</returns>
+        /// <response code="200">Returns the requested item.</response>
+        /// <response code="404">If the item is not found.</response>
         [HttpPost("save-image")]
         public async Task<IActionResult> SaveImage([FromBody] SaveImageModel img)
         {

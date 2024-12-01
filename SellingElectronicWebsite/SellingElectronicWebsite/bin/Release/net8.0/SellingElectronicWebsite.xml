@@ -99,6 +99,35 @@
             <param name="idAddress"></param>
             <returns></returns>
         </member>
+        <member name="M:SellingElectronicWebsite.Controllers.Customer.CommentController.GetAllByIdProduct(System.Int32)">
+            <summary>
+            get all comment by id product
+            </summary>
+            <param name="idProduct"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SellingElectronicWebsite.Controllers.Customer.CommentController.AddComment(SellingElectronicWebsite.Model.CommentModel)">
+            <summary>
+            add new comment
+            </summary>
+            <param name="model">"parentId", "toCustomerId": can null. If comment is sub comment. "toCustomerId" and "parentId" must not null </param>
+            <returns></returns>
+        </member>
+        <member name="M:SellingElectronicWebsite.Controllers.Customer.CommentController.UpdateCommentByIdComment(System.Int32,System.String)">
+            <summary>
+            Update content of comment by id comment
+            </summary>
+            <param name="idComment"></param>
+            <param name="content"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SellingElectronicWebsite.Controllers.Customer.CommentController.DeleteByIdComment(System.Int32)">
+            <summary>
+            Delete comment by id comment
+            </summary>
+            <param name="idComment"></param>
+            <returns></returns>
+        </member>
         <member name="M:SellingElectronicWebsite.Controllers.Customer.CustomerInforController.GetAll(System.String)">
             <summary>
             get all customer infor
@@ -261,6 +290,12 @@
             </summary>
             <param name="status">value: "pending"/"cancel"/"approve". Default = "pending"</param>
             <param name="sortByOrderDate">value: "timeDesc"/"timeAsc". Default = null</param>
+        </member>
+        <member name="M:SellingElectronicWebsite.Controllers.Employee.OrderController.GetByIdCustomer(System.Int32,System.String)">
+            <summary>
+            Get all order by id customer
+            </summary>
+            <param name="status">value: "pending"/"cancel"/"approve". Default = "pending"</param>
         </member>
         <member name="M:SellingElectronicWebsite.Controllers.Employee.OrderController.ExportOrder(System.Int32,System.Int32)">
             <summary>
@@ -441,6 +476,12 @@
             <param name="status">cancel/pending/approve</param>
             <param name="sortBy">timeAsc/timeDesc/null</param>
         </member>
+        <member name="M:SellingElectronicWebsite.Controllers.OrderPendingController.GetByIdCustomer(System.Int32,System.String)">
+            <summary>
+            get all order pending by id customer
+            </summary>
+            <param name="status">cancel/pending/approve</param>
+        </member>
         <member name="M:SellingElectronicWebsite.Controllers.OrderPendingController.Add(SellingElectronicWebsite.Model.OrderPendingModel)">
             <summary>
             Add order pending
@@ -469,8 +510,17 @@
             <summary>
             
             </summary>
+            <remarks>
+            {
+               "base64Image": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9",
+              "fileName": "Iphone14Xanh",
+               "extension": ".png"
+             }
+            </remarks>
             <param name="request">Extension exemple: .jpg, .png,...</param>
-            <returns></returns>
+            <returns>The requested item, if found.</returns>
+            <response code="200">Returns the requested item.</response>
+            <response code="404">If the item is not found.</response>
         </member>
         <member name="M:SellingElectronicWebsite.Controllers.ProductController.GetAll(System.String)">
             <summary>

@@ -19,7 +19,9 @@ public partial class Customer
 
     public virtual ICollection<AddressCustomer> AddressCustomers { get; set; } = new List<AddressCustomer>();
 
-    public virtual ICollection<Comment> Comments { get; set; } = new List<Comment>();
+    public virtual ICollection<Comment> CommentCustomers { get; set; } = new List<Comment>();
+
+    public virtual ICollection<Comment> CommentToCustomers { get; set; } = new List<Comment>();
 
     public virtual ICollection<Message> Messages { get; set; } = new List<Message>();
 

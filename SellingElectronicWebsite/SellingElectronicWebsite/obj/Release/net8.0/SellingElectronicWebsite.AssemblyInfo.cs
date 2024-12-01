@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SellingElectronicWebsite")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+aac713ab08154ef0cdfdbeddb97ab7124cb7d8c0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ba6de8966d6b7ad0217b4407a18f505a65989aa4")]
 [assembly: System.Reflection.AssemblyProductAttribute("SellingElectronicWebsite")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SellingElectronicWebsite")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
