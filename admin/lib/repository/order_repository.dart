@@ -7,10 +7,26 @@ class OrderRepository {
   OrderRepository(this._orderApi);
 
   Future<List<Order>> getAllOrders({
-    required int customerId,
+    required String status,
   }) async {
     return await _orderApi.getAllOrders(
-      customerId: customerId,
+      status: status,
+    );
+  }
+
+  Future<void> cancelOrder({
+    required int orderId,
+  }) async {
+    return await _orderApi.cancelOrder(
+      orderId: orderId,
+    );
+  }
+
+  Future<void> approveOrder({
+    required int orderId,
+  }) async {
+    return await _orderApi.approveOrder(
+      orderId: orderId,
     );
   }
 }

@@ -7,7 +7,7 @@ class Order {
   int? customerId;
   String? customerName;
   int? employeeId;
-  int? employeeName;
+  String? employeeName;
   String? odertDate;
   Store? store;
   String? status;

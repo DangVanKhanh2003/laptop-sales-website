@@ -253,37 +253,41 @@ class _ManageUserState extends State<ManageUser> {
           );
         } else if (snapshot.hasData) {
           data = snapshot.data!;
+          data.sort((a, b) => a.customerId! - b.customerId!);
           return Padding(
             padding: const EdgeInsets.all(16.0),
-            child: Column(
-              children: [
-                Row(
-                  children: [
-                    TextButton(
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.cyan,
-                      ),
-                      onPressed: _onAdd,
-                      child: const Padding(
-                        padding: EdgeInsets.symmetric(
-                            horizontal: 24.0, vertical: 12.0),
-                        child: Text(
-                          'Thêm',
-                          style: TextStyle(color: Colors.black),
+            child: SingleChildScrollView(
+              scrollDirection: Axis.vertical,
+              child: Column(
+                children: [
+                  Row(
+                    children: [
+                      TextButton(
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.cyan,
+                        ),
+                        onPressed: _onAdd,
+                        child: const Padding(
+                          padding: EdgeInsets.symmetric(
+                              horizontal: 24.0, vertical: 12.0),
+                          child: Text(
+                            'Thêm',
+                            style: TextStyle(color: Colors.black),
+                          ),
                         ),
                       ),
-                    ),
-                  ],
-                ),
-                const SizedBox(height: 20.0),
-                Card(
-                  elevation: 4,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(12),
+                    ],
                   ),
-                  child: _buildTable(),
-                ),
-              ],
+                  const SizedBox(height: 20.0),
+                  Card(
+                    elevation: 4,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    child: _buildTable(),
+                  ),
+                ],
+              ),
             ),
           );
         } else {

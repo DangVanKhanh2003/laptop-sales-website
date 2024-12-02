@@ -7,28 +7,47 @@ class RegularHome extends StatelessWidget {
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
     final isLargeScreen = screenWidth > 600;
+
     return Center(
       child: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Card(
-          elevation: 4,
+          elevation: 8,
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(12),
+            borderRadius: BorderRadius.circular(20),
           ),
+          color: Colors.white,
           child: Padding(
-            padding: const EdgeInsets.all(16.0),
+            padding: const EdgeInsets.all(24.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisSize: MainAxisSize.min,
               children: [
-                _buildText('Học phần:', 'Đồ án chuyên ngành', isLargeScreen),
-                _buildText('Nhóm:', '7', isLargeScreen),
-                _buildText('Giảng viên hướng dẫn:', 'Ths. Trần Phương Nhung',
-                    isLargeScreen),
+                _buildTitle('Thông tin dự án', isLargeScreen),
+                const SizedBox(height: 16),
                 _buildText(
-                  'Sinh viên thực hiện:',
-                  'Đàm Gia Khánh, Trần Văn Khang, Đặng Văn Khánh',
-                  isLargeScreen,
+                  icon: Icons.book,
+                  title: 'Học phần:',
+                  content: 'Đồ án chuyên ngành',
+                  isLargeScreen: isLargeScreen,
+                ),
+                _buildText(
+                  icon: Icons.group,
+                  title: 'Nhóm:',
+                  content: '7',
+                  isLargeScreen: isLargeScreen,
+                ),
+                _buildText(
+                  icon: Icons.person,
+                  title: 'Giảng viên hướng dẫn:',
+                  content: 'Ths. Trần Phương Nhung',
+                  isLargeScreen: isLargeScreen,
+                ),
+                _buildText(
+                  icon: Icons.people,
+                  title: 'Sinh viên thực hiện:',
+                  content: 'Đàm Gia Khánh, Trần Văn Khang, Đặng Văn Khánh',
+                  isLargeScreen: isLargeScreen,
                 ),
               ],
             ),
@@ -38,27 +57,52 @@ class RegularHome extends StatelessWidget {
     );
   }
 
-  Widget _buildText(String title, String content, bool isLargeScreen) {
+  Widget _buildTitle(String title, bool isLargeScreen) {
+    return Text(
+      title,
+      style: TextStyle(
+        fontSize: isLargeScreen ? 28 : 20,
+        fontWeight: FontWeight.bold,
+        color: Colors.deepPurple,
+      ),
+    );
+  }
+
+  Widget _buildText({
+    required IconData icon,
+    required String title,
+    required String content,
+    required bool isLargeScreen,
+  }) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 8.0),
-      child: RichText(
-        text: TextSpan(
-          text: '$title ',
-          style: TextStyle(
-            color: Colors.black87,
-            fontWeight: FontWeight.bold,
-            fontSize: isLargeScreen ? 24 : 16,
-          ),
-          children: [
-            TextSpan(
-              text: content,
-              style: TextStyle(
-                fontWeight: FontWeight.normal,
-                fontSize: isLargeScreen ? 22 : 14,
+      child: Row(
+        children: [
+          Icon(icon, color: Colors.deepPurple),
+          const SizedBox(width: 12),
+          Expanded(
+            child: RichText(
+              text: TextSpan(
+                text: '$title ',
+                style: TextStyle(
+                  color: Colors.black87,
+                  fontWeight: FontWeight.bold,
+                  fontSize: isLargeScreen ? 22 : 16,
+                ),
+                children: [
+                  TextSpan(
+                    text: content,
+                    style: TextStyle(
+                      fontWeight: FontWeight.normal,
+                      fontSize: isLargeScreen ? 20 : 14,
+                      color: Colors.black54,
+                    ),
+                  ),
+                ],
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
