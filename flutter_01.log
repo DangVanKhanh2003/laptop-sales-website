@@ -1,0 +1,102 @@
+Flutter crash report.
+Please report a bug at https://github.com/flutter/flutter/issues.
+
+## command
+
+flutter create admin
+
+## exception
+
+PathNotFoundException: PathNotFoundException: Cannot open file, path = 'C:\Users\Admin\Documents\GitHub\laptop-sales-website\admin\linux\my_application.h' (OS Error: The system cannot find the path specified.
+, errno = 3)
+
+```
+#0      _File.throwIfError (dart:io/file_impl.dart:675:7)
+#1      _File.openSync (dart:io/file_impl.dart:490:5)
+#2      ForwardingFile.openSync (package:file/src/forwarding/forwarding_file.dart:74:16)
+#3      ErrorHandlingFile.openSync.<anonymous closure> (package:flutter_tools/src/base/error_handling_io.dart:307:22)
+#4      _runSync (package:flutter_tools/src/base/error_handling_io.dart:600:14)
+#5      ErrorHandlingFile.openSync (package:flutter_tools/src/base/error_handling_io.dart:306:12)
+#6      ErrorHandlingFile.copySync.<anonymous closure> (package:flutter_tools/src/base/error_handling_io.dart:350:27)
+#7      _runSync (package:flutter_tools/src/base/error_handling_io.dart:600:14)
+#8      ErrorHandlingFile.copySync (package:flutter_tools/src/base/error_handling_io.dart:345:5)
+#9      Template.render.<anonymous closure> (package:flutter_tools/src/template.dart:379:18)
+#10     _LinkedHashMapMixin.forEach (dart:collection-patch/compact_hash.dart:633:13)
+#11     Template.render (package:flutter_tools/src/template.dart:281:24)
+#12     CreateBase.renderMerged (package:flutter_tools/src/commands/create_base.dart:485:21)
+<asynchronous suspension>
+#13     CreateBase.generateApp (package:flutter_tools/src/commands/create_base.dart:508:23)
+<asynchronous suspension>
+#14     CreateCommand.runCommand (package:flutter_tools/src/commands/create.dart:369:31)
+<asynchronous suspension>
+#15     FlutterCommand.run.<anonymous closure> (package:flutter_tools/src/runner/flutter_command.dart:1408:27)
+<asynchronous suspension>
+#16     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:153:19)
+<asynchronous suspension>
+#17     CommandRunner.runCommand (package:args/command_runner.dart:212:13)
+<asynchronous suspension>
+#18     FlutterCommandRunner.runCommand.<anonymous closure> (package:flutter_tools/src/runner/flutter_command_runner.dart:420:9)
+<asynchronous suspension>
+#19     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:153:19)
+<asynchronous suspension>
+#20     FlutterCommandRunner.runCommand (package:flutter_tools/src/runner/flutter_command_runner.dart:364:5)
+<asynchronous suspension>
+#21     run.<anonymous closure>.<anonymous closure> (package:flutter_tools/runner.dart:130:9)
+<asynchronous suspension>
+#22     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:153:19)
+<asynchronous suspension>
+#23     main (package:flutter_tools/executable.dart:93:3)
+<asynchronous suspension>
+```
+
+## flutter doctor
+
+```
+[32m[✓][39m Flutter (Channel stable, 3.24.5, on Microsoft Windows [Version 10.0.26100.2454], locale en-US)
+    [32m•[39m Flutter version 3.24.5 on channel stable at C:\External\flutter
+    [32m•[39m Upstream repository https://github.com/flutter/flutter.git
+    [32m•[39m Framework revision dec2ee5c1f (3 weeks ago), 2024-11-13 11:13:06 -0800
+    [32m•[39m Engine revision a18df97ca5
+    [32m•[39m Dart version 3.5.4
+    [32m•[39m DevTools version 2.37.3
+
+[32m[✓][39m Windows Version (Installed version of Windows is version 10 or higher)
+
+[33m[!][39m Android toolchain - develop for Android devices (Android SDK version 34.0.0)
+    [32m•[39m Android SDK at C:\Users\Admin\AppData\Local\Android\sdk
+    [31m✗[39m cmdline-tools component is missing
+      Run `path/to/sdkmanager --install "cmdline-tools;latest"`
+      See https://developer.android.com/studio/command-line for more details.
+    [31m✗[39m Android license status unknown.
+      Run `flutter doctor --android-licenses` to accept the SDK licenses.
+      See https://flutter.dev/to/windows-android-setup for more details.
+
+[31m[✗][39m Chrome - develop for the web (Cannot find Chrome executable at .\Google\Chrome\Application\chrome.exe)
+    [33m![39m Cannot find Chrome. Try setting CHROME_EXECUTABLE to a Chrome executable.
+
+[32m[✓][39m Visual Studio - develop Windows apps (Visual Studio Community 2022 17.12.2)
+    [32m•[39m Visual Studio at C:\Program Files\Microsoft Visual Studio\2022\Community
+    [32m•[39m Visual Studio Community 2022 version 17.12.35521.163
+    [32m•[39m Windows 10 SDK version 10.0.22621.0
+
+[32m[✓][39m Android Studio (version 2024.2)
+    [32m•[39m Android Studio at C:\Program Files\Android\Android Studio
+    [32m•[39m Flutter plugin can be installed from:
+      🔨 https://plugins.jetbrains.com/plugin/9212-flutter
+    [32m•[39m Dart plugin can be installed from:
+      🔨 https://plugins.jetbrains.com/plugin/6351-dart
+    [32m•[39m Java version OpenJDK Runtime Environment (build 21.0.3+-12282718-b509.11)
+
+[32m[✓][39m VS Code (version 1.95.3)
+    [32m•[39m VS Code at C:\Users\Admin\AppData\Local\Programs\Microsoft VS Code
+    [32m•[39m Flutter extension version 3.100.0
+
+[32m[✓][39m Connected device (2 available)
+    [32m•[39m Windows (desktop) • windows • windows-x64    • Microsoft Windows [Version 10.0.26100.2454]
+    [32m•[39m Edge (web)        • edge    • web-javascript • Microsoft Edge 131.0.2903.70
+
+[32m[✓][39m Network resources
+    [32m•[39m All expected network resources are available.
+
+[33m![39m Doctor found issues in 2 categories.
+```
