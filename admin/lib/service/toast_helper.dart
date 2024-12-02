@@ -9,6 +9,8 @@ class ToastHelper {
     Color? color,
   }) {
     DelightToastBar(
+      autoDismiss: true,
+      snackbarDuration: const Duration(seconds: 2),
       builder: (context) => ToastCard(
         leading: const Icon(
           Icons.notification_add_outlined,

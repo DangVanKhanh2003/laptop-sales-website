@@ -6,6 +6,10 @@ class CustomerRepository {
 
   CustomerRepository(this._customerApi);
 
+  Future<List<CustomerAccount>> getAllCustomer() async {
+    return await _customerApi.getAllCustomer();
+  }
+
   Future<CustomerInfo> getCustomerInfoById({
     required int customerId,
   }) async {
@@ -24,13 +28,27 @@ class CustomerRepository {
 
   Future<CustomerInfo> updateCustomerPassword({
     required String email,
-    required String oldPassword,
-    required String newPassword,
+    required String password,
   }) async {
     return await _customerApi.updateCustomerPassword(
       email: email,
-      oldPassword: oldPassword,
-      newPassword: newPassword,
+      password: password,
+    );
+  }
+
+  Future<void> register({
+    required String email,
+    required String password,
+  }) async {
+    return await _customerApi.register(
+      email: email,
+      password: password,
+    );
+  }
+
+  Future<void> deleteCustomer({required int customerId}) async {
+    return await _customerApi.deleteCustomer(
+      customerId: customerId,
     );
   }
 }
