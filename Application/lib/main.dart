@@ -14,8 +14,8 @@ Future<void> main(
   await dotenv.load(fileName: ".env");
   if (Platform.isWindows || Platform.isLinux || Platform.isMacOS) {
     await WindowManager.instance.ensureInitialized();
-    await windowManager.setMinimumSize(Size(400, 800));
-    await windowManager.setMaximumSize(Size(600, 800));
+    await windowManager.setMinimumSize(Size(400, 1000));
+    await windowManager.setMaximumSize(Size(600, 1000));
     await windowManager.center();
     await windowManager.waitUntilReadyToShow();
     await windowManager.show();

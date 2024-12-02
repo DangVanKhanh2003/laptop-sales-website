@@ -160,15 +160,40 @@ class _ProductItem extends ConsumerState<ProductItem> {
   Future<void> _cancelProduct(
     int orderId,
   ) async {
-    setState(() {
-      _isLoading = true;
-    });
+    final state = await showDialog(
+      context: context,
+      barrierDismissible: false,
+      builder: (context) => AlertDialog(
+        title: Text('Xác nhận hủy'),
+        content: Text('Bạn có muốn hủy đơn hàng không?'),
+        actions: [
+          TextButton(
+            onPressed: () {
+              Navigator.of(context).pop(true);
+            },
+            child: Text('Có'),
+          ),
+          TextButton(
+            onPressed: () {
+              Navigator.of(context).pop(false);
+            },
+            child: Text('Không'),
+          ),
+        ],
+      ),
+    );
     try {
-      await GetItHelper.get<OrderPendingRepository>().cancelOrderPending(
-        token: ref.read(tokenProvider),
-        orderId: orderId,
-      );
-      _showSuccess('Đã xoá đơn hàng!');
+      if (state) {
+        setState(() {
+          _isLoading = true;
+        });
+        await GetItHelper.get<OrderPendingRepository>().cancelOrderPending(
+          token: ref.read(tokenProvider),
+          orderId: orderId,
+        );
+
+        _showSuccess('Đã xoá đơn hàng!');
+      }
     } catch (e) {
       _showError(e.toString());
     } finally {
