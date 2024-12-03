@@ -1,5 +1,5 @@
-import 'package:admin/model/order.dart';
-import 'package:admin/repository/order_repository.dart';
+import 'package:admin/model/order_pending.dart' as model;
+import 'package:admin/repository/order_pending_repository.dart';
 import 'package:admin/screen/exception/exception_page.dart';
 import 'package:admin/service/getit_helper.dart';
 import 'package:admin/service/toast_helper.dart';
@@ -13,7 +13,7 @@ class OrderPending extends StatefulWidget {
 }
 
 class _OrderPendingState extends State<OrderPending> {
-  late List<Order> data;
+  late List<model.OrderPending> data;
 
   @override
   void initState() {
@@ -85,23 +85,23 @@ class _OrderPendingState extends State<OrderPending> {
     ];
   }
 
-  List<DataRow> _buildRows(List<Order> orders) {
+  List<DataRow> _buildRows(List<model.OrderPending> orders) {
     return orders.map((order) {
       return DataRow(
         cells: [
-          DataCell(Text(order.orderId.toString())),
+          DataCell(Text(order.orderPendingId.toString())),
           DataCell(
             Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                ...order.listProductOrder!.map(
-                  (e) => Text(e.product!.productName!),
+                ...order.listProductOrederPending!.map(
+                  (e) => Text(e.productName!),
                 ),
               ],
             ),
           ),
-          DataCell(Text(order.dateExport!)),
+          DataCell(Text(order.odertDate!)),
           DataCell(Text(order.customerName!)),
           DataCell(
             DropdownButton<String>(
@@ -123,15 +123,11 @@ class _OrderPendingState extends State<OrderPending> {
               onChanged: (String? value) async {
                 if (value == null || value == 'pending') return;
                 try {
-                  if (value == 'cancel') {
-                    await GetItHelper.get<OrderRepository>().cancelOrder(
-                      orderId: order.orderId!,
-                    );
-                  } else {
-                    await GetItHelper.get<OrderRepository>().approveOrder(
-                      orderId: order.orderId!,
-                    );
-                  }
+                  await GetItHelper.get<OrderPendingRepository>()
+                      .changeOrderPending(
+                    order: order,
+                    status: value,
+                  );
                   _showToast(
                     message: 'Sửa trạng thái đơn hàng thành công',
                     isSuccess: true,
@@ -153,8 +149,8 @@ class _OrderPendingState extends State<OrderPending> {
   @override
   Widget build(BuildContext context) {
     return FutureBuilder(
-      future:
-          GetItHelper.get<OrderRepository>().getAllOrders(status: 'pending'),
+      future: GetItHelper.get<OrderPendingRepository>()
+          .getAllOrderPending(status: 'pending'),
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
           return const Center(

@@ -8,8 +8,8 @@ import 'package:admin/service/image_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 
-class AddProduct extends StatefulWidget {
-  const AddProduct({
+class EditProduct extends StatefulWidget {
+  const EditProduct({
     super.key,
     required this.product,
   });
@@ -17,10 +17,10 @@ class AddProduct extends StatefulWidget {
   final Product product;
 
   @override
-  State<AddProduct> createState() => _AddProductState();
+  State<EditProduct> createState() => _EditProductState();
 }
 
-class _AddProductState extends State<AddProduct> {
+class _EditProductState extends State<EditProduct> {
   late TextEditingController _nameController;
   late TextEditingController _brandController;
   late TextEditingController _seriesController;
@@ -29,10 +29,12 @@ class _AddProductState extends State<AddProduct> {
 
   @override
   void initState() {
-    _nameController = TextEditingController();
-    _brandController = TextEditingController();
-    _seriesController = TextEditingController();
-    _priceController = TextEditingController(text: '0.0');
+    _nameController = TextEditingController(text: widget.product.productName);
+    _brandController = TextEditingController(text: widget.product.brand);
+    _seriesController = TextEditingController(text: widget.product.series);
+    _priceController = TextEditingController(
+      text: widget.product.price.toString(),
+    );
     super.initState();
   }
 

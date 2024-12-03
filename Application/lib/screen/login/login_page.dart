@@ -170,6 +170,9 @@ class _LoginPageState extends ConsumerState<LoginPage> {
                                       password: _passwordController.text,
                                     );
                                     ref.watch(tokenProvider).clone(token);
+                                    await ref
+                                        .watch(tokenProvider.notifier)
+                                        .loadToken();
                                     _toMainScreen();
                                   } catch (e) {
                                     _showError(e.toString());

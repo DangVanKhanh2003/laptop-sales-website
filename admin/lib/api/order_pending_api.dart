@@ -37,36 +37,19 @@ class OrderPendingApi {
     }
   }
 
-  Future<bool> addOrderPending({
+  Future<bool> changeOrderPending({
     required OrderPending order,
+    required String status,
   }) async {
-    final url = Uri.parse(_url);
-    final response = await http
-        .post(url,
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: jsonEncode(
-              {
-                'customerId': order.customerId!,
-                'listProductOrederPending': [
-                  ...order.listProductOrederPending!.map(
-                    (e) => {
-                      "productId": e.productId!,
-                      "amount": e.amount!,
-                      "colorId": 1,
-                    },
-                  ),
-                ],
-              },
-            ))
-        .timeout(
+    final url = Uri.parse(
+        '$_url/${order.orderPendingId}/Employee/1/Change-status?status=$status&idStore=-1');
+    final response = await http.put(url).timeout(
           const Duration(seconds: 10),
         );
     if (response.statusCode == 200) {
       return true;
     } else {
-      throw Exception('Không thể lấy được danh sách: ${response.body}');
+      throw Exception('Không thể thay được danh sách: ${response.body}');
     }
   }
 }

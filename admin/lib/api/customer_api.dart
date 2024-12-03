@@ -68,10 +68,10 @@ class CustomerApi {
   }
 
   Future<void> deleteCustomer({
-    required int customerId,
+    required String guid,
   }) async {
     final url = Uri.parse(
-      '$_url?customerId=$customerId',
+      '$_url?idAccount=$guid',
     );
     final response = await http.delete(url).timeout(
           const Duration(seconds: 10),
@@ -90,7 +90,7 @@ class CustomerApi {
     required String password,
   }) async {
     final url = Uri.parse(
-      '$_urlInfo?email=$email&password=$password',
+      '$_urlInfo?ChangePassword2email=$email&password=$password',
     );
     final response = await http.put(url).timeout(
           const Duration(seconds: 10),

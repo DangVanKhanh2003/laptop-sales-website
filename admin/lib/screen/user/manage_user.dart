@@ -33,7 +33,10 @@ class _ManageUserState extends State<ManageUser> {
     );
   }
 
-  void _onDelete(int customerId) async {
+  void _onDelete({
+    required int customerId,
+    required String guid,
+  }) async {
     try {
       final state = await showDialog(
         context: context,
@@ -71,7 +74,7 @@ class _ManageUserState extends State<ManageUser> {
       );
       if (state) {
         await GetItHelper.get<CustomerRepository>().deleteCustomer(
-          customerId: customerId,
+          guid: guid,
         );
         _showToast(message: 'Xóa người dùng thành công', isSuccess: true);
         setState(() {});
@@ -185,7 +188,10 @@ class _ManageUserState extends State<ManageUser> {
                 IconButton(
                   icon: const Icon(Icons.delete_outline),
                   color: Colors.red,
-                  onPressed: () => _onDelete(user.customerId!),
+                  onPressed: () => _onDelete(
+                    customerId: user.customerId!,
+                    guid: user.accCustomerId!,
+                  ),
                 ),
               ],
             ),

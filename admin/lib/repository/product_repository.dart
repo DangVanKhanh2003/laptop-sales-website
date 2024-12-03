@@ -16,7 +16,7 @@ class ProductRepository {
     required String series,
     required double price,
     required int categoryId,
-    required String mainImg,
+    required String? mainImg,
   }) async {
     return await _productApi.addProduct(
       productName: productName,

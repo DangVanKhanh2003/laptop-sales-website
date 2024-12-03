@@ -81,7 +81,7 @@ void main() {
       expect(find.text('Image Loaded'), findsOneWidget);
     });
 
-    testWidgets('Kích hoạt hàm callback onTap', (WidgetTester tester) async {
+    testWidgets('Kiểm thử hàm onTap', (WidgetTester tester) async {
       final testProduct = Product(
         productName: 'Test Product',
         price: 19.99,

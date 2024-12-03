@@ -22,11 +22,13 @@ class OrderPendingRepository {
     );
   }
 
-  Future<bool> addOrderPending({
+  Future<bool> changeOrderPending({
     required OrderPending order,
+    required String status,
   }) async {
-    return await _orderPendingApi.addOrderPending(
+    return await _orderPendingApi.changeOrderPending(
       order: order,
+      status: status,
     );
   }
 }

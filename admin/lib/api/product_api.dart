@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:admin/model/product.dart';
+import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 
@@ -38,7 +39,7 @@ class ProductApi {
     required String series,
     required double price,
     required int categoryId,
-    required String mainImg,
+    required String? mainImg,
   }) async {
     final uri = Uri.parse(_url);
     final response = await http
@@ -67,19 +68,27 @@ class ProductApi {
     required Product product,
     required int categoryId,
   }) async {
-    final uri = Uri.parse(_url);
+    final uri = Uri.parse('$_url/$productId');
+    debugPrint(jsonEncode({
+      'productName': product.productName,
+      'brand': product.brand,
+      'series': product.series,
+      'price': product.price,
+      'categoryId': categoryId,
+      'mainImg': product.mainImg,
+    }));
     final response = await http
         .put(uri,
             headers: {
               'Content-Type': 'application/json',
             },
             body: jsonEncode({
-              'productName': product.productName!,
-              'brand': product.brand!,
-              'series': product.series!,
-              'price': product.price!,
+              'productName': product.productName,
+              'brand': product.brand,
+              'series': product.series,
+              'price': product.price,
               'categoryId': categoryId,
-              'mainImg': product.mainImg!,
+              'mainImg': product.mainImg,
             }))
         .timeout(const Duration(seconds: 10));
     if (response.statusCode == 200) {

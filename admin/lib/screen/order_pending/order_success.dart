@@ -1,34 +1,22 @@
-import 'package:admin/model/order.dart';
-import 'package:admin/repository/order_repository.dart';
+import 'package:admin/model/order_pending.dart';
+import 'package:admin/repository/order_pending_repository.dart';
 import 'package:admin/screen/exception/exception_page.dart';
 import 'package:admin/service/getit_helper.dart';
-import 'package:admin/service/toast_helper.dart';
 import 'package:flutter/material.dart';
 
-class OrderPending extends StatefulWidget {
-  const OrderPending({super.key});
+class OrderSuccess extends StatefulWidget {
+  const OrderSuccess({super.key});
 
   @override
-  State<OrderPending> createState() => _OrderPendingState();
+  State<OrderSuccess> createState() => _OrderSuccessState();
 }
 
-class _OrderPendingState extends State<OrderPending> {
-  late List<Order> data;
+class _OrderSuccessState extends State<OrderSuccess> {
+  late List<OrderPending> data;
 
   @override
   void initState() {
     super.initState();
-  }
-
-  void _showToast({
-    required String message,
-    required bool isSuccess,
-  }) {
-    ToastHelper.showToast(
-      context: context,
-      message: message,
-      color: isSuccess ? Colors.green : Colors.red,
-    );
   }
 
   Widget _buildTable() {
@@ -76,75 +64,27 @@ class _OrderPendingState extends State<OrderPending> {
           style: TextStyle(fontWeight: FontWeight.bold),
         ),
       ),
-      DataColumn(
-        label: Text(
-          'Thao tác',
-          style: TextStyle(fontWeight: FontWeight.bold),
-        ),
-      ),
     ];
   }
 
-  List<DataRow> _buildRows(List<Order> orders) {
+  List<DataRow> _buildRows(List<OrderPending> orders) {
     return orders.map((order) {
       return DataRow(
         cells: [
-          DataCell(Text(order.orderId.toString())),
+          DataCell(Text(order.orderPendingId.toString())),
           DataCell(
             Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                ...order.listProductOrder!.map(
-                  (e) => Text(e.product!.productName!),
+                ...order.listProductOrederPending!.map(
+                  (e) => Text(e.productName!),
                 ),
               ],
             ),
           ),
-          DataCell(Text(order.dateExport!)),
+          DataCell(Text(order.odertDate!)),
           DataCell(Text(order.customerName!)),
-          DataCell(
-            DropdownButton<String>(
-              items: const [
-                DropdownMenuItem(
-                  value: 'pending',
-                  child: Text('Đang chờ'),
-                ),
-                DropdownMenuItem(
-                  value: 'cancel',
-                  child: Text('Hủy'),
-                ),
-                DropdownMenuItem(
-                  value: 'approve',
-                  child: Text('Xác nhận'),
-                ),
-              ],
-              value: order.status!.toLowerCase(),
-              onChanged: (String? value) async {
-                if (value == null || value == 'pending') return;
-                try {
-                  if (value == 'cancel') {
-                    await GetItHelper.get<OrderRepository>().cancelOrder(
-                      orderId: order.orderId!,
-                    );
-                  } else {
-                    await GetItHelper.get<OrderRepository>().approveOrder(
-                      orderId: order.orderId!,
-                    );
-                  }
-                  _showToast(
-                    message: 'Sửa trạng thái đơn hàng thành công',
-                    isSuccess: true,
-                  );
-                } catch (e) {
-                  _showToast(
-                    message: 'Thất bại: ${e.toString()}',
-                    isSuccess: false,
-                  );
-                }
-              },
-            ),
-          ),
         ],
       );
     }).toList();
@@ -153,8 +93,8 @@ class _OrderPendingState extends State<OrderPending> {
   @override
   Widget build(BuildContext context) {
     return FutureBuilder(
-      future:
-          GetItHelper.get<OrderRepository>().getAllOrders(status: 'pending'),
+      future: GetItHelper.get<OrderPendingRepository>()
+          .getAllOrderPending(status: 'approve'),
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
           return const Center(

@@ -46,9 +46,11 @@ class CustomerRepository {
     );
   }
 
-  Future<void> deleteCustomer({required int customerId}) async {
+  Future<void> deleteCustomer({
+    required String guid,
+  }) async {
     return await _customerApi.deleteCustomer(
-      customerId: customerId,
+      guid: guid,
     );
   }
 }

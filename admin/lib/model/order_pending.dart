@@ -3,7 +3,7 @@ import 'package:admin/model/sale.dart';
 class OrderPending {
   int? orderPendingId;
   int? customerId;
-  String? employeeId;
+  int? employeeId;
   String? customerName;
   String? employeeName;
   String? odertDate;
@@ -67,18 +67,19 @@ class ListProductOrederPending {
   String? mainImg;
   Sale? sale;
 
-  ListProductOrederPending(
-      {this.productOrderPendingId,
-      this.productId,
-      this.productName,
-      this.amount,
-      this.colorName,
-      this.brand,
-      this.series,
-      this.price,
-      this.categoryName,
-      this.mainImg,
-      this.sale});
+  ListProductOrederPending({
+    this.productOrderPendingId,
+    this.productId,
+    this.productName,
+    this.amount,
+    this.colorName,
+    this.brand,
+    this.series,
+    this.price,
+    this.categoryName,
+    this.mainImg,
+    this.sale,
+  });
 
   ListProductOrederPending.fromJson(Map<String, dynamic> json) {
     productOrderPendingId = json['productOrderPendingId'];

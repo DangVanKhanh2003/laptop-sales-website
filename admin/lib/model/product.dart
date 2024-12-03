@@ -1,4 +1,5 @@
 import './sale.dart';
+import './category.dart';
 
 class Product {
   int? productId;
@@ -6,7 +7,7 @@ class Product {
   String? brand;
   String? series;
   double? price;
-  String? categoryName;
+  Category? category;
   String? mainImg;
   Sale? sale;
 
@@ -16,7 +17,7 @@ class Product {
     this.brand,
     this.series,
     this.price,
-    this.categoryName,
+    this.category,
     this.mainImg,
     this.sale,
   });
@@ -27,7 +28,8 @@ class Product {
     brand = json['brand'];
     series = json['series'];
     price = json['price'];
-    categoryName = json['categoryName'];
+    category =
+        json['category'] != null ? Category.fromJson(json['category']) : null;
     mainImg = json['mainImg'];
     sale = json['sale'] != null ? Sale.fromJson(json['sale']) : null;
   }
@@ -39,7 +41,7 @@ class Product {
     data['brand'] = brand;
     data['series'] = series;
     data['price'] = price;
-    data['categoryName'] = categoryName;
+    data['category'] = category;
     data['mainImg'] = mainImg;
     data['sale'] = sale;
     return data;

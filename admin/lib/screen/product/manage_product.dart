@@ -1,7 +1,9 @@
+import 'package:admin/model/category.dart';
 import 'package:admin/model/product.dart';
 import 'package:admin/repository/product_repository.dart';
 import 'package:admin/screen/exception/exception_page.dart';
 import 'package:admin/screen/product/add_product.dart';
+import 'package:admin/screen/product/edit_product.dart';
 import 'package:admin/service/getit_helper.dart';
 import 'package:admin/service/toast_helper.dart';
 import 'package:flutter/material.dart';
@@ -62,21 +64,56 @@ class _ManageProductState extends State<ManageProduct> {
         await GetItHelper.get<ProductRepository>().deleteProduct(
           productId: productId,
         );
+        _showToast(message: 'Xóa sản phẩm thành công', isSuccess: true);
+        setState(() {});
       }
-      _showToast(message: 'Xóa sản phẩm thành công', isSuccess: true);
-      setState(() {});
     } catch (e) {
       _showToast(message: 'Lỗi xảy ra: ${e.toString()}', isSuccess: false);
     }
   }
 
   void _onEdit(int productId) async {
-    // TODO
+    try {
+      final product = data.firstWhere((e) => e.productId! == productId);
+      final state = await showDialog(
+        context: context,
+        barrierDismissible: false,
+        builder: (context) => AlertDialog(
+          title: const Text('Sửa sản phẩm'),
+          content: EditProduct(product: product),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop(true);
+              },
+              child: const Text('Đồng ý'),
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop(false);
+              },
+              child: const Text('Hủy'),
+            ),
+          ],
+        ),
+      );
+      if (state) {
+        await GetItHelper.get<ProductRepository>().editProduct(
+          productId: productId,
+          product: product,
+          categoryId: product.category!.categoryId!,
+        );
+        _showToast(message: 'Sửa sản phẩm thành công', isSuccess: true);
+        setState(() {});
+      }
+    } catch (e) {
+      _showToast(message: 'Lỗi xảy ra: ${e.toString()}', isSuccess: false);
+    }
   }
 
   void _onAdd() async {
     try {
-      final product = Product();
+      final product = Product(category: Category(categoryId: 1));
       final state = await showDialog(
         context: context,
         barrierDismissible: false,
@@ -100,12 +137,17 @@ class _ManageProductState extends State<ManageProduct> {
         ),
       );
       if (state) {
-        // await GetItHelper.get<ProductRepository>().addProduct(
-        //   productId: productId,
-        // );
+        await GetItHelper.get<ProductRepository>().addProduct(
+          brand: product.brand!,
+          categoryId: product.category!.categoryId!,
+          mainImg: product.mainImg!,
+          price: product.price!,
+          productName: product.productName!,
+          series: product.series!,
+        );
+        _showToast(message: 'Thêm sản phẩm thành công', isSuccess: true);
+        setState(() {});
       }
-      _showToast(message: 'Thêm sản phẩm thành công', isSuccess: true);
-      setState(() {});
     } catch (e) {
       _showToast(message: 'Lỗi xảy ra: ${e.toString()}', isSuccess: false);
     }
@@ -186,7 +228,7 @@ class _ManageProductState extends State<ManageProduct> {
           DataCell(Text(product.brand!)),
           DataCell(Text(product.series!)),
           DataCell(Text('\$${product.price}')),
-          DataCell(Text(product.categoryName!)),
+          DataCell(Text(product.category!.categoryName!)),
           DataCell(
             Row(
               children: [
