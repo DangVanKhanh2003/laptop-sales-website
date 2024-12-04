@@ -83,16 +83,20 @@ class CustomerApi {
     }
   }
 
-  // TODO
-
   Future<CustomerInfo> updateCustomerPassword({
     required String email,
     required String password,
   }) async {
     final url = Uri.parse(
-      '$_urlInfo?ChangePassword2email=$email&password=$password',
+      '$_urlInfo/ChangePassword2?newPassword=$password',
     );
-    final response = await http.put(url).timeout(
+    final response = await http
+        .put(url,
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: jsonEncode(email))
+        .timeout(
           const Duration(seconds: 10),
         );
     if (response.statusCode == 200) {
@@ -110,9 +114,7 @@ class CustomerApi {
           const Duration(seconds: 10),
         );
     if (response.statusCode == 200) {
-      return (jsonDecode(response.body) as List<dynamic>)
-          .map((e) => CustomerAccount.fromJson(e))
-          .toList();
+      return (jsonDecode(response.body) as List<dynamic>).map((e) => CustomerAccount.fromJson(e)).toList();
     } else {
       throw Exception(
         'Lỗi xảy ra, không thể cập nhật được mật khẩu: ${response.body}',

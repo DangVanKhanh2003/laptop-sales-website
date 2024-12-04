@@ -101,7 +101,7 @@ class _OrderPendingState extends State<OrderPending> {
               ],
             ),
           ),
-          DataCell(Text(order.dateExport!)),
+          DataCell(Text(order.dateExport == null ? 'Chưa xuất kho' : order.dateExport.toString())),
           DataCell(Text(order.customerName!)),
           DataCell(
             DropdownButton<String>(
@@ -132,6 +132,7 @@ class _OrderPendingState extends State<OrderPending> {
                       orderId: order.orderId!,
                     );
                   }
+                  setState(() {});
                   _showToast(
                     message: 'Sửa trạng thái đơn hàng thành công',
                     isSuccess: true,
@@ -153,8 +154,7 @@ class _OrderPendingState extends State<OrderPending> {
   @override
   Widget build(BuildContext context) {
     return FutureBuilder(
-      future:
-          GetItHelper.get<OrderRepository>().getAllOrders(status: 'pending'),
+      future: GetItHelper.get<OrderRepository>().getAllOrders(status: 'pending'),
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
           return const Center(

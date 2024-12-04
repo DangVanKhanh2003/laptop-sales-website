@@ -83,9 +83,7 @@ class _ChangePasswordState extends ConsumerState<ChangePassword> {
                         if (value == null || value.isEmpty) {
                           return 'Mật khẩu không được trống';
                         }
-                        if (!RegExp(
-                                r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{6,}$')
-                            .hasMatch(value)) {
+                        if (!RegExp(r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{6,}$').hasMatch(value)) {
                           return 'Mật khẩu không hợp lệ';
                         }
                         return null;
@@ -101,7 +99,7 @@ class _ChangePasswordState extends ConsumerState<ChangePassword> {
                   const SizedBox(width: 20),
                   Expanded(
                     child: TextFormField(
-                      controller: _oldPasswordController,
+                      controller: _newPasswordController,
                       decoration: const InputDecoration(
                         hintText: 'Nhập mật khẩu mới',
                       ),
@@ -110,13 +108,10 @@ class _ChangePasswordState extends ConsumerState<ChangePassword> {
                         if (value == null || value.isEmpty) {
                           return 'Mật khẩu không được trống';
                         }
-                        if (!RegExp(
-                                r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{6,}$')
-                            .hasMatch(value)) {
+                        if (!RegExp(r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{6,}$').hasMatch(value)) {
                           return 'Mật khẩu không hợp lệ';
                         }
-                        if (_newPasswordController.text ==
-                            _oldPasswordController.text) {
+                        if (_newPasswordController.text == _oldPasswordController.text) {
                           return 'Mật khẩu mới không được trùng mật khẩu cũ';
                         }
                         return null;
@@ -143,8 +138,7 @@ class _ChangePasswordState extends ConsumerState<ChangePassword> {
                   });
                   try {
                     if (_formKey.currentState!.validate()) {
-                      await GetItHelper.get<CustomerRepository>()
-                          .updateCustomerPassword(
+                      await GetItHelper.get<CustomerRepository>().updateCustomerPassword(
                         email: ref.read(tokenProvider.notifier).email,
                         oldPassword: _oldPasswordController.text,
                         newPassword: _newPasswordController.text,

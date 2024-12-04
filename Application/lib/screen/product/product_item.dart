@@ -29,7 +29,10 @@ class ProductItem extends StatelessWidget {
               product.mainImg != null
                   ? Image(
                       image: MemoryImage(
-                          ConvertHelper.decodeBase64(data: product.mainImg!)),
+                        ConvertHelper.decodeBase64(data: product.mainImg!),
+                      ),
+                      width: 350,
+                      height: 150,
                     )
                   : CachedNetworkImage(
                       imageUrl: 'http://via.placeholder.com/350x150',

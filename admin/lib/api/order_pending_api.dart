@@ -15,9 +15,7 @@ class OrderPendingApi {
           const Duration(seconds: 10),
         );
     if (response.statusCode == 200) {
-      return (jsonDecode(response.body) as List<dynamic>)
-          .map((e) => OrderPending.fromJson(e))
-          .toList();
+      return (jsonDecode(response.body) as List<dynamic>).map((e) => OrderPending.fromJson(e)).toList();
     } else {
       throw Exception('Không thể lấy được danh sách: ${response.body}');
     }
@@ -41,8 +39,7 @@ class OrderPendingApi {
     required OrderPending order,
     required String status,
   }) async {
-    final url = Uri.parse(
-        '$_url/${order.orderPendingId}/Employee/1/Change-status?status=$status&idStore=-1');
+    final url = Uri.parse('$_url/${order.orderPendingId}/Employee/1/Change-status?status=$status&idStore=1');
     final response = await http.put(url).timeout(
           const Duration(seconds: 10),
         );

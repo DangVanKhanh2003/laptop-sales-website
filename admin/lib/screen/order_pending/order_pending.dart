@@ -123,8 +123,7 @@ class _OrderPendingState extends State<OrderPending> {
               onChanged: (String? value) async {
                 if (value == null || value == 'pending') return;
                 try {
-                  await GetItHelper.get<OrderPendingRepository>()
-                      .changeOrderPending(
+                  await GetItHelper.get<OrderPendingRepository>().changeOrderPending(
                     order: order,
                     status: value,
                   );
@@ -132,6 +131,7 @@ class _OrderPendingState extends State<OrderPending> {
                     message: 'Sửa trạng thái đơn hàng thành công',
                     isSuccess: true,
                   );
+                  setState(() {});
                 } catch (e) {
                   _showToast(
                     message: 'Thất bại: ${e.toString()}',
@@ -149,8 +149,7 @@ class _OrderPendingState extends State<OrderPending> {
   @override
   Widget build(BuildContext context) {
     return FutureBuilder(
-      future: GetItHelper.get<OrderPendingRepository>()
-          .getAllOrderPending(status: 'pending'),
+      future: GetItHelper.get<OrderPendingRepository>().getAllOrderPending(status: 'pending'),
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
           return const Center(

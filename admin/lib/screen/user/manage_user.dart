@@ -274,8 +274,7 @@ class _ManageUserState extends State<ManageUser> {
                         ),
                         onPressed: _onAdd,
                         child: const Padding(
-                          padding: EdgeInsets.symmetric(
-                              horizontal: 24.0, vertical: 12.0),
+                          padding: EdgeInsets.symmetric(horizontal: 24.0, vertical: 12.0),
                           child: Text(
                             'Thêm',
                             style: TextStyle(color: Colors.black),
