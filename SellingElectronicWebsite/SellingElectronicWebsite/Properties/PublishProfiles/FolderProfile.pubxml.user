@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121.
+-->
+<Project>
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>E:\Công Việc\BTL_DoAnChuyenNganh\New folder</_PublishTargetUrl>
+    <History>True|2024-11-30T11:11:47.8721131Z||;True|2024-11-30T18:09:16.4512529+07:00||;True|2024-11-30T18:04:44.6872600+07:00||;True|2024-11-27T20:44:23.6356439+07:00||;True|2024-11-19T10:17:04.9255721+07:00||;True|2024-11-19T10:14:17.5390474+07:00||;True|2024-11-18T12:04:20.7667113+07:00||;True|2024-11-17T20:13:10.5556340+07:00||;True|2024-11-16T14:25:46.0190777+07:00||;True|2024-11-16T10:46:25.8686178+07:00||;True|2024-11-16T10:26:57.5040361+07:00||;True|2024-11-11T14:46:33.9031655+07:00||;True|2024-11-11T14:44:06.5231812+07:00||;True|2024-11-11T14:41:07.4337862+07:00||;True|2024-11-10T20:29:53.3233935+07:00||;True|2024-11-10T20:23:23.9301961+07:00||;True|2024-11-10T18:48:44.2875754+07:00||;True|2024-11-10T18:45:47.4639263+07:00||;False|2024-11-10T18:44:42.4560727+07:00||;False|2024-11-10T18:44:32.4172834+07:00||;True|2024-11-10T16:10:28.6754855+07:00||;True|2024-11-10T16:06:24.8043608+07:00||;True|2024-11-08T17:03:15.3480621+07:00||;True|2024-11-08T15:20:56.5423224+07:00||;True|2024-11-08T15:12:06.9662247+07:00||;True|2024-11-04T20:21:32.4776907+07:00||;True|2024-11-04T20:19:05.4076544+07:00||;True|2024-11-04T20:16:24.7866535+07:00||;True|2024-11-04T19:57:06.2073480+07:00||;True|2024-11-04T19:54:56.4892900+07:00||;True|2024-11-04T19:50:49.0633066+07:00||;True|2024-11-04T19:45:48.9852757+07:00||;True|2024-10-31T09:40:37.5333186+07:00||;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="DefaultConnection">
+      <Value>Data Source=DANGVANKHANH\SQLEXPRESS%3bInitial Catalog=SellingElectronics%3bPersist Security Info=True%3bUser Id=1%3bPassword=1%3bIntegrated Security=false%3bTrust Server Certificate=True</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+</Project>

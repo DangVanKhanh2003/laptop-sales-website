@@ -1,0 +1,322 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SellingElectronicWebsite</name>
+    </assembly>
+    <members>
+        <member name="M:SellingElectronicWebsite.Controllers.Customer.CustomerAccountController.CheckLogin(System.String,System.String)">
+            <summary>
+            if login success => token(access vs refresh). i am coding( not complete yet)
+            </summary>
+        </member>
+        <member name="M:SellingElectronicWebsite.Controllers.Customer.CustomerAccountController.Register(System.String,System.String)">
+            <summary>
+            Create new user with new account
+            </summary>
+        </member>
+        <member name="M:SellingElectronicWebsite.Controllers.Customer.CustomerAccountController.DeleteAccountByIdCustomer(System.Int32)">
+            <summary>
+            not code yet
+            </summary>
+        </member>
+        <member name="M:SellingElectronicWebsite.Controllers.Customer.CustomerInforController.GetAll(System.String)">
+            <summary>
+            get all customer infor
+            </summary>
+            <param name="sortBy">defaul is null. you can fill:name_asc(sort ascending by name)/  name_desc(sort descending by name)</param>
+        </member>
+        <member name="M:SellingElectronicWebsite.Controllers.Customer.CustomerInforController.getByPage(System.Int32,System.Int32,System.String)">
+            <summary>
+            get all customer infor by page
+            </summary>
+            <param name="sortBy">defaul is null. you can fill:name_asc(sort ascending by name)/  name_desc(sort descending by name)</param>
+            <returns></returns>
+        </member>
+        <member name="M:SellingElectronicWebsite.Controllers.Customer.CustomerInforController.addNewCustomer(SellingElectronicWebsite.Model.CustomerModel)">
+            <summary>
+            add success => infor new customer
+            </summary>
+        </member>
+        <member name="M:SellingElectronicWebsite.Controllers.Customer.CustomerInforController.deleteCustomerById(System.Int32)">
+            <summary>
+            not complete
+            </summary>
+        </member>
+        <member name="M:SellingElectronicWebsite.Controllers.Customer.OrderPendingController.GetAll(System.String,System.String)">
+            <summary>
+            get all order pending by status and sort by time
+            </summary>
+            <param name="status">cancel/pending/approve</param>
+            <param name="sortBy">timeAsc/timeDesc/null</param>
+        </member>
+        <member name="M:SellingElectronicWebsite.Controllers.Customer.OrderPendingController.GetByPage(System.String,System.Int32,System.Int32,System.String)">
+            <param name="status">cancel/pending/approve</param>
+            <param name="sortBy">timeAsc/timeDesc/null</param>
+        </member>
+        <member name="M:SellingElectronicWebsite.Controllers.Customer.ShoppingCartController.Add(SellingElectronicWebsite.Model.ShoppingCartModel)">
+            <summary>
+            if exist element(in shopping cart) same idCustomer, idProduct, idColor with this item => addition amount to amount ofelement in this shopping cart.
+            </summary>
+        </member>
+        <member name="M:SellingElectronicWebsite.Controllers.Customer.ShoppingCartController.Update(System.Int32,System.Int32)">
+            <summary>
+            update amount for item in shoppingCart by idShoppingCart
+            </summary>
+        </member>
+        <member name="M:SellingElectronicWebsite.Controllers.Employee.ColorController.GetAll">
+            <summary>
+            List all colors. Color used for chossing color of color image
+            </summary>
+        </member>
+        <member name="M:SellingElectronicWebsite.Controllers.Employee.ColorController.GetById(System.Int32)">
+            <summary>
+            Get colors by id.
+            </summary>
+        </member>
+        <member name="M:SellingElectronicWebsite.Controllers.Employee.ColorController.Add(SellingElectronicWebsite.Model.ColorModel)">
+            <summary>
+            Add new color. 
+            </summary>
+        </member>
+        <member name="M:SellingElectronicWebsite.Controllers.Employee.ColorController.Update(SellingElectronicWebsite.Model.ColorModel,System.Int32)">
+            <summary>
+            Update color
+            </summary>
+            
+            <remarks>
+            server find color by id(input) and update the color.
+            </remarks>
+        </member>
+        <member name="M:SellingElectronicWebsite.Controllers.Employee.ColorController.Delete(System.Int32)">
+            <summary>
+            Delete color.
+            </summary>
+            
+            <remarks>
+            Server find color and delete.
+            </remarks>
+        </member>
+        <member name="M:SellingElectronicWebsite.Controllers.Employee.SalesController.GetByIdProduct(System.Int32)">
+            <summary>
+            Get all sale by id product
+            </summary>
+        </member>
+        <member name="M:SellingElectronicWebsite.Controllers.Employee.SalesController.Add(SellingElectronicWebsite.Model.SalesModel)">
+            <summary>
+            
+            </summary>
+            <param name="model">"numProduct = null" is not limited number products sale</param>
+            <returns></returns>
+        </member>
+        <member name="M:SellingElectronicWebsite.Controllers.Employee.SalesController.Update(SellingElectronicWebsite.Model.SalesModel,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="model">"numProduct = null" is not limited number products sale</param>
+            <returns></returns>
+        </member>
+        <member name="M:SellingElectronicWebsite.Controllers.Employee.SalesController.DeleteByIdProduct(System.Int32)">
+            <summary>
+            Delete all sales of product by idProduct
+            </summary>
+        </member>
+        <member name="M:SellingElectronicWebsite.Controllers.Employee.StoreController.GetAllStore">
+            <summary>
+            List all Stores.
+            </summary>
+        </member>
+        <member name="M:SellingElectronicWebsite.Controllers.Employee.StoreController.GetStoreById(System.Int32)">
+            <summary>
+            Get stores by id.
+            </summary>
+        </member>
+        <member name="M:SellingElectronicWebsite.Controllers.Employee.StoreController.AddStore(SellingElectronicWebsite.Model.StoreModel)">
+            <summary>
+            Add new store. 
+            </summary>
+        </member>
+        <member name="M:SellingElectronicWebsite.Controllers.Employee.StoreController.Update(SellingElectronicWebsite.Model.StoreModel,System.Int32)">
+            <summary>
+            Update store
+            </summary>
+            
+            <remarks>
+            server find store by id(input) and update the store.
+            </remarks>
+        </member>
+        <member name="M:SellingElectronicWebsite.Controllers.Employee.StoreController.Delete(System.Int32)">
+            <summary>
+            Delete store.
+            </summary>
+            
+            <remarks>
+            Server find store and delete.
+            </remarks>
+        </member>
+        <member name="M:SellingElectronicWebsite.Controllers.ProductController.GetAll(System.String)">
+            <summary>
+            List all products.
+            </summary>
+            
+            <remarks>
+             In default, value of sortBy is null.If you want to sort, you can enter value for "sortBy" parameter.
+            </remarks>
+            
+            <param name="sortBy">sortBy: price_desc/price_asc/name_desc/null(default)</param>
+        </member>
+        <member name="M:SellingElectronicWebsite.Controllers.ProductController.getAllProductByCategory(System.Int32,System.String)">
+            <summary>
+            List all products by id category.
+            </summary>
+            <remarks>
+             In default, value of sortBy is null.If you want to sort, you can enter value for "sortBy" parameter.
+            </remarks>
+            
+            <param name="sortBy">sortBy: price_desc/price_asc/name_desc/null(default)</param>
+        </member>
+        <member name="M:SellingElectronicWebsite.Controllers.ProductController.GetById(System.Int32)">
+            <summary>
+            Get products by id.
+            </summary>
+        </member>
+        <member name="M:SellingElectronicWebsite.Controllers.ProductController.CountProducts">
+            <summary>
+            Count products.
+            </summary>
+            
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:SellingElectronicWebsite.Controllers.ProductController.GetByPage(System.Int32,System.Int32,System.String)" -->
+        <member name="M:SellingElectronicWebsite.Controllers.ProductController.GetAllcolor(System.Int32)">
+            <summary>
+            get all colors of product.
+            </summary>
+        </member>
+        <member name="M:SellingElectronicWebsite.Controllers.ProductController.Add(SellingElectronicWebsite.Model.ProductModel)">
+            <summary>
+            Add new product. 
+            </summary>
+            <remarks>mainImg used for show image product in the card product of list product(mainImg is link img)</remarks>
+        </member>
+        <member name="M:SellingElectronicWebsite.Controllers.ProductController.AddImgsForProduct(System.Collections.Generic.List{SellingElectronicWebsite.Model.ImageProductsModel})">
+            <summary>
+            add a list images of product.
+            </summary>
+             <param name="models"> Enter a list images</param>
+        </member>
+        <member name="M:SellingElectronicWebsite.Controllers.ProductController.AddSpesForProduct(System.Collections.Generic.List{SellingElectronicWebsite.Model.ProductSpecifiactionModel})">
+            <summary>
+            add a list specifications of product.
+            </summary>
+             <param name="models"> Enter a list images</param>
+        </member>
+        <member name="M:SellingElectronicWebsite.Controllers.ProductController.UpdateImgs(System.Collections.Generic.List{SellingElectronicWebsite.Model.ImageProductsModel},System.Int32)">
+            <summary>
+            Delete all images of product, and then add new list images of product.
+            </summary>
+        </member>
+        <member name="M:SellingElectronicWebsite.Controllers.ProductController.UpdateSpes(System.Collections.Generic.List{SellingElectronicWebsite.Model.ProductSpecifiactionModel},System.Int32)">
+            <summary>
+            Delete all specifications of product, and then add new list specifications of product.
+            </summary>
+            
+        </member>
+        <member name="M:SellingElectronicWebsite.Controllers.ProductController.Update(SellingElectronicWebsite.Model.ProductModel,System.Int32)">
+            <summary>
+            Update product
+            </summary>
+            
+            <remarks>
+            server find prouduct by id(input) and update the product. mainImg used for show image product in the card product of list product(mainImg is link img)
+            </remarks>
+        </member>
+        <member name="M:SellingElectronicWebsite.Controllers.ProductController.Delete(System.Int32)">
+            <summary>
+            Delete product.
+            </summary>
+            
+            <remarks>
+            Server find product and delete.
+            </remarks>
+        </member>
+        <member name="M:SellingElectronicWebsite.Controllers.ProductController.DeleteAllImgByIdProduct(System.Int32)">
+            <summary>
+            Delete all images of product.
+            </summary>
+        </member>
+        <member name="M:SellingElectronicWebsite.Controllers.ProductController.DeleteAllSpebyIdProduct(System.Int32)">
+            <summary>
+            Delete all specifications of product.
+            </summary>
+        </member>
+        <member name="M:SellingElectronicWebsite.Repository.CustomerAccountRepository.CheckLogin(System.String,System.String)">
+            <summary>
+            if exist account return true else return false
+            </summary>
+        </member>
+        <member name="M:SellingElectronicWebsite.Repository.CustomerAccountRepository.DeleteAccountByIdCustomer(System.Int32)">
+            <summary>
+            not code yet
+            </summary>
+        </member>
+        <member name="M:SellingElectronicWebsite.Repository.CustomerAccountRepository.Register(SellingElectronicWebsite.Model.CustomerAccountModel)">
+            <summary>
+            Need check email end user befor register.
+            else return true.
+            </summary>
+        </member>
+        <member name="M:SellingElectronicWebsite.Repository.CustomerAccountRepository.ChangePassword(System.String,System.String,System.String)">
+            <summary>
+            if email and password is valid. The new password will be hash and update => return true.
+            if email and password isn't invalid => return false
+            </summary>
+        </member>
+        <member name="M:SellingElectronicWebsite.Repository.CustomerRepository.GetAll(System.String)">
+            <summary>
+            get all customer infor
+            </summary>
+            <param name="sortBy">defaul is null. you can fill:name_asc(sort ascending by name)/  name_desc(sort descending by name)</param>
+        </member>
+        <member name="M:SellingElectronicWebsite.Repository.CustomerRepository.GetByPage(System.Int32,System.Int32,System.String)">
+            <summary>
+            get all customer infor by page
+            </summary>
+            <param name="sortBy">defaul is null. you can fill:name_asc(sort ascending by name)/  name_desc(sort descending by name)</param>
+        </member>
+        <member name="M:SellingElectronicWebsite.Repository.OrderPendingRepository.Add(SellingElectronicWebsite.Model.OrderPendingModel)">
+            <summary>
+            after add, The system will automatically set pending for status and auto set time for order. 
+            </summary>
+        </member>
+        <member name="M:SellingElectronicWebsite.Repository.OrderPendingRepository.Cancel(System.Int32)">
+            <summary>
+            actor: user => user can cancel order 
+            </summary>
+        </member>
+        <member name="M:SellingElectronicWebsite.Repository.OrderPendingRepository.GetAll(System.String,System.String)">
+            <summary>
+            get all order pending by status and sort by time
+            </summary>
+            <param name="status">cancel/pending/approve</param>
+            <param name="sortBy">timeAsc/timeDesc/null</param>
+        </member>
+        <member name="M:SellingElectronicWebsite.Repository.OrderPendingRepository.GetByPage(System.String,System.Int32,System.Int32,System.String)">
+            <param name="status">cancel/pending/approve</param>
+            <param name="sortBy">timeAsc/timeDesc/null</param>
+        </member>
+        <member name="M:SellingElectronicWebsite.Repository.OrderPendingRepository.UpdateStatus(System.String,System.Int32,System.Int32)">
+            <summary>
+            actor: employee=> employee can change status: cancel, approve. Employee cannot change status if status isn't pending.
+            </summary>
+        </member>
+        <member name="M:SellingElectronicWebsite.Repository.ShoppingCartRepository.Add(SellingElectronicWebsite.Model.ShoppingCartModel)">
+            <summary>
+            if exist element(in shopping cart) same idCustomer, idProduct, idColor with this item => addition amount to amount ofelement in this shopping cart.
+            </summary>
+        </member>
+        <member name="M:SellingElectronicWebsite.Repository.ShoppingCartRepository.UpdateAmount(System.Int32,System.Int32)">
+            <summary>
+            update amount for item in shoppingCart by idShoppingCart
+            </summary>
+        </member>
+    </members>
+</doc>
