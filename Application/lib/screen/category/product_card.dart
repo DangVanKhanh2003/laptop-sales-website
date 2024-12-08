@@ -8,6 +8,7 @@ import 'package:shopping_app/provider/token_provider.dart';
 import 'package:shopping_app/repository/cart_repository.dart';
 import 'package:shopping_app/screen/cart/cart_page.dart';
 import 'package:shopping_app/screen/product_detail/product_detail.dart';
+import 'package:shopping_app/service/convert_helper.dart';
 import 'package:shopping_app/service/getit_helper.dart';
 
 class ProductCard extends ConsumerStatefulWidget {
@@ -52,8 +53,7 @@ class _ProductCardState extends ConsumerState<ProductCard> {
       context: context,
       builder: (context) => AlertDialog(
         title: const Text('Thêm sản phẩm thành công'),
-        content: Text(
-            'Đã thêm thành công sản phẩm ${widget.product.productName} vào giỏ hàng!'),
+        content: Text('Đã thêm thành công sản phẩm ${widget.product.productName} vào giỏ hàng!'),
         actions: [
           TextButton(
             onPressed: () {
@@ -99,13 +99,21 @@ class _ProductCardState extends ConsumerState<ProductCard> {
             contentPadding: const EdgeInsets.all(8.0),
             leading: ClipRRect(
               borderRadius: BorderRadius.circular(8),
-              child: CachedNetworkImage(
-                imageUrl: widget.product.mainImg ??
-                    'http://via.placeholder.com/350x150',
-                placeholder: (context, url) =>
-                    const CircularProgressIndicator(),
-                errorWidget: (context, url, error) => const Icon(Icons.error),
-              ),
+              child: widget.product.mainImg != null
+                  ? Image(
+                      image: MemoryImage(
+                        ConvertHelper.decodeBase64(data: widget.product.mainImg!),
+                      ),
+                      height: 150,
+                      width: 100,
+                    )
+                  : CachedNetworkImage(
+                      imageUrl: 'http://via.placeholder.com/350x150',
+                      width: 100,
+                      height: 150,
+                      placeholder: (context, url) => const CircularProgressIndicator(),
+                      errorWidget: (context, url, error) => const Icon(Icons.error),
+                    ),
             ),
             title: Text(
               widget.product.productName!,
@@ -124,9 +132,7 @@ class _ProductCardState extends ConsumerState<ProductCard> {
             trailing: Tooltip(
               message: 'Thêm vào giỏ hàng',
               child: IconButton(
-                icon: _isLoading
-                    ? const CircularProgressIndicator.adaptive()
-                    : const Icon(Symbols.shopping_cart),
+                icon: _isLoading ? const CircularProgressIndicator.adaptive() : const Icon(Symbols.shopping_cart),
                 onPressed: () async {
                   setState(() {
                     _isLoading = true;

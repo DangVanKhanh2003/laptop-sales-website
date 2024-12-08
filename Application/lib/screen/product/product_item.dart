@@ -32,13 +32,13 @@ class ProductItem extends StatelessWidget {
                         ConvertHelper.decodeBase64(data: product.mainImg!),
                       ),
                       width: 350,
-                      height: 150,
+                      height: 100,
                     )
                   : CachedNetworkImage(
-                      imageUrl: 'http://via.placeholder.com/350x150',
+                      imageUrl: 'http://via.placeholder.com/350x100',
                       fit: BoxFit.cover,
                     ),
-              const SizedBox(height: 25.0),
+              const SizedBox(height: 15.0),
               Text(
                 product.productName!,
                 overflow: TextOverflow.ellipsis,
