@@ -1,34 +1,47 @@
-import 'dart:io';
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shopping_app/model/theme.dart';
 import 'package:shopping_app/provider/setting_provider.dart';
-import 'package:shopping_app/view/login/login_page.dart';
-import 'package:shopping_app/view/root/root_screen.dart';
+import 'package:shopping_app/provider/token_provider.dart';
+import 'package:shopping_app/screen/exception/exception_page.dart';
+import 'package:shopping_app/screen/login/login_page.dart';
+import 'package:dynamic_color/dynamic_color.dart';
+import 'package:shopping_app/screen/root/root_screen.dart';
 
-class Application extends StatelessWidget {
+final tokenFutureProvider = FutureProvider<bool>((ref) async {
+  await ref.read(tokenProvider.notifier).loadToken();
+  return ref.read(tokenProvider).hasData();
+});
+
+class Application extends ConsumerWidget {
   const Application({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    if (Platform.isIOS || Platform.isMacOS) {
-      return const CupertinoApp(
+  Widget build(BuildContext context, WidgetRef ref) {
+    return DynamicColorBuilder(
+      builder: (lightDynamic, darkDynamic) => MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Shopping App',
-        theme: CupertinoDesign.lightTheme,
-        home: LoginPage(),
-      );
-    } else {
-      return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: 'Shopping App',
-        theme: MaterialDesign.lightTheme,
-        darkTheme: MaterialDesign.darkTheme,
-        themeMode: Provider.of<SettingProvider>(context).themeData,
-        home: const RootScreen(),
-      );
-    }
+        theme: MaterialDesign.lightTheme.copyWith(
+          colorScheme: lightDynamic,
+        ),
+        darkTheme: MaterialDesign.darkTheme.copyWith(
+          colorScheme: darkDynamic,
+        ),
+        themeMode: ref.watch(settingProvider).themeData,
+        home: ref.watch(tokenFutureProvider).when(
+              data: (hasToken) {
+                return hasToken ? const RootScreen() : const LoginPage();
+              },
+              loading: () =>
+                  const Center(child: CircularProgressIndicator.adaptive()),
+              error: (error, stackTrace) {
+                return Center(
+                  child: ExceptionPage(message: error.toString()),
+                );
+              },
+            ),
+      ),
+    );
   }
 }

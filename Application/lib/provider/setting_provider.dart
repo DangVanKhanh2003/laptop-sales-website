@@ -1,14 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-class SettingProvider with ChangeNotifier {
-  String _theme = 'system';
+final settingProvider = StateNotifierProvider<SettingProvider, SettingState>(
+  (ref) => SettingProvider(),
+);
 
-  bool _sendNotification = false;
+class SettingState {
+  final String theme;
+  final bool sendNotification;
+  final bool allowLocation;
 
-  String get theme => _theme;
-
-  bool get sendNotification => _sendNotification;
+  SettingState({
+    this.theme = 'system',
+    this.sendNotification = false,
+    this.allowLocation = false,
+  });
 
   ThemeMode get themeData {
     final Map<String, ThemeMode> exchanger = {
@@ -16,49 +23,51 @@ class SettingProvider with ChangeNotifier {
       'dark': ThemeMode.dark,
       'light': ThemeMode.light,
     };
-    return exchanger[_theme] ?? ThemeMode.system;
+    return exchanger[theme] ?? ThemeMode.system;
   }
 
-  SettingProvider() {
-    //_loadTheme();
-    //_loadOnNotification();
+  SettingState copyWith({
+    String? theme,
+    bool? sendNotification,
+    bool? allowLocation,
+  }) {
+    return SettingState(
+      theme: theme ?? this.theme,
+      sendNotification: sendNotification ?? this.sendNotification,
+      allowLocation: allowLocation ?? this.allowLocation,
+    );
+  }
+}
+
+class SettingProvider extends StateNotifier<SettingState> {
+  SettingProvider() : super(SettingState()) {
+    _loadSetting();
   }
 
-  void setTheme(String value) async {
-    _theme = value;
-    await _saveTheme();
-    notifyListeners();
-  }
-
-  void setNotification(bool value) async {
-    _sendNotification = value;
-    await _saveOnNotification();
-    notifyListeners();
-  }
-
-  Future<void> _saveTheme() async {
+  Future<void> _loadSetting() async {
     final prefs = await SharedPreferences.getInstance();
-    await prefs.setString('theme', _theme);
-    return;
+    state = state.copyWith(
+      theme: prefs.getString('theme'),
+      sendNotification: prefs.getBool('sendNotification'),
+      allowLocation: prefs.getBool('allowLocation'),
+    );
   }
 
-  Future<void> _loadTheme() async {
+  Future<void> setTheme(String theme) async {
     final prefs = await SharedPreferences.getInstance();
-    _theme = prefs.getString('theme') ?? 'system';
-    notifyListeners();
-    return;
+    await prefs.setString('theme', theme);
+    state = state.copyWith(theme: theme);
   }
 
-  Future<void> _saveOnNotification() async {
+  Future<void> setSendNotification(bool sendNotification) async {
     final prefs = await SharedPreferences.getInstance();
-    await prefs.setBool('sendNotification', _sendNotification);
-    return;
+    await prefs.setBool('sendNotification', sendNotification);
+    state = state.copyWith(sendNotification: sendNotification);
   }
 
-  Future<void> _loadOnNotification() async {
+  Future<void> setAllowLocation(bool allowLocation) async {
     final prefs = await SharedPreferences.getInstance();
-    _sendNotification = prefs.getBool('sendNotification') ?? false;
-    notifyListeners();
-    return;
+    await prefs.setBool('allowLocation', allowLocation);
+    state = state.copyWith(allowLocation: allowLocation);
   }
 }

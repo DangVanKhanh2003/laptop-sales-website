@@ -1,0 +1,28 @@
+name: admin
+description: 'A new Flutter project.'
+publish_to: 'none'
+version: 1.0.0+1
+environment:
+    sdk: ^3.5.4
+dependencies:
+    flutter:
+        sdk: flutter
+    cupertino_icons: ^1.0.8
+    flutter_dotenv: ^5.2.1
+    http: ^1.2.2
+    shared_preferences: ^2.3.3
+    get_it: ^8.0.2
+    delightful_toast: ^1.1.0
+    image_picker: ^1.1.2
+    image_picker_for_web: ^3.0.6
+
+dev_dependencies:
+    flutter_test:
+        sdk: flutter
+    flutter_lints: ^4.0.0
+flutter:
+    uses-material-design: true
+    assets:
+        - assets/
+        - assets/images/
+        - .env

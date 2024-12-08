@@ -3,7 +3,10 @@
 #
 
 list(APPEND FLUTTER_PLUGIN_LIST
-  screen_retriever
+  dynamic_color
+  file_selector_windows
+  local_notifier
+  screen_retriever_windows
   window_manager
 )
 

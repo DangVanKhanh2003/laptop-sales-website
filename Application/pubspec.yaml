@@ -1,24 +1,44 @@
 name: shopping_app
-description: "An e-commercial project"
-publish_to: "none"
+description: 'An e-commercial project'
+publish_to: 'none'
 version: 1.0.0+1
 environment:
-    sdk: ^3.5.3
+    sdk: ^3.5.4
 dependencies:
     flutter:
         sdk: flutter
     cupertino_icons: ^1.0.8
-    provider: ^6.1.2
     shared_preferences: ^2.3.2
     material_symbols_icons: ^4.2785.1
-    window_manager: ^0.4.2
+    window_manager: ^0.4.3
+    flutter_riverpod: ^2.6.1
+    http: ^1.2.2
+    get_it: ^8.0.2
+    cached_network_image: ^3.4.1
+    page_transition: ^2.1.0
+    dynamic_color: ^1.7.0
+    jwt_decode: ^0.3.1
+    google_generative_ai: ^0.4.6
+    flutter_dotenv: ^5.2.1
+    shimmer: ^3.0.0
+    flutter_local_notifications: ^18.0.0
+    local_notifier: ^0.1.6
+    file_selector: ^1.0.3
+    path: ^1.9.0
+    path_provider: ^2.1.5
+    speech_to_text: ^7.0.0
 
 dev_dependencies:
     flutter_test:
         sdk: flutter
-    flutter_lints: ^4.0.0
+    flutter_lints: ^5.0.0
 flutter:
     uses-material-design: true
+    generate: true
+    assets:
+        - assets/
+        - assets/images/
+        - .env
     fonts:
         - family: GoogleSans
           fonts:
