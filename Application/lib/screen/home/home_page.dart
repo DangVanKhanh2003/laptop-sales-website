@@ -48,31 +48,36 @@ class _HomePageState extends ConsumerState<HomePage> {
           return const HomeLoading();
         } else if (snapshot.hasData) {
           return Padding(
-            padding:
-                const EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                search_bar.SearchBar(controller: _controller),
-                const SizedBox(height: 20.0),
-                Text(
-                  'Danh mục',
-                  style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                        fontWeight: FontWeight.bold,
-                      ),
-                ),
-                const SizedBox(height: 12.0),
-                CategoryGrid(categoryList: snapshot.data!.categoryList!),
-                const SizedBox(height: 20.0),
-                Text(
-                  'Sản phẩm',
-                  style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                        fontWeight: FontWeight.bold,
-                      ),
-                ),
-                const SizedBox(height: 12.0),
-                Expanded(child: ProductView(controller: _scrollController)),
-              ],
+            padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.0),
+            child: SingleChildScrollView(
+              scrollDirection: Axis.vertical,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  search_bar.SearchBar(controller: _controller),
+                  const SizedBox(height: 20.0),
+                  Text(
+                    'Danh mục',
+                    style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                          fontWeight: FontWeight.bold,
+                        ),
+                  ),
+                  const SizedBox(height: 12.0),
+                  CategoryGrid(categoryList: snapshot.data!.categoryList!),
+                  const SizedBox(height: 20.0),
+                  Text(
+                    'Sản phẩm',
+                    style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                          fontWeight: FontWeight.bold,
+                        ),
+                  ),
+                  const SizedBox(height: 12.0),
+                  SizedBox(
+                    height: 400,
+                    child: ProductView(controller: _scrollController),
+                  ),
+                ],
+              ),
             ),
           );
         } else if (snapshot.hasError) {
