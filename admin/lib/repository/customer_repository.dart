@@ -26,7 +26,7 @@ class CustomerRepository {
     );
   }
 
-  Future<CustomerInfo> updateCustomerPassword({
+  Future<void> updateCustomerPassword({
     required String email,
     required String password,
   }) async {

@@ -201,7 +201,6 @@ class _PaymentPageState extends ConsumerState<PaymentPage> {
           'Xác nhận',
           style: TextStyle(
             fontWeight: FontWeight.bold,
-            color: Color(0xFF013237),
           ),
         ),
       ),
@@ -297,7 +296,6 @@ class _PaymentAppbar extends StatelessWidget {
               'Quay lại',
               style: TextStyle(
                 fontWeight: FontWeight.bold,
-                color: Color(0xFF013237),
               ),
             ),
           ),
@@ -325,7 +323,6 @@ class _PaymentAppbar extends StatelessWidget {
               'Thanh toán',
               style: TextStyle(
                 fontWeight: FontWeight.bold,
-                color: Color(0xFF013237),
               ),
             ),
           ),

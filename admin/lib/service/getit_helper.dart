@@ -1,3 +1,5 @@
+import 'package:admin/api/stats_api.dart';
+import 'package:admin/repository/stats_repository.dart';
 import 'package:get_it/get_it.dart';
 import 'package:admin/api/category_api.dart';
 import 'package:admin/api/comment_api.dart';
@@ -19,24 +21,35 @@ class GetItHelper {
     return _getIt.get<T>();
   }
 
+  static void registerIfNot<T extends Object>(
+    T Function() signFunc,
+  ) {
+    if (!_getIt.isRegistered<T>()) {
+      _getIt.registerSingleton(signFunc());
+    }
+  }
+
   static void registerSingleton() {
-    _getIt.registerLazySingleton<CategoryRepository>(
+    registerIfNot<CategoryRepository>(
       () => CategoryRepository(CategoryApi()),
     );
-    _getIt.registerLazySingleton<ProductRepository>(
+    registerIfNot<ProductRepository>(
       () => ProductRepository(ProductApi()),
     );
-    _getIt.registerLazySingleton<CustomerRepository>(
+    registerIfNot<CustomerRepository>(
       () => CustomerRepository(CustomerApi()),
     );
-    _getIt.registerLazySingleton<OrderPendingRepository>(
+    registerIfNot<OrderPendingRepository>(
       () => OrderPendingRepository(OrderPendingApi()),
     );
-    _getIt.registerLazySingleton<OrderRepository>(
+    registerIfNot<OrderRepository>(
       () => OrderRepository(OrderApi()),
     );
-    _getIt.registerLazySingleton<CommentRepository>(
+    registerIfNot<CommentRepository>(
       () => CommentRepository(CommentApi()),
+    );
+    registerIfNot<StatsRepository>(
+      () => StatsRepository(StatsApi()),
     );
   }
 }
