@@ -113,7 +113,7 @@ class _ManageProductState extends State<ManageProduct> {
 
   void _onAdd() async {
     try {
-      final product = Product(category: Category(categoryId: 1));
+      final product = Product(category: Category(categoryId: 1), price: 0.0);
       final state = await showDialog(
         context: context,
         barrierDismissible: false,
@@ -279,8 +279,7 @@ class _ManageProductState extends State<ManageProduct> {
                         ),
                         onPressed: _onAdd,
                         child: const Padding(
-                          padding: EdgeInsets.symmetric(
-                              horizontal: 24.0, vertical: 12.0),
+                          padding: EdgeInsets.symmetric(horizontal: 24.0, vertical: 12.0),
                           child: Text(
                             'Thêm',
                             style: TextStyle(color: Colors.black),

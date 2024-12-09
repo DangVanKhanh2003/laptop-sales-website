@@ -83,24 +83,27 @@ class CustomerApi {
     }
   }
 
-  Future<CustomerInfo> updateCustomerPassword({
+  Future<void> updateCustomerPassword({
     required String email,
     required String password,
   }) async {
     final url = Uri.parse(
-      '$_urlInfo/ChangePassword2?newPassword=$password',
+      '$_url/ChangePassword2',
     );
     final response = await http
         .put(url,
             headers: {
               'Content-Type': 'application/json',
             },
-            body: jsonEncode(email))
+            body: jsonEncode({
+              'email': email,
+              'newPassword': password,
+            }))
         .timeout(
           const Duration(seconds: 10),
         );
     if (response.statusCode == 200) {
-      return CustomerInfo.fromJson(jsonDecode(response.body));
+      return;
     } else {
       throw Exception(
         'Lỗi xảy ra, không thể cập nhật được mật khẩu: ${response.body}',

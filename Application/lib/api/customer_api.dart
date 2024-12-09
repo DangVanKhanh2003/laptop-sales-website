@@ -71,8 +71,7 @@ class CustomerApi {
       return CustomerInfo.fromJson(jsonDecode(response.body));
     } else {
       // Ngoại lệ xảy ra
-      throw Exception(
-          'Lỗi xảy ra, không thể lấy được thông tin người dùng: ${response.body}');
+      throw Exception('Lỗi xảy ra, không thể lấy được thông tin người dùng: ${response.body}');
     }
   }
 
@@ -115,17 +114,20 @@ class CustomerApi {
     required String oldPassword,
     required String newPassword,
   }) async {
-    final url = Uri.parse(
-      '$_urlInfo?email=$email&password=$oldPassword&newPassword=a$newPassword',
-    );
-    final response = await http.put(
-      url,
-      headers: {
-        'Authorization': token.toAuthorizationJson(),
-      },
-    ).timeout(
-      const Duration(seconds: 10),
-    );
+    final url = Uri.parse(_url);
+    final response = await http
+        .put(url,
+            headers: {
+              'Authorization': token.toAuthorizationJson(),
+            },
+            body: jsonEncode({
+              "email": email,
+              "password": oldPassword,
+              "newPassword": newPassword,
+            }))
+        .timeout(
+          const Duration(seconds: 10),
+        );
     if (response.headers.containsKey('Authorization')) {
       token.clone(
         TokenState.fromJson(jsonDecode(response.headers['Authorization']!)),
