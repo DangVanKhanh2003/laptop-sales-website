@@ -98,15 +98,30 @@ class HistoryCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
+      elevation: 4,
       margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
-      child: ListTile(
-        leading: Text('$index'),
-        title: Text('${history.odertDate}'),
-        subtitle: Column(
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+      child: Padding(
+        padding: const EdgeInsets.all(16),
+        child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: history.cancelProducts!
-              .map((productOrder) => ProductCard(productOrder: productOrder))
-              .toList(),
+          children: [
+            Text(
+              'Lịch sử #$index',
+              style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                    fontWeight: FontWeight.bold,
+                  ),
+            ),
+            const SizedBox(height: 8),
+            Text(
+              'Ngày đặt hàng: ${history.odertDate}',
+              style: Theme.of(context).textTheme.bodyMedium,
+            ),
+            const Divider(height: 24, thickness: 1),
+            Column(
+              children: history.cancelProducts!.map((productOrder) => ProductCard(productOrder: productOrder)).toList(),
+            ),
+          ],
         ),
       ),
     );
@@ -126,30 +141,62 @@ class ProductCard extends StatelessWidget {
     final product = productOrder.product!;
     final image = product.mainImg != null
         ? Image(
-            image:
-                MemoryImage(ConvertHelper.decodeBase64(data: product.mainImg!)),
+            image: MemoryImage(ConvertHelper.decodeBase64(data: product.mainImg!)),
             width: 50,
             height: 50,
+            fit: BoxFit.cover,
           )
         : CachedNetworkImage(
             imageUrl: 'http://via.placeholder.com/350x150',
             fit: BoxFit.cover,
-            width: 100,
-            height: 100,
+            width: 50,
+            height: 50,
           );
 
-    return Card(
-      margin: const EdgeInsets.only(top: 8),
-      child: ListTile(
-        leading: image,
-        title: Text(product.productName!),
-        subtitle: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text('Giá bán: \$${product.price}'),
-            Text('Số lượng: ${productOrder.amount}'),
-          ],
-        ),
+    return Container(
+      margin: const EdgeInsets.symmetric(vertical: 8),
+      padding: const EdgeInsets.all(12),
+      decoration: BoxDecoration(
+        color: Theme.of(context).brightness == Brightness.light ? Colors.white : Colors.grey[800],
+        borderRadius: BorderRadius.circular(10),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.grey.withOpacity(0.2),
+            blurRadius: 6,
+            offset: const Offset(0, 3),
+          ),
+        ],
+      ),
+      child: Row(
+        children: [
+          ClipRRect(
+            borderRadius: BorderRadius.circular(8),
+            child: image,
+          ),
+          const SizedBox(width: 12),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  product.productName!,
+                  style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                        fontWeight: FontWeight.w600,
+                      ),
+                ),
+                const SizedBox(height: 4),
+                Text(
+                  'Giá bán: \$${product.price}',
+                  style: Theme.of(context).textTheme.bodyMedium,
+                ),
+                Text(
+                  'Số lượng: ${productOrder.amount}',
+                  style: Theme.of(context).textTheme.bodyMedium,
+                ),
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }

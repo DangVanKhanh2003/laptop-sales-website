@@ -83,29 +83,32 @@ class _ProductItem extends ConsumerState<ProductItem> {
 
   @override
   Widget build(BuildContext context) {
+    final isMobile = MediaQuery.of(context).size.width < 600;
     return ListTile(
+      contentPadding: EdgeInsets.symmetric(
+        horizontal: isMobile ? 8.0 : 16.0,
+        vertical: isMobile ? 4.0 : 8.0,
+      ),
       leading: widget.order.product!.mainImg != null
           ? Image(
               image: MemoryImage(
-                ConvertHelper.decodeBase64(
-                  data: widget.order.product!.mainImg!,
-                ),
+                ConvertHelper.decodeBase64(data: widget.order.product!.mainImg!),
               ),
-              width: 100,
-              height: 100,
+              width: 80,
+              height: 80,
+              fit: BoxFit.cover,
             )
           : CachedNetworkImage(
               imageUrl: 'http://via.placeholder.com/350x150',
               fit: BoxFit.cover,
-              width: 100,
-              height: 100,
+              width: 80,
+              height: 80,
             ),
-      title: Text(widget.order.product!.productName!),
-      subtitle: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text('Giá: \$${widget.order.product!.price}'),
-        ],
+      title: Text(
+        widget.order.product!.productName!,
+        maxLines: 1,
+        overflow: TextOverflow.ellipsis,
+        style: TextStyle(fontSize: isMobile ? 14 : 16),
       ),
       trailing: Tooltip(
         message: 'Xem chi tiết',
@@ -128,8 +131,8 @@ class _ProductItem extends ConsumerState<ProductItem> {
       _isLoading = true;
     });
     try {
-      final product = await GetItHelper.get<ProductRepository>()
-          .getProductById(id: productId, token: ref.read(tokenProvider));
+      final product =
+          await GetItHelper.get<ProductRepository>().getProductById(id: productId, token: ref.read(tokenProvider));
       _navigateToProductDetail(product);
     } catch (e) {
       _showError(e.toString());
