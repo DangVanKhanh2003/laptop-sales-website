@@ -27,6 +27,7 @@ dependencies:
     path: ^1.9.0
     path_provider: ^2.1.5
     speech_to_text: ^7.0.0
+    curved_labeled_navigation_bar: ^2.0.5
 
 dev_dependencies:
     flutter_test:

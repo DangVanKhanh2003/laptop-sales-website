@@ -1,3 +1,5 @@
+import 'package:curved_labeled_navigation_bar/curved_navigation_bar.dart';
+import 'package:curved_labeled_navigation_bar/curved_navigation_bar_item.dart';
 import 'package:flutter/material.dart';
 import 'package:material_symbols_icons/symbols.dart';
 import 'package:page_transition/page_transition.dart';
@@ -97,23 +99,28 @@ class _RootScreenState extends State<RootScreen> {
           children: _screens,
         ),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Symbols.home),
+      bottomNavigationBar: CurvedNavigationBar(
+        backgroundColor:
+            Theme.of(context).brightness == Brightness.dark ? Colors.black : Theme.of(context).colorScheme.surface,
+        color: Theme.of(context).brightness == Brightness.dark ? Colors.blueGrey : Colors.blueAccent,
+        items: [
+          CurvedNavigationBarItem(
+            child: Icon(Symbols.home, color: Colors.white),
             label: 'Trang chủ',
+            labelStyle: TextStyle(color: Colors.white),
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Symbols.notifications),
+          CurvedNavigationBarItem(
+            child: Icon(Symbols.notifications, color: Colors.white),
             label: 'Thông báo',
+            labelStyle: TextStyle(color: Colors.white),
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Symbols.settings),
+          CurvedNavigationBarItem(
+            child: Icon(Symbols.settings, color: Colors.white),
             label: 'Cài đặt',
+            labelStyle: TextStyle(color: Colors.white),
           ),
         ],
-        currentIndex: _index,
-        selectedItemColor: Theme.of(context).colorScheme.primary.withOpacity(0.85),
+        index: _index,
         onTap: _onChangeScreen,
       ),
     );
