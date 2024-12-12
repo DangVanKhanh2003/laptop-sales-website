@@ -10,6 +10,7 @@ import 'package:shopping_app/repository/cart_repository.dart';
 import 'package:shopping_app/repository/product_repository.dart';
 import 'package:shopping_app/screen/cart/empty_cart.dart';
 import 'package:shopping_app/screen/product_detail/product_detail.dart';
+import 'package:shopping_app/service/convert_helper.dart';
 import 'package:shopping_app/service/getit_helper.dart';
 
 class CartView extends ConsumerStatefulWidget {
@@ -232,16 +233,21 @@ class __ProductCardState extends ConsumerState<_ProductCard> {
               children: [
                 Checkbox(
                   value: widget.selectedItems.contains(widget.cart),
-                  onChanged: (value) =>
-                      widget.onChangeSelectedItem(widget.cart),
+                  onChanged: (value) => widget.onChangeSelectedItem(widget.cart),
                 ),
                 const SizedBox(width: 5.0),
-                CachedNetworkImage(
-                  imageUrl: widget.cart.mainImg ??
-                      'http://via.placeholder.com/350x150',
-                  width: 50,
-                  height: 50,
-                ),
+                widget.cart.mainImg != null
+                    ? Image(
+                        image: MemoryImage(ConvertHelper.decodeBase64(data: widget.cart.mainImg!)),
+                        width: 50,
+                        height: 50,
+                        fit: BoxFit.cover,
+                      )
+                    : CachedNetworkImage(
+                        imageUrl: 'http://via.placeholder.com/350x150',
+                        width: 50,
+                        height: 50,
+                      ),
               ],
             ),
             title: Text(widget.cart.productName!),
