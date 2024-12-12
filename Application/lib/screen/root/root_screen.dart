@@ -17,16 +17,35 @@ class RootScreen extends StatefulWidget {
 class _RootScreenState extends State<RootScreen> {
   late int _index;
 
+  late PageStorageBucket _bucket;
+
   final List<Widget> _screens = const <Widget>[
-    HomePage(),
-    NotificationPage(),
-    SettingPage(),
+    HomePage(
+      key: PageStorageKey('home'),
+    ),
+    NotificationPage(
+      key: PageStorageKey('notification'),
+    ),
+    SettingPage(
+      key: PageStorageKey('setting'),
+    ),
   ];
 
   @override
   void initState() {
     _index = 0;
+    _bucket = PageStorageBucket();
     super.initState();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
   }
 
   void _onChangeScreen(int index) {
@@ -71,7 +90,13 @@ class _RootScreenState extends State<RootScreen> {
           ),
         ],
       ),
-      body: _screens[_index],
+      body: PageStorage(
+        bucket: _bucket,
+        child: IndexedStack(
+          index: _index,
+          children: _screens,
+        ),
+      ),
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
@@ -88,8 +113,7 @@ class _RootScreenState extends State<RootScreen> {
           ),
         ],
         currentIndex: _index,
-        selectedItemColor:
-            Theme.of(context).colorScheme.primary.withOpacity(0.85),
+        selectedItemColor: Theme.of(context).colorScheme.primary.withOpacity(0.85),
         onTap: _onChangeScreen,
       ),
     );

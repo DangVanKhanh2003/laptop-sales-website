@@ -12,7 +12,6 @@ class StatsApi {
     required int endTime,
   }) async {
     final uri = Uri.parse('$_url?startDate=$startTime&endDate=$endTime');
-    print('$_url?startDate=$startTime&endDate=$endTime');
     final response = await http.get(uri).timeout(
           const Duration(seconds: 10),
         );

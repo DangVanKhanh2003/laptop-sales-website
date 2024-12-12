@@ -100,28 +100,46 @@ class _ProductItem extends ConsumerState<ProductItem> {
 
   @override
   Widget build(BuildContext context) {
+    final isMobile = MediaQuery.of(context).size.width < 600;
+
     return ListTile(
+      contentPadding: EdgeInsets.symmetric(
+        horizontal: isMobile ? 8.0 : 16.0,
+        vertical: isMobile ? 4.0 : 8.0,
+      ),
       leading: widget.product.mainImg != null
           ? Image(
               image: MemoryImage(
                 ConvertHelper.decodeBase64(data: widget.product.mainImg!),
               ),
-              width: 100,
-              height: 100,
+              width: 80,
+              height: 80,
+              fit: BoxFit.cover,
             )
           : CachedNetworkImage(
               imageUrl: 'http://via.placeholder.com/350x150',
               fit: BoxFit.cover,
-              width: 100,
-              height: 100,
+              width: 80,
+              height: 80,
             ),
-      title: Text(widget.product.productName!),
+      title: Text(
+        widget.product.productName!,
+        maxLines: 1,
+        overflow: TextOverflow.ellipsis,
+        style: TextStyle(fontSize: isMobile ? 14 : 16),
+      ),
       subtitle: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text('Giá: \$${widget.product.price}'),
+          Text(
+            'Giá: \$${widget.product.price}',
+            style: TextStyle(fontSize: isMobile ? 12 : 14),
+          ),
           const SizedBox(height: 4.0),
-          Text('Số lượng: ${widget.product.amount}'),
+          Text(
+            'Số lượng: ${widget.product.amount}',
+            style: TextStyle(fontSize: isMobile ? 12 : 14),
+          ),
         ],
       ),
       trailing: Row(
@@ -135,7 +153,10 @@ class _ProductItem extends ConsumerState<ProductItem> {
                     onPressed: () => _viewProductDetails(
                       widget.product.productId!,
                     ),
-                    icon: const Icon(Symbols.info),
+                    icon: Icon(
+                      Symbols.info,
+                      size: isMobile ? 18 : 24,
+                    ),
                   ),
           ),
           Tooltip(
@@ -146,9 +167,10 @@ class _ProductItem extends ConsumerState<ProductItem> {
                     onPressed: () => _cancelProduct(
                       widget.product.productOrderPendingId!,
                     ),
-                    icon: const Icon(
+                    icon: Icon(
                       Symbols.remove,
                       color: Colors.red,
+                      size: isMobile ? 18 : 24,
                     ),
                   ),
           ),
@@ -211,8 +233,8 @@ class _ProductItem extends ConsumerState<ProductItem> {
       _isLoading = true;
     });
     try {
-      final product = await GetItHelper.get<ProductRepository>()
-          .getProductById(id: productId, token: ref.read(tokenProvider));
+      final product =
+          await GetItHelper.get<ProductRepository>().getProductById(id: productId, token: ref.read(tokenProvider));
       _navigateToProductDetail(product);
     } catch (e) {
       _showError(e.toString());
