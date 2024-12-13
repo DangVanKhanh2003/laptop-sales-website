@@ -1,5 +1,8 @@
 import 'package:admin/model/stat.dart';
 import 'package:admin/repository/stats_repository.dart';
+import 'package:admin/screen/dashboard/admin_barchart.dart';
+import 'package:admin/screen/dashboard/admin_chart.dart';
+import 'package:admin/screen/dashboard/admin_piechart.dart';
 import 'package:admin/screen/exception/exception_page.dart';
 import 'package:admin/service/getit_helper.dart';
 import 'package:flutter/material.dart';
@@ -77,12 +80,21 @@ class _DashboardAnalysisState extends State<DashboardAnalysis> {
           } else if (snapshot.hasData) {
             final data = snapshot.data!;
             _calculateData(data);
-
             return SingleChildScrollView(
               padding: const EdgeInsets.all(16.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      AdminChart(stats: data),
+                      AdminBarChart(stats: data),
+                      AdminPieChart(stats: data),
+                    ],
+                  ),
+                  const SizedBox(height: 8.0),
                   // Header
                   Card(
                     elevation: 2,

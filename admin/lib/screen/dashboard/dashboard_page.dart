@@ -73,6 +73,8 @@ class _DashboardPageState extends State<DashboardPage> {
         padding: const EdgeInsets.all(8.0),
         child: Row(
           children: [
+            Text(label),
+            const SizedBox(width: 8.0),
             IconButton(
               icon: const Icon(Icons.calendar_month, color: Colors.blue),
               onPressed: onPressed,
@@ -119,13 +121,13 @@ class _DashboardPageState extends State<DashboardPage> {
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           _datePickerRow(
-            label: 'Thời gian bắt đầu',
+            label: 'Thời gian bắt đầu: ',
             date: _startTime,
             onPressed: _pickStartDate,
           ),
           const SizedBox(height: 8.0),
           _datePickerRow(
-            label: 'Thời gian kết thúc',
+            label: 'Thời gian kết thúc: ',
             date: _endTime,
             onPressed: _pickEndDate,
           ),
